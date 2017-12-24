@@ -1,0 +1,14 @@
+{
+  "docs": "doc",
+  "dist": "docs",
+  "css": [
+    "lib/iview/styles/iview.css",
+    "lib/vuecoms.css",
+    "lib/custom.css"
+  ],
+  "scripts": [
+    "lib/vue.js",
+    "lib/iview/iview.js",
+    "lib/vuecoms.js"
+  ]
+}

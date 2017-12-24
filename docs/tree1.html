@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=fc8777a9">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=a85656cd">
+    <link rel="stylesheet" href="lib/custom.css?t=b7e407ef">
+    <script src="assets/script.js?t=42463e55"></script>
+    <script src="lib/vue.js?t=3f3ee46e"></script>
+    <script src="lib/iview/iview.js?t=ea83000a"></script>
+    <script src="lib/vuecoms.js?t=b2f6124a"></script>
+    <title>树控件 - Vuecoms</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Box</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-box1" href="box1.html">基本用法</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Table</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table3" href="table3.html">表格拖动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table4" href="table4.html">表格行编辑</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Query</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title -active link-tree1" href="tree1.html">树控件</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Build</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-tree1">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="">&#x6811;&#x63A7;&#x4EF6;</h1>
+<div id="ex-tree-01" style="width: 200px; overflow: auto; border: 1px solid gray;">
+  <tree :data="data"></tree>
+</div>
+<script>
+var ex_tree_01 = new Vue({
+  el: '#ex-tree-01',
+  data: function () {
+    var data = [
+      {
+        title: 'parent 1',
+        expand: true,
+        children: [
+          {
+            title: 'parent 1-1 - long- long- long- long- long- long',
+            expand: true,
+            children: [
+              {
+                title: 'leaf 1-1-1- long- long- long- long- long- long'
+              },
+              {
+                title: 'leaf 1-1-2'
+              }
+            ]
+          },
+          {
+            title: 'parent 1-2',
+            expand: true,
+            children: [
+              {
+                title: 'leaf 1-2-1'
+              },
+              {
+                title: 'leaf 1-2-1'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+    return {data:data}
+  }
+})
+</script>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="query1.html"><span class="title">基本查询</span></a></div>
+          <div class="right"><a href="build1.html"><span class="label">Next: </span><span class="title">基本构建</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
