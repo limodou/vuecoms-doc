@@ -6,3 +6,7 @@
   padding-left: 0px;
   margin-bottom: 0px;
 }
+
+.markdown-body input.ivu-input {
+  font-size: 12px;
+}

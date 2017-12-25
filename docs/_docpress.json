@@ -77,6 +77,12 @@
             "source": "doc/build1.md",
             "url": "build1.html",
             "slug": "build1"
+          },
+          {
+            "title": "多段展示",
+            "source": "doc/build2.md",
+            "url": "build2.html",
+            "slug": "build2"
           }
         ]
       }
@@ -136,6 +142,12 @@
       "title": "基本构建 - Vuecoms",
       "pageTitle": "基本构建",
       "slug": "build1"
+    },
+    "build2.html": {
+      "source": "doc/build2.md",
+      "title": "多段展示 - Vuecoms",
+      "pageTitle": "多段展示",
+      "slug": "build2"
     }
   },
   "sources": {
@@ -148,20 +160,21 @@
     "doc/query1.md": "query1.html",
     "doc/tree1.md": "tree1.html",
     "doc/build1.md": "build1.html",
+    "doc/build2.md": "build2.html",
     "doc/lib/custom.css": "lib/custom.css",
     "doc/lib/vue.js": "lib/vue.js",
-    "doc/lib/vuecoms.js": "lib/vuecoms.js",
     "doc/lib/vuecoms.css": "lib/vuecoms.css",
+    "doc/lib/vuecoms.js": "lib/vuecoms.js",
     "doc/lib/iview/iview.js": "lib/iview/iview.js",
     "doc/lib/iview/iview.min.js": "lib/iview/iview.min.js",
     "doc/lib/iview/iview.min.js.gz": "lib/iview/iview.min.js.gz",
     "doc/lib/iview/locale/de-DE.js": "lib/iview/locale/de-DE.js",
+    "doc/lib/iview/locale/en-US.js": "lib/iview/locale/en-US.js",
     "doc/lib/iview/locale/es-ES.js": "lib/iview/locale/es-ES.js",
     "doc/lib/iview/locale/fr-FR.js": "lib/iview/locale/fr-FR.js",
-    "doc/lib/iview/locale/id-ID.js": "lib/iview/locale/id-ID.js",
     "doc/lib/iview/locale/it-IT.js": "lib/iview/locale/it-IT.js",
+    "doc/lib/iview/locale/id-ID.js": "lib/iview/locale/id-ID.js",
     "doc/lib/iview/locale/ja-JP.js": "lib/iview/locale/ja-JP.js",
-    "doc/lib/iview/locale/en-US.js": "lib/iview/locale/en-US.js",
     "doc/lib/iview/locale/ko-KR.js": "lib/iview/locale/ko-KR.js",
     "doc/lib/iview/locale/pt-BR.js": "lib/iview/locale/pt-BR.js",
     "doc/lib/iview/locale/pt-PT.js": "lib/iview/locale/pt-PT.js",
@@ -169,10 +182,10 @@
     "doc/lib/iview/locale/sv-SE.js": "lib/iview/locale/sv-SE.js",
     "doc/lib/iview/locale/th-TH.js": "lib/iview/locale/th-TH.js",
     "doc/lib/iview/locale/tr-TR.js": "lib/iview/locale/tr-TR.js",
-    "doc/lib/iview/locale/vi-VN.js": "lib/iview/locale/vi-VN.js",
     "doc/lib/iview/locale/uk-UA.js": "lib/iview/locale/uk-UA.js",
-    "doc/lib/iview/locale/zh-CN.js": "lib/iview/locale/zh-CN.js",
+    "doc/lib/iview/locale/vi-VN.js": "lib/iview/locale/vi-VN.js",
     "doc/lib/iview/locale/zh-TW.js": "lib/iview/locale/zh-TW.js",
+    "doc/lib/iview/locale/zh-CN.js": "lib/iview/locale/zh-CN.js",
     "doc/lib/iview/styles/iview.css": "lib/iview/styles/iview.css",
     "doc/lib/iview/styles/fonts/ionicons.eot": "lib/iview/styles/fonts/ionicons.eot",
     "doc/lib/iview/styles/fonts/ionicons.svg": "lib/iview/styles/fonts/ionicons.svg",

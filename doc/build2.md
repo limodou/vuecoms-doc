@@ -1,74 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=fc8777a9">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=61df9deb">
-    <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
-    <script src="assets/script.js?t=42463e55"></script>
-    <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=ea83000a"></script>
-    <script src="lib/vuecoms.js?t=93721854"></script>
-    <title>基本构建 - Vuecoms</title>
-    <meta name="viewport" content="width=device-width">
-  </head>
-  <body class="-menu-visible">
-    <div class="doc-layout">
-      <div class="toggle menu-toggle js-menu-toggle"></div>
-      <div class="menu toc-menu">
-        <li class="menu-item -level-0 -parent">
-          <ul class="submenu">
-            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Box</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-box1" href="box1.html">基本用法</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Table</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-table3" href="table3.html">表格拖动</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-table4" href="table4.html">表格行编辑</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Query</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Build</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title -active link-build1" href="build1.html">基本构建</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </div>
-      <div class="body page-build1">
-        <div class="header-nav">
-          <div class="right">
-          </div>
-        </div>
-        <div class="markdown-body"><h1 id="">&#x57FA;&#x672C;&#x6784;&#x5EFA;</h1>
-<div id="ex-build-01">
+# 多段展示
+
+<div id="ex-build-02">
   <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules"></build>
   <div>
     {{value}}
@@ -85,14 +17,17 @@ function choices1_options (callback) {
     callback(c)
   }, 1000)
 }
-var ex_build_01 = new Vue({
-  el: '#ex-build-01',
+Vue.component('u-table', {
+  template: '<table><tr><th>Test</th></tr><tr><td>AAA</td></tr></table>'
+})
+var ex_build_02 = new Vue({
+  el: '#ex-build-02',
   data: function () {
     var self = this
     var data = [
       {
-        name: 'basic',
-        title: '基本信息',
+        name: 'basic1',
+        title: '基本信息1',
         labelWidth: 150,
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
@@ -105,6 +40,24 @@ var ex_build_01 = new Vue({
           },
           {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices1_options}
           },
+        ],
+        layout: [
+          ['str1', 'str2'],
+          ['select1', 'select2'],
+        ],
+        component: 'Layout',
+        boxComponent: 'Box',
+      },
+      {
+        name: 'files',
+        title: '附件',
+        component: 'u-table'
+      },
+      {
+        name: 'basic2',
+        title: '基本信息2',
+        labelWidth: 150,
+        fields: [
           {name: 'select3', label: '选择', type: 'select', required: true, multiple: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
@@ -178,12 +131,10 @@ var ex_build_01 = new Vue({
                     label: 'Tomato',
                   } ],
                 } ]
-          }
+              }
           },
         ],
         layout: [
-          ['str1', 'str2'],
-          ['select1', 'select2'],
           ['select3', 'select4'],
           ['radio1', 'radio2'],
           ['checkboxgroup1', 'checkboxgroup2'],
@@ -193,8 +144,6 @@ var ex_build_01 = new Vue({
           ['date1', 'date2'],
           ['tree1']
         ],
-        layoutComponent: 'Layout',
-        boxComponent: 'Box',
         buttons: {
           items: [
             [{label: '查看结果', type:'primary', onClick: function(target, data){
@@ -210,7 +159,7 @@ var ex_build_01 = new Vue({
               }
             }]
           ],
-          size: ''
+          size: 'default'
         }
       }
     ]
@@ -250,13 +199,3 @@ var ex_build_01 = new Vue({
   }
 })
 </script>
-
-        </div>
-        <div class="footer-nav">
-          <div class="left"><a href="tree1.html"><span class="title">树控件</span></a></div>
-          <div class="right"><a href="build2.html"><span class="label">Next: </span><span class="title">多段展示</span></a></div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>

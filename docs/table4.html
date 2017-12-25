@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=fc8777a9">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=6864603c">
-    <link rel="stylesheet" href="lib/custom.css?t=b7e407ef">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=61df9deb">
+    <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
     <script src="lib/iview/iview.js?t=ea83000a"></script>
-    <script src="lib/vuecoms.js?t=1b08e8f6"></script>
+    <script src="lib/vuecoms.js?t=93721854"></script>
     <title>表格行编辑 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -55,6 +55,8 @@
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
                 </li>
+                <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -88,21 +90,27 @@ var ex_table_04 = new Vue({
         {name:'Action', title:'Name5'}
       ],
       buttons: [
-        [{label: '查看结果', type:'primary', onClick: function(){
-            console.table(self.$refs.table.store.states.data)
+        [
+          {label: '新建', type:'primary', onClick: function(target, store){
+              store.addEditRow()
+            }
+          }
+        ],
+        [{label: '查看结果', type:'primary', onClick: function(target, store){
+            console.table(store.states.data)
           }}],
-        [{label: '显示注释', type:'primary', onClick: function(){
-              self.$refs.table.store.setComment(1, 'name3', '这是评论')
+        [{label: '显示注释', type:'primary', onClick: function(target, store){
+              store.setComment(1, 'name3', '这是评论')
             }},
-        {label: '隐藏注释', type:'primary', onClick: function(){
-              self.$refs.table.store.removeComment(1, 'name3')
+        {label: '隐藏注释', type:'primary', onClick: function(target, store){
+              store.removeComment(1, 'name3')
             }}
           ],
-        [{label: '显示Class', type:'primary', onClick: function(){
-              self.$refs.table.store.setClass(3, 'name3', 'ivu-btn-error')
+        [{label: '显示Class', type:'primary', onClick: function(target, store){
+              store.setClass(3, 'name3', 'ivu-btn-error')
             }},
-        {label: '删除Class', type:'primary', onClick: function(){
-              self.$refs.table.store.removeClass(3, 'name3')
+        {label: '删除Class', type:'primary', onClick: function(target, store){
+              store.removeClass(3, 'name3')
             }}
           ]
       ],

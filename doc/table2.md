@@ -35,10 +35,26 @@ var ex_table_02 = new Vue({
       data: [
       ],
       buttons: [
-        [{label: '新增', type:'primary', onClick: function(){
-            self.$Message.info('Click 新增')
-          }}, {label: '编辑', disabled: true}, {label: '删除'}],
-        [{label: '上移', icon:'ios-arrow-thin-up'}, {label: '下移', icon: 'ios-arrow-thin-down'}]
+        [
+          {label: '新增', type:'primary', onClick: function(target, data){
+              self.$Message.info('Click 新增')
+            }
+          },
+          {label: '编辑', disabled: true},
+          {label: '删除', onClick: function(target, data){
+              var selection = target.getSelection()
+              if (selection.length === 0) {
+                self.$Message.error('请先选择要删除的记录')
+              } else {
+                target.removeRow(selection)
+              }
+            }
+          }
+        ],
+        [
+          {label: '上移', icon:'ios-arrow-thin-up'},
+          {label: '下移', icon: 'ios-arrow-thin-down'}
+        ]
       ],
       rightButtons: [
         [{label: '下载'}]
