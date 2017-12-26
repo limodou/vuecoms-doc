@@ -1,7 +1,7 @@
 # 多段展示
 
 <div id="ex-build-02">
-  <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules"></build>
+  <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :label-width="labelWidth"></build>
   <div>
     {{value}}
   </div>
@@ -28,7 +28,6 @@ var ex_build_02 = new Vue({
       {
         name: 'basic1',
         title: '基本信息1',
-        labelWidth: 150,
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
             info: 'info信息', required: true, rule: {type: 'email'}},
@@ -56,7 +55,6 @@ var ex_build_02 = new Vue({
       {
         name: 'basic2',
         title: '基本信息2',
-        labelWidth: 150,
         fields: [
           {name: 'select3', label: '选择', type: 'select', required: true, multiple: true, options: {choices: [
             {label:'选项一', value: 'A'},
@@ -184,7 +182,8 @@ var ex_build_02 = new Vue({
                   callback()
                 }
               }
-            }
+            },
+            labelWidth: 200
           }
   },
   methods: {
