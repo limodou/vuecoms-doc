@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=fc8777a9">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=61df9deb">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=ad111fd2">
     <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
     <script src="lib/iview/iview.js?t=ea83000a"></script>
-    <script src="lib/vuecoms.js?t=93721854"></script>
+    <script src="lib/vuecoms.js?t=dca5de67"></script>
     <title>复杂表格 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -72,6 +72,7 @@
   <div>
     <input ref="loading" v-model="loading_text" style="display:inline-block">
     <label style="display:inline-block">&#x5207;&#x6362;loading<input v-model="show_loading" type="checkbox"></label>
+    <label style="display:inline-block">&#x5207;&#x6362;nowrap<input v-model="show_nowrap" type="checkbox"></label>
     <button @click="handleTitleHide">&#x5207;&#x6362;Title&#x5B57;&#x6BB5;&#x663E;&#x793A;</button>
   </div>
   <grid ref="grid" :data="table" @on-selected="handleSelected" @on-deselected="handleDeselected" @on-selected-all="handleSelectedAll" @on-deselected-all="handleDeselectedAll"></grid>
@@ -218,12 +219,16 @@ var ex_table_02 = new Vue({
       logs:[],
       loading_text:'loading',
       show_loading:false,
+      show_nowrap: false,
       param:{}
     }
   },
   watch: {
     show_loading: function() {
       this.$refs.grid.showLoading(this.show_loading, this.loading_text)
+    },
+    show_nowrap: function () {
+      this.$refs.grid.$set(this.$refs.grid.store.states, 'nowrap', this.show_nowrap)
     }
   },
   methods: {

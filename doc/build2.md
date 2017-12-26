@@ -90,7 +90,7 @@ var ex_build_02 = new Vue({
           },
           {name: 'checkbox1', label: '选择', type: 'checkbox', required: true},
           {name: 'checkbox2', label: '选择', type: 'checkbox', static: true},
-          {name: 'text1', label: '文本1', type: 'text', required: true},
+          {name: 'text1', label: '文本1', type: 'text', required: true, options: {autosize: false}},
           {name: 'text2', label: '文本2', type: 'text', static: true},
           {name: 'date1', label: '日期1', required: true, type: 'date'},
           {name: 'date2', label: '日期2', type: 'date', static: true},
@@ -164,7 +164,6 @@ var ex_build_02 = new Vue({
       }
     ]
     return {data:data, value: {
-              str2: 'aaa',
               select1: 'B',
               select2: 'A',
               select3: ['A', 'B'],

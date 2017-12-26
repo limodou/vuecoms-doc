@@ -4,6 +4,7 @@
   <div>
     <input ref="loading" v-model="loading_text" style="display:inline-block"></input>
     <label style="display:inline-block">切换loading<input v-model="show_loading" type="checkbox"></input></label>
+    <label style="display:inline-block">切换nowrap<input v-model="show_nowrap" type="checkbox"></input></label>
     <button @click="handleTitleHide">切换Title字段显示</button>
   </div>
   <Grid ref='grid' :data="table"
@@ -154,12 +155,16 @@ var ex_table_02 = new Vue({
       logs:[],
       loading_text:'loading',
       show_loading:false,
+      show_nowrap: false,
       param:{}
     }
   },
   watch: {
     show_loading: function() {
       this.$refs.grid.showLoading(this.show_loading, this.loading_text)
+    },
+    show_nowrap: function () {
+      this.$refs.grid.$set(this.$refs.grid.store.states, 'nowrap', this.show_nowrap)
     }
   },
   methods: {

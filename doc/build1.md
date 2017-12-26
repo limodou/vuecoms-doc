@@ -35,7 +35,8 @@ var ex_build_01 = new Vue({
           },
           {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices1_options}
           },
-          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices1_options}
+          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices1_options},
+          help: '这是设置了select2_static的结果，未使用缺省机制'
           },
           {name: 'select3', label: '选择', type: 'select', required: true, multiple: true, options: {choices: [
             {label:'选项一', value: 'A'},
@@ -125,7 +126,7 @@ var ex_build_01 = new Vue({
           ['date1', 'date2'],
           ['tree1']
         ],
-        layoutComponent: 'Layout',
+        component: 'Layout',
         boxComponent: 'Box',
         buttons: {
           items: [
@@ -148,6 +149,7 @@ var ex_build_01 = new Vue({
     ]
     return {data:data, value: {
               str2: 'aaa',
+              select2_static: '静态结果',
               select1: 'B',
               select2: 'A',
               select3: ['A', 'B'],

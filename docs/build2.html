@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=fc8777a9">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=61df9deb">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=ad111fd2">
     <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
     <script src="lib/iview/iview.js?t=ea83000a"></script>
-    <script src="lib/vuecoms.js?t=93721854"></script>
+    <script src="lib/vuecoms.js?t=dca5de67"></script>
     <title>多段展示 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -158,7 +158,7 @@ var ex_build_02 = new Vue({
           },
           {name: 'checkbox1', label: '选择', type: 'checkbox', required: true},
           {name: 'checkbox2', label: '选择', type: 'checkbox', static: true},
-          {name: 'text1', label: '文本1', type: 'text', required: true},
+          {name: 'text1', label: '文本1', type: 'text', required: true, options: {autosize: false}},
           {name: 'text2', label: '文本2', type: 'text', static: true},
           {name: 'date1', label: '日期1', required: true, type: 'date'},
           {name: 'date2', label: '日期2', type: 'date', static: true},
@@ -232,7 +232,6 @@ var ex_build_02 = new Vue({
       }
     ]
     return {data:data, value: {
-              str2: 'aaa',
               select1: 'B',
               select2: 'A',
               select3: ['A', 'B'],
