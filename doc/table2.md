@@ -75,7 +75,7 @@ var ex_table_02 = new Vue({
           data.push(row)
         }
         setTimeout( function () {
-          callback(data)
+          callback(data, {total:100})
           }, 0)
       },
       onSelect: function (row) {

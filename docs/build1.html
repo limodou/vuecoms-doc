@@ -9,7 +9,7 @@
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
     <script src="lib/iview/iview.js?t=ea83000a"></script>
-    <script src="lib/vuecoms.js?t=14e499ef"></script>
+    <script src="lib/vuecoms.js?t=6a3dc82b"></script>
     <title>基本构建 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -69,20 +69,20 @@
         </div>
         <div class="markdown-body"><h1 id="">&#x57FA;&#x672C;&#x6784;&#x5EFA;</h1>
 <div id="ex-build-01">
-  <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules"></build>
+  <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :choices="choices"></build>
   <div>
     {{value}}
   </div>
 </div>
 <script>
-function choices1_options (callback) {
+function function_choices1 (callback) {
   setTimeout(function () {
     var c = [
       {label:'选项一', value: 'A'},
       {label:'选项二', value: 'B'},
       {label:'选项三', value: 'C'}
     ]
-    callback(c)
+    callabck(c)
   }, 1000)
 }
 var ex_build_01 = new Vue({
@@ -101,9 +101,8 @@ var ex_build_01 = new Vue({
             return '<a href="#">' + v + '</a>'
             }
           },
-          {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices1_options}
-          },
-          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices1_options},
+          {name: 'select1', label: '选择', type: 'select', required: true},
+          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: function_choices1},
           help: '这是设置了select2_static的结果，未使用缺省机制'
           },
           {name: 'select3', label: '选择', type: 'select', required: true, multiple: true, options: {choices: [
@@ -209,6 +208,14 @@ var ex_build_01 = new Vue({
             [{label: '合并出错结果', type:'info', onClick: function(target, data){
                 self.errors = {select1: '这是合并后的错误'}
               }
+            }],
+            [{label: '更新select1 choices', type:'info', onClick: function(target, data){
+                self.choices.select1 = [
+                  {label:'选项A', value: 'A'},
+                  {label:'选项B', value: 'B'},
+                  {label:'选项C', value: 'C'}
+                ]
+              }
             }]
           ],
           size: ''
@@ -228,6 +235,11 @@ var ex_build_01 = new Vue({
               text1: 'Line 1\nLine 2',
               text2: 'Line 3\nLine 4',
               date2: '2017-12-12'
+            },
+            choices: {
+                select1: [
+                  {label:'选项一', value: 'A'}
+                ]
             },
             errors: {},
             rules: {
@@ -249,6 +261,17 @@ var ex_build_01 = new Vue({
         this.$Message.info('saved')
       }
     }
+  },
+  mounted: function () {
+    var self = this
+    setTimeout(function () {
+      var c = [
+        {label:'选项一', value: 'A'},
+        {label:'选项二', value: 'B'},
+        {label:'选项三', value: 'C'}
+      ]
+      self.$set(self.choices, 'select1', c)
+    }, 1000)
   }
 })
 </script>
