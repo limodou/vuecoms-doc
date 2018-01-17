@@ -13,6 +13,8 @@ Vuecoms
   * [基本查询](query1.md)
 * [Tree]
   * [树控件](tree1.md)
+* [TreeSelect]
+  * [选择树控件](treeselect.md)
 * [Build]
   * [基本构建](build1.md)
   * [多段展示](build2.md)

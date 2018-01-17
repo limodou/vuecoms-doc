@@ -1,0 +1,193 @@
+# 树选择控件
+
+<div id="ex-tree-01">
+  <i-tree-select :choices="choices" v-model="value" clearable filterable></i-tree-select>
+  <pre>{{value}}</pre>
+</div>
+<script>
+var ex_tree_01 = new Vue({
+  el: '#ex-tree-01',
+  data: function () {
+    var data = [
+      {
+        id: 'a',
+        title: 'parent 1',
+        expand: true,
+        children: [
+          {
+            id: 'a1',
+            title: 'parent 1-1 - long- long- long- long- long- long',
+            expand: true,
+            children: [
+              {
+                id: 'a1-1',
+                title: 'leaf 1-1-1- long- long- long- long- long- long'
+              },
+              {
+                id: 'a1-2',
+                title: 'leaf 1-1-2'
+              }
+            ]
+          },
+          {
+            id: 'a2',
+            title: 'parent 1-2',
+            expand: true,
+            children: [
+              {
+                id: 'a2-1',
+                title: 'leaf 1-2-1'
+              },
+              {
+                id: 'a2-2',
+                title: 'leaf 1-2-1'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+    return {choices: data, value:''}
+  }
+})
+</script>
+
+<div id="ex-tree-02">
+  <i-tree-select :choices="choices" v-model="value" multiple filterable></i-tree-select>
+  <pre>{{value}}</pre>
+</div>
+<script>
+var ex_tree_02 = new Vue({
+  el: '#ex-tree-02',
+  data: function () {
+    var data = [
+      {
+        id: 'a',
+        title: 'parent 1',
+        expand: true,
+        children: [
+          {
+            id: 'a1',
+            title: 'parent 1-1 - long- long- long- long- long- long',
+            expand: true,
+            children: [
+              {
+                id: 'a1-1',
+                title: 'leaf 1-1-1- long- long- long- long- long- long'
+              },
+              {
+                id: 'a1-2',
+                title: 'leaf 1-1-2'
+              }
+            ]
+          },
+          {
+            id: 'a2',
+            title: 'parent 1-2',
+            expand: true,
+            children: [
+              {
+                id: 'a2-1',
+                title: 'leaf 1-2-1'
+              },
+              {
+                id: 'a2-2',
+                title: 'leaf 1-2-1'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+    return {choices: data, value:''}
+  }
+})
+</script>
+
+
+<div id="ex-tree-03">
+  <i-tree-select :choices="choices" v-model="value" multiple filterable remote
+    :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData"
+  ></i-tree-select>
+  <pre>{{value}}</pre>
+</div>
+<script>
+var ex_tree_03 = new Vue({
+  el: '#ex-tree-03',
+  data: function () {
+    var data = [
+    ]
+    return {choices: data, value:''}
+  },
+  methods: {
+    handleRemoteQuery: function (query, callback) {
+      var self = this
+      setTimeout( function () {
+        var data = [
+          {
+            id: 'a',
+            title: 'parent a',
+            expand: true,
+            children: [
+              {
+                id: 'a1',
+                title: 'parent a1',
+                expand: true,
+                children: [
+                  {
+                    id: 'a1-1',
+                    title: 'a1-1'
+                  },
+                  {
+                    id: 'a1-2',
+                    title: 'a1-2'
+                  }
+                ]
+              },
+              {
+                id: 'a2',
+                title: 'parent a2',
+                expand: true,
+                children: [
+                  {
+                    id: 'a2-1',
+                    title: 'a2-1'
+                  },
+                  {
+                    id: 'a2-2',
+                    title: 'a2-2'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+        callback(data)
+      }, 300)
+    },
+    handleRemoteLoadData: function (item, callback) {
+      if (!item) {
+        callback([
+          {
+            id: 'parent', 
+            title: 'parent', 
+            loading: false, 
+            children: []
+          }
+        ])
+      } else {
+        callback([
+          {
+              title: 'children1',
+              id: 'children1'
+          },
+          {
+              id: 'children2',
+              title: 'children2'
+          }
+        ])
+      }
+    }
+  }
+})
+</script>
