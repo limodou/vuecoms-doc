@@ -35,6 +35,10 @@ var ex_table_02 = new Vue({
       indexCol: true,
       data: [
       ],
+      param: {
+        str1: "Hello World!!!",
+        tree: '1'
+      },
       buttons: [
         [
           {label: '新增', type:'primary', onClick: function(target, data){
@@ -49,6 +53,11 @@ var ex_table_02 = new Vue({
               } else {
                 target.removeRow(selection)
               }
+            }
+          },
+          {label: '设置机构查询值', onClick: function(target, data){
+              self.$refs.grid.$refs.query.store.states.value.tree = '2'
+              self.$refs.grid.$refs.query.store.states.fields[1].options.label = 'A机构'
             }
           }
         ],
@@ -131,14 +140,38 @@ var ex_table_02 = new Vue({
     }
     table.query = {
       fields: [
-        {name: "str1", type: "str", label: "字符串1", placeholder: "请输入字符串1"}
+        {name: "str1", type: "str", label: "字符串1", placeholder: "请输入字符串1"},
+        {name: "tree", type: "treeselect", label: "机构", options: {
+          remote: true,
+          'remote-load-data': function (item, callback) {
+            if (!item) {
+              callback([
+                {
+                  id: 'parent',
+                  title: 'parent',
+                  loading: false,
+                  children: []
+                }
+              ])
+            } else {
+              callback([
+                {
+                    title: 'children1',
+                    id: 'children1'
+                },
+                {
+                    id: 'children2',
+                    title: 'children2'
+                }
+              ])
+            }
+          }
+        }
+      }
       ],
       layout: [
-        ['str1']
+        ['str1', 'tree']
       ],
-      value: {
-        str1: "Hello World!!!"
-      },
       buttons: {
         align: "center",//按钮左中右 start center end 默认 end
         submit: {
@@ -147,7 +180,8 @@ var ex_table_02 = new Vue({
         clear: {
           label: "点此清除"
         }
-      }
+      },
+      choices: {}
     }
     return {
       table:table,

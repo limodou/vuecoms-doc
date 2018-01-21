@@ -1,7 +1,7 @@
 # 树选择控件
 
 <div id="ex-tree-01">
-  <i-tree-select :choices="choices" v-model="value" clearable filterable></i-tree-select>
+  <tree-select :choices="choices" v-model="value" clearable filterable></tree-select>
   <pre>{{value}}</pre>
 </div>
 <script>
@@ -53,7 +53,7 @@ var ex_tree_01 = new Vue({
 </script>
 
 <div id="ex-tree-02">
-  <i-tree-select :choices="choices" v-model="value" multiple filterable></i-tree-select>
+  <tree-select :choices="choices" v-model="value" multiple filterable></tree-select>
   <pre>{{value}}</pre>
 </div>
 <script>
@@ -106,9 +106,9 @@ var ex_tree_02 = new Vue({
 
 
 <div id="ex-tree-03">
-  <i-tree-select :choices="choices" v-model="value" multiple filterable remote
+  <tree-select :choices="choices" v-model="value" multiple filterable remote
     :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData"
-  ></i-tree-select>
+  ></tree-select>
   <pre>{{value}}</pre>
 </div>
 <script>
@@ -169,9 +169,9 @@ var ex_tree_03 = new Vue({
       if (!item) {
         callback([
           {
-            id: 'parent', 
-            title: 'parent', 
-            loading: false, 
+            id: 'parent',
+            title: 'parent',
+            loading: false,
             children: []
           }
         ])

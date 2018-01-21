@@ -1,7 +1,8 @@
 # 基本查询
 
 <div id="ex-query-01">
-  <query-form :fields="fields" :layout="layout" :value="value" :buttons="buttons" :show-line="3"></query-form>
+  <query-form :fields="fields" :layout="layout" :value="value" :buttons="buttons" :show-line="1"
+    :label-width="labelWidth"></query-form>
 </div>
 <script>
 var ex_query_01 = new Vue({
@@ -18,6 +19,7 @@ var ex_query_01 = new Vue({
   },
   data: function () {
         return {
+          labelWidth: 120,
           fields: [
                     {name: "str1", type: "str", label: "字符串1", placeholder: "请输入字符串1"},
                     {name: "str2", type: "str", label: "字符串2", placeholder: "请输入字符串2"},
@@ -56,7 +58,7 @@ var ex_query_01 = new Vue({
                       placeholder: "日期单选",
                       format: "yyyy#MM#dd",
                       confirm: true,
-                      size: "small",
+                      size: "default",
                       disabled: false,
                       placement: "bottom",//top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end (default bottom-start)
                       readonly: false,

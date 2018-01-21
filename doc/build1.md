@@ -26,6 +26,7 @@ var ex_build_01 = new Vue({
         name: 'basic',
         title: '基本信息',
         labelWidth: 150,
+        staticSuffix: '_static',
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
             info: 'info信息', required: true, rule: {type: 'email'}},
@@ -33,81 +34,81 @@ var ex_build_01 = new Vue({
             return '<a href="#">' + v + '</a>'
             }
           },
-          {name: 'select1', label: '选择', type: 'select', required: true},
-          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: function_choices1},
+          {name: 'select1', label: '选择1', type: 'select', required: true, options: {clearable: true}},
+          {name: 'select2', label: '选择2', type: 'select', static: true, options: {choices: function_choices1},
           help: '这是设置了select2_static的结果，未使用缺省机制'
           },
-          {name: 'select3', label: '选择', type: 'select', required: true, multiple: true, options: {choices: [
+          {name: 'select3', label: '选择3', type: 'select', required: true, multiple: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
             ]}
           },
-          {name: 'select4', label: '选择', type: 'select', multiple: true, static: true, options: {choices: [
+          {name: 'select4', label: '选择4', type: 'select', multiple: true, static: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
             ]}
           },
-          {name: 'radio1', label: '选择', type: 'radio', required: true, multiple: true, options: {choices: [
+          {name: 'radio1', label: '选择5', type: 'radio', required: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
             ]}
           },
-          {name: 'radio2', label: '选择', type: 'radio', static: true, options: {choices: [
+          {name: 'radio2', label: '选择6', type: 'radio', static: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
             ]}
           },
-          {name: 'checkboxgroup1', label: '选择', type: 'checkboxgroup', required: true, options: {choices: [
+          {name: 'checkboxgroup1', label: '选择7', type: 'checkboxgroup', multiple: true, required: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
             ]}
           },
-          {name: 'checkboxgroup2', label: '选择', type: 'checkboxgroup', static: true, options: {choices: [
+          {name: 'checkboxgroup2', label: '选择8', type: 'checkboxgroup', static: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
             ]}
           },
-          {name: 'checkbox1', label: '选择', type: 'checkbox', required: true},
-          {name: 'checkbox2', label: '选择', type: 'checkbox', static: true},
+          {name: 'checkbox1', label: '选择9', type: 'checkbox', required: true},
+          {name: 'checkbox2', label: '选择10', type: 'checkbox', static: true},
           {name: 'text1', label: '文本1', type: 'text', required: true},
           {name: 'text2', label: '文本2', type: 'text', static: true},
           {name: 'date1', label: '日期1', required: true, type: 'date'},
           {name: 'date2', label: '日期2', type: 'date', static: true},
-          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {options:
+          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {choices:
             [ {
                   id: 'fruits',
-                  label: 'Fruits',
+                  title: 'Fruits',
                   children: [ {
                     id: 'apple',
-                    label: 'Apple',
+                    title: 'Apple',
                   }, {
                     id: 'grapes',
-                    label: 'Grapes',
+                    title: 'Grapes',
                   }, {
                     id: 'pear',
-                    label: 'Pear',
+                    title: 'Pear',
                   }, {
                     id: 'strawberry',
-                    label: 'Strawberry',
+                    title: 'Strawberry',
                   }, {
                     id: 'watermelon',
-                    label: 'Watermelon',
+                    title: 'Watermelon',
                   } ],
                 }, {
                   id: 'vegetables',
-                  label: 'Vegetables',
+                  title: 'Vegetables',
                   children: [ {
                     id: 'corn',
-                    label: 'Corn',
+                    title: 'Corn',
                   }, {
                     id: 'carrot',
-                    label: 'Carrot',
+                    title: 'Carrot',
                   }, {
                     id: 'eggplant',
-                    label: 'Eggplant',
+                    title: 'Eggplant',
                   }, {
                     id: 'tomato',
-                    label: 'Tomato',
+                    title: 'Tomato',
                   } ],
                 } ]
           }

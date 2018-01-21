@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=e1e80eb9">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=6bd12973">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=69611c2a">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=2feb49d9">
     <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=49102682"></script>
-    <script src="lib/vuecoms.js?t=fdf4036e"></script>
+    <script src="lib/iview/iview.js?t=151587ca"></script>
+    <script src="lib/vuecoms.js?t=61db5771"></script>
     <title>多段展示 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -166,44 +166,46 @@ var ex_build_02 = new Vue({
           {name: 'text2', label: '文本2', type: 'text', static: true},
           {name: 'date1', label: '日期1', required: true, type: 'date'},
           {name: 'date2', label: '日期2', type: 'date', static: true},
-          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {options:
-            [ {
+          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {
+            choices:
+              [ {
                   id: 'fruits',
-                  label: 'Fruits',
+                  title: 'Fruits',
                   children: [ {
                     id: 'apple',
-                    label: 'Apple',
+                    title: 'Apple',
                   }, {
                     id: 'grapes',
-                    label: 'Grapes',
+                    title: 'Grapes',
                   }, {
                     id: 'pear',
-                    label: 'Pear',
+                    title: 'Pear',
                   }, {
                     id: 'strawberry',
-                    label: 'Strawberry',
+                    title: 'Strawberry',
                   }, {
                     id: 'watermelon',
-                    label: 'Watermelon',
+                    title: 'Watermelon',
                   } ],
                 }, {
                   id: 'vegetables',
-                  label: 'Vegetables',
+                  title: 'Vegetables',
                   children: [ {
                     id: 'corn',
-                    label: 'Corn',
+                    title: 'Corn',
                   }, {
                     id: 'carrot',
-                    label: 'Carrot',
+                    title: 'Carrot',
                   }, {
                     id: 'eggplant',
-                    label: 'Eggplant',
+                    title: 'Eggplant',
                   }, {
                     id: 'tomato',
-                    label: 'Tomato',
+                    title: 'Tomato',
                   } ],
-                } ]
-              }
+                }
+              ]
+            }  
           },
         ],
         layout: [
@@ -215,24 +217,26 @@ var ex_build_02 = new Vue({
           ['text2'],
           ['date1', 'date2'],
           ['tree1']
-        ],
-        buttons: {
-          items: [
+        ]
+      },
+      {
+        name: 'buttons',
+        buttons: [
             [{label: '查看结果', type:'primary', onClick: function(target, data){
                 console.log(target, data)
               }
             }],
             [{label: '校验', type:'primary', onClick: function(target, data){
-                target.validate(self.save)
+                self.$refs.build.validate(self.save)
               }
             }],
             [{label: '合并出错结果', type:'info', onClick: function(target, data){
-                self.errors = {select1: '这是合并后的错误'}
+                self.$refs.build.errors = {select1: '这是合并后的错误'}
               }
             }]
           ],
-          size: 'default'
-        }
+        size: 'default',
+        component: 'buttons'
       }
     ]
     return {data:data, value: {
