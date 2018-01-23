@@ -1,7 +1,9 @@
 # 基本查询
 
 <div id="ex-query-01">
-  <query-form :fields="fields" :layout="layout" :value="value" :buttons="buttons" :show-line="1"
+  <query-form ref="query" :fields="fields" :layout="layout"
+    :choices="choices"
+    :value="value" :buttons="buttons" :show-line="1"
     :label-width="labelWidth"></query-form>
 </div>
 <script>
@@ -42,10 +44,6 @@ var ex_query_01 = new Vue({
                       name: "select2",
                       type: "iselect",
                       label: "选择2",
-                      choices: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {
-                        label: "洛杉矶",
-                        value: "city_003"
-                      }],
                       multiple: true,
                       disabled: false,
                       filterable: true,
@@ -143,6 +141,13 @@ var ex_query_01 = new Vue({
                     checkbox: ["1","2"],
                     radio: "1",
                     datepicker: "2016-01-01"
+                  },
+                  choices: {
+                    select2: [
+                      {label: "西雅图", value: "city_001"},
+                      {label: "旧金山", value: "city_002"},
+                      {label: "洛杉矶", value: "city_003"}
+                    ],
                   },
                   buttons: {
                     align: "center",//按钮左中右 start center end 默认 end

@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=151587ca"></script>
-    <script src="lib/vuecoms.js?t=61db5771"></script>
+    <script src="lib/iview/iview.js?t=fb7291c3"></script>
+    <script src="lib/vuecoms.js?t=d404e9e6"></script>
     <title>选择树控件 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -177,7 +177,8 @@ var ex_tree_02 = new Vue({
 })
 </script>
 <div id="ex-tree-03">
-  <tree-select :choices="choices" v-model="value" multiple filterable="" remote="" :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData"></tree-select>
+  <tree-select :choices="choices" v-model="value" multiple filterable="" remote="" :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData">
+  </tree-select>
   <pre>{{value}}</pre>
 </div>
 <script>
@@ -187,6 +188,17 @@ var ex_tree_03 = new Vue({
     var data = [
     ]
     return {choices: data, value:''}
+  },
+  mounted: function () {
+    var self = this
+    setTimeout(function () {
+      self.choices = [{
+        id: 'parent',
+        title: 'parent',
+        loading: false,
+        children: []
+        }]
+      }, 3000)
   },
   methods: {
     handleRemoteQuery: function (query, callback) {
@@ -235,16 +247,7 @@ var ex_tree_03 = new Vue({
       }, 300)
     },
     handleRemoteLoadData: function (item, callback) {
-      if (!item) {
-        callback([
-          {
-            id: 'parent',
-            title: 'parent',
-            loading: false,
-            children: []
-          }
-        ])
-      } else {
+      if (item) {
         callback([
           {
               title: 'children1',

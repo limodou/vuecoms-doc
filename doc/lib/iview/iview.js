@@ -8973,6 +8973,10 @@ exports.default = {
             this.$emit('on-keypress', event);
         },
         handleKeyup: function handleKeyup(event) {
+            var keycode = event.which;
+            if (event.ctrlKey && (keycode == 88 || keycode == 89 || keycode == 90) || event.keyCode === 46 || event.keyCode === 8) {
+                this.handleInput(event);
+            }
             this.$emit('on-keyup', event);
         },
         handleIconClick: function handleIconClick(event) {
@@ -35654,7 +35658,7 @@ exports.default = {
         }
     },
     data: function data() {
-        var d = {
+        return {
             prefixCls: prefixCls,
             visible: false,
             selectedSingle: '',
@@ -35670,7 +35674,6 @@ exports.default = {
             dropWidth: '',
             oldData: null,
             currentData: this.choices };
-        return d;
     },
 
     computed: {
@@ -36230,6 +36233,14 @@ exports.default = {
         },
         model: function model() {
             this.$emit('input', this.model);
+        },
+
+        choices: {
+            handler: function handler(val) {
+                this.currentData = val;
+            },
+
+            deep: true
         },
         visible: function visible(val) {
             if (val) {

@@ -70,7 +70,7 @@ var ex_build_01 = new Vue({
           },
           {name: 'checkbox1', label: '选择9', type: 'checkbox', required: true},
           {name: 'checkbox2', label: '选择10', type: 'checkbox', static: true},
-          {name: 'text1', label: '文本1', type: 'text', required: true},
+          {name: 'text1', label: '文本1', type: 'text', required: true, rule:{max:20}, help: '最多输入20个汉字'},
           {name: 'text2', label: '文本2', type: 'text', static: true},
           {name: 'date1', label: '日期1', required: true, type: 'date'},
           {name: 'date2', label: '日期2', type: 'date', static: true},
@@ -148,6 +148,17 @@ var ex_build_01 = new Vue({
                   {label:'选项B', value: 'B'},
                   {label:'选项C', value: 'C'}
                 ]
+              }
+            }],
+            [{label: '提交测试', type:'info', name: 'submit', onClick: function(target, data){
+                console.log(this)
+                this.disabled = true
+                this.btns.submit.loading = true
+                var self = this
+                setTimeout(function () {
+                  self.btns.submit.loading = false
+                  self.disabled = false
+                }, 5000)
               }
             }]
           ],

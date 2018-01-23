@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=151587ca"></script>
-    <script src="lib/vuecoms.js?t=61db5771"></script>
+    <script src="lib/iview/iview.js?t=fb7291c3"></script>
+    <script src="lib/vuecoms.js?t=d404e9e6"></script>
     <title>基本查询 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -75,7 +75,7 @@
         </div>
         <div class="markdown-body"><h1 id="">&#x57FA;&#x672C;&#x67E5;&#x8BE2;</h1>
 <div id="ex-query-01">
-  <query-form :fields="fields" :layout="layout" :value="value" :buttons="buttons" :show-line="1" :label-width="labelWidth"></query-form>
+  <query-form ref="query" :fields="fields" :layout="layout" :choices="choices" :value="value" :buttons="buttons" :show-line="1" :label-width="labelWidth"></query-form>
 </div>
 <script>
 var ex_query_01 = new Vue({
@@ -115,10 +115,6 @@ var ex_query_01 = new Vue({
                       name: "select2",
                       type: "iselect",
                       label: "选择2",
-                      choices: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {
-                        label: "洛杉矶",
-                        value: "city_003"
-                      }],
                       multiple: true,
                       disabled: false,
                       filterable: true,
@@ -216,6 +212,13 @@ var ex_query_01 = new Vue({
                     checkbox: ["1","2"],
                     radio: "1",
                     datepicker: "2016-01-01"
+                  },
+                  choices: {
+                    select2: [
+                      {label: "西雅图", value: "city_001"},
+                      {label: "旧金山", value: "city_002"},
+                      {label: "洛杉矶", value: "city_003"}
+                    ],
                   },
                   buttons: {
                     align: "center",//按钮左中右 start center end 默认 end

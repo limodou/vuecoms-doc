@@ -107,8 +107,8 @@ var ex_tree_02 = new Vue({
 
 <div id="ex-tree-03">
   <tree-select :choices="choices" v-model="value" multiple filterable remote
-    :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData"
-  ></tree-select>
+    :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData">
+  </tree-select>
   <pre>{{value}}</pre>
 </div>
 <script>
@@ -118,6 +118,17 @@ var ex_tree_03 = new Vue({
     var data = [
     ]
     return {choices: data, value:''}
+  },
+  mounted: function () {
+    var self = this
+    setTimeout(function () {
+      self.choices = [{
+        id: 'parent',
+        title: 'parent',
+        loading: false,
+        children: []
+        }]
+      }, 3000)
   },
   methods: {
     handleRemoteQuery: function (query, callback) {
@@ -166,16 +177,7 @@ var ex_tree_03 = new Vue({
       }, 300)
     },
     handleRemoteLoadData: function (item, callback) {
-      if (!item) {
-        callback([
-          {
-            id: 'parent',
-            title: 'parent',
-            loading: false,
-            children: []
-          }
-        ])
-      } else {
+      if (item) {
         callback([
           {
               title: 'children1',
