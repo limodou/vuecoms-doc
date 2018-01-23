@@ -27,6 +27,7 @@ var ex_build_02 = new Vue({
     var data = [
       {
         name: 'basic1',
+        static: true,
         title: '基本信息1',
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',

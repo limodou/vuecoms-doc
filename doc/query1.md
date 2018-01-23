@@ -29,15 +29,11 @@ var ex_query_01 = new Vue({
                       name: "select1",
                       type: "iselect",
                       label: "选择1",
-                      choices: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {
-                        label: "洛杉矶",
-                        value: "city_003"
-                      }],
                       multiple: false,
                       clearable: true,
                       disabled: false,
                       filterable: true,
-                      size: "large", // small default large
+                      size: "default", // small default large
                       placeholder: "这是一个下拉单选项"
                     },
                     {
@@ -143,6 +139,10 @@ var ex_query_01 = new Vue({
                     datepicker: "2016-01-01"
                   },
                   choices: {
+                    select1: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {
+                      label: "洛杉矶",
+                      value: "city_003"
+                    }],
                     select2: [
                       {label: "西雅图", value: "city_001"},
                       {label: "旧金山", value: "city_002"},

@@ -71,7 +71,7 @@ var ex_build_01 = new Vue({
           {name: 'checkbox1', label: '选择9', type: 'checkbox', required: true},
           {name: 'checkbox2', label: '选择10', type: 'checkbox', static: true},
           {name: 'text1', label: '文本1', type: 'text', required: true, rule:{max:20}, help: '最多输入20个汉字'},
-          {name: 'text2', label: '文本2', type: 'text', static: true},
+          {name: 'text2', label: '文本2', type: 'text', static: true, rule:{max:20}, help: '最多输入20个汉字'},
           {name: 'date1', label: '日期1', required: true, type: 'date'},
           {name: 'date2', label: '日期2', type: 'date', static: true},
           {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {choices:
@@ -177,7 +177,7 @@ var ex_build_01 = new Vue({
               checkboxgroup2: ['A', 'B'],
               checkbox2: 'B',
               text1: 'Line 1\nLine 2',
-              text2: 'Line 3\nLine 4',
+              text2: 'Line 3\nLine 4\nLine 5\nLine 6\nLine 7\nLine 8',
               date2: '2017-12-12'
             },
             choices: {

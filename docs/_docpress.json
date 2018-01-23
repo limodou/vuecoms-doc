@@ -185,8 +185,8 @@
     "doc/lib/vuecoms.js": "lib/vuecoms.js",
     "doc/lib/vuecoms.js.map": "lib/vuecoms.js.map",
     "doc/lib/iview/iview.js": "lib/iview/iview.js",
-    "doc/lib/iview/iview.min.js.gz": "lib/iview/iview.min.js.gz",
     "doc/lib/iview/iview.min.js": "lib/iview/iview.min.js",
+    "doc/lib/iview/iview.min.js.gz": "lib/iview/iview.min.js.gz",
     "doc/lib/iview/locale/de-DE.js": "lib/iview/locale/de-DE.js",
     "doc/lib/iview/locale/en-US.js": "lib/iview/locale/en-US.js",
     "doc/lib/iview/locale/es-ES.js": "lib/iview/locale/es-ES.js",
@@ -202,16 +202,16 @@
     "doc/lib/iview/locale/ro-RO.js": "lib/iview/locale/ro-RO.js",
     "doc/lib/iview/locale/ru-RU.js": "lib/iview/locale/ru-RU.js",
     "doc/lib/iview/locale/sv-SE.js": "lib/iview/locale/sv-SE.js",
+    "doc/lib/iview/locale/th-TH.js": "lib/iview/locale/th-TH.js",
     "doc/lib/iview/locale/tr-TR.js": "lib/iview/locale/tr-TR.js",
     "doc/lib/iview/locale/uk-UA.js": "lib/iview/locale/uk-UA.js",
-    "doc/lib/iview/locale/th-TH.js": "lib/iview/locale/th-TH.js",
     "doc/lib/iview/locale/vi-VN.js": "lib/iview/locale/vi-VN.js",
     "doc/lib/iview/locale/zh-CN.js": "lib/iview/locale/zh-CN.js",
     "doc/lib/iview/locale/zh-TW.js": "lib/iview/locale/zh-TW.js",
     "doc/lib/iview/styles/iview.css": "lib/iview/styles/iview.css",
     "doc/lib/iview/styles/fonts/ionicons.eot": "lib/iview/styles/fonts/ionicons.eot",
     "doc/lib/iview/styles/fonts/ionicons.svg": "lib/iview/styles/fonts/ionicons.svg",
-    "doc/lib/iview/styles/fonts/ionicons.woff": "lib/iview/styles/fonts/ionicons.woff",
-    "doc/lib/iview/styles/fonts/ionicons.ttf": "lib/iview/styles/fonts/ionicons.ttf"
+    "doc/lib/iview/styles/fonts/ionicons.ttf": "lib/iview/styles/fonts/ionicons.ttf",
+    "doc/lib/iview/styles/fonts/ionicons.woff": "lib/iview/styles/fonts/ionicons.woff"
   }
 }

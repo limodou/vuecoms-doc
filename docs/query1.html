@@ -9,7 +9,7 @@
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
     <script src="lib/iview/iview.js?t=fb7291c3"></script>
-    <script src="lib/vuecoms.js?t=d404e9e6"></script>
+    <script src="lib/vuecoms.js?t=ffa126b2"></script>
     <title>基本查询 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -100,15 +100,11 @@ var ex_query_01 = new Vue({
                       name: "select1",
                       type: "iselect",
                       label: "选择1",
-                      choices: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {
-                        label: "洛杉矶",
-                        value: "city_003"
-                      }],
                       multiple: false,
                       clearable: true,
                       disabled: false,
                       filterable: true,
-                      size: "large", // small default large
+                      size: "default", // small default large
                       placeholder: "这是一个下拉单选项"
                     },
                     {
@@ -214,6 +210,10 @@ var ex_query_01 = new Vue({
                     datepicker: "2016-01-01"
                   },
                   choices: {
+                    select1: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {
+                      label: "洛杉矶",
+                      value: "city_003"
+                    }],
                     select2: [
                       {label: "西雅图", value: "city_001"},
                       {label: "旧金山", value: "city_002"},
