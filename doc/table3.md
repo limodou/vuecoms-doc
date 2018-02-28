@@ -42,7 +42,8 @@ var ex_table_03 = new Vue({
           render: function(h, param){
             return h('Input', {
                 props: {
-                  value: param.value
+                  value: param.value,
+                  number: true
                 },
                 on: {
                 'input': function (value) {

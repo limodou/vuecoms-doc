@@ -104,16 +104,63 @@ var ex_tree_02 = new Vue({
 })
 </script>
 
+### 远程单选示例
 
 <div id="ex-tree-03">
-  <tree-select :choices="choices" v-model="value" multiple filterable remote
-    :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData">
+  <tree-select :choices="choices" v-model="value" remote
+    :remote-load-data="handleRemoteLoadData">
   </tree-select>
   <pre>{{value}}</pre>
 </div>
 <script>
 var ex_tree_03 = new Vue({
   el: '#ex-tree-03',
+  data: function () {
+    var data = [
+    ]
+    return {choices: data, value:''}
+  },
+  mounted: function () {
+    var self = this
+    setTimeout(function () {
+      self.choices = [{
+        id: 'parent',
+        title: 'parent',
+        loading: false,
+        children: []
+        }]
+      }, 3000)
+  },
+  methods: {
+    handleRemoteLoadData: function (item, callback) {
+      if (item) {
+        callback([
+          {
+              title: 'children1',
+              id: 'children1'
+          },
+          {
+              id: 'children2',
+              title: 'children2'
+          }
+        ])
+      }
+    }
+  }
+})
+</script>
+
+### 远程多选示例
+
+<div id="ex-tree-04">
+  <tree-select :choices="choices" v-model="value" multiple filterable remote
+    :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData">
+  </tree-select>
+  <pre>{{value}}</pre>
+</div>
+<script>
+var ex_tree_04 = new Vue({
+  el: '#ex-tree-04',
   data: function () {
     var data = [
     ]

@@ -11,7 +11,8 @@
     @on-selected="handleSelected"
     @on-deselected="handleDeselected"
     @on-selected-all="handleSelectedAll"
-    @on-deselected-all="handleDeselectedAll"></Grid>
+    @on-deselected-all="handleDeselectedAll"
+    @on-query-change="handleQueryChange"></Grid>
   <div>Selected: {{selected}}</div>
   <div>Param: {{param}}</div>
 </div>
@@ -27,7 +28,7 @@ var ex_table_02 = new Vue({
       pagination: true,
       pageSizeOpts: [10, 30, 50],
       total: 80,
-      height: 300,
+      height: 'auto',
       draggable: true,
       checkCol: true,
       checkColWidth: 120,
@@ -221,6 +222,9 @@ var ex_table_02 = new Vue({
     handleTitleHide: function() {
       var title_column = this.table.columns[1]
       this.$set(title_column, 'hidden', !title_column.hidden)
+    },
+    handleQueryChange: function (data) {
+      console.log(data)
     }
   }
 })

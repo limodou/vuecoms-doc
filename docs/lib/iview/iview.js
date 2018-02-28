@@ -8993,7 +8993,8 @@ exports.default = {
         },
         handleInput: function handleInput(event) {
             var value = event.target.value;
-            if (this.number) value = (0, _isNan2.default)(Number(value)) ? value : Number(value);
+            this.setCurrentValue(value);
+            if (this.number) value = (0, _isNan2.default)(Number(value)) ? '0' : Number(value);
             this.$emit('input', value);
             this.setCurrentValue(value);
             this.$emit('on-change', event);
@@ -9004,7 +9005,6 @@ exports.default = {
         setCurrentValue: function setCurrentValue(value) {
             var _this = this;
 
-            if (value === this.currentValue) return;
             this.$nextTick(function () {
                 (0, _newArrowCheck3.default)(this, _this);
 
@@ -34056,7 +34056,7 @@ exports.default = {
 
 module.exports = { render: function render() {
     var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;
-    return _c('collapse-transition', [_c('ul', {
+    return _c('ul', {
       class: _vm.classes
     }, [_c('li', [_c('span', {
       class: _vm.arrowClasses,
@@ -34110,7 +34110,7 @@ module.exports = { render: function render() {
           "show-checkbox": _vm.showCheckbox
         }
       }) : _vm._e();
-    })], 2)])]);
+    })], 2)]);
   }, staticRenderFns: [] };
 
 /***/ }),
@@ -36296,7 +36296,7 @@ exports.default = {
                 }
                 this.focusIndex = 0;
             } else {
-                if (val) {
+                if (val && this.filterable) {
                     if (!this.oldData) {
                         this.oldData = this.currentData;
                     }
@@ -36445,11 +36445,7 @@ module.exports = { render: function render() {
       attrs: {
         "type": "arrow-down-b"
       }
-    }) : _vm._e()])], 2), _vm._v(" "), _c('transition', {
-      attrs: {
-        "name": _vm.transitionName
-      }
-    }, [_c('Drop', {
+    }) : _vm._e()])], 2), _vm._v(" "), _c('Drop', {
       directives: [{
         name: "show",
         rawName: "v-show",
@@ -36504,7 +36500,7 @@ module.exports = { render: function render() {
         expression: "loading"
       }],
       class: [_vm.prefixCls + '-loading']
-    }, [_vm._v(_vm._s(_vm.localeLoadingText))])])], 1)], 1);
+    }, [_vm._v(_vm._s(_vm.localeLoadingText))])])], 1);
   }, staticRenderFns: [] };
 
 /***/ })

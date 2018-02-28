@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=fb7291c3"></script>
-    <script src="lib/vuecoms.js?t=ffa126b2"></script>
+    <script src="lib/iview/iview.js?t=601c295d"></script>
+    <script src="lib/vuecoms.js?t=8e0e59c6"></script>
     <title>基本查询 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -75,7 +75,7 @@
         </div>
         <div class="markdown-body"><h1 id="">&#x57FA;&#x672C;&#x67E5;&#x8BE2;</h1>
 <div id="ex-query-01">
-  <query-form ref="query" :fields="fields" :layout="layout" :choices="choices" :value="value" :buttons="buttons" :show-line="1" :label-width="labelWidth"></query-form>
+  <query-form ref="query" :fields="fields" :layout="layout" :choices="choices" :value="value" :buttons="buttons" :show-line="1" :label-width="labelWidth" @on-query-change="handleQueryChange"></query-form>
 </div>
 <script>
 var ex_query_01 = new Vue({
@@ -88,6 +88,9 @@ var ex_query_01 = new Vue({
         submit: function(data){
           console.log("submit event => ",data);
           return true
+        },
+        handleQueryChange (change) {
+          console.log(change)
         }
   },
   data: function () {

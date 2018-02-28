@@ -4,7 +4,8 @@
   <query-form ref="query" :fields="fields" :layout="layout"
     :choices="choices"
     :value="value" :buttons="buttons" :show-line="1"
-    :label-width="labelWidth"></query-form>
+    :label-width="labelWidth"
+    @on-query-change="handleQueryChange"></query-form>
 </div>
 <script>
 var ex_query_01 = new Vue({
@@ -17,6 +18,9 @@ var ex_query_01 = new Vue({
         submit: function(data){
           console.log("submit event => ",data);
           return true
+        },
+        handleQueryChange (change) {
+          console.log(change)
         }
   },
   data: function () {

@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=fb7291c3"></script>
-    <script src="lib/vuecoms.js?t=ffa126b2"></script>
+    <script src="lib/iview/iview.js?t=601c295d"></script>
+    <script src="lib/vuecoms.js?t=8e0e59c6"></script>
     <title>表格拖动 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -116,7 +116,8 @@ var ex_table_03 = new Vue({
           render: function(h, param){
             return h('Input', {
                 props: {
-                  value: param.value
+                  value: param.value,
+                  number: true
                 },
                 on: {
                 'input': function (value) {

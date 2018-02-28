@@ -76,7 +76,19 @@
             "title": "选择树控件",
             "source": "doc/treeselect.md",
             "url": "treeselect.html",
-            "slug": "treeselect"
+            "slug": "treeselect",
+            "headings": [
+              {
+                "title": "远程单选示例",
+                "depth": 3,
+                "id": ""
+              },
+              {
+                "title": "远程多选示例",
+                "depth": 3,
+                "id": ""
+              }
+            ]
           }
         ]
       },
@@ -152,7 +164,19 @@
       "source": "doc/treeselect.md",
       "title": "选择树控件 - Vuecoms",
       "pageTitle": "选择树控件",
-      "slug": "treeselect"
+      "slug": "treeselect",
+      "headings": [
+        {
+          "title": "远程单选示例",
+          "depth": 3,
+          "id": ""
+        },
+        {
+          "title": "远程多选示例",
+          "depth": 3,
+          "id": ""
+        }
+      ]
     },
     "build1.html": {
       "source": "doc/build1.md",
@@ -188,8 +212,8 @@
     "doc/lib/iview/iview.min.js": "lib/iview/iview.min.js",
     "doc/lib/iview/iview.min.js.gz": "lib/iview/iview.min.js.gz",
     "doc/lib/iview/locale/de-DE.js": "lib/iview/locale/de-DE.js",
-    "doc/lib/iview/locale/en-US.js": "lib/iview/locale/en-US.js",
     "doc/lib/iview/locale/es-ES.js": "lib/iview/locale/es-ES.js",
+    "doc/lib/iview/locale/en-US.js": "lib/iview/locale/en-US.js",
     "doc/lib/iview/locale/fa-IR.js": "lib/iview/locale/fa-IR.js",
     "doc/lib/iview/locale/fr-FR.js": "lib/iview/locale/fr-FR.js",
     "doc/lib/iview/locale/hi-IN.js": "lib/iview/locale/hi-IN.js",
