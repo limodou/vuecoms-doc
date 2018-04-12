@@ -48,6 +48,12 @@
         ]
       },
       {
+        "title": "基础控件",
+        "source": "doc/fields.md",
+        "url": "fields.html",
+        "slug": "fields"
+      },
+      {
         "title": "Query",
         "sections": [
           {
@@ -148,6 +154,12 @@
       "pageTitle": "表格行编辑",
       "slug": "table4"
     },
+    "fields.html": {
+      "source": "doc/fields.md",
+      "title": "基础控件 - Vuecoms",
+      "pageTitle": "基础控件",
+      "slug": "fields"
+    },
     "query1.html": {
       "source": "doc/query1.md",
       "title": "基本查询 - Vuecoms",
@@ -198,6 +210,7 @@
     "doc/table2.md": "table2.html",
     "doc/table3.md": "table3.html",
     "doc/table4.md": "table4.html",
+    "doc/fields.md": "fields.html",
     "doc/query1.md": "query1.html",
     "doc/tree1.md": "tree1.html",
     "doc/treeselect.md": "treeselect.html",
@@ -211,13 +224,13 @@
     "doc/lib/iview/iview.js": "lib/iview/iview.js",
     "doc/lib/iview/iview.min.js": "lib/iview/iview.min.js",
     "doc/lib/iview/iview.min.js.gz": "lib/iview/iview.min.js.gz",
+    "doc/lib/iview/locale/en-US.js": "lib/iview/locale/en-US.js",
     "doc/lib/iview/locale/de-DE.js": "lib/iview/locale/de-DE.js",
     "doc/lib/iview/locale/es-ES.js": "lib/iview/locale/es-ES.js",
-    "doc/lib/iview/locale/en-US.js": "lib/iview/locale/en-US.js",
     "doc/lib/iview/locale/fa-IR.js": "lib/iview/locale/fa-IR.js",
-    "doc/lib/iview/locale/fr-FR.js": "lib/iview/locale/fr-FR.js",
     "doc/lib/iview/locale/hi-IN.js": "lib/iview/locale/hi-IN.js",
     "doc/lib/iview/locale/id-ID.js": "lib/iview/locale/id-ID.js",
+    "doc/lib/iview/locale/fr-FR.js": "lib/iview/locale/fr-FR.js",
     "doc/lib/iview/locale/it-IT.js": "lib/iview/locale/it-IT.js",
     "doc/lib/iview/locale/ja-JP.js": "lib/iview/locale/ja-JP.js",
     "doc/lib/iview/locale/ko-KR.js": "lib/iview/locale/ko-KR.js",

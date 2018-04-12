@@ -5,6 +5,7 @@
     :choices="choices"
     :value="value" :buttons="buttons" :show-line="1"
     :label-width="labelWidth"
+    :show-selected="true"
     @on-query-change="handleQueryChange"></query-form>
 </div>
 <script>
@@ -51,9 +52,10 @@ var ex_query_01 = new Vue({
                     },
                     {
                       name: "datepicker",
-                      type: "date",
+                      type: "daterange",
                       label: "日期",
                       placeholder: "日期单选",
+                      range: true,
                       format: "yyyy#MM#dd",
                       confirm: true,
                       size: "default",
@@ -140,7 +142,6 @@ var ex_query_01 = new Vue({
                     str1: "Hello World!!!",
                     checkbox: ["1","2"],
                     radio: "1",
-                    datepicker: "2016-01-01"
                   },
                   choices: {
                     select1: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {

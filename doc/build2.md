@@ -7,16 +7,10 @@
   </div>
 </div>
 <script>
-function choices1_options (callback) {
-  setTimeout(function () {
-    var c = [
-      {label:'选项一', value: 'A'},
-      {label:'选项二', value: 'B'},
-      {label:'选项三', value: 'C'}
-    ]
-    callback(c)
-  }, 1000)
-}
+var choices = [
+  {label:'选项一', value: 'A'},
+  {label:'选项二', value: 'B'},
+  ]
 Vue.component('u-table', {
   template: '<table><tr><th>Test</th></tr><tr><td>AAA</td></tr></table>'
 })
@@ -36,9 +30,9 @@ var ex_build_02 = new Vue({
             return '<a href="#">' + v + '</a>'
             }
           },
-          {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices1_options}
+          {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices}
           },
-          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices1_options}
+          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices}
           },
         ],
         layout: [
@@ -57,93 +51,13 @@ var ex_build_02 = new Vue({
         name: 'basic2',
         title: '基本信息2',
         fields: [
-          {name: 'select3', label: '选择', type: 'select', required: true, multiple: true, options: {choices: [
-            {label:'选项一', value: 'A'},
-            {label:'选项二', value: 'B'},
-            ]}
+          {name: 'select3', label: '选择', type: 'select', required: true, multiple: true, options: {choices: choices}
           },
-          {name: 'select4', label: '选择', type: 'select', multiple: true, static: true, options: {choices: [
-            {label:'选项一', value: 'A'},
-            {label:'选项二', value: 'B'},
-            ]}
-          },
-          {name: 'radio1', label: '选择', type: 'radio', required: true, multiple: true, options: {choices: [
-            {label:'选项一', value: 'A'},
-            {label:'选项二', value: 'B'},
-            ]}
-          },
-          {name: 'radio2', label: '选择', type: 'radio', static: true, options: {choices: [
-            {label:'选项一', value: 'A'},
-            {label:'选项二', value: 'B'},
-            ]}
-          },
-          {name: 'checkboxgroup1', label: '选择', type: 'checkboxgroup', required: true, options: {choices: [
-            {label:'选项一', value: 'A'},
-            {label:'选项二', value: 'B'},
-            ]}
-          },
-          {name: 'checkboxgroup2', label: '选择', type: 'checkboxgroup', static: true, options: {choices: [
-            {label:'选项一', value: 'A'},
-            {label:'选项二', value: 'B'},
-            ]}
-          },
-          {name: 'checkbox1', label: '选择', type: 'checkbox', required: true},
-          {name: 'checkbox2', label: '选择', type: 'checkbox', static: true},
-          {name: 'text1', label: '文本1', type: 'text', required: true, options: {autosize: false}},
-          {name: 'text2', label: '文本2', type: 'text', static: true},
-          {name: 'date1', label: '日期1', required: true, type: 'date'},
-          {name: 'date2', label: '日期2', type: 'date', static: true},
-          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {
-            choices:
-              [ {
-                  id: 'fruits',
-                  title: 'Fruits',
-                  children: [ {
-                    id: 'apple',
-                    title: 'Apple',
-                  }, {
-                    id: 'grapes',
-                    title: 'Grapes',
-                  }, {
-                    id: 'pear',
-                    title: 'Pear',
-                  }, {
-                    id: 'strawberry',
-                    title: 'Strawberry',
-                  }, {
-                    id: 'watermelon',
-                    title: 'Watermelon',
-                  } ],
-                }, {
-                  id: 'vegetables',
-                  title: 'Vegetables',
-                  children: [ {
-                    id: 'corn',
-                    title: 'Corn',
-                  }, {
-                    id: 'carrot',
-                    title: 'Carrot',
-                  }, {
-                    id: 'eggplant',
-                    title: 'Eggplant',
-                  }, {
-                    id: 'tomato',
-                    title: 'Tomato',
-                  } ],
-                }
-              ]
-            }  
+          {name: 'select4', label: '选择', type: 'select', multiple: true, static: true, options: {choices: choices}
           },
         ],
         layout: [
           ['select3', 'select4'],
-          ['radio1', 'radio2'],
-          ['checkboxgroup1', 'checkboxgroup2'],
-          ['checkbox1', 'checkbox2'],
-          ['text1'],
-          ['text2'],
-          ['date1', 'date2'],
-          ['tree1']
         ]
       },
       {
@@ -171,12 +85,6 @@ var ex_build_02 = new Vue({
               select2: 'A',
               select3: ['A', 'B'],
               select4: ['A', 'B'],
-              radio2: 'A',
-              checkboxgroup2: ['A', 'B'],
-              checkbox2: 'B',
-              text1: 'Line 1\nLine 2',
-              text2: 'Line 3\nLine 4',
-              date2: '2017-12-12'
             },
             errors: {},
             rules: {

@@ -7,16 +7,6 @@
   </div>
 </div>
 <script>
-function function_choices1 (callback) {
-  setTimeout(function () {
-    var c = [
-      {label:'选项一', value: 'A'},
-      {label:'选项二', value: 'B'},
-      {label:'选项三', value: 'C'}
-    ]
-    callabck(c)
-  }, 1000)
-}
 var ex_build_01 = new Vue({
   el: '#ex-build-01',
   data: function () {
@@ -30,13 +20,12 @@ var ex_build_01 = new Vue({
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
             info: 'info信息', required: true, rule: {type: 'email'}},
-          {name: 'str2', label: '静态字符串2', static: true, required: true, convert: function(v){
+          {name: 'str2', label: '静态字符串2', static: true, required: true, format: function(v){
             return '<a href="#">' + v + '</a>'
-            }
-          },
+          }},
           {name: 'select1', label: '选择1', type: 'select', required: true, options: {clearable: true}},
-          {name: 'select2', label: '选择2', type: 'select', static: true, options: {choices: function_choices1},
-          help: '这是设置了select2_static的结果，未使用缺省机制'
+          {name: 'select2', label: '选择2', type: 'select', static: true, options: {clearable: true},
+            help: '这是设置了select2_static的结果，未使用缺省机制'
           },
           {name: 'select3', label: '选择3', type: 'select', required: true, multiple: true, options: {choices: [
             {label:'选项一', value: 'A'},
@@ -111,7 +100,7 @@ var ex_build_01 = new Vue({
                     title: 'Tomato',
                   } ],
                 } ]
-          }
+              }
           },
         ],
         layout: [
@@ -142,8 +131,13 @@ var ex_build_01 = new Vue({
                 self.errors = {select1: '这是合并后的错误'}
               }
             }],
-            [{label: '更新select1 choices', type:'info', onClick: function(target, data){
-                self.choices.select1 = [
+            [{label: '更新select1-2 choices', type:'info', onClick: function(target, data){
+                target.fields.select1.options.choices = [
+                  {label:'选项A', value: 'A'},
+                  {label:'选项B', value: 'B'},
+                  {label:'选项C', value: 'C'}
+                ]
+                target.fields.select2.options.choices = [
                   {label:'选项A', value: 'A'},
                   {label:'选项B', value: 'B'},
                   {label:'选项C', value: 'C'}
@@ -166,11 +160,12 @@ var ex_build_01 = new Vue({
         }
       }
     ]
-    return {data:data, value: {
+    return {data:data,
+            value: {
+              str1: 'email@gmail.com',
               str2: 'aaa',
+              select1: 'A',
               select2_static: '静态结果',
-              select1: 'B',
-              select2: 'A',
               select3: ['A', 'B'],
               select4: ['A', 'B'],
               radio2: 'A',
@@ -207,7 +202,7 @@ var ex_build_01 = new Vue({
     }
   },
   mounted: function () {
-    var self = this
+    /* var self = this
     setTimeout(function () {
       var c = [
         {label:'选项一', value: 'A'},
@@ -215,7 +210,7 @@ var ex_build_01 = new Vue({
         {label:'选项三', value: 'C'}
       ]
       self.$set(self.choices, 'select1', c)
-    }, 1000)
+    }, 1000) */
   }
 })
 </script>
