@@ -21,7 +21,6 @@ var ex_build_02 = new Vue({
     var data = [
       {
         name: 'basic1',
-        static: true,
         title: '基本信息1',
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
@@ -30,14 +29,14 @@ var ex_build_02 = new Vue({
             return '<a href="#">' + v + '</a>'
             }
           },
-          {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices}
-          },
-          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices}
-          },
+          {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices}},
+          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices}},
+          {name: 'rich1', label: '富文本', type: 'tinymce', options: { options: {height: 200}}},
         ],
         layout: [
           ['str1', 'str2'],
           ['select1', 'select2'],
+          ['rich1']
         ],
         component: 'Layout',
         boxComponent: 'Box',

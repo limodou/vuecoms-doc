@@ -9,6 +9,8 @@
   "scripts": [
     "lib/vue.js",
     "lib/iview/iview.js",
+    "lib/echarts.common.js",
+    "lib/tinymce/tinymce.js",
     "lib/vuecoms.js"
   ]
 }

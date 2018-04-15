@@ -19,3 +19,9 @@ Vuecoms
 * [Build]
   * [基本构建](build1.md)
   * [多段展示](build2.md)
+* [Chart]
+  * [EChart](chart.md)
+* [Editor]
+  * [Editor](editor.md)
+* [Dialog]
+  * [Dialog](dialog.md)

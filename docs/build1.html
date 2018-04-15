@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=69611c2a">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=2feb49d9">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=fc8777a9">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=359066a1">
     <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=601c295d"></script>
-    <script src="lib/vuecoms.js?t=96485b8a"></script>
+    <script src="lib/iview/iview.js?t=ea83000a"></script>
+    <script src="lib/echarts.common.js?t=d9190139"></script>
+    <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
+    <script src="lib/vuecoms.js?t=33caa584"></script>
     <title>基本构建 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -64,6 +66,24 @@
                 <li class="menu-item -level-2"><a class="link title -active link-build1" href="build1.html">基本构建</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Chart</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-chart" href="chart.html">EChart</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Editor</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-editor" href="editor.html">Editor</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
                 </li>
               </ul>
             </li>
@@ -139,6 +159,8 @@ var ex_build_01 = new Vue({
           {name: 'text2', label: '文本2', type: 'text', static: true, rule:{max:20}, help: '最多输入20个汉字'},
           {name: 'date1', label: '日期1', required: true, type: 'date'},
           {name: 'date2', label: '日期2', type: 'date', static: true},
+          {name: 'date3', label: '日期1', required: true, type: 'datetime'},
+          {name: 'date4', label: '日期2', type: 'datetime', static: true},
           {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {choices:
             [ {
                   id: 'fruits',
@@ -178,6 +200,8 @@ var ex_build_01 = new Vue({
                 } ]
               }
           },
+          {name: 'switch', label: '开关', type: 'i-switch'},
+          {name: 'slider', label: '滑块', type: 'Slider', required: true, rule: {type: 'number'}},
         ],
         layout: [
           ['str1', 'str2'],
@@ -189,10 +213,13 @@ var ex_build_01 = new Vue({
           ['text1'],
           ['text2'],
           ['date1', 'date2'],
-          ['tree1']
+          ['date3', 'date4'],
+          ['tree1'],
+          ['switch', 'slider']
         ],
         component: 'Layout',
         boxComponent: 'Box',
+        boxOptions: {widthBorder: false, headerClass: 'primary'},
         buttons: {
           items: [
             [{label: '查看结果', type:'primary', onClick: function(target, data){
@@ -234,9 +261,24 @@ var ex_build_01 = new Vue({
           ],
           size: ''
         }
+      },
+      {
+        name: 'basic',
+        title: '',
+        labelWidth: 150,
+        staticSuffix: '_static',
+        fields: [
+          {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
+            info: 'info信息', required: true, rule: {type: 'email'}},
+        ],
+        layout: [
+          ['str1']
+        ],
+        boxComponent: ''
       }
     ]
-    return {data:data,
+    return {
+            data:data,
             value: {
               str1: 'email@gmail.com',
               str2: 'aaa',
@@ -249,7 +291,8 @@ var ex_build_01 = new Vue({
               checkbox2: 'B',
               text1: 'Line 1\nLine 2',
               text2: 'Line 3\nLine 4\nLine 5\nLine 6\nLine 7\nLine 8',
-              date2: '2017-12-12'
+              date2: '2017-12-12',
+              date4: '2017-12-12 12:01:28'
             },
             choices: {
                 select1: [

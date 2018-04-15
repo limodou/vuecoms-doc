@@ -63,6 +63,8 @@ var ex_build_01 = new Vue({
           {name: 'text2', label: '文本2', type: 'text', static: true, rule:{max:20}, help: '最多输入20个汉字'},
           {name: 'date1', label: '日期1', required: true, type: 'date'},
           {name: 'date2', label: '日期2', type: 'date', static: true},
+          {name: 'date3', label: '日期1', required: true, type: 'datetime'},
+          {name: 'date4', label: '日期2', type: 'datetime', static: true},
           {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {choices:
             [ {
                   id: 'fruits',
@@ -102,6 +104,8 @@ var ex_build_01 = new Vue({
                 } ]
               }
           },
+          {name: 'switch', label: '开关', type: 'i-switch'},
+          {name: 'slider', label: '滑块', type: 'Slider', required: true, rule: {type: 'number'}},
         ],
         layout: [
           ['str1', 'str2'],
@@ -113,10 +117,13 @@ var ex_build_01 = new Vue({
           ['text1'],
           ['text2'],
           ['date1', 'date2'],
-          ['tree1']
+          ['date3', 'date4'],
+          ['tree1'],
+          ['switch', 'slider']
         ],
         component: 'Layout',
         boxComponent: 'Box',
+        boxOptions: {widthBorder: false, headerClass: 'primary'},
         buttons: {
           items: [
             [{label: '查看结果', type:'primary', onClick: function(target, data){
@@ -158,9 +165,24 @@ var ex_build_01 = new Vue({
           ],
           size: ''
         }
+      },
+      {
+        name: 'basic',
+        title: '',
+        labelWidth: 150,
+        staticSuffix: '_static',
+        fields: [
+          {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
+            info: 'info信息', required: true, rule: {type: 'email'}},
+        ],
+        layout: [
+          ['str1']
+        ],
+        boxComponent: ''
       }
     ]
-    return {data:data,
+    return {
+            data:data,
             value: {
               str1: 'email@gmail.com',
               str2: 'aaa',
@@ -173,7 +195,8 @@ var ex_build_01 = new Vue({
               checkbox2: 'B',
               text1: 'Line 1\nLine 2',
               text2: 'Line 3\nLine 4\nLine 5\nLine 6\nLine 7\nLine 8',
-              date2: '2017-12-12'
+              date2: '2017-12-12',
+              date4: '2017-12-12 12:01:28'
             },
             choices: {
                 select1: [
