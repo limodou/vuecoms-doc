@@ -13,12 +13,13 @@ var ex_table_04 = new Vue({
       nowrap: true,
       actionColumn: 'Action',
       columns: [
-        {name:'name1', title:'Name1', width:200, editor: 'string'},
-        {name:'name2', title:'Name2', width: 200, align: 'left', editor: 'select', editorOptions: {
+        {name:'name1', title:'Name1', width:200, editor: {type: 'string'}},
+        {name:'name2', title:'Name2', width: 200, align: 'left', editor: {type: 'select', options: {
           choices: [['A', 'Test A'], ['B', 'Test B']]
-          }},
-        {name:'name3', title:'Name3', width:200},
-        {name:'name4', title:'Name4', width:200, editor: 'date'},
+          }}
+        },
+        {name:'name3', title:'Name3', width:200, editor: {type: 'i-switch'}},
+        {name:'name4', title:'Name4', width:200, editor: {type: 'date'}},
         {name:'Action', title:'Name5'}
       ],
       buttons: [

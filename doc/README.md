@@ -11,7 +11,7 @@ Vuecoms
   * [表格行编辑](table4.md)
 * [基础控件](fields.md)
 * [Query]
-  * [基本查询](query1.md)
+   * [基本查询](query1.md)
 * [Tree]
   * [树控件](tree1.md)
 * [TreeSelect]

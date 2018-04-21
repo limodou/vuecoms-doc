@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=69611c2a">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=359066a1">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=fc8777a9">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=1eb29722">
     <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=601c295d"></script>
+    <script src="lib/iview/iview.js?t=ea83000a"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=8e40e4eb"></script>
+    <script src="lib/vuecoms.js?t=24a8de88"></script>
     <title>基本查询 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -97,7 +97,8 @@
         </div>
         <div class="markdown-body"><h1 id="">&#x57FA;&#x672C;&#x67E5;&#x8BE2;</h1>
 <div id="ex-query-01">
-  <query-form ref="query" :fields="fields" :layout="layout" :choices="choices" :value="value" :buttons="buttons" :show-line="1" :label-width="labelWidth" :show-selected="true" @on-query-change="handleQueryChange"></query-form>
+  <query ref="query" :data="fields" :layout="layout" :choices="choices" :default-value="defaultValue" :show-line="1" :value="value" :label-width="labelWidth" :show-selected="true" @on-query-change="handleQueryChange"></query>
+    {{value}}
 </div>
 <script>
 var ex_query_01 = new Vue({
@@ -111,7 +112,7 @@ var ex_query_01 = new Vue({
           console.log("submit event => ",data);
           return true
         },
-        handleQueryChange (change) {
+        handleQueryChange: function (change) {
           console.log(change)
         }
   },
@@ -119,44 +120,33 @@ var ex_query_01 = new Vue({
         return {
           labelWidth: 120,
           fields: [
-                    {name: "str1", type: "str", label: "字符串1", placeholder: "请输入字符串1"},
-                    {name: "str2", type: "str", label: "字符串2", placeholder: "请输入字符串2"},
+                    {name: "str1", type: "string", label: "字符串1", placeholder: "请输入字符串1"},
+                    {name: "str2", type: "string", label: "字符串2", placeholder: "请输入字符串2"},
                     {
                       name: "select1",
-                      type: "iselect",
+                      type: "select",
                       label: "选择1",
-                      multiple: false,
-                      clearable: true,
-                      disabled: false,
-                      filterable: true,
-                      size: "default", // small default large
-                      placeholder: "这是一个下拉单选项"
+                      placeholder: "这是一个下拉单选项",
+                      options: {
+                        filterable: true
+                      }
                     },
                     {
                       name: "select2",
-                      type: "iselect",
+                      type: "select",
                       label: "选择2",
                       multiple: true,
-                      disabled: false,
-                      filterable: true,
                       placeholder: "这是一个下拉多选项"
                     },
                     {
                       name: "datepicker",
-                      type: "daterange",
+                      type: "date",
                       label: "日期",
                       placeholder: "日期单选",
-                      range: true,
-                      format: "yyyy#MM#dd",
-                      confirm: true,
-                      size: "default",
-                      disabled: false,
-                      placement: "bottom",//top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end (default bottom-start)
-                      readonly: false,
-                      editable: false,
-                      clearable: false,
-                      transfer: false,
                       options: {
+                        confirm: true,
+                        size: "default",
+                        placement: "bottom",//top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end (default bottom-start)
                         disabledDate: function (date) {
                           return date && date.valueOf() < Date.now() - 86400000;
                         },
@@ -196,43 +186,54 @@ var ex_query_01 = new Vue({
                       }
                     },
                     {
+                      name: 'datepickerrange',
+                      type: 'datepickerrange',
+                      label: '日期范围',
+                      options: {
+                        placeholderBegin: '开始时间',
+                        placeholderEnd: '结束时间'
+                      }
+                    },
+                    {
                       name: "radio",
                       type: "radio",
                       label: "单选框",
-                      rType: "button", // button or null
-                      disabled: false,
-                      size: "small",
-                      vertical: true,
-                      choices: [{label: "1", name: "备选项1"}, {label: "2", name: "备选项2", disabled: true}, {
-                        label: "3",
-                        name: "备选项3"
-                      }]
+                      options: {
+                        choices: [
+                          {value: "1", label: "备选项1"}, 
+                          {value: "2", label: "备选项2", disabled: true}, 
+                          {value: "3", label: "备选项3"}
+                        ]
+                      }
                     },
                     {
                       name: "checkbox",
-                      type: "checkbox",
+                      type: "checkboxgroup",
                       label: "多选框",
-                      size: "large", //small default large
-                      disabled: false,
-                      choices: [{label: "1", name: "备选项1"}, {label: "2", name: "备选项2"}, {
-                        label: "3",
-                        name: "备选项3",
-                        disabled: true
-                      }]
+                      options: {
+                        choices: [
+                          {value: "1", label: "备选项1"}, 
+                          {value: "2", label: "备选项2", disabled: true}, 
+                          {value: "3", label: "备选项3"}
+                        ]
+                      }
                     },
                   ],
                   layout: [
                     ['str1', 'str2'],
                     ['select1', 'select2'],
-                    ["datepicker"],
+                    ['datepicker', 'datepickerrange'],
                     ['radio', 'checkbox']
                   ],
-                  value: {
+                  defaultValue: {
                     select1: 'city_003',
                     select2: ["city_001"],
                     str1: "Hello World!!!",
                     checkbox: ["1","2"],
                     radio: "1",
+                  },
+                  value: {
+                    datepickerrange: ['2018-04-20', '2018-04-22']
                   },
                   choices: {
                     select1: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {

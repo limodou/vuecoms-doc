@@ -1,12 +1,14 @@
 # 基本查询
 
 <div id="ex-query-01">
-  <query-form ref="query" :fields="fields" :layout="layout"
+  <query ref="query" :data="fields" :layout="layout"
     :choices="choices"
-    :value="value" :buttons="buttons" :show-line="1"
+    :default-value="defaultValue" :show-line="1"
+    :value="value"
     :label-width="labelWidth"
     :show-selected="true"
-    @on-query-change="handleQueryChange"></query-form>
+    @on-query-change="handleQueryChange"></query>
+    {{value}}
 </div>
 <script>
 var ex_query_01 = new Vue({
@@ -20,7 +22,7 @@ var ex_query_01 = new Vue({
           console.log("submit event => ",data);
           return true
         },
-        handleQueryChange (change) {
+        handleQueryChange: function (change) {
           console.log(change)
         }
   },
@@ -28,44 +30,33 @@ var ex_query_01 = new Vue({
         return {
           labelWidth: 120,
           fields: [
-                    {name: "str1", type: "str", label: "字符串1", placeholder: "请输入字符串1"},
-                    {name: "str2", type: "str", label: "字符串2", placeholder: "请输入字符串2"},
+                    {name: "str1", type: "string", label: "字符串1", placeholder: "请输入字符串1"},
+                    {name: "str2", type: "string", label: "字符串2", placeholder: "请输入字符串2"},
                     {
                       name: "select1",
-                      type: "iselect",
+                      type: "select",
                       label: "选择1",
-                      multiple: false,
-                      clearable: true,
-                      disabled: false,
-                      filterable: true,
-                      size: "default", // small default large
-                      placeholder: "这是一个下拉单选项"
+                      placeholder: "这是一个下拉单选项",
+                      options: {
+                        filterable: true
+                      }
                     },
                     {
                       name: "select2",
-                      type: "iselect",
+                      type: "select",
                       label: "选择2",
                       multiple: true,
-                      disabled: false,
-                      filterable: true,
                       placeholder: "这是一个下拉多选项"
                     },
                     {
                       name: "datepicker",
-                      type: "daterange",
+                      type: "date",
                       label: "日期",
                       placeholder: "日期单选",
-                      range: true,
-                      format: "yyyy#MM#dd",
-                      confirm: true,
-                      size: "default",
-                      disabled: false,
-                      placement: "bottom",//top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end (default bottom-start)
-                      readonly: false,
-                      editable: false,
-                      clearable: false,
-                      transfer: false,
                       options: {
+                        confirm: true,
+                        size: "default",
+                        placement: "bottom",//top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end (default bottom-start)
                         disabledDate: function (date) {
                           return date && date.valueOf() < Date.now() - 86400000;
                         },
@@ -105,43 +96,54 @@ var ex_query_01 = new Vue({
                       }
                     },
                     {
+                      name: 'datepickerrange',
+                      type: 'datepickerrange',
+                      label: '日期范围',
+                      options: {
+                        placeholderBegin: '开始时间',
+                        placeholderEnd: '结束时间'
+                      }
+                    },
+                    {
                       name: "radio",
                       type: "radio",
                       label: "单选框",
-                      rType: "button", // button or null
-                      disabled: false,
-                      size: "small",
-                      vertical: true,
-                      choices: [{label: "1", name: "备选项1"}, {label: "2", name: "备选项2", disabled: true}, {
-                        label: "3",
-                        name: "备选项3"
-                      }]
+                      options: {
+                        choices: [
+                          {value: "1", label: "备选项1"}, 
+                          {value: "2", label: "备选项2", disabled: true}, 
+                          {value: "3", label: "备选项3"}
+                        ]
+                      }
                     },
                     {
                       name: "checkbox",
-                      type: "checkbox",
+                      type: "checkboxgroup",
                       label: "多选框",
-                      size: "large", //small default large
-                      disabled: false,
-                      choices: [{label: "1", name: "备选项1"}, {label: "2", name: "备选项2"}, {
-                        label: "3",
-                        name: "备选项3",
-                        disabled: true
-                      }]
+                      options: {
+                        choices: [
+                          {value: "1", label: "备选项1"}, 
+                          {value: "2", label: "备选项2", disabled: true}, 
+                          {value: "3", label: "备选项3"}
+                        ]
+                      }
                     },
                   ],
                   layout: [
                     ['str1', 'str2'],
                     ['select1', 'select2'],
-                    ["datepicker"],
+                    ['datepicker', 'datepickerrange'],
                     ['radio', 'checkbox']
                   ],
-                  value: {
+                  defaultValue: {
                     select1: 'city_003',
                     select2: ["city_001"],
                     str1: "Hello World!!!",
                     checkbox: ["1","2"],
                     radio: "1",
+                  },
+                  value: {
+                    datepickerrange: ['2018-04-20', '2018-04-22']
                   },
                   choices: {
                     select1: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {

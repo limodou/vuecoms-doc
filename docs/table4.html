@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=69611c2a">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=359066a1">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=fc8777a9">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=1eb29722">
     <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=601c295d"></script>
+    <script src="lib/iview/iview.js?t=ea83000a"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=8e40e4eb"></script>
+    <script src="lib/vuecoms.js?t=24a8de88"></script>
     <title>表格行编辑 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -109,12 +109,13 @@ var ex_table_04 = new Vue({
       nowrap: true,
       actionColumn: 'Action',
       columns: [
-        {name:'name1', title:'Name1', width:200, editor: 'string'},
-        {name:'name2', title:'Name2', width: 200, align: 'left', editor: 'select', editorOptions: {
+        {name:'name1', title:'Name1', width:200, editor: {type: 'string'}},
+        {name:'name2', title:'Name2', width: 200, align: 'left', editor: {type: 'select', options: {
           choices: [['A', 'Test A'], ['B', 'Test B']]
-          }},
-        {name:'name3', title:'Name3', width:200},
-        {name:'name4', title:'Name4', width:200, editor: 'date'},
+          }}
+        },
+        {name:'name3', title:'Name3', width:200, editor: {type: 'i-switch'}},
+        {name:'name4', title:'Name4', width:200, editor: {type: 'date'}},
         {name:'Action', title:'Name5'}
       ],
       buttons: [

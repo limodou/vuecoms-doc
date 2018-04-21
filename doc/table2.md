@@ -141,7 +141,7 @@ var ex_table_02 = new Vue({
     }
     table.query = {
       fields: [
-        {name: "str1", type: "str", label: "字符串1", placeholder: "请输入字符串1"},
+        {name: "str1", type: "string", label: "字符串1", placeholder: "请输入字符串1"},
         {name: "tree", type: "treeselect", label: "机构", options: {
           remote: true,
           'remote-load-data': function (item, callback) {
