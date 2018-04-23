@@ -196,7 +196,8 @@ var ex_build_01 = new Vue({
               text1: 'Line 1\nLine 2',
               text2: 'Line 3\nLine 4\nLine 5\nLine 6\nLine 7\nLine 8',
               date2: '2017-12-12',
-              date4: '2017-12-12 12:01:28'
+              date4: '2017-12-12 12:01:28',
+              tree1: ['apple', 'grapes']
             },
             choices: {
                 select1: [
