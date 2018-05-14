@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=69611c2a">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=1eb29722">
-    <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=f07c5066">
+    <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
     <script src="lib/iview/iview.js?t=601c295d"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=84043d80"></script>
+    <script src="lib/vuecoms.js?t=0ebcff3f"></script>
     <title>简单表格 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -106,23 +106,48 @@ var ex_table_01 = new Vue({
     var table = {
       nowrap: true,
       columns: [
-        {name:'name1', title:'Name1', width:200, fixed: 'left'},
-        {name:'name2', title:'Name2', width: 200, fixed: 'left'},
-        {name:'name3', title:'Name3', width:200},
+        {name:'check', title:'#', width:40, fixed: 'left', render: function(h, param) {
+          var self = this
+          return h('Checkbox', {
+            props: {
+              value: param.value
+            },
+            on: {
+              input: function(value) {
+                alert(self.value)
+              }
+            }
+          })
+        }},
+        {name:'name1', title:'Name1', width:100, fixed: 'left'},
+        {name:'name2', title:'Name2', width: 100, fixed: 'left'},
+        {name:'name3', title:'Name3', width:100},
         {name:'name4', title:'Name4', align:'center', width:200},
-        {name:'name5', title:'Name5', width:200},
-        {name:'name6', title:'Name6', width:200}
+        {name:'name5', title:'Name5', width:200, render: function(h, param) {
+          var self = this
+          return h('Checkbox', {
+            props: {
+              value: param.value
+            },
+            on: {
+              input: function(value) {
+                alert(self.value)
+              }
+            }
+          })
+        }},
+        {name:'name6', title:'Name6'}
       ],
       data: [],
-      combineCols:['name1', 'name2', 'name3', 'name4']
+      combineCols:[['check', 'name1', 'name2', 'name3'], ['name5']]
     }
 
-    table.data.push({id:1, name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
-    table.data.push({id:2, name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
-    table.data.push({id:3, name1:'A1', name2:'B2', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
-    table.data.push({id:4, name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
-    table.data.push({id:5, name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
-    table.data.push({id:6, name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:2, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:3, check: 'A1', name1:'A1', name2:'B2', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:4, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
+    table.data.push({id:5, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
+    table.data.push({id:6, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
 
     return {table:table}
   }

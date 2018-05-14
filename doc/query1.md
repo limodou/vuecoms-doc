@@ -1,7 +1,7 @@
 # 基本查询
 
 <div id="ex-query-01">
-  <query ref="query" :data="fields" :layout="layout"
+  <query ref="query" :fields="fields" :layout="layout"
     :choices="choices"
     :default-value="defaultValue" :show-line="1"
     :value="value"

@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=69611c2a">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=1eb29722">
-    <link rel="stylesheet" href="lib/custom.css?t=e74ed0ca">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=f07c5066">
+    <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
     <script src="lib/iview/iview.js?t=601c295d"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=84043d80"></script>
+    <script src="lib/vuecoms.js?t=0ebcff3f"></script>
     <title>复杂表格 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -103,7 +103,7 @@
     <label style="display:inline-block">&#x5207;&#x6362;nowrap<input v-model="show_nowrap" type="checkbox"></label>
     <button @click="handleTitleHide">&#x5207;&#x6362;Title&#x5B57;&#x6BB5;&#x663E;&#x793A;</button>
   </div>
-  <grid ref="grid" :data="table" @on-selected="handleSelected" @on-deselected="handleDeselected" @on-selected-all="handleSelectedAll" @on-deselected-all="handleDeselectedAll" @on-query-change="handleQueryChange"></grid>
+  <grid ref="grid" :data="table" :value="value" @on-selected="handleSelected" @on-deselected="handleDeselected" @on-selected-all="handleSelectedAll" @on-deselected-all="handleDeselectedAll" @on-query-change="handleQueryChange"></grid>
   <div>Selected: {{selected}}</div>
   <div>Param: {{param}}</div>
 </div>
@@ -112,6 +112,7 @@ var ex_table_02 = new Vue({
   el: '#ex-table-02',
   data: function () {
     var self = this
+    var value = []
     var table = {
       columns: [],
       multiSelect: true,
@@ -125,8 +126,6 @@ var ex_table_02 = new Vue({
       checkColWidth: 120,
       checkColTitle: 'Check All',
       indexCol: true,
-      data: [
-      ],
       param: {
         str1: "Hello World!!!",
         tree: '1'
@@ -228,7 +227,7 @@ var ex_table_02 = new Vue({
       for (var j = 1; j < 10; j++) {
         row['name' + j] = 'Name-' + (i + 1) + '-' + j
       }
-      table.data.push(row)
+      value.push(row)
     }
     table.query = {
       fields: [
@@ -282,7 +281,8 @@ var ex_table_02 = new Vue({
       loading_text:'loading',
       show_loading:false,
       show_nowrap: false,
-      param:{}
+      param:{},
+      value: value
     }
   },
   watch: {

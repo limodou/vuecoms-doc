@@ -7,7 +7,7 @@
     <label style="display:inline-block">切换nowrap<input v-model="show_nowrap" type="checkbox"></input></label>
     <button @click="handleTitleHide">切换Title字段显示</button>
   </div>
-  <Grid ref='grid' :data="table"
+  <Grid ref='grid' :data="table" :value="value"
     @on-selected="handleSelected"
     @on-deselected="handleDeselected"
     @on-selected-all="handleSelectedAll"
@@ -21,6 +21,7 @@ var ex_table_02 = new Vue({
   el: '#ex-table-02',
   data: function () {
     var self = this
+    var value = []
     var table = {
       columns: [],
       multiSelect: true,
@@ -34,8 +35,6 @@ var ex_table_02 = new Vue({
       checkColWidth: 120,
       checkColTitle: 'Check All',
       indexCol: true,
-      data: [
-      ],
       param: {
         str1: "Hello World!!!",
         tree: '1'
@@ -137,7 +136,7 @@ var ex_table_02 = new Vue({
       for (var j = 1; j < 10; j++) {
         row['name' + j] = 'Name-' + (i + 1) + '-' + j
       }
-      table.data.push(row)
+      value.push(row)
     }
     table.query = {
       fields: [
@@ -191,7 +190,8 @@ var ex_table_02 = new Vue({
       loading_text:'loading',
       show_loading:false,
       show_nowrap: false,
-      param:{}
+      param:{},
+      value: value
     }
   },
   watch: {
