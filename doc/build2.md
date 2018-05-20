@@ -1,5 +1,7 @@
 # 多段展示
 
+Build控件可以展示多个段落。
+
 <div id="ex-build-02">
   <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :label-width="labelWidth"></build>
   <div>
@@ -32,11 +34,22 @@ var ex_build_02 = new Vue({
           {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices}},
           {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices}},
           {name: 'rich1', label: '富文本', type: 'tinymce', options: { options: {height: 200}}},
+          {name: 'grid', label: '表格', type: 'Grid', options: {
+            data: {
+              columns: [
+                {name:'name1', title:'Name1', width:100, fixed: 'left'},
+                {name:'name2', title:'Name2', width: 100, fixed: 'left'},
+                {name:'name3', title:'Name3', width:100},
+                {name:'name4', title:'Name4', align:'center', width:200},
+              ]
+            }
+          }}
         ],
         layout: [
           ['str1', 'str2'],
           ['select1', 'select2'],
-          ['rich1']
+          ['rich1'],
+          ['grid']
         ],
         component: 'Layout',
         boxComponent: 'Box',
@@ -84,6 +97,12 @@ var ex_build_02 = new Vue({
               select2: 'A',
               select3: ['A', 'B'],
               select4: ['A', 'B'],
+              grid: [
+                {name1: '1', name2: '2', name3: '3', name4: '4'},
+                {name1: '2', name2: '2', name3: '3', name4: '4'},
+                {name1: '3', name2: '2', name3: '3', name4: '4'},
+                {name1: '4', name2: '2', name3: '3', name4: '4'},                
+              ]
             },
             errors: {},
             rules: {
