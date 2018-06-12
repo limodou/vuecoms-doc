@@ -1,15 +1,18 @@
 # 简单表格
 
 <div id="ex-table-01">
-  <Grid :data="table"></Grid>
+  <Grid :data="table" ref="grid"></Grid>
 </div>
 
 <script>
 var ex_table_01 = new Vue({
   el: '#ex-table-01',
   data: function () {
+    var self = this
     var table = {
       nowrap: true,
+      indexCol: true,
+      theme: 'default',
       columns: [
         {name:'check', title:'#', width:40, fixed: 'left', render: function(h, param) {
           var self = this
@@ -44,7 +47,17 @@ var ex_table_01 = new Vue({
         {name:'name6', title:'Name6'}
       ],
       data: [],
-      combineCols:[['check', 'name1', 'name2', 'name3'], ['name5']]
+      combineCols:[['check', 'name1', 'name2', 'name3'], ['name5']],
+      buttons: [
+        [
+          {label: '切换样式', type: 'primary', onClick: function () {
+            if (self.$refs.grid.theme === 'default')
+              self.$refs.grid.theme = 'simple'
+            else
+              self.$refs.grid.theme = 'default'
+          }}
+        ]
+      ]
     }
 
     table.data.push({id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})

@@ -14,7 +14,7 @@ var ex_table_04 = new Vue({
       actionColumn: 'Action',
       columns: [
         {name:'name1', title:'Name1', width:200, editor: {type: 'string'}},
-        {name:'name2', title:'Name2', width: 200, align: 'left', editor: {type: 'select', options: {
+        {name:'name2', title:'Name2', width: 200, align: 'left', editor: {type: 'select', static: true, options: {
           choices: [['A', 'Test A'], ['B', 'Test B']]
           }}
         },
@@ -25,7 +25,7 @@ var ex_table_04 = new Vue({
       buttons: [
         [
           {label: '新建', type:'primary', onClick: function(target, store){
-              store.addEditRow()
+              store.addEditRow({name2: 'A'})
             }
           }
         ],

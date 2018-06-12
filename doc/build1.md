@@ -238,3 +238,16 @@ var ex_build_01 = new Vue({
   }
 })
 </script>
+
+
+## 参数说明
+
+| 属性 | 说明 | 缺省值 |
+|-----|-----|-------|
+| data | Build参数，结构为一个Object，详细格式见下面 |  |
+| labelWidth | 标签宽度 | 150px |
+| staticSuffix | 静态字段后缀，当字段定义为static时，缺省先找形式为 name_suffix 的值 | '_static' |
+| value | 传入的数据 | {} |
+| errors | 错误信息，方便从外部传入。key为字段名 | {} | 
+| rules | 单独定义的校验规则。key为字段名。它是在字段上定义的rule的一个补充 | {} |
+| choices | select字段的choices值。方便从外部传入 | {} |

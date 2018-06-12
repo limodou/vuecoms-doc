@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=69611c2a">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=f07c5066">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=d18d107e">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
     <script src="lib/iview/iview.js?t=601c295d"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=0ebcff3f"></script>
+    <script src="lib/vuecoms.js?t=82111cdd"></script>
     <title>复杂表格 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -84,6 +84,18 @@
             <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-research_edit" href="research_edit.html">任务编辑</a>
                 </li>
               </ul>
             </li>
@@ -202,6 +214,7 @@ var ex_table_02 = new Vue({
       title: '合并/Title',
       sortable: true,
       fixed: 'left',
+      showTitle: false,
       format: function(value, column, row) {
         return '<a href="#">' + value + '</a>'
       }

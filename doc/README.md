@@ -25,3 +25,8 @@ Vuecoms
   * [Editor](editor.md)
 * [Dialog]
   * [Dialog](dialog.md)
+* [动态模板]
+  * [Template](template.md)
+* [综合示例]
+  * [任务编辑](research_edit.md)
+

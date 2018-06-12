@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=69611c2a">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=d18d107e">
+    <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
+    <script src="assets/script.js?t=42463e55"></script>
+    <script src="lib/vue.js?t=3f3ee46e"></script>
+    <script src="lib/iview/iview.js?t=601c295d"></script>
+    <script src="lib/echarts.common.js?t=d9190139"></script>
+    <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
+    <script src="lib/vuecoms.js?t=82111cdd"></script>
+    <title>任务编辑 - Vuecoms</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Box</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-box1" href="box1.html">基本用法</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Table</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table3" href="table3.html">表格拖动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table4" href="table4.html">表格行编辑</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-fields" href="fields.html">基础控件</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Query</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">TreeSelect</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-treeselect" href="treeselect.html">选择树控件</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Build</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Chart</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-chart" href="chart.html">EChart</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Editor</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-editor" href="editor.html">Editor</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title -active link-research_edit" href="research_edit.html">任务编辑</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-research_edit">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="">&#x4EFB;&#x52A1;&#x7F16;&#x8F91;</h1>
+<div id="app">
+  <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :label-width="labelWidth"></build>
+  <modal v-model="openNewReq" title="&#x5BF9;&#x8BDD;&#x6846;&#x6807;&#x9898;" width="1024">
+    <grid :data="reqData" :value="reqValue"></grid>
+  
+</modal></div>
+<script>
+Vue.component('team', {
+    template: '<Grid ref="grid" :data="data" :value="value" @input="handleInput"></Grid>',
+    props: ['value'],
+    data: function () {
+      var self = this
+      return  {
+          data: {
+            indexCol: true,
+            checkColTitle: '',
+            idField: 'sn',
+            editMode: 'row',
+            actionColumn: 'action',
+            columns: [
+              {name: 'sn', title: 'ID', hidden: true},
+              {name: 'name', title: '成员角色', width: 100, editor: {type: 'select'}},
+              {name: 'members', title: '成员', editor: {type: 'select', multiple: true, options: {
+                  filterable: true, remote: true, rich: true, remoteMethod: function(query, callback){
+                    setTimeout(function(){
+                      if (query === 'a')
+                        callback([{value:'A', label:'Test A', text: 'A'}, {value:'B', label:'Test B', text: 'B'}, {value:'C', label:'Test C', text: 'C'}])
+                      else
+                        callback([{value:'D', label:'Test D', text: 'D'}, {value:'E', label:'Test E', text: 'E'}, {value:'F', label:'Test F', text: 'F'}])
+                    }, 1000)
+                  },
+                  getSelected: function(v, callback){
+                    setTimeout(function(){
+                      if (v && v.length > 0)
+                        callback([{label: 'Test A', value: 'A'}])
+                    }, 1000)
+                  },
+                  onRenderLabel: function(item) {
+                    return '<span class="item">' + item.text + ' - ' + item.label + '</span>'
+                  }
+                }
+              }},
+              {name: 'action', title: '操作', width: 250, render: function(h, param){
+                var buttons = [
+                  self.$refs.grid.defaultEditRender(h, param.row),
+                  self.$refs.grid.defaultDeleteRender(h, param.row),
+                ]
+                if (!param.row._editting) {
+                  buttons.push(h('Button', 
+                    {
+                      props: {
+                        type: 'primary',
+                        size: 'small',
+                      },
+                      style: {
+                          margin: '0 5px'
+                      },
+                      on: {
+                        click: function () {
+                          self.$refs.grid.store.addEditRow({name: param.row.name, members: param.row.members})
+                        }
+                      }
+                    }, '缺省增加')
+                  )
+                }
+                return h('div', {
+                  'class': 'u-cell-text'
+                }, buttons)
+              }}
+            ],
+            pagination: true,
+            total: 1,
+            buttons: [
+              [{label: '增加角色', type:'primary', onClick: function(target, store){
+                store.addEditRow()
+              }}]
+            ],
+            onSaveRow: function (row, callback) {
+              self.$Message.info("save")
+              callback('ok', row)
+              console.log('save', row)
+            },
+            onDeleteRow: function (row, callback) {
+              self.$Message.info("delete")
+              callback('ok', row)
+              console.log('delete', row)
+            }
+          }
+        }
+      },
+      methods: {
+        handleInput: function (value) {
+          this.$emit('input', value)
+        }
+      },
+      mounted: function () {
+        var self = this
+        setTimeout(function(){
+          var col = self.$refs.grid.getColumn('name')
+          self.$set(col.editor, 'options', {filterable: true, choices: [['A', 'Test A'], ['B', 'Test B']]})
+        }, 1000)
+      }
+    }
+  )
+var ex_build_02 = new Vue({
+  el: '#app',
+  data: function () {
+    var self = this
+    var data = [
+      {
+        boxOptions: {headerClass: 'primary'},
+        title: '基本信息',
+        fields: [
+          {name: 'title', label: '标题', placeholder: '请输入...', required: true},
+          {name: 'desc', label: '说明', type: 'text', required: true, options: {
+            autosize: {minRows: 5}
+          }},
+        ],
+        layout: [
+          ['title'],
+          ['desc']
+        ],
+      },
+      {
+        title: '关联业务要求',
+        boxOptions: {headerClass: 'primary'},
+        fields: [
+          {name: 'busirequires', label: '', type: 'Grid', options: {
+            data: {
+              indexCol: true,
+              checkColTitle: '',
+              idField: 'sn',
+              columns: [
+                {name: 'sn', title: '业务要求编号', width: 150},
+                {name: 'title', title: '业务要求名称', align: 'left'},
+                {name: 'depart', title: '提出部门', width: 200},
+                {name: 'contact', title: '联系人', width: 100},
+                {name: 'action', title: '操作', width: 60, render: function (h, param){
+                  return h('i-button', {
+                    on: {
+                      click: function(value) {
+                        console.log(param)
+                      }
+                    },
+                    props: {
+                      size: 'small',
+                      type: 'error'
+                    }
+                  }, '删除')
+                }}
+              ],
+              pagination: true,
+              total: 1,
+              buttons: [
+                [{label: '关联业务要求', type:'primary', onClick: function(){
+                  self.openNewReq = !self.openNewReq
+                }}]
+              ],
+            }
+          }
+          },
+        ],
+        layout: [
+          ['busirequires'],
+        ]
+      },
+      {
+        title: '需求项分析结果',
+        boxOptions: {headerClass: 'primary'},
+        fields: [
+          {name: 'reqitems', label: '', type: 'Grid', options: {
+            data: {
+              indexCol: true,
+              checkColTitle: '',
+              idField: 'sn',
+              columns: [
+                {name: 'sn', title: '业务要求编号', width: 150},
+                {name: 'title', title: '业务要求名称', align: 'left'},
+                {name: 'reqitemsn', title: '需求项编号', width: 150},
+                {name: 'reqitemname', title: '需求项名称', width: 100},
+                {name: 'type', title: '项目类型', width: 100},
+                {name: 'prjname', title: '项目名称', width: 100},
+                {name: 'action', title: '操作', width: 120, render: function (h, param){
+                  return h('div', {
+                  },
+                  [
+                    h('i-button', {
+                      style: {
+                        marginRight: '4px'
+                      },
+                      on: {
+                        click: function(value) {
+                          console.log(param)
+                        }
+                      },
+                      props: {
+                        size: 'small',
+                        type: 'error'
+                      }
+                    }, '删除'),
+                    h('i-button', {
+                      on: {
+                        click: function(value) {
+                          console.log(param)
+                        }
+                      },
+                      props: {
+                        size: 'small',
+                        type: 'primary'
+                      }
+                    }, '关联项目')
+                  ])
+                }}
+              ],
+              pagination: true,
+              total: 1,
+              buttons: [
+                [
+                  {label: '导入需求项分析结果', type:'primary', onClick: function(){
+                  }},
+                  {label: '导入模板下载', type:'ghost', onClick: function(){
+                  }}
+                ]
+              ],
+            }
+          }
+          },
+        ],
+        layout: [
+          ['reqitems'],
+        ]
+      },
+      {
+        title: '小组成员',
+        boxOptions: {headerClass: 'primary'},
+        fields: [
+          {name: 'team', label: '', type: 'team'}
+        ],
+        layout: [
+          ['team'],
+        ]
+      },
+    ]
+    var reqData = {
+      // width: 988,
+      checkCol: true,
+      indexCol: true,
+      pagination: true,
+      idField: 'sn',
+      columns: [
+        {name: 'sn', title: '业务要求编号', width: 150},
+        {name: 'title', title: '业务要求名称'},
+        {name: 'depart', title: '提出部门', width: 200},
+        {name: 'contact', title: '联系人', width: 100},
+      ]
+    }
+    return {data:data, 
+            value: {
+              busirequires: []
+            },
+            reqData: reqData,
+            reqValue: [],
+            errors: {},
+            rules: {},
+            labelWidth: 150,
+            openNewReq: false
+          }
+  },
+  mounted: function () {
+    var self = this
+    setTimeout(function() {
+      self.value.busirequires = [
+        {sn: 'Test001', title: 'AAAAA', depart: 'BBBBB', contact: 'CCCCC'}
+      ]
+    }, 1000)
+    setTimeout(function() {
+      self.reqValue = [
+        {sn: 'Test001', title: 'AAAAA', depart: 'BBBBB', contact: 'CCCCC'}
+      ]
+    }, 1000)
+    setTimeout(function() {
+      self.$set(self.value, 'team', [
+          {sn: '1', name: 'A', members: [{label: 'Test A', value: 'A'}, {label: 'Test B', value: 'B'}] },
+          {sn: '2', name: 'B', members: [{label: 'Test A', value: 'A'}, {label: 'Test C', value: 'C'}] }
+        ]
+      )
+    }, 1000)
+  },
+  methods: {
+    save: function(error) {
+      if (error) {
+        this.$Message.error(error)
+      } else {
+        this.$Message.info('saved')
+      }
+    }
+  }
+})
+</script>
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="template.html"><span class="title">Template</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
