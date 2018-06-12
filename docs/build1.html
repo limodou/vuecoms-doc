@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=69611c2a">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=f07c5066">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=d18d107e">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
     <script src="lib/iview/iview.js?t=601c295d"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=0ebcff3f"></script>
+    <script src="lib/vuecoms.js?t=82111cdd"></script>
     <title>基本构建 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -64,6 +64,10 @@
             <li class="menu-item -level-1 -parent"><span class="title">Build</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title -active link-build1" href="build1.html">基本构建</a>
+                  <ul class="headings heading-list">
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">参数说明</a>
+                    </li>
+                  </ul>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
                 </li>
@@ -84,6 +88,18 @@
             <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-research_edit" href="research_edit.html">任务编辑</a>
                 </li>
               </ul>
             </li>
@@ -334,6 +350,53 @@ var ex_build_01 = new Vue({
   }
 })
 </script>
+<h2 id="">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x7F3A;&#x7701;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>Build&#x53C2;&#x6570;&#xFF0C;&#x7ED3;&#x6784;&#x4E3A;&#x4E00;&#x4E2A;Object&#xFF0C;&#x8BE6;&#x7EC6;&#x683C;&#x5F0F;&#x89C1;&#x4E0B;&#x9762;</td>
+<td></td>
+</tr>
+<tr>
+<td>labelWidth</td>
+<td>&#x6807;&#x7B7E;&#x5BBD;&#x5EA6;</td>
+<td>150px</td>
+</tr>
+<tr>
+<td>staticSuffix</td>
+<td>&#x9759;&#x6001;&#x5B57;&#x6BB5;&#x540E;&#x7F00;&#xFF0C;&#x5F53;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x4E3A;static&#x65F6;&#xFF0C;&#x7F3A;&#x7701;&#x5148;&#x627E;&#x5F62;&#x5F0F;&#x4E3A; name_suffix &#x7684;&#x503C;</td>
+<td>&apos;_static&apos;</td>
+</tr>
+<tr>
+<td>value</td>
+<td>&#x4F20;&#x5165;&#x7684;&#x6570;&#x636E;</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>errors</td>
+<td>&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x65B9;&#x4FBF;&#x4ECE;&#x5916;&#x90E8;&#x4F20;&#x5165;&#x3002;key&#x4E3A;&#x5B57;&#x6BB5;&#x540D;</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>rules</td>
+<td>&#x5355;&#x72EC;&#x5B9A;&#x4E49;&#x7684;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#x3002;key&#x4E3A;&#x5B57;&#x6BB5;&#x540D;&#x3002;&#x5B83;&#x662F;&#x5728;&#x5B57;&#x6BB5;&#x4E0A;&#x5B9A;&#x4E49;&#x7684;rule&#x7684;&#x4E00;&#x4E2A;&#x8865;&#x5145;</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>choices</td>
+<td>select&#x5B57;&#x6BB5;&#x7684;choices&#x503C;&#x3002;&#x65B9;&#x4FBF;&#x4ECE;&#x5916;&#x90E8;&#x4F20;&#x5165;</td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
 
         </div>
         <div class="footer-nav">

@@ -111,6 +111,7 @@ var ex_table_02 = new Vue({
       title: '合并/Title',
       sortable: true,
       fixed: 'left',
+      showTitle: false,
       format: function(value, column, row) {
         return '<a href="#">' + value + '</a>'
       }
