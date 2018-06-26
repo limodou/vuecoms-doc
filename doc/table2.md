@@ -29,7 +29,7 @@ var ex_table_02 = new Vue({
       pagination: true,
       pageSizeOpts: [10, 30, 50],
       total: 80,
-      height: 'auto',
+      height: 300,
       draggable: true,
       checkCol: true,
       checkColWidth: 120,
@@ -127,10 +127,10 @@ var ex_table_02 = new Vue({
     }
     //隐藏字段
     table.columns.push({
-      name: 'title',
-      title: 'Title',
+      name: 'action',
+      title: 'Action',
       sortable: false,
-      hidden: true
+      fixed: 'right'
     })
     for (var i = 0; i < 10; i++) {
       var row = {id: i + 1, title: 'Title-' + (i + 1)}

@@ -28,10 +28,10 @@ var ex_table_01 = new Vue({
           })
         }},
         {name:'name1', title:'Name1', width:100, fixed: 'left'},
-        {name:'name2', title:'Name2', width: 100, fixed: 'left'},
+        {name:'name2', title:'Name2', width: 100},
         {name:'name3', title:'Name3', width:100},
-        {name:'name4', title:'Name4', align:'center', width:200},
-        {name:'name5', title:'Name5', width:200, render: function(h, param) {
+        {name:'name4', title:'Name4', align:'center', width:400},
+        {name:'name5', title:'Name5', width:400, render: function(h, param) {
           var self = this
           return h('Checkbox', {
             props: {
@@ -44,7 +44,7 @@ var ex_table_01 = new Vue({
             }
           })
         }},
-        {name:'name6', title:'Name6'}
+        {name:'name6', title:'Name6', fixed: 'right'}
       ],
       data: [],
       combineCols:[['check', 'name1', 'name2', 'name3'], ['name5']],
