@@ -16,6 +16,7 @@ var ex_table_03 = new Vue({
         {name:'name1', title:'Name1', width:200,
           render: function(h, param){
             return h('RadioGroup', {
+                class: 'nowrap',
                 props: {
                   value: param.value
                 },
