@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=20630046">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=074aa5b4">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=3b96dc92">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=6aa14d5a">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=3a95c3b5"></script>
+    <script src="lib/iview/iview.js?t=c12243ec"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=024acf22"></script>
+    <script src="lib/vuecoms.js?t=4f58de04"></script>
     <title>基本构建 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -31,6 +31,8 @@
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Table</span>
               <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-table0" href="table0.html">表格说明</a>
+                </li>
                 <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
@@ -141,6 +143,21 @@ var ex_build_01 = new Vue({
           {name: 'select2', label: '选择2', type: 'select', static: true, options: {clearable: true},
             help: '这是设置了select2_static的结果，未使用缺省机制'
           },
+          {name: 'select1_1', label: '远程选择1', type: 'select', type: 'select', options: {
+            clearable: true,
+            filterable: true, 
+            remote: true, 
+            rich: true, 
+            remoteMethod: function(query, callback){
+              setTimeout(function(){
+                if (query === 'a')
+                  callback([{value:'A', label:'Test A', text: 'A'}, {value:'B', label:'Test B', text: 'B'}, {value:'C', label:'Test C', text: 'C'}])
+                else
+                  callback([{value:'D', label:'Test D', text: 'D'}, {value:'E', label:'Test E', text: 'E'}, {value:'F', label:'Test F', text: 'F'}])
+                }, 1000)
+              }
+            }
+          },
           {name: 'select3', label: '选择3', type: 'select', required: true, multiple: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
@@ -224,6 +241,7 @@ var ex_build_01 = new Vue({
         layout: [
           ['str1', 'str2'],
           ['select1', 'select2'],
+          [{name: 'select1_1', clospan: 12}],
           ['select3', 'select4'],
           ['radio1', 'radio2'],
           ['checkboxgroup1', 'checkboxgroup2'],
@@ -302,6 +320,7 @@ var ex_build_01 = new Vue({
               str2: 'aaa',
               select1: 'A',
               select2_static: '静态结果',
+              select1_1: {label: '选择X', value: 'X'},
               select3: ['A', 'B'],
               select4: ['A', 'B'],
               radio2: 'A',

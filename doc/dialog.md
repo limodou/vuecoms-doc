@@ -31,10 +31,50 @@ var ex_editor_01 = new Vue({
           {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices}},
           {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices}},
           {name: 'rich1', label: '富文本', type: 'tinymce', options: { options: {height: 200}}},
+          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {choices:
+            [ {
+                  id: 'fruits',
+                  title: 'Fruits',
+                  children: [ {
+                    id: 'apple',
+                    title: 'Apple',
+                  }, {
+                    id: 'grapes',
+                    title: 'Grapes',
+                  }, {
+                    id: 'pear',
+                    title: 'Pear',
+                  }, {
+                    id: 'strawberry',
+                    title: 'Strawberry',
+                  }, {
+                    id: 'watermelon',
+                    title: 'Watermelon',
+                  } ],
+                }, {
+                  id: 'vegetables',
+                  title: 'Vegetables',
+                  children: [ {
+                    id: 'corn',
+                    title: 'Corn',
+                  }, {
+                    id: 'carrot',
+                    title: 'Carrot',
+                  }, {
+                    id: 'eggplant',
+                    title: 'Eggplant',
+                  }, {
+                    id: 'tomato',
+                    title: 'Tomato',
+                  } ],
+                } ]
+              }
+          },
         ],
         layout: [
           ['str1', 'str2'],
           ['select1', 'select2'],
+          ['tree1'],
           ['rich1']
         ],
         component: 'Layout',

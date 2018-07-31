@@ -1,7 +1,9 @@
 # 表格行编辑
 
 <div id="ex-table-04">
-  <Grid ref="table" :data="table"></Grid>
+  <Grid ref="table" :data="table">
+    <h3 slot="beforeQuery" style="text-align:center">可编辑表格</h3>
+  </Grid>
 </div>
 <script>
 var ex_table_04 = new Vue({
@@ -12,8 +14,11 @@ var ex_table_04 = new Vue({
       editMode: 'row', // 行编辑模式
       nowrap: true,
       actionColumn: 'Action',
+      indexCol: true,
       columns: [
-        {name:'name1', title:'Name1', width:200, editor: {type: 'string'}},
+        {name:'name1', title:'Name1', width:200, editor: {type: 'string', onChange: function(v, row){
+          console.log(v, row)
+        }}},
         {name:'name2', title:'Name2', width: 200, align: 'left', editor: {type: 'select', static: true, options: {
           choices: [['A', 'Test A'], ['B', 'Test B']]
           }}
@@ -45,7 +50,15 @@ var ex_table_04 = new Vue({
         {label: '删除Class', type:'primary', onClick: function(target, store){
               store.removeClass(3, 'name3')
             }}
-          ]
+          ],
+        [
+          {label: '切换样式', type: 'primary', onClick: function () {
+            if (self.$refs.table.theme === 'default')
+              self.$refs.table.theme = 'simple'
+            else
+              self.$refs.table.theme = 'default'
+          }}
+        ]
       ],
       data: [],
       onSaveRow: function (row, callback) {

@@ -12,7 +12,8 @@
     @on-deselected="handleDeselected"
     @on-selected-all="handleSelectedAll"
     @on-deselected-all="handleDeselectedAll"
-    @on-query-change="handleQueryChange"></Grid>
+    @on-query-change="handleQueryChange">
+    </Grid>
   <div>Selected: {{selected}}</div>
   <div>Param: {{param}}</div>
 </div>

@@ -27,6 +27,21 @@ var ex_build_01 = new Vue({
           {name: 'select2', label: '选择2', type: 'select', static: true, options: {clearable: true},
             help: '这是设置了select2_static的结果，未使用缺省机制'
           },
+          {name: 'select1_1', label: '远程选择1', type: 'select', type: 'select', options: {
+            clearable: true,
+            filterable: true, 
+            remote: true, 
+            rich: true, 
+            remoteMethod: function(query, callback){
+              setTimeout(function(){
+                if (query === 'a')
+                  callback([{value:'A', label:'Test A', text: 'A'}, {value:'B', label:'Test B', text: 'B'}, {value:'C', label:'Test C', text: 'C'}])
+                else
+                  callback([{value:'D', label:'Test D', text: 'D'}, {value:'E', label:'Test E', text: 'E'}, {value:'F', label:'Test F', text: 'F'}])
+                }, 1000)
+              }
+            }
+          },
           {name: 'select3', label: '选择3', type: 'select', required: true, multiple: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
@@ -110,6 +125,7 @@ var ex_build_01 = new Vue({
         layout: [
           ['str1', 'str2'],
           ['select1', 'select2'],
+          [{name: 'select1_1', clospan: 12}],
           ['select3', 'select4'],
           ['radio1', 'radio2'],
           ['checkboxgroup1', 'checkboxgroup2'],
@@ -188,6 +204,7 @@ var ex_build_01 = new Vue({
               str2: 'aaa',
               select1: 'A',
               select2_static: '静态结果',
+              select1_1: {label: '选择X', value: 'X'},
               select3: ['A', 'B'],
               select4: ['A', 'B'],
               radio2: 'A',

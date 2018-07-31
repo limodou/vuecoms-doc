@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=20630046">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=074aa5b4">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=3b96dc92">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=6aa14d5a">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=3a95c3b5"></script>
+    <script src="lib/iview/iview.js?t=c12243ec"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=024acf22"></script>
+    <script src="lib/vuecoms.js?t=4f58de04"></script>
     <title>基本用法 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -37,6 +37,8 @@
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Table</span>
               <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-table0" href="table0.html">表格说明</a>
+                </li>
                 <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
@@ -118,11 +120,28 @@
         <div class="markdown-body"><h1 id="">&#x57FA;&#x672C;&#x7528;&#x6CD5;</h1>
 <p>&#x751F;&#x6210;&#x4E00;&#x4E2A;Box&#x7EC4;&#x4EF6;&#x3002;</p>
 <div id="ex-box-01">
-  <box title="&#x8FD9;&#x662F;&#x6807;&#x9898;">
+  <box title="&#x8FD9;&#x662F;&#x6807;&#x9898;" removable="" :with-border="border" :header-class="headerClass">
     <p>&#x8FD9;&#x662F;&#x5185;&#x5BB9;</p>
     <p>&#x8FD9;&#x662F;&#x5185;&#x5BB9;</p>
     <p>&#x8FD9;&#x662F;&#x5185;&#x5BB9;</p>
     <p>&#x8FD9;&#x662F;&#x5185;&#x5BB9;</p>
+    <div slot="footer">
+      <i-button type="primary" @click="handleBorder">{{displayBorder}}</i-button>
+      <dropdown style="margin-left: 20px" @on-click="handleClass">
+        <i-button type="primary">
+            &#x5207;&#x6362;Box&#x7684;&#x6807;&#x9898;&#x8FB9;&#x6846;&#x7684;&#x6837;&#x5F0F;
+            <icon type="arrow-down-b"></icon>
+        </i-button>
+        <dropdown-menu slot="list">
+            <dropdown-item name="primary">primary</dropdown-item>
+            <dropdown-item name="success">success</dropdown-item>
+            <dropdown-item name="warning">warning</dropdown-item>
+            <dropdown-item name="danger">danger</dropdown-item>
+            <dropdown-item name="default">default</dropdown-item>
+            <dropdown-item name="info">info</dropdown-item>
+        </dropdown-menu>
+    </dropdown>
+    </div>
   </box>
 </div>
 <h2 id="slots">slots &#x8BF4;&#x660E;</h2>
@@ -187,14 +206,32 @@
 </table>
 <script>
 var ex_box_01 = new Vue({
-  el: '#ex-box-01'
+  el: '#ex-box-01',
+  data: {
+    border: true,
+    displayBorder: '隐藏表头线',
+    headerClass: ''
+  },
+  methods: {
+    handleBorder: function() {
+      this.border = !this.border
+      if (this.border) {
+        this.displayBorder = '隐藏表头线'
+      } else {
+        this.displayBorder = '显示表头线'
+      }
+    },
+    handleClass: function (name) {
+      this.headerClass = name
+    }
+  }
 })
 </script>
 
         </div>
         <div class="footer-nav">
           <div class="left"><a href="index.html"><span class="title">Vuecoms</span></a></div>
-          <div class="right"><a href="table1.html"><span class="label">Next: </span><span class="title">简单表格</span></a></div>
+          <div class="right"><a href="table0.html"><span class="label">Next: </span><span class="title">表格说明</span></a></div>
         </div>
       </div>
     </div>

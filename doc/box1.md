@@ -3,11 +3,28 @@
 生成一个Box组件。
 
 <div id="ex-box-01">
-  <Box title="这是标题">
+  <Box title="这是标题" removable :with-border="border" :header-class="headerClass">
     <p>这是内容</p>
     <p>这是内容</p>
     <p>这是内容</p>
     <p>这是内容</p>
+    <div slot="footer">
+      <i-button type="primary" @click="handleBorder">{{displayBorder}}</i-button>
+      <Dropdown style="margin-left: 20px" @on-click="handleClass">
+        <i-button type="primary">
+            切换Box的标题边框的样式
+            <Icon type="arrow-down-b"></Icon>
+        </i-button>
+        <dropdown-menu slot="list">
+            <dropdown-item name="primary">primary</dropdown-item>
+            <dropdown-item name="success">success</dropdown-item>
+            <dropdown-item name="warning">warning</dropdown-item>
+            <dropdown-item name="danger">danger</dropdown-item>
+            <dropdown-item name="default">default</dropdown-item>
+            <dropdown-item name="info">info</dropdown-item>
+        </dropdown-menu>
+    </Dropdown>
+    </div>
   </Box>
 </div>
 
@@ -31,6 +48,24 @@
 
 <script>
 var ex_box_01 = new Vue({
-  el: '#ex-box-01'
+  el: '#ex-box-01',
+  data: {
+    border: true,
+    displayBorder: '隐藏表头线',
+    headerClass: ''
+  },
+  methods: {
+    handleBorder: function() {
+      this.border = !this.border
+      if (this.border) {
+        this.displayBorder = '隐藏表头线'
+      } else {
+        this.displayBorder = '显示表头线'
+      }
+    },
+    handleClass: function (name) {
+      this.headerClass = name
+    }
+  }
 })
 </script>

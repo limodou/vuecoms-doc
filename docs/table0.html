@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=3b96dc92">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=6aa14d5a">
+    <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
+    <script src="assets/script.js?t=42463e55"></script>
+    <script src="lib/vue.js?t=3f3ee46e"></script>
+    <script src="lib/iview/iview.js?t=c12243ec"></script>
+    <script src="lib/echarts.common.js?t=d9190139"></script>
+    <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
+    <script src="lib/vuecoms.js?t=4f58de04"></script>
+    <title>表格说明 - Vuecoms</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Box</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-box1" href="box1.html">基本用法</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Table</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title -active link-table0" href="table0.html">表格说明</a>
+                  <ul class="headings heading-list">
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">基本用法</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-data" href="#data">data参数说明</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">表头列定义说明</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">表格按钮定义说明</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table3" href="table3.html">表格拖动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table4" href="table4.html">表格行编辑</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table5" href="table5.html">Tree表格</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-fields" href="fields.html">基础控件</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Query</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">TreeSelect</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-treeselect" href="treeselect.html">选择树控件</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Build</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Chart</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-chart" href="chart.html">EChart</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Editor</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-editor" href="editor.html">Editor</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-research_edit" href="research_edit.html">任务编辑</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-table0">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="">&#x8868;&#x683C;&#x8BF4;&#x660E;</h1>
+<h2 id="">&#x57FA;&#x672C;&#x7528;&#x6CD5;</h2>
+<p>vuecoms&#x8868;&#x683C;&#x662F;&#x96C6;&#xFF1A;&#x8868;&#x683C;&#x3001;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x3001;&#x5206;&#x9875;&#x7B49;&#x63A7;&#x4EF6;&#x4E8E;&#x4E00;&#x4F53;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF0C;&#x4EE5;&#x51B3;&#x5B9A;&#x67D0;&#x4E9B;&#x7279;&#x6027;&#x662F;&#x5426;&#x542F;&#x7528;&#x3002;</p>
+<pre><code>&lt;Grid :data=&quot;data&quot; :value=&quot;value&quot;&gt;&lt;/Grid&gt;
+</code></pre>
+<p>&#x8868;&#x683C;&#x7684;&#x4E3B;&#x8981;&#x53C2;&#x6570;&#x90FD;&#x653E;&#x5728; data(Object)&#x4E2D;&#xFF0C;value(Array)&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h2 id="data">data&#x53C2;&#x6570;&#x8BF4;&#x660E;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7F3A;&#x7701;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>columns</td>
+<td>&#x8868;&#x5934;&#x5B9A;&#x4E49;&#xFF0C;&#x8BE6;&#x60C5;&#x8BF7;&#x53C2;&#x89C1;&#x300A;&#x8868;&#x5934;&#x5217;&#x5B9A;&#x4E49;&#x8BF4;&#x660E;&#x300B;</td>
+<td>Array</td>
+<td>&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>rowHeight</td>
+<td>&#x884C;&#x9AD8;</td>
+<td>Number</td>
+<td>34</td>
+</tr>
+<tr>
+<td>minColWidth</td>
+<td>&#x6700;&#x5C0F;&#x5217;&#x5BBD;&#x5EA6;</td>
+<td>Number</td>
+<td>5</td>
+</tr>
+<tr>
+<td>defaultColWidth</td>
+<td>&#x7F3A;&#x7701;&#x5217;&#x5BBD;&#x5EA6;</td>
+<td>Number</td>
+<td>100</td>
+</tr>
+<tr>
+<td>nowrap</td>
+<td>&#x662F;&#x5426;&#x81EA;&#x52A8;&#x6362;&#x884C;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>width</td>
+<td>&#x8868;&#x683C;&#x5BBD;&#x5EA6;&#x3002;&#x5982;&#x679C;&#x4E3A; &apos;auto&apos; &#x65F6;&#xFF0C; &#x4F1A;&#x6839;&#x636E;&#x7236;&#x5143;&#x7D20;&#x5BBD;&#x5EA6;&#x81EA;&#x52A8;&#x8C03;&#x6574;</td>
+<td>Number|&apos;auto&apos;</td>
+<td>&apos;auto&apos;</td>
+</tr>
+<tr>
+<td>height</td>
+<td>&#x8868;&#x683C;&#x9AD8;&#x5EA6;&#x3002;&#x5982;&#x679C;&#x4E3A; &apos;auto&apos; &#x65F6;&#xFF0C;&#x4F1A;&#x6839;&#x636E;&#x5185;&#x5BB9;&#x9AD8;&#x5EA6;&#x81EA;&#x52A8;&#x8C03;&#x6574;</td>
+<td>Number|&apos;auto&apos;</td>
+<td>&apos;auto&apos;</td>
+</tr>
+<tr>
+<td>theme</td>
+<td>&#x663E;&#x793A;&#x6837;&#x5F0F;&#x3002;&#x76EE;&#x524D;&#x652F;&#x6301;&#xFF1A; &apos;default&apos;, &apos;simple&apos;&#x3002;simple &#x5219;&#x6CA1;&#x6709;&#x5217;&#x7684;&#x7AD6;&#x7EBF;&#x3002;</td>
+<td>Enum</td>
+<td>&apos;default&apos;</td>
+</tr>
+<tr>
+<td>checkCol</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;checkbox&#x5217;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>checkColWidth</td>
+<td>checkbox&#x5217;&#x7684;&#x5BBD;&#x5EA6;</td>
+<td>Number</td>
+<td>30</td>
+</tr>
+<tr>
+<td>checkColTitle</td>
+<td>checkbox&#x5217;&#x7684;&#x6807;&#x9898;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>indexCol</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;&#x5E8F;&#x53F7;&#x5217;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>indexColWidth</td>
+<td>&#x5E8F;&#x53F7;&#x5217;&#x7684;&#x5BBD;&#x5EA6;</td>
+<td>Number</td>
+<td>40</td>
+</tr>
+<tr>
+<td>indexColTitle</td>
+<td>&#x5E8F;&#x53F7;&#x5217;&#x7684;&#x6807;&#x9898;</td>
+<td>String</td>
+<td>&apos;#&apos;</td>
+</tr>
+<tr>
+<td>cellTitle</td>
+<td>&#x662F;&#x5426;&#x5C06;&#x5355;&#x5143;&#x683C;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;title&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x9F20;&#x6807;&#x653E;&#x4E0A;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x663E;&#x793A;Tip</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>idField</td>
+<td>&#x8868;&#x683C;&#x6570;&#x636E;&#x540D;&#x552F;&#x4E00;&#x5B57;&#x6BB5;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x3002;&#x7528;&#x4E8E;&#x5B9A;&#x4F4D;&#x67D0;&#x4E00;&#x884C;&#xFF0C;&#x6BD4;&#x5982;&#x5220;&#x9664;</td>
+<td>String</td>
+<td>&apos;id&apos;</td>
+</tr>
+<tr>
+<td>multiSelect</td>
+<td>&#x662F;&#x5426;&#x591A;&#x9009;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>clickSelect</td>
+<td>&#x70B9;&#x51FB;&#x65F6;&#x662F;&#x5426;&#x9009;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4E3A; false &#xFF0C;&#x5219;&#x53EA;&#x80FD;&#x901A;&#x8FC7;checkbox&#x6765;&#x9009;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x628A; checkCol &#x8BBE;&#x4E3A; true</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>resizable</td>
+<td>&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x8868;&#x5934;&#x5217;&#x7684;&#x5BBD;&#x5EA6;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>draggable</td>
+<td>&#x662F;&#x5426;&#x652F;&#x6301;&#x884C;&#x62D6;&#x62FD;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>loadingText</td>
+<td>&#x88C5;&#x5165;&#x6570;&#x636E;&#x4E2D;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;,&#x652F;&#x6301;HTML&#x683C;&#x5F0F;&#x3002;</td>
+<td>String</td>
+<td>&apos;&lt;i class=&quot;icon-loading ivu-icon ivu-icon-load-c&quot;&gt;&lt;/i&gt; Loading...&apos;</td>
+</tr>
+<tr>
+<td>url</td>
+<td>&#x4ECE;&#x540E;&#x53F0;&#x88C5;&#x5165;&#x6570;&#x636E;&#x7684;&#x5730;&#x5740;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>autoLoad</td>
+<td>&#x662F;&#x5426;&#x81EA;&#x52A8;&#x4ECE;&#x540E;&#x53F0;&#x88C5;&#x5165;&#x6570;&#x636E;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>parseUrl</td>
+<td>&#x662F;&#x5426;&#x81EA;&#x52A8;&#x4ECE;&#x6D4F;&#x89C8;&#x5668;&#x7684;URL&#x4E0A;&#x5206;&#x6790;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x7684;&#x53C2;&#x6570;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>buttons</td>
+<td>&#x8868;&#x683C;&#x5934;&#x7684;&#x6309;&#x94AE;&#x5B9A;&#x4E49;&#x3002;&#x5C06;&#x663E;&#x793A;&#x5728;&#x8868;&#x683C;&#x5DE6;&#x4E0A;&#x89D2;&#x3002;&#x5177;&#x4F53;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x8BE6;&#x60C5;&#x53C2;&#x89C1;&#x4E0B;&#x9762;&#x7684; &#x6309;&#x94AE;&#x5B9A;&#x4E49;</td>
+<td>Array</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>rightButtons</td>
+<td>&#x8868;&#x683C;&#x5934;&#x7684;&#x6309;&#x94AE;&#x5B9A;&#x4E49;&#x3002;&#x5C06;&#x663E;&#x793A;&#x5728;&#x8868;&#x683C;&#x53F3;&#x4E0A;&#x89D2;&#x3002;&#x5177;&#x4F53;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x8BE6;&#x60C5;&#x53C2;&#x89C1;&#x4E0B;&#x9762;&#x7684; &#x6309;&#x94AE;&#x5B9A;&#x4E49;</td>
+<td>Array</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>bottomButtons</td>
+<td>&#x8868;&#x683C;&#x5E95;&#x7684;&#x6309;&#x94AE;&#x5B9A;&#x4E49;&#x3002;&#x5C06;&#x663E;&#x793A;&#x5728;&#x8868;&#x683C;&#x5DE6;&#x4E0B;&#x89D2;&#x3002;&#x5177;&#x4F53;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x8BE6;&#x60C5;&#x53C2;&#x89C1;&#x4E0B;&#x9762;&#x7684; &#x6309;&#x94AE;&#x5B9A;&#x4E49;</td>
+<td>Array</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>combineCols</td>
+<td>&#x5355;&#x5143;&#x683C;&#x5408;&#x5E76;&#x8BBE;&#x7F6E;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x5B9A;&#x4E49;&#x4E86;&#x8FDE;&#x7EED;&#x7684;&#x8868;&#x683C;&#x5217;&#xFF0C;&#x5F53;&#x4E0A;&#x4E0B;&#x5217;&#x7684;&#x503C;&#x76F8;&#x540C;&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;&#x4E0A;&#x4E0B;&#x5355;&#x5143;&#x683C;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x3002;</td>
+<td>Array</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>noData</td>
+<td>&#x65E0;&#x6570;&#x636E;&#x65F6;&#x7F3A;&#x7701;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;</td>
+<td>String</td>
+<td>&#x6682;&#x65E0;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td>editMode</td>
+<td>&#x7F16;&#x8F91;&#x8868;&#x683C;&#x7684;&#x6A21;&#x5F0F;&#x3002;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x884C;&#x7F16;&#x8F91;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x4E3A; &apos;row&apos;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>actionColumn</td>
+<td>&#x5F53;&#x5904;&#x4E8E;&#x884C;&#x7F16;&#x8F91;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x67D0;&#x5217;&#x663E;&#x793A;&#x7F16;&#x8F91;&#x6309;&#x94AE;&#xFF0C;&#x5982; &quot;&#x7F16;&#x8F91;&quot;, &quot;&#x5220;&#x9664;&quot;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>deleteRowConfirm</td>
+<td>&#x5F53;&#x5220;&#x9664;&#x65F6;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;&#x5220;&#x9664;&#x5904;&#x7406;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x5728;&#x5220;&#x9664;&#x65F6;&#x8981;&#x786E;&#x8BA4;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>query</td>
+<td>&#x67E5;&#x8BE2;&#x53C2;&#x6570;&#xFF0C;&#x8BE6;&#x60C5;&#x53C2;&#x89C1; &#x67E5;&#x8BE2;&#x8BF4;&#x660E;</td>
+<td>Object</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>pagination</td>
+<td>&#x5206;&#x9875;&#x5C55;&#x793A;&#x5207;&#x6362;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>prev</td>
+<td>&#x4E0A;&#x4E00;&#x9875;&#x6309;&#x94AE;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;</td>
+<td>String</td>
+<td>&apos;&#x4E0A;&#x4E00;&#x9875;&apos;</td>
+</tr>
+<tr>
+<td>next</td>
+<td>&#x4E0B;&#x4E00;&#x9875;&#x6309;&#x94AE;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;</td>
+<td>String</td>
+<td>&apos;&#x4E0B;&#x4E00;&#x9875;&apos;</td>
+</tr>
+<tr>
+<td>first</td>
+<td>&#x9996;&#x9875;&#x6309;&#x94AE;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;&#x3002;&#x4E3A;&#x7A7A;&#x65F6;&#x4E0D;&#x663E;&#x793A;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>last</td>
+<td>&#x6700;&#x540E;&#x4E00;&#x9875;&#x6309;&#x94AE;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;&#x3002;&#x4E3A;&#x7A7A;&#x65F6;&#x4E0D;&#x663E;&#x793A;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>start</td>
+<td>&#x8D77;&#x59CB;&#x5E8F;&#x53F7;</td>
+<td>Number</td>
+<td>1</td>
+</tr>
+<tr>
+<td>total</td>
+<td>&#x603B;&#x6761;&#x6570;&#x3002;&#x5B83;&#x5C06;&#x5728;&#x540E;&#x53F0;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x7531;&#x5E94;&#x7528;&#x6765;&#x6839;&#x636E;&#x5177;&#x4F53;&#x503C;&#x8FDB;&#x884C;&#x8C03;&#x6574;</td>
+<td>Number</td>
+<td>0</td>
+</tr>
+<tr>
+<td>pageSizeOpts</td>
+<td>&#x6BCF;&#x9875;&#x663E;&#x793A;&#x6761;&#x6570;&#x8BBE;&#x7F6E;</td>
+<td>Array</td>
+<td>[10, 20, 30, 40, 50]</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>&#x6BCF;&#x9875;&#x663E;&#x793A;&#x6761;&#x6570;</td>
+<td>Number</td>
+<td>10</td>
+</tr>
+<tr>
+<td>tree</td>
+<td>&#x662F;&#x5426;&#x6309;treegrid&#x6765;&#x663E;&#x793A;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>defaultExpanded</td>
+<td>&#x7F3A;&#x7701;&#x662F;&#x5426;&#x5C55;&#x8868;&#x7236;&#x7ED3;&#x70B9;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>parentField</td>
+<td>&#x7236;&#x7ED3;&#x70B9;&#x5B57;&#x6BB5;&#x540D;</td>
+<td>String</td>
+<td>&apos;parent&apos;</td>
+</tr>
+<tr>
+<td>treeField</td>
+<td>&#x663E;&#x793A;&#x6811;&#x578B;&#x7ED3;&#x6784;&#x7684;&#x5217;&#x540D;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>isParentField</td>
+<td>&#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x5F53;&#x524D;&#x5217;&#x662F;&#x5426;&#x4E3A;&#x7236;&#x7ED3;&#x70B9;&#x7684;&#x5B57;&#x6BB5;&#x540D;</td>
+<td>String</td>
+<td>&apos;_isParent&apos;</td>
+</tr>
+<tr>
+<td>expandField</td>
+<td>&#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x7236;&#x7ED3;&#x70B9;&#x5C55;&#x5F00;&#x72B6;&#x6001;&#x7684;&#x5B57;&#x6BB5;&#x540D;</td>
+<td>String</td>
+<td>&apos;_expand&apos;</td>
+</tr>
+<tr>
+<td>openedIcon</td>
+<td>&#x7236;&#x7ED3;&#x70B9;&#x6253;&#x5F00;&#x65F6;&#x663E;&#x793A;&#x7684;&#x56FE;&#x6807;&#x7C7B;&#x540D;</td>
+<td>String</td>
+<td>&apos;ivu-icon ivu-icon-arrow-down-b&apos;</td>
+</tr>
+<tr>
+<td>closedIcon</td>
+<td>&#x7236;&#x7ED3;&#x70B9;&#x5173;&#x95ED;&#x65F6;&#x663E;&#x793A;&#x7684;&#x56FE;&#x6807;&#x7C7B;&#x540D;</td>
+<td>String</td>
+<td>&apos;ivu-icon ivu-icon-arrow-right-b&apos;</td>
+</tr>
+<tr>
+<td>indentWidth</td>
+<td>&#x5B50;&#x7ED3;&#x70B9;&#x7F29;&#x8FD1;&#x7684;&#x5BBD;&#x5EA6;</td>
+<td>Number</td>
+<td>20</td>
+</tr>
+<tr>
+<td>iconWidth</td>
+<td>&#x6298;&#x53E0;&#x56FE;&#x6807;&#x7684;&#x5BBD;&#x5EA6;</td>
+<td>Number</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onLoadData</td>
+<td>&#x88C5;&#x5165;&#x6570;&#x636E;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x4F20;&#x5165; function (url, param, callback)&#xFF0C;&#x5F53;&#x6811;&#x578B;&#x7ED3;&#x6784;&#x65F6;&#xFF0C;&#x4F1A;&#x4F20;&#x5165;parent&#x5B57;&#x6BB5;</td>
+</tr>
+<tr>
+<td>onSelect</td>
+<td>&#x5728;&#x9009;&#x62E9;&#x884C;&#x524D;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E3A;True&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x9009;&#x4E2D;</td>
+</tr>
+<tr>
+<td>onDeselect</td>
+<td>&#x5728;&#x53D6;&#x6D88;&#x9009;&#x62E9;&#x884C;&#x524D;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E3A;True&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x53D6;&#x6D88;&#x9009;&#x4E2D;</td>
+</tr>
+<tr>
+<td>onCheckable</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;checkbox</td>
+</tr>
+<tr>
+<td>onSaveRow</td>
+<td>&#x4FDD;&#x5B58;&#x884C;&#x65F6;&#x8C03;&#x7528; function (row, callback)&#x3002;&#x5F53;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x65F6;&#xFF0C;&#x9700;&#x8C03;&#x7528; callback &#xFF0C;&#x683C;&#x5F0F;&#x4E3A; callback(flag, data)&#x3002;&#x5176;&#x4E2D; flag &#x4E3A; &apos;ok&apos; &#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C;&#x5219;data&#x4E3A;&#x6700;&#x540E;&#x7684;&#x6570;&#x636E;&#x3002; &apos;error&apos; &#x8868;&#x793A;&#x6709;&#x9519;&#x8BEF;&#xFF0C; &#x5219;data&#x4E3A;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td>onSaveCol</td>
+<td>&#x4FDD;&#x5B58;&#x5355;&#x5143;&#x683C;&#x65F6;&#x8C03;&#x7528; function (row, callback)&#x3002;&#x5F53;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x65F6;&#xFF0C;&#x9700;&#x8C03;&#x7528; callback &#xFF0C;&#x683C;&#x5F0F;&#x4E3A; callback(flag, data)&#x3002;&#x5176;&#x4E2D; flag &#x4E3A; &apos;ok&apos; &#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C;&#x5219;data&#x4E3A;&#x6700;&#x540E;&#x7684;&#x6570;&#x636E;&#x3002; &apos;error&apos; &#x8868;&#x793A;&#x6709;&#x9519;&#x8BEF;&#xFF0C; &#x5219;data&#x4E3A;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x3002;</td>
+</tr>
+<tr>
+<td>onDeleteRow</td>
+<td>&#x5220;&#x9664;&#x884C;&#x7684;&#x786E;&#x8BA4; function (row, callback), callback(flag, data)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="">&#x8868;&#x5934;&#x5217;&#x5B9A;&#x4E49;&#x8BF4;&#x660E;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+<th>&#x7F3A;&#x7701;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>&#x5217;&#x540D;&#x3002;&#x4E0D;&#x53EF;&#x4E3A;&#x7A7A;&#x3002;</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>width</td>
+<td>&#x5217;&#x5BBD;&#x5EA6;&#x3002;&#x5F53;&#x4E0D;&#x63D0;&#x4F9B;&#x65F6;&#xFF0C;&#x8868;&#x793A;&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;&#x3002;</td>
+<td>Number</td>
+<td>0</td>
+</tr>
+<tr>
+<td>sortable</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;&#x6392;&#x5EA6;&#x6307;&#x793A;&#x3002;&#x4E3A; true &#x65F6;&#xFF0C;&#x5728;&#x5B57;&#x6BB5;&#x6807;&#x9898;&#x53F3;&#x4FA7;&#x4F1A;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x56FE;&#x6807;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x63A7;&#x5236;&#x6392;&#x5E8F;&#x503C;&#x3002;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>align</td>
+<td>&#x5217;&#x7684;&#x6587;&#x5B57;&#x5BF9;&#x9F50;&#x3002;&#x53EF;&#x9009;&#x503C;&#x4E3A;: &apos;left&apos;, &apos;right&apos;, &apos;center&apos;</td>
+<td>Enum</td>
+<td>&apos;center&apos;</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>&#x662F;&#x5426;&#x9690;&#x85CF;&#x3002;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x67D0;&#x5217;&#x662F;&#x5426;&#x663E;&#x793A;&#x3002;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>&#x6D6E;&#x52A8;&#x4F4D;&#x7F6E;&#x3002;&#x53EF;&#x9009;&#x503C;&#x4E3A;: &apos;left&apos;, &apos;right&apos;, &apos;&apos;</td>
+<td>Enum</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>resizable</td>
+<td>&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x62D6;&#x62FD;&#x6539;&#x53D8;&#x5BBD;&#x5EA6;&#x3002;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>editor</td>
+<td>&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x7F16;&#x8F91;&#xFF0C;&#x5219;&#x4E3A;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;&#x3002;&#x5B83;&#x7B26;&#x5408;Build&#x7684;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x3002;&#x8BE6;&#x60C5;&#x53C2;&#x89C1; Build&#x7684;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x8BF4;&#x660E;&#x3002;</td>
+<td>Object</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>render</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x3002;&#x5F62;&#x5F0F;&#x4E3A; render: function(h, param)&#xFF0C;&#x5176;&#x4E2D;h &#x4E3A;createElement&#x51FD;&#x6570;&#x3002;param&#x4E3A;&#x4E0A;&#x4E0B;&#x6587;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#xFF1A;<br>{<br>value: &#x5355;&#x5143;&#x683C;&#x7684;&#x503C;<br>column: &#x5355;&#x5143;&#x683C;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;<br>row: &#x5355;&#x5143;&#x683C;&#x6240;&#x5728;&#x884C;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;<br>}</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+<tr>
+<td>format</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x5316;&#x51FD;&#x6570;&#x3002;&#x4E0E;render&#x4E0D;&#x540C;&#x3002;render&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x65B0;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x800C;format&#x53EA;&#x8F93;&#x51FA;HTML&#x3002;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x9700;&#x8981;&#x5BF9;&#x5355;&#x5143;&#x683C;&#x5185;&#x5BB9;&#x505A;&#x6587;&#x672C;&#x52A0;&#x5DE5;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;format&#xFF0C;&#x5982;&#xFF1A;&#x52A0;&#x989C;&#x8272;&#xFF0C;&#x94FE;&#x63A5;&#x4E4B;&#x7C7B;&#x7684;&#x3002;&#x8C03;&#x7528;&#x5F62;&#x5F0F;&#x4E3A;&#xFF1A;format: function(value, column, row)</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h2 id="">&#x8868;&#x683C;&#x6309;&#x94AE;&#x5B9A;&#x4E49;&#x8BF4;&#x660E;</h2>
+<p>&#x8868;&#x683C;&#x6309;&#x94AE;&#x7684;&#x5B9A;&#x4E49;&#x548C;Build&#x4E2D;&#x7684;&#x6309;&#x94AE;&#x5B9A;&#x4E49;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x5B50;&#x6570;&#x7EC4;&#x901A;&#x8FC7; ButtonGroup &#x7EC4;&#x7EC7;&#x5728;&#x4E00;&#x8D77;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#x6309;&#x94AE;&#x7684;&#x5B9A;&#x4E49;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+<th>&#x7F3A;&#x7701;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>&#x6309;&#x94AE;&#x6807;&#x7B7E;</td>
+<td>String</td>
+<td>&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>type</td>
+<td>&#x6309;&#x94AE;&#x6837;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#xFF1A;&apos;primary&apos;, &apos;ghost&apos;, &apos;dashed&apos;, &apos;text&apos;, &apos;info&apos;, &apos;success&apos;, &apos;warning&apos;, &apos;error&apos;</td>
+<td>Enum</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>shape</td>
+<td>&#x5F62;&#x72B6;&#x3002;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#xFF1A;&apos;&apos; &#x6216; &apos;circle&apos;</td>
+<td>Enum</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>size</td>
+<td>&#x5927;&#x5C0F;&#x3002;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#xFF1A;&apos;large&apos;, &apos;&apos;, &apos;small&apos;</td>
+<td>Enum</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>&#x662F;&#x5426;&#x7981;&#x7528;&#x3002;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>long</td>
+<td>&#x662F;&#x5426;&#x957F;&#x6309;&#x94AE;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>loading</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;&#x88C5;&#x5165;&#x6548;&#x679C;&#xFF0C;&#x4E3A;&#x88C5;&#x5165;&#x6548;&#x679C;&#x65F6;&#x7981;&#x7528;&#x3002;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>&#x56FE;&#x6807;&#x7C7B;&#x578B;&#x540D;&#x3002;&#x4F7F;&#x7528;iview&#x7684;&#x56FE;&#x6807;&#x540D;&#x79F0;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>onClick</td>
+<td>&#x70B9;&#x51FB;&#x65F6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x51FD;&#x6570;&#x539F;&#x578B;&#x4E3A; onClick: function (target, data), &#x5176;&#x4E2D;target&#x4E3A;&#x8868;&#x683C;&#x63A7;&#x4EF6;&#x672C;&#x8EAB;&#x3002;data&#x4E3A;&#x8868;&#x683C;&#x5E95;&#x5C42;&#x7684;store&#x5BF9;&#x8C61;&#x3002;</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="box1.html"><span class="title">基本用法</span></a></div>
+          <div class="right"><a href="table1.html"><span class="label">Next: </span><span class="title">简单表格</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

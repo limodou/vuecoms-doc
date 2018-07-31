@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=20630046">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=074aa5b4">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=3b96dc92">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=6aa14d5a">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=3a95c3b5"></script>
+    <script src="lib/iview/iview.js?t=c12243ec"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=024acf22"></script>
+    <script src="lib/vuecoms.js?t=4f58de04"></script>
     <title>任务编辑 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -31,6 +31,8 @@
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Table</span>
               <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-table0" href="table0.html">表格说明</a>
+                </li>
                 <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
@@ -118,7 +120,7 @@
 </modal></div>
 <script>
 Vue.component('team', {
-    template: '<Grid ref="grid" :data="data" :value="value" @input="handleInput"></Grid>',
+    template: '<Grid ref="grid" :data="data" :value="value" @input="handleInput"><h3 slot="beforeQuery">小组角色</h3></Grid>',
     props: ['value'],
     data: function () {
       var self = this
@@ -129,9 +131,21 @@ Vue.component('team', {
             idField: 'sn',
             editMode: 'row',
             actionColumn: 'action',
+            height: 150,
             columns: [
               {name: 'sn', title: 'ID', hidden: true},
               {name: 'name', title: '成员角色', width: 100, editor: {type: 'select'}},
+              {name: 'user', title: '人员', width: 120, editor: {type: 'select', options: {
+                  filterable: true, remote: true, rich: true, remoteMethod: function(query, callback){
+                    setTimeout(function(){
+                      if (query === 'a')
+                        callback([{value:'A', label:'Test A', text: 'A'}, {value:'B', label:'Test B', text: 'B'}, {value:'C', label:'Test C', text: 'C'}])
+                      else
+                        callback([{value:'D', label:'Test D', text: 'D'}, {value:'E', label:'Test E', text: 'E'}, {value:'F', label:'Test F', text: 'F'}])
+                    }, 1000)
+                  },
+                }}
+              },
               {name: 'members', title: '成员', editor: {type: 'select', multiple: true, options: {
                   filterable: true, remote: true, rich: true, remoteMethod: function(query, callback){
                     setTimeout(function(){
@@ -184,7 +198,7 @@ Vue.component('team', {
             total: 1,
             buttons: [
               [{label: '增加角色', type:'primary', onClick: function(target, store){
-                store.addEditRow()
+                store.addEditRow(null, true)
               }}]
             ],
             onSaveRow: function (row, callback) {
@@ -354,16 +368,31 @@ var ex_build_02 = new Vue({
       },
     ]
     var reqData = {
-      // width: 988,
+      width: 988,
+      height: 150,
       checkCol: true,
       indexCol: true,
       pagination: true,
       idField: 'sn',
+      editMode: 'row',
+      actionColumn: 'action',
+      buttons: [
+        [
+          {label: '新建', type:'primary', onClick: function(target, store){
+              store.addEditRow({name2: 'A'}, true)
+            }
+          }
+        ],
+      ],
       columns: [
         {name: 'sn', title: '业务要求编号', width: 150},
         {name: 'title', title: '业务要求名称'},
         {name: 'depart', title: '提出部门', width: 200},
-        {name: 'contact', title: '联系人', width: 100},
+        {name: 'contact', title: '联系人', width: 100, editor: {type: 'select', options: {
+            choices: [['A', '张三'], ['B', '李四']]
+          }}
+        },
+        {name: 'action', title: '操作', width: 120}
       ]
     }
     return {data:data, 
@@ -387,13 +416,13 @@ var ex_build_02 = new Vue({
     }, 1000)
     setTimeout(function() {
       self.reqValue = [
-        {sn: 'Test001', title: 'AAAAA', depart: 'BBBBB', contact: 'CCCCC'}
+        {sn: 'Test001', title: 'AAAAA', depart: 'BBBBB', contact: 'A'}
       ]
     }, 1000)
     setTimeout(function() {
       self.$set(self.value, 'team', [
-          {sn: '1', name: 'A', members: [{label: 'Test A', value: 'A'}, {label: 'Test B', value: 'B'}] },
-          {sn: '2', name: 'B', members: [{label: 'Test A', value: 'A'}, {label: 'Test C', value: 'C'}] }
+          {sn: '1', name: 'A', user: {label: 'Test A', value: 'A'}, members: [{label: 'Test A', value: 'A'}, {label: 'Test B', value: 'B'}] },
+          {sn: '2', name: 'B', user: {label: 'Test C', value: 'C'}, members: [{label: 'Test A', value: 'A'}, {label: 'Test C', value: 'C'}] }
         ]
       )
     }, 1000)
