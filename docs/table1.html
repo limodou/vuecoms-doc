@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=3b96dc92">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=af433927">
     <link rel="stylesheet" href="lib/vuecoms.css?t=6aa14d5a">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
-    <script src="lib/iview/iview.js?t=c12243ec"></script>
+    <script src="lib/iview/iview.js?t=0fe3f1be"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=4f58de04"></script>
+    <script src="lib/vuecoms.js?t=67e051f6"></script>
     <title>简单表格 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -150,7 +150,7 @@ var ex_table_01 = new Vue({
         {name:&apos;name1&apos;, title:&apos;Name1&apos;, width:100, fixed: &apos;left&apos;},
         {name:&apos;name2&apos;, title:&apos;Name2&apos;, width: 100},
         {name:&apos;name3&apos;, title:&apos;Name3&apos;, width:100},
-        {name:&apos;name4&apos;, title:&apos;Name4&apos;, align:&apos;center&apos;, width:400},
+        {name:&apos;name4&apos;, title:&apos;Name4&apos;, align:&apos;center&apos;, width:400, html: false},
         {name:&apos;name5&apos;, title:&apos;Name5&apos;, width:400, render: function(h, param) {
           var self = this
           return h(&apos;Checkbox&apos;, {
@@ -179,7 +179,7 @@ var ex_table_01 = new Vue({
         ]
       ]
     }
-<pre><code>table.data.push({id:1, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;B1&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E1&apos;, name6:&apos;F1&apos;})
+<pre><code>table.data.push({id:1, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;B1&apos;, name3:&apos;C1&apos;, name4:&apos;&lt;i&gt;Hello&lt;/i&gt;&apos;, name5:&apos;E1&apos;, name6:&apos;F1&apos;})
 table.data.push({id:2, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;B1&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E1&apos;, name6:&apos;F1&apos;})
 table.data.push({id:3, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;B2&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E1&apos;, name6:&apos;F1&apos;})
 table.data.push({id:4, check: &apos;A2&apos;, name1:&apos;A2&apos;, name2:&apos;B2&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E2&apos;, name6:&apos;F1&apos;})
@@ -220,7 +220,7 @@ var ex_table_01 = new Vue({
         {name:'name1', title:'Name1', width:100, fixed: 'left'},
         {name:'name2', title:'Name2', width: 100},
         {name:'name3', title:'Name3', width:100},
-        {name:'name4', title:'Name4', align:'center', width:400},
+        {name:'name4', title:'Name4', align:'center', width:400, html: false},
         {name:'name5', title:'Name5', width:400, render: function(h, param) {
           var self = this
           return h('Checkbox', {
@@ -249,7 +249,7 @@ var ex_table_01 = new Vue({
         ]
       ]
     }
-    table.data.push({id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'<i>Hello</i>', name5:'E1', name6:'F1'})
     table.data.push({id:2, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
     table.data.push({id:3, check: 'A1', name1:'A1', name2:'B2', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
     table.data.push({id:4, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})

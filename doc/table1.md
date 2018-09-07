@@ -38,7 +38,7 @@ var ex_table_01 = new Vue({
         {name:'name1', title:'Name1', width:100, fixed: 'left'},
         {name:'name2', title:'Name2', width: 100},
         {name:'name3', title:'Name3', width:100},
-        {name:'name4', title:'Name4', align:'center', width:400},
+        {name:'name4', title:'Name4', align:'center', width:400, html: false},
         {name:'name5', title:'Name5', width:400, render: function(h, param) {
           var self = this
           return h('Checkbox', {
@@ -68,7 +68,7 @@ var ex_table_01 = new Vue({
       ]
     }
 
-    table.data.push({id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'<i>Hello</i>', name5:'E1', name6:'F1'})
     table.data.push({id:2, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
     table.data.push({id:3, check: 'A1', name1:'A1', name2:'B2', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
     table.data.push({id:4, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
@@ -110,7 +110,7 @@ var ex_table_01 = new Vue({
         {name:'name1', title:'Name1', width:100, fixed: 'left'},
         {name:'name2', title:'Name2', width: 100},
         {name:'name3', title:'Name3', width:100},
-        {name:'name4', title:'Name4', align:'center', width:400},
+        {name:'name4', title:'Name4', align:'center', width:400, html: false},
         {name:'name5', title:'Name5', width:400, render: function(h, param) {
           var self = this
           return h('Checkbox', {
@@ -139,7 +139,7 @@ var ex_table_01 = new Vue({
         ]
       ]
     }
-    table.data.push({id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'<i>Hello</i>', name5:'E1', name6:'F1'})
     table.data.push({id:2, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
     table.data.push({id:3, check: 'A1', name1:'A1', name2:'B2', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
     table.data.push({id:4, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
