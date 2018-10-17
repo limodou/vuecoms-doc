@@ -77,7 +77,6 @@ var ex_editor_01 = new Vue({
           ['tree1'],
           ['rich1']
         ],
-        component: 'Layout',
         boxComponent: ''
       }
     ]

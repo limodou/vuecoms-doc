@@ -25818,11 +25818,13 @@ var _index2 = _interopRequireDefault(_index);
 
 var _shim = __webpack_require__(590);
 
-var _elementDataset = __webpack_require__(591);
+__webpack_require__(591);
+
+var _elementDataset = __webpack_require__(592);
 
 var _elementDataset2 = _interopRequireDefault(_elementDataset);
 
-var _treeSelect = __webpack_require__(592);
+var _treeSelect = __webpack_require__(593);
 
 var _treeSelect2 = _interopRequireDefault(_treeSelect);
 
@@ -25958,6 +25960,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 (0, _shim.shim)();
+(0, _shim.findIndex)();
 (0, _elementDataset2.default)();
 
 var API = (0, _extends3.default)({
@@ -39966,8 +39969,251 @@ var shim = exports.shim = function shim() {
   }
 };
 
+var findIndex = exports.findIndex = function findIndex() {
+  if (!Array.prototype.findIndex) {
+    Object.defineProperty(Array.prototype, 'findIndex', {
+      value: function value(predicate) {
+        'use strict';
+
+        if (this == null) {
+          throw new TypeError('Array.prototype.findIndex called on null or undefined');
+        }
+        if (typeof predicate !== 'function') {
+          throw new TypeError('predicate must be a function');
+        }
+        var list = Object(this);
+        var length = list.length >>> 0;
+        var thisArg = arguments[1];
+        var value;
+
+        for (var i = 0; i < length; i++) {
+          value = list[i];
+          if (predicate.call(thisArg, value, i, list)) {
+            return i;
+          }
+        }
+        return -1;
+      },
+      enumerable: false,
+      configurable: false,
+      writable: false
+    });
+  }
+};
+
 /***/ }),
 /* 591 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if ("document" in self) {
+  if (!("classList" in document.createElement("_")) || document.createElementNS && !("classList" in document.createElementNS("http://www.w3.org/2000/svg", "g"))) {
+
+    (function (view) {
+
+      "use strict";
+
+      if (!('Element' in view)) return;
+
+      var classListProp = "classList",
+          protoProp = "prototype",
+          elemCtrProto = view.Element[protoProp],
+          objCtr = Object,
+          strTrim = String[protoProp].trim || function () {
+        return this.replace(/^\s+|\s+$/g, "");
+      },
+          arrIndexOf = Array[protoProp].indexOf || function (item) {
+        var i = 0,
+            len = this.length;
+        for (; i < len; i++) {
+          if (i in this && this[i] === item) {
+            return i;
+          }
+        }
+        return -1;
+      },
+          DOMEx = function DOMEx(type, message) {
+        this.name = type;
+        this.code = DOMException[type];
+        this.message = message;
+      },
+          checkTokenAndGetIndex = function checkTokenAndGetIndex(classList, token) {
+        if (token === "") {
+          throw new DOMEx("SYNTAX_ERR", "The token must not be empty.");
+        }
+        if (/\s/.test(token)) {
+          throw new DOMEx("INVALID_CHARACTER_ERR", "The token must not contain space characters.");
+        }
+        return arrIndexOf.call(classList, token);
+      },
+          ClassList = function ClassList(elem) {
+        var trimmedClasses = strTrim.call(elem.getAttribute("class") || ""),
+            classes = trimmedClasses ? trimmedClasses.split(/\s+/) : [],
+            i = 0,
+            len = classes.length;
+        for (; i < len; i++) {
+          this.push(classes[i]);
+        }
+        this._updateClassName = function () {
+          elem.setAttribute("class", this.toString());
+        };
+      },
+          classListProto = ClassList[protoProp] = [],
+          classListGetter = function classListGetter() {
+        return new ClassList(this);
+      };
+
+      DOMEx[protoProp] = Error[protoProp];
+      classListProto.item = function (i) {
+        return this[i] || null;
+      };
+      classListProto.contains = function (token) {
+        return ~checkTokenAndGetIndex(this, token + "");
+      };
+      classListProto.add = function () {
+        var tokens = arguments,
+            i = 0,
+            l = tokens.length,
+            token,
+            updated = false;
+        do {
+          token = tokens[i] + "";
+          if (!~checkTokenAndGetIndex(this, token)) {
+            this.push(token);
+            updated = true;
+          }
+        } while (++i < l);
+
+        if (updated) {
+          this._updateClassName();
+        }
+      };
+      classListProto.remove = function () {
+        var tokens = arguments,
+            i = 0,
+            l = tokens.length,
+            token,
+            updated = false,
+            index;
+        do {
+          token = tokens[i] + "";
+          index = checkTokenAndGetIndex(this, token);
+          while (~index) {
+            this.splice(index, 1);
+            updated = true;
+            index = checkTokenAndGetIndex(this, token);
+          }
+        } while (++i < l);
+
+        if (updated) {
+          this._updateClassName();
+        }
+      };
+      classListProto.toggle = function (token, force) {
+        var result = this.contains(token),
+            method = result ? force !== true && "remove" : force !== false && "add";
+
+        if (method) {
+          this[method](token);
+        }
+
+        if (force === true || force === false) {
+          return force;
+        } else {
+          return !result;
+        }
+      };
+      classListProto.replace = function (token, replacement_token) {
+        var index = checkTokenAndGetIndex(token + "");
+        if (~index) {
+          this.splice(index, 1, replacement_token);
+          this._updateClassName();
+        }
+      };
+      classListProto.toString = function () {
+        return this.join(" ");
+      };
+
+      if (objCtr.defineProperty) {
+        var classListPropDesc = {
+          get: classListGetter,
+          enumerable: true,
+          configurable: true
+        };
+        try {
+          objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+        } catch (ex) {
+          if (ex.number === undefined || ex.number === -0x7FF5EC54) {
+            classListPropDesc.enumerable = false;
+            objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+          }
+        }
+      } else if (objCtr[protoProp].__defineGetter__) {
+        elemCtrProto.__defineGetter__(classListProp, classListGetter);
+      }
+    })(self);
+  }
+
+  (function () {
+    "use strict";
+
+    var testElement = document.createElement("_");
+
+    testElement.classList.add("c1", "c2");
+
+    if (!testElement.classList.contains("c2")) {
+      var createMethod = function createMethod(method) {
+        var original = DOMTokenList.prototype[method];
+
+        DOMTokenList.prototype[method] = function (token) {
+          var i,
+              len = arguments.length;
+
+          for (i = 0; i < len; i++) {
+            token = arguments[i];
+            original.call(this, token);
+          }
+        };
+      };
+      createMethod('add');
+      createMethod('remove');
+    }
+
+    testElement.classList.toggle("c3", false);
+
+    if (testElement.classList.contains("c3")) {
+      var _toggle = DOMTokenList.prototype.toggle;
+
+      DOMTokenList.prototype.toggle = function (token, force) {
+        if (1 in arguments && !this.contains(token) === !force) {
+          return force;
+        } else {
+          return _toggle.call(this, token);
+        }
+      };
+    }
+
+    if (!("replace" in document.createElement("_").classList)) {
+      DOMTokenList.prototype.replace = function (token, replacement_token) {
+        var tokens = this.toString().split(" "),
+            index = tokens.indexOf(token + "");
+        if (~index) {
+          tokens = tokens.slice(index);
+          this.remove.apply(this, tokens);
+          this.add(replacement_token);
+          this.add.apply(this, tokens.slice(1));
+        }
+      };
+    }
+
+    testElement = null;
+  })();
+}
+
+/***/ }),
+/* 592 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40050,7 +40296,7 @@ function elementDatasetPolyfill() {
 
 
 /***/ }),
-/* 592 */
+/* 593 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40060,7 +40306,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _treeSelect = __webpack_require__(593);
+var _treeSelect = __webpack_require__(594);
 
 var _treeSelect2 = _interopRequireDefault(_treeSelect);
 
@@ -40069,7 +40315,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _treeSelect2.default;
 
 /***/ }),
-/* 593 */
+/* 594 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40077,7 +40323,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue__ = __webpack_require__(244);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_0de2b719_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__ = __webpack_require__(594);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_0de2b719_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__ = __webpack_require__(595);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_0de2b719_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_0de2b719_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(0);
 /* script */
@@ -40108,7 +40354,7 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 
 
 /***/ }),
-/* 594 */
+/* 595 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

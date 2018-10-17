@@ -74,7 +74,7 @@ var ex_table_02 = new Vue({
         [{'label': '导出'}]
       ],
       onLoadData: function (url, param, callback) {
-        self.param = Object.assign({}, param)
+        self.param = param
         var data = []
         var b = (param.page - 1) * param.pageSize
         for (var i = 0; i < param.pageSize; i++) {

@@ -137,7 +137,6 @@ var ex_build_01 = new Vue({
           ['tree1'],
           ['switch', 'slider']
         ],
-        component: 'Layout',
         boxComponent: 'Box',
         boxOptions: {widthBorder: false, headerClass: 'primary'},
         buttons: {
