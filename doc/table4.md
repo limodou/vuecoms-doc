@@ -76,6 +76,11 @@ var ex_table_04 = new Vue({
       onDeleteRow: function (row, callback) {
         self.$Message.info("delete")
         callback('ok', row)
+      },
+      onRowEditRender: function (h, row) {
+        if (row.id === 3) {
+          return h('div', '本行不可编辑')
+        }
       }
     }
     table.data.push({id:1, name1:'Field-A1', name2:'A', name3:'Field-C1', name4:'Field-D1'})

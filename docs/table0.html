@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=af433927">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=6aa14d5a">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=7af1c70e">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=3f3ee46e"></script>
     <script src="lib/iview/iview.js?t=37b493cd"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=3e549dbe"></script>
+    <script src="lib/vuecoms.js?t=14f6af34"></script>
     <title>表格说明 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -487,6 +487,10 @@
 <tr>
 <td>onDeleteRow</td>
 <td>&#x5220;&#x9664;&#x884C;&#x7684;&#x786E;&#x8BA4; function (row, callback), callback(flag, data)</td>
+</tr>
+<tr>
+<td>onRowEditRender</td>
+<td>&#x884C;&#x7F16;&#x8F91;&#x5BF9;&#x5E94;&#x7684;&#x7F16;&#x8F91;&#x6309;&#x94AE;&#x5217;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6E32;&#x67D3;&#x56DE;&#x8C03;&#x51FD;&#x6570; function (h, row) h &#x4E3A;create&#x51FD;&#x6570;&#xFF0C;row&#x4E3A;&#x6570;&#x636E;&#x884C;&#x3002;&#x5F53;&#x8FD4;&#x56DE; null &#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x7F3A;&#x7701;&#x7684;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x884C;&#x6E32;&#x67D3;&#x65F6;&#xFF0C;&#x5E94;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;render&#x8C03;&#x7528;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#xFF1A; render(&apos;div&apos;, &apos;&#x672C;&#x884C;&#x4E0D;&#x53EF;&#x7F16;&#x8F91;&apos;)</td>
 </tr>
 </tbody>
 </table>
