@@ -15,16 +15,23 @@ var ex_table_04 = new Vue({
       nowrap: true,
       actionColumn: 'Action',
       indexCol: true,
+      checkCol: true,
+      multiSelect: true,
+      static: false,
       columns: [
         {name:'name1', title:'Name1', width:200, editor: {type: 'string', onChange: function(v, row){
           console.log(v, row)
         }}},
-        {name:'name2', title:'Name2', width: 200, align: 'left', editor: {type: 'select', static: true, options: {
+        {name:'name2', title:'Name2', align: 'left', 
+          editor: {type: 'select', static: true, options: {
           choices: [['A', 'Test A'], ['B', 'Test B']]
           }}
         },
         {name:'name3', title:'Name3', width:200, editor: {type: 'i-switch'}},
-        {name:'name4', title:'Name4', width:200, editor: {type: 'date'}},
+        {name:'name4', title:'Name4', width:200, format: function (value, column, row)   {
+            return '<a href="#">' + value + '</a>'
+          },
+          editor: {type: 'date'}},
         {name:'Action', title:'Name5'}
       ],
       buttons: [
@@ -57,6 +64,9 @@ var ex_table_04 = new Vue({
               self.$refs.table.theme = 'simple'
             else
               self.$refs.table.theme = 'default'
+          }},
+          {label: '静态切换', type: 'info', onClick: function () {
+            self.$refs.table.static = !self.$refs.table.static 
           }}
         ]
       ],

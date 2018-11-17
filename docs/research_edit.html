@@ -11,7 +11,7 @@
     <script src="lib/iview/iview.js?t=37b493cd"></script>
     <script src="lib/echarts.common.js?t=d9190139"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=14f6af34"></script>
+    <script src="lib/vuecoms.js?t=c0451b8b"></script>
     <title>任务编辑 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -114,8 +114,8 @@
         <div class="markdown-body"><h1 id="">&#x4EFB;&#x52A1;&#x7F16;&#x8F91;</h1>
 <div id="app">
   <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :label-width="labelWidth"></build>
-  <modal v-model="openNewReq" title="&#x5BF9;&#x8BDD;&#x6846;&#x6807;&#x9898;" width="1024">
-    <grid :data="reqData" :value="reqValue"></grid>
+  <modal v-model="openNewReq" title="&#x5BF9;&#x8BDD;&#x6846;&#x6807;&#x9898;" width="1024" ref="dialog">
+    <grid ref="dialogGrid" :data="reqData" :value="reqValue"></grid>
   
 </modal></div>
 <script>
@@ -232,13 +232,20 @@ Vue.component('team', {
       }
     }
   )
+Vue.component('mybox', {
+  template: ['<Card style="margin-bottom:20px">',
+  '<p slot="title" style="margin-bottom:0">基本信息（使用Card组件）</p>',
+  '<i-button slot="extra" size="small">新增</i-button>',
+  '<slot></slot>',
+  '</Card>'].join('')
+})
 var ex_build_02 = new Vue({
   el: '#app',
   data: function () {
     var self = this
     var data = [
       {
-        boxOptions: {headerClass: 'primary'},
+        boxComponent: 'mybox',
         title: '基本信息',
         fields: [
           {name: 'title', label: '标题', placeholder: '请输入...', required: true},
@@ -284,6 +291,7 @@ var ex_build_02 = new Vue({
               buttons: [
                 [{label: '关联业务要求', type:'primary', onClick: function(){
                   self.openNewReq = !self.openNewReq
+                  self.$refs.dialogGrid.deselectAll()
                 }}]
               ],
             }
