@@ -1,32 +1,27 @@
 {
-  "_args": [
-    [
-      "tinymce@4.7.11",
-      "/Users/limodou/mywork/vue/vuecoms"
-    ]
-  ],
-  "_development": true,
-  "_from": "tinymce@4.7.11",
-  "_id": "tinymce@4.7.11",
+  "_from": "tinymce@4.8.5",
+  "_id": "tinymce@4.8.5",
   "_inBundle": false,
-  "_integrity": "sha512-rLWAibMZa1oFaxucufQxVacbXzt5LJe0lSgsRYlLIi0YOhl6JKFIuYqxlU74UygaAliDlNUX84hlMj7Ky0QmXQ==",
+  "_integrity": "sha512-1V6+PxP5Kp8H/Kuf+EOe6vyrtj1Dlj98q33DgiKGoGPTmbcQaVZWiT+lhqj8ICXKVLV3YxAieOJyJXai4SLHQg==",
   "_location": "/tinymce",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "tinymce@4.7.11",
+    "raw": "tinymce@4.8.5",
     "name": "tinymce",
     "escapedName": "tinymce",
-    "rawSpec": "4.7.11",
+    "rawSpec": "4.8.5",
     "saveSpec": null,
-    "fetchSpec": "4.7.11"
+    "fetchSpec": "4.8.5"
   },
   "_requiredBy": [
-    "#DEV:/"
+    "#DEV:/",
+    "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/tinymce/-/tinymce-4.7.11.tgz",
-  "_spec": "4.7.11",
+  "_resolved": "https://registry.npmjs.org/tinymce/-/tinymce-4.8.5.tgz",
+  "_shasum": "a80ea66c4f90078bd93625b0f0914a4f774e0af3",
+  "_spec": "tinymce@4.8.5",
   "_where": "/Users/limodou/mywork/vue/vuecoms",
   "author": {
     "name": "Ephox Corporation"
@@ -34,6 +29,8 @@
   "bugs": {
     "url": "https://github.com/tinymce/tinymce/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "Web based JavaScript HTML WYSIWYG editor control.",
   "homepage": "https://github.com/tinymce/tinymce-dist#readme",
   "keywords": [
@@ -51,5 +48,5 @@
     "type": "git",
     "url": "git+https://github.com/tinymce/tinymce-dist.git"
   },
-  "version": "4.7.11"
+  "version": "4.8.5"
 }
