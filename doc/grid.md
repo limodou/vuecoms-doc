@@ -103,21 +103,21 @@ Vue.component('sheetunit', {
       var h = (oh || rect.height) + this.item.dh
       this.$refs.grid.resize(w, h)
     },
-    load: function(){
-      var self = this
+    onLoad: function(url, param, callback) {
       if (this.onLoadData) {
-        var callback = function (data) {
-          if (data)
-            self.$refs.grid.mergeOptions(data)
-        }
+        this.item.param = param
         this.onLoadData(this.item, callback)
       }
-    }
+    },
+  },
+  created: function(){
+    this.item.options.autoLoad = false
+    this.item.options.onLoadData = this.onLoad
   },
   mounted: function() {
     this.$nextTick(function(){
       this.resize()
-      this.load()
+      this.$refs.grid.loadData()
     })
   }
 })
@@ -217,21 +217,6 @@ var sheet1 = {
         str1: "Hello World!!!",
         tree: '1'
       },
-      onLoadData: function (url, param, callback) {
-        self.param = param
-        var data = []
-        var b = (param.page - 1) * param.pageSize
-        for (var i = 0; i < param.pageSize; i++) {
-          var row = {id: b + i + 1, title: 'P' + param.page + '-Title-' + (i + 1)}
-          for (var j = 1; j < 7; j++) {
-            row['name' + j] = 'P' + param.page + '-Name-' + (i + 1) + '-' + j
-          }
-          data.push(row)
-        }
-        setTimeout( function () {
-          callback(data, {total:100})
-          }, 0)
-      },
     }
 }
 var testLayout = [
@@ -279,6 +264,20 @@ var testLayout = [
             }
             callback(result)
           }, 2000)
+        } else if (item.type === 'sheetunit') {
+          var param = item.param
+          var data = []
+          var b = (param.page - 1) * param.pageSize
+          for (var i = 0; i < param.pageSize; i++) {
+            var row = {id: b + i + 1, title: 'P' + param.page + '-Title-' + (i + 1)}
+            for (var j = 1; j < 7; j++) {
+              row['name' + j] = 'P' + param.page + '-Name-' + (i + 1) + '-' + j
+            }
+            data.push(row)
+          }
+          setTimeout( function () {
+            callback(data, {total:100})
+            }, 0)
         }
         else {
           callback()
