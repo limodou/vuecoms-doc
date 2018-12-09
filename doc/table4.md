@@ -18,6 +18,8 @@ var ex_table_04 = new Vue({
       checkCol: true,
       multiSelect: true,
       static: false,
+      pagination: true,
+      total: 6,
       columns: [
         {name:'name1', title:'Name1', width:200, editor: {type: 'string', onChange: function(v, row){
           console.log(v, row)

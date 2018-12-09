@@ -100,3 +100,55 @@ var ex_echart_01 = new Vue({
   }
 })
 </script>
+<div id="ex-echart-02">
+  <chart ref="chart" :options="polar"></chart>
+</div>
+<style>
+.echarts {
+  height: 600px;
+  width: 1024px;
+}
+</style>
+<script>
+var polar = {
+    title: {
+        text: '图表示例',
+        left: 'center'
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {},
+            magicType: {
+                type: ['line', 'bar']
+            }
+        },
+    },
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: 'line'
+    }]
+}
+var ex_echart_02 = new Vue({
+  el: '#ex-echart-02',
+  data: function () {
+    return {polar: polar}
+  },
+  mounted: function () {
+      setTimeout(function(){
+        ex_echart_02.$refs.chart.mergeOptions({
+            series: [{
+                data: [120, 460, 320, 560, 820, 932, 901],
+                type: 'line'
+            }]
+        })
+      }, 5000)
+  }
+})
+</script>

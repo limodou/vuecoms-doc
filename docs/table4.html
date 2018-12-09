@@ -9,9 +9,10 @@
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=0fd2d527"></script>
     <script src="lib/iview/iview.js?t=c777d288"></script>
-    <script src="lib/echarts.common.js?t=d9190139"></script>
+    <script src="lib/echarts.common.min.js?t=cce08242"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=53dbc5bf"></script>
+    <script src="lib/vuecoms.js?t=0cd8708d"></script>
+    <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
     <title>表格行编辑 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -95,6 +96,12 @@
                 </li>
               </ul>
             </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Grid</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-grid" href="grid.html">布局展示</a>
+                </li>
+              </ul>
+            </li>
             <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
@@ -134,6 +141,8 @@ var ex_table_04 = new Vue({
       checkCol: true,
       multiSelect: true,
       static: false,
+      pagination: true,
+      total: 6,
       columns: [
         {name:'name1', title:'Name1', width:200, editor: {type: 'string', onChange: function(v, row){
           console.log(v, row)

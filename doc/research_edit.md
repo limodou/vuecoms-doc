@@ -1,134 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=6306abe9">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=9424a245">
-    <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
-    <script src="assets/script.js?t=42463e55"></script>
-    <script src="lib/vue.js?t=0fd2d527"></script>
-    <script src="lib/iview/iview.js?t=c777d288"></script>
-    <script src="lib/echarts.common.min.js?t=cce08242"></script>
-    <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=0cd8708d"></script>
-    <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
-    <title>任务编辑 - Vuecoms</title>
-    <meta name="viewport" content="width=device-width">
-  </head>
-  <body class="-menu-visible">
-    <div class="doc-layout">
-      <div class="toggle menu-toggle js-menu-toggle"></div>
-      <div class="menu toc-menu">
-        <li class="menu-item -level-0 -parent">
-          <ul class="submenu">
-            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Box</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-box1" href="box1.html">基本用法</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Table</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-table0" href="table0.html">表格说明</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-table3" href="table3.html">表格拖动</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-table4" href="table4.html">表格行编辑</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-table5" href="table5.html">Tree表格</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1"><a class="link title  link-fields" href="fields.html">基础控件</a>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Query</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">TreeSelect</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-treeselect" href="treeselect.html">选择树控件</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Build</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-build3" href="build3.html">数据联动</a>
-                </li>
-                <li class="menu-item -level-2"><a class="link title  link-build4" href="build4.html">Select Rich</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Chart</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-chart" href="chart.html">EChart</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Editor</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-editor" href="editor.html">Editor</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Grid</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-grid" href="grid.html">布局展示</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title -active link-research_edit" href="research_edit.html">任务编辑</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </div>
-      <div class="body page-research_edit">
-        <div class="header-nav">
-          <div class="right">
-          </div>
-        </div>
-        <div class="markdown-body"><h1 id="">&#x4EFB;&#x52A1;&#x7F16;&#x8F91;</h1>
+# 任务编辑
+
 <div id="app">
   <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :label-width="labelWidth"></build>
-  <modal v-model="openNewReq" title="&#x5BF9;&#x8BDD;&#x6846;&#x6807;&#x9898;" width="1024" ref="dialog">
-    <grid ref="dialogGrid" :data="reqData" :value="reqValue"></grid>
-  
-</modal></div>
+  <Modal v-model="openNewReq"
+    title="对话框标题"
+    width="1024"
+    ref="dialog"
+  >
+    <Grid ref="dialogGrid" :data="reqData" :value="reqValue"></Grid>
+  </Model>
+</div>
 <script>
 Vue.component('team', {
     template: '<Grid ref="grid" :data="data" :value="value" @input="handleInput"><h3 slot="beforeQuery">小组角色</h3></Grid>',
@@ -472,11 +353,3 @@ var ex_build_02 = new Vue({
   }
 })
 </script>
-        </div>
-        <div class="footer-nav">
-          <div class="left"><a href="template.html"><span class="title">Template</span></a></div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>

@@ -9,9 +9,10 @@
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=0fd2d527"></script>
     <script src="lib/iview/iview.js?t=c777d288"></script>
-    <script src="lib/echarts.common.js?t=d9190139"></script>
+    <script src="lib/echarts.common.min.js?t=cce08242"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=53dbc5bf"></script>
+    <script src="lib/vuecoms.js?t=0cd8708d"></script>
+    <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
     <title>Dialog - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -95,6 +96,12 @@
                 </li>
               </ul>
             </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Grid</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-grid" href="grid.html">布局展示</a>
+                </li>
+              </ul>
+            </li>
             <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
@@ -118,8 +125,12 @@
         <div class="markdown-body"><h1 id="">&#x5BF9;&#x8BDD;&#x6846;</h1>
 <div id="ex-editor-01">
   <i-button type="primary" @click="open=true">Show Modal</i-button>
-  <modal v-model="open" title="&#x5BF9;&#x8BDD;&#x6846;&#x6807;&#x9898;" width="1024">
+  <modal v-model="open" title="&#x5BF9;&#x8BDD;&#x6846;&#x6807;&#x9898;" width="1024" ref="modal">
     <build ref="build" :data="data" :value="value"></build>
+    <div slot="footer">
+      <i-button type="text" size="large" @click.native="cancel">&#x53D6;&#x6D88;</i-button>
+      <i-button type="primary" size="large" :loading="buttonLoading" @click.native="ok">&#x786E;&#x5B9A;</i-button>
+    </div>
   
 </modal></div>
 <script>
@@ -196,11 +207,34 @@ var ex_editor_01 = new Vue({
     return {
       open: false,
       data: data,
+      buttonLoading: false,
       value: {
         select1: 'B',
         select2: 'A',
         select3: ['A', 'B'],
         select4: ['A', 'B'],
+      }
+    }
+  },
+  methods: {
+    ok: function (){
+      this.buttonLoading = true
+      this.$refs.build.validate(this.save)
+    },
+    cancel: function (){
+      this.$refs.modal.close()
+    },
+    save: function(error) {
+      var self = this
+      if (error) {
+        this.buttonLoading = false
+        this.$Message.error(error)
+      } else {
+        setTimeout(function(){
+          self.buttonLoading = false
+          self.$refs.modal.close()
+          self.$Message.info('saved')
+        }, 1000)
       }
     }
   }
@@ -210,7 +244,7 @@ var ex_editor_01 = new Vue({
         </div>
         <div class="footer-nav">
           <div class="left"><a href="editor.html"><span class="title">Editor</span></a></div>
-          <div class="right"><a href="template.html"><span class="label">Next: </span><span class="title">Template</span></a></div>
+          <div class="right"><a href="grid.html"><span class="label">Next: </span><span class="title">布局展示</span></a></div>
         </div>
       </div>
     </div>

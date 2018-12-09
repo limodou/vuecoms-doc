@@ -5,8 +5,14 @@
   <Modal v-model="open"
     title="对话框标题"
     width="1024"
+    ref="modal"
   >
     <build ref="build" :data="data" :value="value"></build>
+    <div slot="footer">
+      <i-button type="text" size="large" @click.native="cancel">取消</i-button>
+      <i-button type="primary" size="large" :loading="buttonLoading" 
+                                @click.native="ok">确定</i-button>
+    </div>
   </Model>
 </div>
 <script>
@@ -83,11 +89,34 @@ var ex_editor_01 = new Vue({
     return {
       open: false,
       data: data,
+      buttonLoading: false,
       value: {
         select1: 'B',
         select2: 'A',
         select3: ['A', 'B'],
         select4: ['A', 'B'],
+      }
+    }
+  },
+  methods: {
+    ok: function (){
+      this.buttonLoading = true
+      this.$refs.build.validate(this.save)
+    },
+    cancel: function (){
+      this.$refs.modal.close()
+    },
+    save: function(error) {
+      var self = this
+      if (error) {
+        this.buttonLoading = false
+        this.$Message.error(error)
+      } else {
+        setTimeout(function(){
+          self.buttonLoading = false
+          self.$refs.modal.close()
+          self.$Message.info('saved')
+        }, 1000)
       }
     }
   }
