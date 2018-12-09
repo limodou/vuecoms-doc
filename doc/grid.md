@@ -54,7 +54,7 @@ Vue.component('reportlist', {
           this.$set(this.layout[i], 'visiable', !visiable)
           if (visiable){
             this.$set(this.layout[i], 'x', 0)
-            this.$set(this.layout[i], 'y', 0)
+            this.$set(this.layout[i], 'y', 2)
           }
           break
         }
@@ -98,8 +98,9 @@ Vue.component('sheetunit', {
   props: ['item', 'onLoadData'],
   methods: {
     resize: function(ow, oh) {
-      var w = ow || (this.$parent.$el.offsetWidth - 20)
-      var h = oh || (this.$parent.$el.offsetHeight)
+      var rect = this.$parent.calcPosition(this.item.x, this.item.y, this.item.w, this.item.h)
+      var w = (ow || rect.width) - 20
+      var h = (oh || rect.height) + this.item.dh
       this.$refs.grid.resize(w, h)
     },
     load: function(){
@@ -114,8 +115,10 @@ Vue.component('sheetunit', {
     }
   },
   mounted: function() {
-    this.resize()
-    this.load()
+    this.$nextTick(function(){
+      this.resize()
+      this.load()
+    })
   }
 })
 var chart1 = {type: 'chartunit', title: '报表1', x:0, y:0, w:6, h:2, i:"chart1", 
@@ -195,14 +198,13 @@ var chart2 = {type: 'chartunit', title: '报表2', x:0, y:0, w:6, h:2, i:"chart2
   }
 }
 var sheet1 = {
-  type: 'sheetunit', title: '报表3', x:0, y:0, w:6, h:2, i:"chart3", 
+  type: 'sheetunit', title: '报表3', x:0, y:0, w:6, h:2, dh:-90, i:"chart3", 
     sqlname:'test3',
     options: {
       nowrap: true,
       indexCol: true,
       theme: 'default',
       pagination: true,
-      height: 180,
       columns: [
         {name:'name1', title:'Name1', width:100, fixed: 'left'},
         {name:'name2', title:'Name2', width: 100},
