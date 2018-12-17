@@ -18,8 +18,7 @@
             :use-css-transforms="true"
             :vertical-compact="true"
     >
-        <!-- <component v-for="item in layout" :is="item.type" :item="item"></component> -->
-        <grid-item :ref="'gi_'+item.i" v-for="item in newlayout" :key="item.i" :x="item.x" :y="item.y" :w="item.w" :h="item.h" :i="item.i" @resized="resizedEvent">
+        <grid-item v-for="item in newlayout" :ref="'gi_'+item.i" :key="item.i" :x="item.x" :y="item.y" :w="item.w" :h="item.h" :i="item.i" @resized="resizedEvent">
           <component :ref="item.i" :is="item.type" :item="item" :on-load-data="onLoadData"></component>
         </grid-item>
       </grid-layout>
@@ -227,7 +226,7 @@ var testLayout = [
 	var ex_grid_01 = new Vue({
     el: '#ex-grid-01',
     data: {
-      layout: testLayout,
+      layout: [],
     },
     computed: {
       newlayout: function (){
@@ -240,6 +239,12 @@ var testLayout = [
         }
         return list
       }
+    },
+    mounted: function() {
+      var self = this
+      setTimeout(function(){
+        self.layout = testLayout
+      }, 500)
     },
     methods: {
       resizedEvent: function(i, newH, newW, newHPx, newWPx) {

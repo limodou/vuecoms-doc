@@ -17,7 +17,7 @@ var ex_build_01 = new Vue({
         staticSuffix: '_static',
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
-            info: 'info信息', required: true, rule: {type: 'email'}, onChange(value, data){
+            info: 'info信息', required: true, rule: {type: 'email'}, onChange: function(value, data){
               self.$set(data, 'str2', value)
             }},
           {name: 'str2', label: '静态字符串2', static: true, required: true, format: function(v){

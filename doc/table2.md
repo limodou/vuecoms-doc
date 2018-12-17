@@ -25,7 +25,7 @@ var ex_table_02 = new Vue({
     var value = []
     var table = {
       columns: [],
-      multiSelect: true,
+      multiSelect: false,
       resizable: true,
       pagination: true,
       pageSizeOpts: [10, 30, 50],
