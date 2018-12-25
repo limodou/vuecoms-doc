@@ -11,6 +11,7 @@ Vuecoms
   * [表格拖动](table3.md)
   * [表格行编辑](table4.md)
   * [Tree表格](table5.md)
+  * [通用表格](table6.md)
 * [基础控件](fields.md)
 * [Query]
    * [基本查询](query1.md)
