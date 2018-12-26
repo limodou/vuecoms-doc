@@ -5415,6 +5415,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
             }
         } else {
             popperOffsets.left = referenceOffsets.left + referenceOffsets.width / 2 - popperRect.width / 2;
+            if (popperOffsets.left < 0) popperOffsets.left = referenceOffsets.left;
             if (placement === 'top') {
                 popperOffsets.top = referenceOffsets.top - popperRect.height;
             } else {

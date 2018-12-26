@@ -121,7 +121,7 @@ Vue.component('team', {
         var self = this
         setTimeout(function(){
           var col = self.$refs.grid.getColumn('name')
-          self.$set(col.editor, 'options', {filterable: true, choices: [['A', 'Test A'], ['B', 'Test B']]})
+          self.$set(col.editor, 'options', {filterable: true, choices: [['A', 'Test ATEST B TEST C test DTEST B TEST C test D'], ['B', 'Test B']]})
         }, 1000)
       }
     }
