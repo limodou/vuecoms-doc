@@ -66,6 +66,7 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | closedIcon | 父结点关闭时显示的图标类名  | String | 'ivu-icon ivu-icon-arrow-right-b' |
 | indentWidth | 子结点缩近的宽度 | Number | 20 |
 | iconWidth | 折叠图标的宽度 | Number | 14 |
+| choices | 表格中editor中type为select对应的choices值，可以直接更新它让column的editor的choices更新 | Object | {} |
 
 
 | 回调函数名 | 说明 |
@@ -93,7 +94,7 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | resizable | 是否可以拖拽改变宽度。| Boolean | true |
 | editor | 如果可以编辑，则为编辑器的定义对象。它符合Build的字段定义规则。详情参见 Build的字段定义说明。| Object | {} |
 | render | 自定义渲染函数。形式为 render: function(h, param)，其中h 为createElement函数。param为上下文参数，其值为：<br/>{<br/>value: 单元格的值<br/>column: 单元格定义对象<br/>row: 单元格所在行的数据对象<br/>}| Function | null |
-| format | 自定义格式化函数。与render不同。render可以生成新的控件，而format只输出HTML。所以只要需要对单元格内容做文本加工的，可以使用format，如：加颜色，链接之类的。调用形式为：format: function(value, column, row)| Function | null |
+| format | 自定义格式化函数。与render不同。render可以生成新的控件，而format只输出HTML。所以只要需要对单元格内容做文本加工的，可以使用format，如：加颜色，链接之类的。调用形式为：format: function(value, column, row)。 <br/>新增字符串形式，如 `'<a href="/view/${row.id}">${row.title}</a>'`| Function\|String | null |
 
 ## 表格按钮定义说明
 
