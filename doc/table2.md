@@ -22,10 +22,12 @@ var ex_table_02 = new Vue({
   el: '#ex-table-02',
   data: function () {
     var self = this
+    var order = 1
+    var index = 1
     var value = []
     var table = {
       columns: [],
-      multiSelect: false,
+      multiSelect: true,
       resizable: true,
       pagination: true,
       pageSizeOpts: [10, 30, 50],
@@ -33,9 +35,12 @@ var ex_table_02 = new Vue({
       height: 300,
       draggable: true,
       checkCol: true,
+      idField: 'id',
+      orderField: 'order',
       checkColWidth: 120,
       checkColTitle: 'Check All',
       indexCol: true,
+      // selectedRowClass: '',
       param: {
         str1: "Hello World!!!",
         tree: '1'
@@ -63,8 +68,47 @@ var ex_table_02 = new Vue({
           }
         ],
         [
-          {label: '上移', icon:'ios-arrow-thin-up'},
-          {label: '下移', icon: 'ios-arrow-thin-down'}
+          {label: '置顶', type: 'primary', onClick: function (target, store) {
+              var rows = store.getSelectedRows()
+              if (rows.length === 0) {
+                self.$Message.info('请先选择')
+              } else {
+                store.moveRow(rows[0], 'first') 
+              }
+            }
+          },
+          {label: '上移', type: 'primary', onClick: function (target, store) {
+              var rows = store.getSelectedRows()
+              if (rows.length === 0) {
+                self.$Message.info('请先选择')
+              } else {
+                store.moveRow(rows[0], 'up')
+              }
+            }
+          },
+          {label: '下移', type: 'primary', onClick: function (target, store) {
+              var rows = store.getSelectedRows()
+              if (rows.length === 0) {
+                self.$Message.info('请先选择')
+              } else {
+                store.moveRow(rows[0], 'down')
+              }
+            }
+          },
+          {label: '置底', type: 'primary', onClick: function (target, store) {
+              var rows = store.getSelectedRows()
+              if (rows.length === 0) {
+                self.$Message.info('请先选择')
+              } else {
+                store.moveRow(rows[0], 'last')
+              }
+            }
+          }
+        ],
+        [
+          {label: '清除所有选中', type: 'primary', onClick: function (target, store){
+            store.deselectAll()
+          }}
         ]
       ],
       rightButtons: [
@@ -76,16 +120,15 @@ var ex_table_02 = new Vue({
       onLoadData: function (url, param, callback) {
         self.param = param
         var data = []
-        var b = (param.page - 1) * param.pageSize
         for (var i = 0; i < param.pageSize; i++) {
-          var row = {id: b + i + 1, title: 'P' + param.page + '-Title-' + (i + 1)}
+          var row = {id: (param.page-1) * param.pageSize + i + 1, title: 'P' + param.page + '-Title-' + (i + 1), order: order++}
           for (var j = 1; j < 10; j++) {
             row['name' + j] = 'P' + param.page + '-Name-' + (i + 1) + '-' + j
           }
           data.push(row)
         }
         setTimeout( function () {
-          callback(data, {total:100})
+          callback(data, {total:1000000})
           }, 0)
       },
       onSelect: function (row) {
@@ -98,6 +141,10 @@ var ex_table_02 = new Vue({
       onCheckable: function (row) {
         var r = row.id !== 2 && row.id !==3
         return r
+      },
+      onMove: function(order, callback) {
+        console.log('order', order)
+        callback(true)
       }
     }
     table.columns.push({
@@ -109,7 +156,7 @@ var ex_table_02 = new Vue({
     })
     table.columns.push({
       name: 'title',
-      title: '合并/Title',
+      title: '合并/Very Long Title Test',
       sortable: true,
       fixed: 'left',
       showTitle: false,
@@ -203,6 +250,9 @@ var ex_table_02 = new Vue({
     show_nowrap: function () {
       this.$refs.grid.$set(this.$refs.grid.store.states, 'nowrap', this.show_nowrap)
     }
+  },
+  mounted: function () {
+    this.$refs.grid.store.setSelection([1, 2])
   },
   methods: {
     handleSelected: function(row) {

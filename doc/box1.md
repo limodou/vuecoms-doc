@@ -3,7 +3,9 @@
 生成一个Box组件。
 
 <div id="ex-box-01">
-  <Box title="这是标题" removable :with-border="border" :header-class="headerClass">
+  <Box title="这是标题" :removerable="removerable"
+    :theme="theme"
+    :with-border="border" :header-class="headerClass">
     <p>这是内容</p>
     <p>这是内容</p>
     <p>这是内容</p>
@@ -23,7 +25,8 @@
             <dropdown-item name="default">default</dropdown-item>
             <dropdown-item name="info">info</dropdown-item>
         </dropdown-menu>
-    </Dropdown>
+      </Dropdown>
+      <i-button type="primary" @click="handleTheme">切换样式</i-button>
     </div>
   </Box>
 </div>
@@ -34,17 +37,22 @@
 |----------|-----|
 | tools | 在Box标题处放置工具控件 |
 | 缺省 | Box体放置内容 |
+| title | 标题区 |
 | footer | 在Box下面放置工具 |
 
 ## 参数说明
 
 | 属性 | 说明 | 缺省值 |
 |-----|-----|-------|
+| icon | 图标 | '' |
 | title | 标题 | '' |
-| withBorder | 是否显示border | true |
+| withBorder | 是否显示表头border | true |
+| withFooterBorder | 是否显示表尾border | true |
 | headerClass | 表头样式，可以选 primary, success, warning, danger, default, info | '' |
-| collapse | 是否可以收缩 | true |
-| reomve | 是否可以删除 | false | 
+| collapse | 是否显示收缩工具 | true |
+| removerable | 是否显示删除工具 | false | 
+| headerAlign | 标题区对齐方式 | 'left' |
+| theme | Box风格。可以支持 'card' 风格 | '' |
 
 <script>
 var ex_box_01 = new Vue({
@@ -52,7 +60,9 @@ var ex_box_01 = new Vue({
   data: {
     border: true,
     displayBorder: '隐藏表头线',
-    headerClass: ''
+    headerClass: '',
+    removerable: true,
+    theme: 'default'
   },
   methods: {
     handleBorder: function() {
@@ -65,6 +75,10 @@ var ex_box_01 = new Vue({
     },
     handleClass: function (name) {
       this.headerClass = name
+    },
+    handleTheme: function () {
+      if (this.theme === 'default') this.theme = 'card'
+      else this.theme = 'default'
     }
   }
 })

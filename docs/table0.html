@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=6306abe9">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=9424a245">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=f79d060b">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=cac0e1aa">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
-    <script src="lib/vue.js?t=11137295"></script>
-    <script src="lib/iview/iview.js?t=05ed700f"></script>
+    <script src="lib/vue.js?t=46ed8b2a"></script>
+    <script src="lib/iview/iview.js?t=4b109b10"></script>
     <script src="lib/echarts.common.min.js?t=cce08242"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=fa9f1bca"></script>
+    <script src="lib/vuecoms.js?t=6d49ad8c"></script>
     <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
     <title>表格说明 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
@@ -42,6 +42,10 @@
                     </li>
                     <li class="heading-item -depth-2"><a class="hlink link-" href="#">表格按钮定义说明</a>
                     </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">表格查询配置说明</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-store" href="#store">表格Store方法说明</a>
+                    </li>
                   </ul>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
@@ -66,6 +70,12 @@
                 </li>
               </ul>
             </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
+                </li>
+              </ul>
+            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
@@ -78,6 +88,12 @@
                 </li>
               </ul>
             </li>
+            <li class="menu-item -level-1 -parent"><span class="title">CardList</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-cardlist" href="cardlist.html">卡片列表</a>
+                </li>
+              </ul>
+            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Build</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
@@ -87,6 +103,8 @@
                 <li class="menu-item -level-2"><a class="link title  link-build3" href="build3.html">数据联动</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build4" href="build4.html">Select Rich</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
                 </li>
               </ul>
             </li>
@@ -248,6 +266,12 @@
 <td>&apos;id&apos;</td>
 </tr>
 <tr>
+<td>orderField</td>
+<td>&#x6392;&#x5E8F;&#x5B57;&#x6BB5;&#x540D;</td>
+<td>String</td>
+<td>&apos;order&apos;</td>
+</tr>
+<tr>
 <td>multiSelect</td>
 <td>&#x662F;&#x5426;&#x591A;&#x9009;</td>
 <td>Boolean</td>
@@ -258,6 +282,12 @@
 <td>&#x70B9;&#x51FB;&#x65F6;&#x662F;&#x5426;&#x9009;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4E3A; false &#xFF0C;&#x5219;&#x53EA;&#x80FD;&#x901A;&#x8FC7;checkbox&#x6765;&#x9009;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x628A; checkCol &#x8BBE;&#x4E3A; true</td>
 <td>Boolean</td>
 <td>false</td>
+</tr>
+<tr>
+<td>selectedRowClass</td>
+<td>&#x9009;&#x4E2D;&#x65F6;&#x7684;class&#x5C5E;&#x6027;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A; &apos;selected&apos;, &#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x9009;&#x4E2D;&#x884C;&#x4E0D;&#x663E;&#x793A;&#x5BF9;&#x5E94;&#x7684;class</td>
+<td>String</td>
+<td>selected</td>
 </tr>
 <tr>
 <td>resizable</td>
@@ -416,22 +446,10 @@
 <td>false</td>
 </tr>
 <tr>
-<td>parentField</td>
-<td>&#x7236;&#x7ED3;&#x70B9;&#x5B57;&#x6BB5;&#x540D;</td>
-<td>String</td>
-<td>&apos;parent&apos;</td>
-</tr>
-<tr>
 <td>treeField</td>
 <td>&#x663E;&#x793A;&#x6811;&#x578B;&#x7ED3;&#x6784;&#x7684;&#x5217;&#x540D;</td>
 <td>String</td>
 <td>&apos;&apos;</td>
-</tr>
-<tr>
-<td>isParentField</td>
-<td>&#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x5F53;&#x524D;&#x5217;&#x662F;&#x5426;&#x4E3A;&#x7236;&#x7ED3;&#x70B9;&#x7684;&#x5B57;&#x6BB5;&#x540D;</td>
-<td>String</td>
-<td>&apos;_isParent&apos;</td>
 </tr>
 <tr>
 <td>expandField</td>
@@ -469,6 +487,30 @@
 <td>Object</td>
 <td>{}</td>
 </tr>
+<tr>
+<td>headerShow</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;&#x8868;&#x5934;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>multiHeaderSep</td>
+<td>&#x591A;&#x884C;&#x8868;&#x5934;&#x5206;&#x9694;&#x7B26;</td>
+<td>String</td>
+<td>&apos;/&apos;</td>
+</tr>
+<tr>
+<td>hoverShow</td>
+<td>&#x5F53;&#x9F20;&#x6807;&#x79FB;&#x52A8;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x663E;&#x793A;hover&#x7684;&#x6837;&#x5F0F;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>checkStrictly</td>
+<td>&#x5F53;Grid&#x4E3A;&#x6811;&#x578B;&#x7ED3;&#x6784;&#x65F6;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A; true &#x65F6;&#xFF0C;&#x9009;&#x62E9;&#x7236;&#x7ED3;&#x70B9;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x9009;&#x62E9;&#x5B50;&#x7ED3;&#x70B9;&#x3002;&#x4E3A; false &#x65F6;&#xFF0C;&#x9009;&#x62E9;&#x7236;&#x7ED3;&#x70B9;&#x4F1A;&#x81EA;&#x52A8;&#x8054;&#x52A8;&#x9009;&#x62E9;&#x5B50;&#x7ED3;&#x70B9;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
 </tbody>
 </table>
 <table>
@@ -481,15 +523,15 @@
 <tbody>
 <tr>
 <td>onLoadData</td>
-<td>&#x88C5;&#x5165;&#x6570;&#x636E;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x4F20;&#x5165; function (url, param, callback)&#xFF0C;&#x5F53;&#x6811;&#x578B;&#x7ED3;&#x6784;&#x65F6;&#xFF0C;&#x4F1A;&#x4F20;&#x5165;parent&#x5B57;&#x6BB5;</td>
+<td>&#x88C5;&#x5165;&#x6570;&#x636E;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x4F20;&#x5165; function (url, param, callback)&#xFF0C;&#x5F53;&#x6811;&#x578B;&#x7ED3;&#x6784;&#x65F6;&#xFF0C;&#x4F1A;&#x53D8;&#x4E3A;(parent(idField), row(&#x5F53;&#x524D;&#x7ED3;&#x70B9;))&#x3002;&#x5176;&#x4E2D;param&#x4F1A;&#x5305;&#x542B;&#xFF1A;<br>&#x5206;&#x9875;&#x53D8;&#x91CF;: pageSize(&#x6BCF;&#x9875;&#x6761;&#x6570;), page(&#x5F53;&#x524D;&#x9875;)<br>&#x6392;&#x5E8F;&#x5B57;&#x6BB5;: sortField(&#x6392;&#x5E8F;&#x5B57;&#x6BB5;&#x540D;), sortDir(&#x6392;&#x5E8F;&#x65B9;&#x5411;asc, desc))<br>&#x67E5;&#x8BE2;&#x53D8;&#x91CF;: &#x8FD9;&#x4E2A;&#x662F;&#x548C;query&#x5BF9;&#x5E94;&#x7684;&#x3002;<br><br>callback(rows, param) callback&#x7528;&#x4E8E;&#x5728;&#x5904;&#x7406;&#x540E;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x3002;&#x4F8B;&#x5982;&#xFF1A;callback(rows, {total: &#x603B;&#x6761;&#x6570;})</td>
 </tr>
 <tr>
 <td>onSelect</td>
-<td>&#x5728;&#x9009;&#x62E9;&#x884C;&#x524D;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E3A;True&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x9009;&#x4E2D;</td>
+<td>&#x5728;&#x9009;&#x62E9;&#x884C;&#x524D;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E3A;true&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x9009;&#x4E2D;&#x3002;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x4E3A; (row, flag) flag &#x4E3A;true&#x8868;&#x793A;&#x9009;&#x4E2D;&#xFF0C;&#x4E3A;false&#x8868;&#x793A;&#x53D6;&#x6D88;&#x9009;&#x4E2D;</td>
 </tr>
 <tr>
 <td>onDeselect</td>
-<td>&#x5728;&#x53D6;&#x6D88;&#x9009;&#x62E9;&#x884C;&#x524D;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E3A;True&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x53D6;&#x6D88;&#x9009;&#x4E2D;</td>
+<td>&#x5728;&#x53D6;&#x6D88;&#x9009;&#x62E9;&#x884C;&#x524D;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E3A;true&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x53D6;&#x6D88;&#x9009;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x63D0;&#x4F9B;&#xFF0C;&#x5219;&#x5F53;onSelect&#x5B58;&#x5728;&#x65F6;&#x4F1A;&#x8C03;&#x7528;onSelect&#x3002;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x4E3A; row</td>
 </tr>
 <tr>
 <td>onCheckable</td>
@@ -564,7 +606,7 @@
 <td>html</td>
 <td>&#x662F;&#x5426;&#x5BF9;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x8F6C;&#x4E49;&#x3002;render&#x4E0D;&#x53D7;&#x6B64;&#x63A7;&#x5236;&#x3002;format&#x7684;&#x7ED3;&#x679C;&#x53D7;&#x63A7;&#x5236;&#x3002;</td>
 <td>Boolean</td>
-<td>True</td>
+<td>true</td>
 </tr>
 <tr>
 <td>resizable</td>
@@ -580,7 +622,7 @@
 </tr>
 <tr>
 <td>render</td>
-<td>&#x81EA;&#x5B9A;&#x4E49;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x3002;&#x5F62;&#x5F0F;&#x4E3A; render: function(h, param)&#xFF0C;&#x5176;&#x4E2D;h &#x4E3A;createElement&#x51FD;&#x6570;&#x3002;param&#x4E3A;&#x4E0A;&#x4E0B;&#x6587;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#xFF1A;<br>{<br>value: &#x5355;&#x5143;&#x683C;&#x7684;&#x503C;<br>column: &#x5355;&#x5143;&#x683C;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;<br>row: &#x5355;&#x5143;&#x683C;&#x6240;&#x5728;&#x884C;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;<br>}</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x3002;&#x5F62;&#x5F0F;&#x4E3A; render: function(h, param)&#xFF0C;&#x5176;&#x4E2D;h &#x4E3A;createElement&#x51FD;&#x6570;&#x3002;param&#x4E3A;&#x4E0A;&#x4E0B;&#x6587;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#xFF1A;<br>{<br>value: &#x5355;&#x5143;&#x683C;&#x7684;&#x503C;<br>column: &#x5355;&#x5143;&#x683C;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;<br>row: &#x5355;&#x5143;&#x683C;&#x6240;&#x5728;&#x884C;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;<br>grid: &#x6240;&#x5C5E;grid&#x5BF9;&#x8C61;<br>}</td>
 <td>Function</td>
 <td>null</td>
 </tr>
@@ -658,6 +700,202 @@
 <td>&#x70B9;&#x51FB;&#x65F6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x51FD;&#x6570;&#x539F;&#x578B;&#x4E3A; onClick: function (target, data), &#x5176;&#x4E2D;target&#x4E3A;&#x8868;&#x683C;&#x63A7;&#x4EF6;&#x672C;&#x8EAB;&#x3002;data&#x4E3A;&#x8868;&#x683C;&#x5E95;&#x5C42;&#x7684;store&#x5BF9;&#x8C61;&#x3002;</td>
 <td>Function</td>
 <td>null</td>
+</tr>
+</tbody>
+</table>
+<h2 id="">&#x8868;&#x683C;&#x67E5;&#x8BE2;&#x914D;&#x7F6E;&#x8BF4;&#x660E;</h2>
+<p>Grid&#x652F;&#x6301;&#x5185;&#x7F6E;&#x7684;&#x67E5;&#x8BE2;&#x5C55;&#x793A;&#xFF0C;&#x901A;&#x8FC7;&#x5B9A;&#x4E49; <code>query</code> &#x5C5E;&#x6027;&#xFF0C;&#x5177;&#x4F53;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;</p>
+<pre><code>query: {
+  fields: [
+    {name: &quot;str1&quot;, type: &quot;string&quot;, label: &quot;&#x5B57;&#x7B26;&#x4E32;1&quot;, placeholder: &quot;&#x8BF7;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;1&quot;},
+  ],
+  layout: [
+    [&apos;str1&apos;]
+  ]
+}
+</code></pre>
+<p>&#x5C5E;&#x6027;&#x8BF4;&#x660E;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+<th>&#x7F3A;&#x7701;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fields</td>
+<td>&#x67E5;&#x8BE2;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x3002;&#x5177;&#x4F53;&#x7684;&#x5F62;&#x5F0F;&#x548C;Build&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x4E00;&#x81F4;&#x3002;</td>
+<td>Array</td>
+<td>&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>labelWidth</td>
+<td>&#x6807;&#x7B7E;&#x5BBD;&#x5EA6;&#x3002;</td>
+<td>Number</td>
+<td>80</td>
+</tr>
+<tr>
+<td>layout</td>
+<td>&#x5E03;&#x5C40;&#x3002;&#x4E3A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#xFF0C;&#x5982; <code>[[&apos;str1&apos;, &apos;str2&apos;], [&apos;str3&apos;, &apos;str4&apos;]]</code> <br>&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x5B57;&#x6BB5;&#x662F;&#x5BF9;&#x5E94;fields&#x4E2D;&#x5B57;&#x6BB5;&#x7684;name&#x503C;&#x3002;&#x9664;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E3A;&#x5BF9;&#x8C61;&#xFF0C;&#x5982; <code>{name: &apos;str1&apos;, colspan: 8}</code>&#xFF0C;&#x5176;&#x4E2D; <code>colspan</code> &#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x7684;&#x5BBD;&#x5EA6;&#x3002;&#x6309;24&#x5217;&#x8BA1;&#x7B97;&#xFF0C;&#x5982;&#x679C;&#x6309;2&#x5217;&#x6309;&#xFF0C;colspan&#x5E94;&#x4E3A; 12.</td>
+<td>Array[Array]</td>
+<td>&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>firstLineLayout</td>
+<td>&#x5F53;&#x5E03;&#x5C40;&#x4E3A;&#x591A;&#x884C;&#x65F6;&#xFF0C;&#x7F3A;&#x7701;&#x53EA;&#x663E;&#x793A;&#x7B2C;&#x4E00;&#x884C;&#xFF0C;&#x5219;&#x7B2C;&#x4E00;&#x884C;&#x5C55;&#x793A;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x6839;&#x636E;layout&#x5C5E;&#x6027;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x6765;&#x51B3;&#x5B9A;&#x7684;&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x7B2C;&#x4E00;&#x884C;&#x7684;&#x5E03;&#x5C40;&#xFF0C;&#x5B83;&#x5C06;&#x663E;&#x793A;&#x4E3A;&#x7D27;&#x51D1;&#x6A21;&#x5F0F;&#x3002;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x8BBE;&#x7F6E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x5BBD;&#x5EA6;.</td>
+<td>Array</td>
+<td>&#x975E;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>showLine</td>
+<td>&#x7F3A;&#x7701;&#x663E;&#x793A;&#x51E0;&#x884C;&#x6761;&#x4EF6;&#x3002;&#x5728;&#x5E03;&#x5C40;&#x6709;&#x591A;&#x884C;&#x65F6;&#x6709;&#x610F;&#x4E49;&#x3002;</td>
+<td>Number</td>
+<td>1</td>
+</tr>
+<tr>
+<td>choices</td>
+<td>&#x5BF9;&#x4E8E;&#x5B57;&#x6BB5;&#x4E3A;&#x4E0B;&#x62C9;&#x5217;&#x8868;&#x65F6;&#xFF0C;&#x5F53;choices&#x4E3A;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x503C;&#x6765;&#x5F02;&#x6B65;&#x4FEE;&#x6539;&#x5BF9;&#x5E94;&#x5B57;&#x6BB5;&#x7684;&#x4E0B;&#x62C9;&#x503C;&#x3002;&#x5982;&#xFF1A;<br><code>choices: {select1: []}</code></td>
+<td>Object</td>
+<td>&#x975E;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>submitText</td>
+<td>&#x63D0;&#x4EA4;&#x67E5;&#x8BE2;&#x7684;&#x6309;&#x94AE;&#x540D;&#x79F0;</td>
+<td>String</td>
+<td><code>&apos;&#x67E5;&#x8BE2;&apos;</code></td>
+</tr>
+<tr>
+<td>resetText</td>
+<td>&#x91CD;&#x7F6E;&#x67E5;&#x8BE2;&#x7684;&#x6309;&#x94AE;&#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x4E0D;&#x663E;&#x793A;</td>
+<td>String</td>
+<td><code>&apos;&#x91CD;&#x7F6E;&apos;</code></td>
+</tr>
+<tr>
+<td>parseUrl</td>
+<td>&#x662F;&#x5426;&#x81EA;&#x52A8;&#x6839;&#x636E;URL&#x6765;&#x89E3;&#x6790;&#x67E5;&#x8BE2;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x3002;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h2 id="store">&#x8868;&#x683C;Store&#x65B9;&#x6CD5;&#x8BF4;&#x660E;</h2>
+<p>&#x5728;&#x8868;&#x683C;&#x5E95;&#x5C42;&#x6709;store&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;states&#x4FDD;&#x5B58;&#x4E86;Grid&#x6240;&#x9700;&#x8981;&#x7684;&#x53D8;&#x91CF;&#xFF0C;store&#x672C;&#x8EAB;&#x5219;&#x4FDD;&#x5B58;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7;&#x5728;Grid&#x4E0A;&#x5B9A;&#x4E49;ref&#xFF0C;&#x7136;&#x540E; this.$refs.grid.store&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x4E0B;&#x9762;&#x5206;&#x522B;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x65B9;&#x6CD5;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x8FD4;&#x56DE;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected</td>
+<td>selected(row) <br>&#x5224;&#x65AD;&#x4E00;&#x884C;&#x662F;&#x5426;&#x88AB;&#x9009;&#x4E2D;, row&#x4E3A;&#x8981;&#x5224;&#x65AD;&#x7684;&#x884C;&#x3002;</td>
+<td>true / false</td>
+</tr>
+<tr>
+<td>toggle</td>
+<td>toggle(row, force=false) <br>&#x5207;&#x6362;&#x9009;&#x4E2D;/&#x4E0D;&#x9009;&#x4E2D;&#x72B6;&#x6001;&#x3002;force&#x4E3A;&#x5F3A;&#x5236;&#x5207;&#x6362;&#x3002;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>select</td>
+<td>select(row, force=false) <br>&#x9009;&#x4E2D;&#x67D0;&#x884C;&#x3002;&#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86; onSelect() &#x56DE;&#x8C03;&#xFF0C;&#x5219;&#x5F53;force&#x4E3A;false&#x65F6;&#x4F1A;&#x901A;&#x7528;onSelect&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#xFF0C;&#x5982;&#x679C;onSelect&#x8FD4;&#x56DE;true&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x9009;&#x4E2D;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x53EF;&#x4EE5;&#x9009;&#x4E2D;&#x3002;&#x5F53;force&#x4E3A;true&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;onSelect&#x65B9;&#x6CD5;&#x3002;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>selectAll</td>
+<td>selectAll(force=false) <br>&#x5168;&#x9009;&#x3002;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>deselect</td>
+<td>dselect(row, force=false) <br>&#x53D6;&#x6D88;&#x9009;&#x62E9;&#x3002;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>deselectAll</td>
+<td>deselectAll(force=false) <br>&#x5168;&#x90E8;&#x53D6;&#x6D88;&#x9009;&#x62E9;&#x3002;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>getSelection</td>
+<td>getSelection() <br>&#x83B7;&#x53D6;&#x9009;&#x4E2D;&#x8BB0;&#x5F55;&#x7684;idField&#x6570;&#x7EC4;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6B64;&#x51FD;&#x6570;&#x4F1A;&#x4F7F;&#x7528;idField&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A; &apos;id&apos;</td>
+<td>Array</td>
+</tr>
+<tr>
+<td>getSelectedRows</td>
+<td>getSelectedRows() <br>&#x83B7;&#x53D6;&#x9009;&#x4E2D;&#x8BB0;&#x5F55;&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x7EC4;</td>
+<td>Array</td>
+</tr>
+<tr>
+<td>setSelection</td>
+<td>setSelection (selection, force=true) <br>&#x8BBE;&#x7F6E;&#x9009;&#x4E2D;&#x884C;&#x3002;selection&#x4E3A;&#x884C;&#x5BF9;&#x5E94;&#x7684;idField&#x7684;&#x6570;&#x7EC4;&#x3002;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>showLoading</td>
+<td>showLoading (loading=true, text=&apos;&apos;) <br>&#x663E;&#x793A;/&#x9690;&#x85CF;&#x6B63;&#x5728;&#x88C5;&#x8F7D;&#x7684;&#x4FE1;&#x606F;&#x7A97;&#x3002;loading&#x7528;&#x4E8E;&#x5207;&#x6362;&#x3002;text&#x4E3A;&#x663E;&#x793A;&#x7684;&#x4FE1;&#x606F;&#x5185;&#x5BB9;&#x3002;&#x7F3A;&#x7701;&#x4E3A; states.loadingText &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x503C;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>removeRow</td>
+<td>removeRow (row) <br>&#x5220;&#x9664;&#x67D0;&#x4E00;&#x884C;&#x3002;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>setComment</td>
+<td>setComment (row, column, content, type=&apos;info&apos;) <br>&#x8BBE;&#x7F6E;&#x67D0;&#x884C;&#x67D0;&#x5355;&#x5143;&#x683C;&#x7684;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&#x3002;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>removeComment</td>
+<td>removeComment (row, column) <br>&#x5220;&#x9664;&#x67D0;&#x884C;&#x67D0;&#x5355;&#x5143;&#x683C;&#x7684;&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&#x3002;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>setClass (row, column, name)</td>
+<td>setClass (row, column, name) <br>&#x8BBE;&#x7F6E;&#x67D0;&#x884C;&#x67D0;&#x5355;&#x5143;&#x683C;&#x7684;class&#x5C5E;&#x6027;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>removeClass</td>
+<td>removeClass (row, column) <br>&#x5220;&#x9664;&#x67D0;&#x884C;&#x67D0;&#x5355;&#x5143;&#x683C;&#x7684;class&#x5C5E;&#x6027;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>updateRow</td>
+<td>updateRow(row)</td>
+<td>&#x66F4;&#x65B0;&#x67D0;&#x884C;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td>addRow</td>
+<td>addRow (row, item, position=&apos;after&apos;, isChild=false) <br>&#x589E;&#x52A0;&#x884C;&#x3002;row&#x4E3A;&#x6570;&#x636E;&#xFF0C;&#x4E3A;null&#x6216;{}&#x65F6;&#x4E3A;&#x7A7A;&#x884C;&#x3002;item&#xFF0C;position&#x548C;isChild&#x8054;&#x7528;&#x8868;&#x793A;&#x6DFB;&#x52A0;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x3002;&#x5F53;isChild&#x4E3A;true&#x65F6;&#xFF0C;item&#x8868;&#x793A;&#x7236;&#x7ED3;&#x70B9;&#x3002;&#x4E3A;false&#x65F6;&#xFF0C;item&#x8868;&#x793A;&#x5144;&#x5F1F;&#x7ED3;&#x70B9;&#x3002;&#x5BF9;&#x4E8E;&#x5144;&#x5F1F;&#x7ED3;&#x70B9;&#xFF0C;position&#x4E3A; &apos;before&apos; &#x65F6;&#xFF0C;&#x662F;&#x63D2;&#x5728;&#x5B83;&#x4E4B;&#x524D;&#x3002;&apos;after&apos; &#x65F6;&#xFF0C;&#x662F;&#x63D2;&#x5728;&#x5B83;&#x4E4B;&#x540E;&#x3002;&#x5BF9;&#x4E8E;&#x7236;&#x7ED3;&#x70B9;&#xFF0C;&apos;before&apos; &#x662F;&#x63D2;&#x5728;&#x5B83;&#x7684;&#x6700;&#x5F00;&#x59CB;&#x7684;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&apos;after&apos; &#x662F;&#x8FFD;&#x56DE;&#x5230;&#x6240;&#x6709;&#x5B50;&#x7ED3;&#x70B9;&#x4E4B;&#x540E;</td>
+<td>Object (&#x65B0;&#x7684;row&#x5BF9;&#x8C61;)</td>
+</tr>
+<tr>
+<td>addChildRow</td>
+<td>addChildRow(row, parent, position) <br>&#x5B83;&#x662F;addRow&#x5BF9;&#x4E8E;&#x63D2;&#x5165;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x5305;&#x88C5;&#x3002;</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>addEditRow</td>
+<td>addEditRow (row, parent, position, isChild=false)<br>&#x5B83;&#x548C;addRow&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x6DFB;&#x52A0;&#x4E4B;&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x884C;&#x7F16;&#x8F91;&#x72B6;&#x6001;&#x3002;</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>addEditChildRow</td>
+<td>addEditChildRow (row, parent, position) <br>&#x6DFB;&#x52A0;&#x53EF;&#x7F16;&#x8F91;&#x7684;&#x5B50;&#x7ED3;&#x70B9;&#x3002;</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>getColumn</td>
+<td>getColumn (name)<br>&#x83B7;&#x5F97;&#x6307;&#x5B9A;&#x540D;&#x5B57;&#x7684;&#x8868;&#x5934;</td>
+<td>Object</td>
 </tr>
 </tbody>
 </table>

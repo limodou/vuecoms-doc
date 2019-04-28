@@ -51,8 +51,6 @@ var ex_build_02 = new Vue({
           ['rich1'],
           ['grid']
         ],
-        component: 'Layout',
-        boxComponent: 'Box',
       },
       {
         name: 'files',
@@ -86,7 +84,15 @@ var ex_build_02 = new Vue({
             [{label: '合并出错结果', type:'info', onClick: function(target, data){
                 self.$refs.build.errors = {select1: '这是合并后的错误'}
               }
-            }]
+            }],
+            [{label: '隐藏基本信息2', type:'info', onClick: function(target, data){
+                //self.$refs.build = {select1: '这是合并后的错误'}
+                self.$set(self.$refs.build.data[2], 'hidden', !self.$refs.build.data[2].hidden)
+              }
+            }],
+            [
+              {component: 'u-select', props: {choices: [{label: 'Test A', value: 'A'}, {label: 'Test B', value: 'B'}], value: 'A'}, on: {input: function(v){self.$Message.info(v)}}}
+            ]
           ],
         size: 'default',
         component: 'buttons'

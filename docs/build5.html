@@ -13,7 +13,7 @@
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
     <script src="lib/vuecoms.js?t=6d49ad8c"></script>
     <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
-    <title>Dialog - Vuecoms</title>
+    <title>自定义Box - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
   <body class="-menu-visible">
@@ -90,7 +90,7 @@
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build4" href="build4.html">Select Rich</a>
                 </li>
-                <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
+                <li class="menu-item -level-2"><a class="link title -active link-build5" href="build5.html">自定义Box</a>
                 </li>
               </ul>
             </li>
@@ -108,7 +108,7 @@
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
               <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title -active link-dialog" href="dialog.html">Dialog</a>
+                <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
                 </li>
               </ul>
             </li>
@@ -133,134 +133,155 @@
           </ul>
         </li>
       </div>
-      <div class="body page-dialog">
+      <div class="body page-build5">
         <div class="header-nav">
           <div class="right">
           </div>
         </div>
-        <div class="markdown-body"><h1 id="">&#x5BF9;&#x8BDD;&#x6846;</h1>
-<div id="ex-editor-01">
-  <i-button type="primary" @click="open=true">Show Modal</i-button>
-  <modal v-model="open" title="&#x5BF9;&#x8BDD;&#x6846;&#x6807;&#x9898;" width="1024" ref="modal">
-    <build ref="build" :data="data" :value="value"></build>
-    <div slot="footer">
-      <i-button type="text" size="large" @click.native="cancel">&#x53D6;&#x6D88;</i-button>
-      <i-button type="primary" size="large" :loading="buttonLoading" @click.native="ok">&#x786E;&#x5B9A;</i-button>
-    </div>
-  
-</modal></div>
+        <div class="markdown-body"><h1 id="box">&#x81EA;&#x5B9A;&#x4E49;Box</h1>
+<p>&#x672C;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x5728;Build&#x4E2D;&#x66FF;&#x6362;&#x539F;&#x6709;&#x7684;Box&#xFF0C;&#x589E;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x662F;&#x5728;Box&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#x3002;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x51E0;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x4F7F;&#x7528; <code>theme=&quot;card&quot;</code> &#x7684;&#x98CE;&#x683C;&#xFF0C;&#x548C;iview&#x517C;&#x5BB9;</li>
+<li>&#x4E0D;&#x663E;&#x793A;&#x6536;&#x8D77;&#x6309;&#x94AE;</li>
+<li>&#x5B9A;&#x5236;title&#x6548;&#x679C;&#xFF0C;&#x52A0;icon&#x548C;&#x70B9;&#x51FB;&#x94FE;&#x63A5;</li>
+<li>&#x5E95;&#x90E8;&#x6309;&#x94AE;&#x5C45;&#x4E2D;&#x663E;&#x793A;</li>
+</ol>
+<div id="ex-build-01">
+  <build ref="build" :data="data" :value="value" :choices="choices" :errors="errors"></build>
+  <div>{{value}}</div>
+</div>
 <script>
-var choices = [
-  {label:'选项一', value: 'A'},
-  {label:'选项二', value: 'B'},
-  ]
-var ex_editor_01 = new Vue({
-  el: '#ex-editor-01',
-  data: function () {
-    var data = [
-      {
-        name: 'basic1',
-        title: '基本信息1',
-        fields: [
-          {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
-            info: 'info信息', required: true, rule: {type: 'email'}},
-          {name: 'str2', label: '静态字符串2', static: true, required: true, convert: function(v){
-            return '<a href="#">' + v + '</a>'
-            }
-          },
-          {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices}},
-          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices}},
-          {name: 'rich1', label: '富文本', type: 'tinymce', options: { options: {height: 200}}},
-          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {choices:
-            [ {
-                  id: 'fruits',
-                  title: 'Fruits',
-                  children: [ {
-                    id: 'apple',
-                    title: 'Apple',
-                  }, {
-                    id: 'grapes',
-                    title: 'Grapes',
-                  }, {
-                    id: 'pear',
-                    title: 'Pear',
-                  }, {
-                    id: 'strawberry',
-                    title: 'Strawberry',
-                  }, {
-                    id: 'watermelon',
-                    title: 'Watermelon',
-                  } ],
-                }, {
-                  id: 'vegetables',
-                  title: 'Vegetables',
-                  children: [ {
-                    id: 'corn',
-                    title: 'Corn',
-                  }, {
-                    id: 'carrot',
-                    title: 'Carrot',
-                  }, {
-                    id: 'eggplant',
-                    title: 'Eggplant',
-                  }, {
-                    id: 'tomato',
-                    title: 'Tomato',
-                  } ],
-                } ]
-              }
-          },
-        ],
-        layout: [
-          ['str1', 'str2'],
-          ['select1', 'select2'],
-          ['tree1'],
-          ['rich1']
-        ],
-        boxComponent: ''
-      }
-    ]
-    return {
-      open: false,
-      data: data,
-      buttonLoading: false,
-      value: {
-        select1: 'B',
-        select2: 'A',
-        select3: ['A', 'B'],
-        select4: ['A', 'B'],
-      }
-    }
-  },
+Vue.component('mybox', {
+  template: ['<Box theme="card" style="margin-bottom:20px" :removerable="false" :collapse="false" v-bind="$options.propsData">',
+  '<p slot="title"><Icon :type="icon"></Icon> {{title}} <a @click.prevent="handleClick" style="font-size: 12px">点击示例</a></p>',
+  '<i-button slot="tools" size="small">新增</i-button>',
+  '<div slot="footer"><slot name="footer"></slot></div>',
+  '<slot></slot>',
+  '</Box>'].join(''),
+  props: ['title', 'icon', 'withBorder', 'withFooterBorder', 'footerAlign', 'headerAlign'],
   methods: {
-    ok: function (){
-      this.buttonLoading = true
-      this.$refs.build.validate(this.save)
-    },
-    cancel: function (){
-      this.$refs.modal.close()
-    },
-    save: function(error) {
-      var self = this
-      if (error) {
-        this.buttonLoading = false
-        this.$Message.error(error)
-      } else {
-        setTimeout(function(){
-          self.buttonLoading = false
-          self.$refs.modal.close()
-          self.$Message.info('saved')
-        }, 1000)
-      }
+    handleClick: function() {
+      console.log(this)
+      this.$Message.info("点击示例")
     }
   }
 })
+var ex_build_01 = new Vue({
+  el: '#ex-build-01',
+  data: function () {
+    var self = this
+    var data = [
+      {
+        name: 'basic',
+        title: '基本信息',
+        labelWidth: 150,
+        staticSuffix: '_static',
+        fields: [
+          {name: 'select1', label: '选择1', type: 'select', required: true, options: {clearable: true,
+              // choices: [
+              //   {label:'选项一', value: 'A'},
+              //   {label:'选项二', value: 'B'},
+              // ] 
+            },
+            onChange: function (value, alldata) {
+              self.$set(alldata, 'select2', value)
+            }
+          },
+          {name: 'select2', label: '选择2', type: 'str', static: true},
+          {name: 'select3', label: '选择3', type: 'select', required: true, multiple: true, options: {clearable: true,
+              // choices: [
+              //   {label:'选项一', value: 'A'},
+              //   {label:'选项二', value: 'B'},
+              // ] 
+            }
+          },
+        ],
+        layout: [
+          ['select1', 'select2'],
+          [{name: 'select3', colspan: 12}]
+        ],
+        boxComponent: 'mybox',
+        boxOptions: {icon: 'ios-albums-outline', withBorder: true, withFooterBorder: false, footerAlign: 'center'},
+        buttons: {
+          items: [
+            [{label: '查看结果', type:'primary', onClick: function(target, data){
+                console.log(target, data)
+              }
+            }],
+          ],
+        }
+      },
+    ]
+    return {
+            data:data,
+            value: {
+              select1: '',
+              select2: ''
+            },
+            choices: {
+              select1: [],
+              select3: []
+            },
+            errors: {},
+          }
+  },
+  methods: {
+    save: function(error) {
+      if (error) {
+        this.$Message.error(error)
+      } else {
+        this.$Message.info('saved')
+      }
+    }
+  },
+  mounted: function () {
+    var self = this
+    setTimeout(function () {
+      self.$set(self.value, 'select1', 'A')
+      self.$set(self.value, 'select3', ['A', 'B'])
+    }, 50)
+    setTimeout(function () {
+      var c = [
+        {label:'选项一', value: 'A'},
+        {label:'选项二', value: 'B'},
+        {label:'选项三', value: 'C'}
+      ]
+      self.$set(self.choices, 'select1', c)
+      self.$set(self.choices, 'select3', c)
+    }, 1000)
+  }
+})
 </script>
+<hr>
+<p>&#x4E0A;&#x8FF0;Box&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>Vue.component(&apos;mybox&apos;, {
+  template: [&apos;&lt;Box theme=&quot;card&quot; style=&quot;margin-bottom:20px&quot; :removerable=&quot;false&quot; :collapse=&quot;false&quot; v-bind=&quot;$options.propsData&quot;&gt;&apos;,
+  &apos;&lt;p slot=&quot;title&quot; class=&quot;box-title&quot;&gt;&lt;Icon :type=&quot;icon&quot;&gt;&lt;/Icon&gt; {{title}} &lt;a @click.prevent=&quot;handleClick&quot; style=&quot;font-size: 12px&quot;&gt;&#x70B9;&#x51FB;&#x793A;&#x4F8B;&lt;/a&gt;&lt;/p&gt;&apos;,
+  &apos;&lt;i-button slot=&quot;tools&quot; size=&quot;small&quot;&gt;&#x65B0;&#x589E;&lt;/i-button&gt;&apos;,
+  &apos;&lt;div slot=&quot;footer&quot;&gt;&lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;&lt;/div&gt;&apos;,
+  &apos;&lt;slot&gt;&lt;/slot&gt;&apos;,
+  &apos;&lt;/Box&gt;&apos;].join(&apos;&apos;),
+  props: [&apos;title&apos;, &apos;icon&apos;, &apos;withBorder&apos;, &apos;withFooterBorder&apos;, &apos;footerAlign&apos;, &apos;headerAlign&apos;],
+  methods: {
+    handleClick: function() {
+      console.log(this)
+      this.$Message.info(&quot;&#x70B9;&#x51FB;&#x793A;&#x4F8B;&quot;)
+    }
+  }
+})
+</code></pre>
+<p>&#x672C;&#x793A;&#x4F8B;&#x662F;&#x76F4;&#x63A5;&#x5728;js&#x4E2D;&#x7F16;&#x5199;&#xFF0C;&#x672A;&#x5199;&#x6210;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x65B9;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x5355;&#x6587;&#x4EF6;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x4FEE;&#x6539;&#x3002;</p>
+<ul>
+<li><code>v-bind=&quot;$options.propsData&quot;</code> &#x662F;&#x7528;&#x4E8E;&#x65B9;&#x4FBF;&#x5411;Box&#x4F20;&#x9012;&#x5916;&#x90E8;&#x8BBE;&#x7F6E;&#x7684;&#x53C2;&#x6570;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x5728; <code>props</code> &#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x53EF;&#x4EE5;&#x8BA9;&#x5916;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>&lt;p slot=&quot;title&quot;&gt;&lt;Icon :type=&quot;icon&quot;&gt;&lt;/Icon&gt; {{title}} &lt;a @click.prevent=&quot;handleClick&quot; style=&quot;font-size: 12px&quot;&gt;&#x70B9;&#x51FB;&#x793A;&#x4F8B;&lt;/a&gt;&lt;/p&gt;</code> &#x5B9E;&#x73B0;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x6807;&#x9898;&#x5934;&#x3002;&#x8981;&#x6CE8;&#x610F;&#x6307;&#x660E; <code>slot=&quot;title&quot;</code>&#x3002;</li>
+<li><code>&lt;i-button slot=&quot;tools&quot; size=&quot;small&quot;&gt;&#x65B0;&#x589E;&lt;/i-button&gt;</code> &#x5B9E;&#x73B0;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x53F3;&#x4E0A;&#x89D2;&#x5DE5;&#x5177;&#x6309;&#x94AE;&#x3002;</li>
+<li><code>&lt;div slot=&quot;footer&quot;&gt;&lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;&lt;/div&gt;</code> &#x5B9E;&#x73B0;&#x4E86; footer &#x5904;&#x7406;&#xFF0C;&#x4EE5;&#x4FBF;&#x5411;&#x539F; Box &#x7684; footer &#x8FDB;&#x884C;&#x5185;&#x5BB9;&#x4F20;&#x9012;&#x3002;</li>
+</ul>
 
         </div>
         <div class="footer-nav">
-          <div class="left"><a href="editor.html"><span class="title">Editor</span></a></div>
-          <div class="right"><a href="grid.html"><span class="label">Next: </span><span class="title">布局展示</span></a></div>
+          <div class="left"><a href="build4.html"><span class="title">Select Rich</span></a></div>
+          <div class="right"><a href="chart.html"><span class="label">Next: </span><span class="title">EChart</span></a></div>
         </div>
       </div>
     </div>

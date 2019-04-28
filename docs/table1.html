@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=6306abe9">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=9424a245">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=f79d060b">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=cac0e1aa">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
-    <script src="lib/vue.js?t=11137295"></script>
-    <script src="lib/iview/iview.js?t=05ed700f"></script>
+    <script src="lib/vue.js?t=46ed8b2a"></script>
+    <script src="lib/iview/iview.js?t=4b109b10"></script>
     <script src="lib/echarts.common.min.js?t=cce08242"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=fa9f1bca"></script>
+    <script src="lib/vuecoms.js?t=6d49ad8c"></script>
     <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
     <title>简单表格 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
@@ -56,6 +56,12 @@
                 </li>
               </ul>
             </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
+                </li>
+              </ul>
+            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
@@ -68,6 +74,12 @@
                 </li>
               </ul>
             </li>
+            <li class="menu-item -level-1 -parent"><span class="title">CardList</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-cardlist" href="cardlist.html">卡片列表</a>
+                </li>
+              </ul>
+            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Build</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
@@ -77,6 +89,8 @@
                 <li class="menu-item -level-2"><a class="link title  link-build3" href="build3.html">数据联动</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build4" href="build4.html">Select Rich</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
                 </li>
               </ul>
             </li>
@@ -164,7 +178,7 @@ var ex_table_01 = new Vue({
         {name:&apos;name2&apos;, title:&apos;Name2&apos;, width: 100},
         {name:&apos;name3&apos;, title:&apos;Name3&apos;, width:100},
         {name:&apos;name4&apos;, title:&apos;Name4&apos;, align:&apos;center&apos;, width:400, html: false},
-        {name:&apos;name5&apos;, title:&apos;Name5&apos;, width:400, render: function(h, param) {
+        {name:&apos;name5&apos;, title:&apos;Name5&apos;, width:80, render: function(h, param) {
           var self = this
           return h(&apos;Checkbox&apos;, {
             props: {
@@ -212,10 +226,15 @@ var ex_table_01 = new Vue({
   data: function () {
     var self = this
     var table = {
-      nowrap: true,
+      nowrap: false,
       indexCol: true,
       theme: 'default',
       pagination: true,
+      multiHeaderSep: '//',
+      headerShow: false,
+      hoverShow: false,
+      total: 1,
+      page: 1,
       columns: [
         {name:'check', title:'#', width:40, fixed: 'left', render: function(h, param) {
           var self = this
@@ -231,10 +250,10 @@ var ex_table_01 = new Vue({
           })
         }},
         {name:'name1', title:'Name1', width:100, fixed: 'left'},
-        {name:'name2', title:'Name2', width: 100},
+        {name:'name2', title:'Name2 Name2中中中 中中中中 <i class="ivu-icon ivu-icon-logo-youtube"></i>', width: 100},
         {name:'name3', title:'Name3', width:100},
         {name:'name4', title:'Name4', align:'center', width:400, html: false},
-        {name:'name5', title:'Name5', width:400, render: function(h, param) {
+        {name:'name5', title:'Name5', width:80, render: function(h, param) {
           var self = this
           return h('Checkbox', {
             props: {
@@ -259,15 +278,20 @@ var ex_table_01 = new Vue({
             else
               self.$refs.grid.theme = 'default'
           }}
+        ],
+        [
+          {label: '切换表头', type: 'primary', onClick: function () {
+            self.$refs.grid.store.states.headerShow = !self.$refs.grid.store.states.headerShow
+          }}
         ]
       ]
     }
-    table.data.push({id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'<i>Hello</i>', name5:'E1', name6:'F1'})
-    table.data.push({id:2, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
-    table.data.push({id:3, check: 'A1', name1:'A1', name2:'B2', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
-    table.data.push({id:4, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
-    table.data.push({id:5, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
-    table.data.push({id:6, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
+    table.data.push({id:1, check: 'A1', name1:'A1', name2:0, name3:'C1', name4:'<i>Hello</i>', name5:'E1', name6:'F1'})
+    table.data.push({id:2, check: 'A1', name1:'A1', name2:'0', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:3, check: 'A1', name1:'A1', name2:'0', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:4, check: 'A2', name1:'A2', name2:'0', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
+    table.data.push({id:5, check: 'A2', name1:'A2', name2:'0', name3:'C1', name4:0, name5:'E2', name6:'F1'})
+    table.data.push({id:6, check: 'A1', name1:'A1', name2:'0', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
     return {table:table}
   }
 })

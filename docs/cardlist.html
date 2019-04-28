@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=f79d060b">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=cac0e1aa">
+    <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
+    <script src="assets/script.js?t=42463e55"></script>
+    <script src="lib/vue.js?t=46ed8b2a"></script>
+    <script src="lib/iview/iview.js?t=4b109b10"></script>
+    <script src="lib/echarts.common.min.js?t=cce08242"></script>
+    <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
+    <script src="lib/vuecoms.js?t=6d49ad8c"></script>
+    <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
+    <title>卡片列表 - Vuecoms</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Box</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-box1" href="box1.html">基本用法</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Table</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-table0" href="table0.html">表格说明</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table3" href="table3.html">表格拖动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table4" href="table4.html">表格行编辑</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table5" href="table5.html">Tree表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table6" href="table6.html">通用表格</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-fields" href="fields.html">基础控件</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Query</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">TreeSelect</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-treeselect" href="treeselect.html">选择树控件</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">CardList</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title -active link-cardlist" href="cardlist.html">卡片列表</a>
+                  <ul class="headings heading-list">
+                    <li class="heading-item -depth-2"><a class="hlink link-config" href="#config">config参数说明</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-cardlist" href="#cardlist">CardList 方法说明</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Build</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build3" href="build3.html">数据联动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build4" href="build4.html">Select Rich</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Chart</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-chart" href="chart.html">EChart</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Editor</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-editor" href="editor.html">Editor</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Grid</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-grid" href="grid.html">布局展示</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-research_edit" href="research_edit.html">任务编辑</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-cardlist">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="">&#x5361;&#x7247;&#x5217;&#x8868;</h1>
+<p>&#x4E3A;&#x4E86;&#x5904;&#x7406;&#x901A;&#x7528;&#x7684;&#x5361;&#x7247;&#x5F0F;&#x5217;&#x8868;&#x7ED3;&#x6784;&#xFF0C;vuecoms&#x63D0;&#x4F9B;&#x4E86; CardList &#x7EC4;&#x4EF6;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x81EA;&#x5B9A;&#x4E49;&#x5361;&#x7247;&#x5217;&#x8868;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x5206;&#x9875;&#xFF0C;&#x6570;&#x636E;&#x5904;&#x7406;&#x7B49;&#xFF0C;&#x4F46;&#x662F;&#x5177;&#x4F53;&#x7684;&#x5C55;&#x793A;&#x4EA4;&#x7ED9;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x4E3A;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&lt;div id=&quot;ex-table-01&quot;&gt;
+  &lt;card-list :config=&quot;table&quot; v-if=&quot;enable&quot; ref=&quot;cardlist&quot;&gt;
+    &lt;template slot-scope=&quot;data&quot;&gt;
+      &lt;card v-for=&quot;item of data.data&quot; style=&quot;margin-bottom: 10px&quot;&gt;
+        &lt;card-item :data=&quot;item&quot;&gt;&lt;/card-item&gt;
+      &lt;/card&gt;
+    &lt;/template&gt;
+  &lt;/card-list&gt;
+  &lt;Buttons :buttons=&quot;buttons&quot;&gt;&lt;/Buttons&gt;
+&lt;/div&gt;
+</code></pre>
+<p>&#x5176;&#x4E2D; <code>&lt;card-list&gt;</code> &#x5B9E;&#x73B0;&#x4E86;&#x6574;&#x4F53;&#x7684;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#xFF0C;&#x5B83;&#x9700;&#x8981; <code>config</code> &#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x4FE1;&#x606F;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x7528;&#x6237;&#x9700;&#x8981;&#x5B9A;&#x4E49;</p>
+<pre><code>&lt;template slot-scope=&quot;data&quot;&gt;
+  &lt;card v-for=&quot;item of data.data&quot; style=&quot;margin-bottom: 10px&quot;&gt;
+    &lt;card-item :data=&quot;item&quot;&gt;&lt;/card-item&gt;
+  &lt;/card&gt;
+&lt;/template&gt;
+</code></pre>
+<p>&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5361;&#x7247;&#x5C55;&#x793A;&#x3002;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86; <code>slot-scope</code> &#x7684;&#x529F;&#x80FD;&#xFF08;&#x76EE;&#x524D;vuecoms&#x8FD8;&#x4E0D;&#x652F;&#x6301;Vue 2.6.X&#xFF09;&#x3002;&#x6570;&#x636E;&#x5C06;&#x901A;&#x8FC7; <code>slot-scope</code> &#x6765;&#x83B7;&#x53D6;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3A; <code>data</code> &#xFF0C;&#x7136;&#x540E;&#x7528;&#x6237;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>data.data</code> &#x6765;&#x83B7;&#x53D6;&#x5E95;&#x5C42;&#x7684;&#x6570;&#x636E;&#x5217;&#x8868;&#x3002;</p>
+<div id="ex-table-01">
+  <card-list :config="table" v-if="enable" ref="cardlist">
+    <template slot-scope="data">
+      <card v-for="item of data.data" style="margin-bottom: 10px">
+        <card-item :data="item"></card-item>
+      </card>
+    </template>
+    <card slot="nodata">&#x6682;&#x65E0;&#x6570;&#x636E;</card>
+  </card-list>
+  <buttons :buttons="buttons"></buttons>
+</div>
+<script>
+Vue.component('card-item', {
+  template: ['<div>',
+    '<div style="font-size: 20px">{{data.id}}-{{data.title}}</div>',
+    '<div style="font-size: 9px">',
+    '<i-button type="error" ghost size="small">{{data.status}}</i-button>',
+    ' <span>{{data.author}}</span>',
+    ' <span>{{data.publishDate}}</span>',
+    '</div>',
+    '</div>'].join(''), 
+  props: ['data']
+})
+var no = 1
+var ex_table_01 = new Vue({
+  el: '#ex-table-01',
+  data: function () {
+    var self = this
+    var table = {
+      pagination: true,
+      scroll: false,
+      onLoadData: function(param, callback) {
+        console.log(param)
+        var data = []
+        for(var i=0, len=10; i<len; i++) {
+          data.push({id:no++, title: '测试文章', status: 'top', author: '人民网', publishDate: '18分钟前'})
+        }
+        callback(data, {total: 100})
+      },
+      query: {
+        fields: [
+          {name: 'title'}
+        ],
+        layout: [
+          ['title']
+        ]
+      }
+    }
+    var buttons = [
+      [{label: '切换无限滚动', type: 'primary', onClick: function(target, data){
+        self.$refs.cardlist.store.scroll = !self.$refs.cardlist.store.scroll
+      }},
+      ],
+      [{label: '清除数据', type: 'primary', onClick: function(target, data){
+        self.$refs.cardlist.store.data = []
+      }},
+      ]
+    ]
+    return {table:table, buttons: buttons, enable: true}
+  }
+})
+</script>
+<hr>
+<p>CardList &#x9700;&#x8981;&#x4E00;&#x4E2A; <code>config</code> &#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x9009;&#x7528;&#x7684;&#x503C;&#x4E3A;:</p>
+<h2 id="config">config&#x53C2;&#x6570;&#x8BF4;&#x660E;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7F3A;&#x7701;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td>&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x540C;Grid&#x7684;&#x683C;&#x5F0F;</td>
+<td>Object</td>
+<td>null</td>
+</tr>
+<tr>
+<td>pagination</td>
+<td>&#x5206;&#x9875;&#x5C55;&#x793A;&#x5207;&#x6362;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>prev</td>
+<td>&#x4E0A;&#x4E00;&#x9875;&#x6309;&#x94AE;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;</td>
+<td>String</td>
+<td>&apos;&#x4E0A;&#x4E00;&#x9875;&apos;</td>
+</tr>
+<tr>
+<td>next</td>
+<td>&#x4E0B;&#x4E00;&#x9875;&#x6309;&#x94AE;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;</td>
+<td>String</td>
+<td>&apos;&#x4E0B;&#x4E00;&#x9875;&apos;</td>
+</tr>
+<tr>
+<td>first</td>
+<td>&#x9996;&#x9875;&#x6309;&#x94AE;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;&#x3002;&#x4E3A;&#x7A7A;&#x65F6;&#x4E0D;&#x663E;&#x793A;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>last</td>
+<td>&#x6700;&#x540E;&#x4E00;&#x9875;&#x6309;&#x94AE;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;&#x3002;&#x4E3A;&#x7A7A;&#x65F6;&#x4E0D;&#x663E;&#x793A;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>start</td>
+<td>&#x8D77;&#x59CB;&#x5E8F;&#x53F7;</td>
+<td>Number</td>
+<td>1</td>
+</tr>
+<tr>
+<td>total</td>
+<td>&#x603B;&#x6761;&#x6570;&#x3002;&#x5B83;&#x5C06;&#x5728;&#x540E;&#x53F0;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x7531;&#x5E94;&#x7528;&#x6765;&#x6839;&#x636E;&#x5177;&#x4F53;&#x503C;&#x8FDB;&#x884C;&#x8C03;&#x6574;</td>
+<td>Number</td>
+<td>0</td>
+</tr>
+<tr>
+<td>pageSizeOpts</td>
+<td>&#x6BCF;&#x9875;&#x663E;&#x793A;&#x6761;&#x6570;&#x8BBE;&#x7F6E;</td>
+<td>Array</td>
+<td>[10, 20, 30, 40, 50]</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>&#x6BCF;&#x9875;&#x663E;&#x793A;&#x6761;&#x6570;</td>
+<td>Number</td>
+<td>10</td>
+</tr>
+<tr>
+<td>data</td>
+<td>&#x5E95;&#x5C42;&#x6570;&#x636E;</td>
+<td>Array</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>autoLoad</td>
+<td>&#x662F;&#x5426;&#x81EA;&#x52A8;&#x88C5;&#x5165;&#x6570;&#x636E;&#x3002;&#x4E3A;true&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x786E;&#x53D1;onLoadData&#x56DE;&#x8C03;&#x3002;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>onLoadData</td>
+<td>&#x5411;&#x540E;&#x53F0;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x7684;&#x56DE;&#x8C03;&#x3002;&#x4E0E;Grid&#x7C7B;&#x4F3C;&#xFF0C;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#x3002;&#x683C;&#x5F0F;&#x4E3A; onLoadData(param, callback)</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+<tr>
+<td>bottomButtons</td>
+<td>&#x5206;&#x9875;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x5E95;&#x90E8;&#x6309;&#x94AE;</td>
+<td>Array</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>nodata</td>
+<td>&#x65E0;&#x6570;&#x636E;&#x65F6;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;HTML&#x4EE3;&#x7801;</td>
+<td>String</td>
+<td>&apos;&#x6682;&#x65E0;&#x6570;&#x636E;&apos;</td>
+</tr>
+<tr>
+<td>scroll</td>
+<td>&#x662F;&#x5426;&#x65E0;&#x9650;&#x6EDA;&#x52A8;&#x3002;&#x5982;&#x679C;&#x4E3A;true&#xFF0C;&#x5219;&#x5206;&#x9875;&#x7EC4;&#x4EF6;&#x5C06;&#x4E0D;&#x663E;&#x793A;&#xFF0C;&#x5F53;&#x6EDA;&#x52A8;&#x5230;&#x5E95;&#x90E8;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x7528;onLoadData&#x65B9;&#x6CD5;&#x3002;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cardlist">CardList &#x65B9;&#x6CD5;&#x8BF4;&#x660E;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x65B9;&#x6CD5;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x8FD4;&#x56DE;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addRows</td>
+<td>&#x5411;CardList&#x4E2D;&#x8FFD;&#x52A0;&#x6570;&#x636E;&#x3002;&#x5982;&#x679C;&#x4E3A;&#x65E0;&#x9650;&#x6EDA;&#x52A8;&#xFF0C;&#x5219;&#x539F;&#x6570;&#x636E;&#x4E0D;&#x4F1A;&#x6E05;&#x9664;&#x3002;&#x5982;&#x679C;&#x4E3A;&#x5206;&#x9875;&#x6A21;&#x5F0F;&#xFF0C;&#x5219;&#x4F1A;&#x8FDB;&#x884C;&#x66FF;&#x6362;</td>
+<td>&#x6DFB;&#x52A0;&#x540E;&#x7684;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td>loadData</td>
+<td>&#x88C5;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x5237;&#x65B0;</td>
+<td>Promise</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="treeselect.html"><span class="title">选择树控件</span></a></div>
+          <div class="right"><a href="build1.html"><span class="label">Next: </span><span class="title">基本构建</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

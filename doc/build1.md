@@ -17,13 +17,14 @@ var ex_build_01 = new Vue({
         title: '基本信息',
         labelWidth: 150,
         staticSuffix: '_static',
+        static: false,
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
             info: 'info信息', required: true, rule: {type: 'email'}},
           {name: 'str2', label: '静态字符串2', static: true, required: true, format: function(v){
             return '<a href="#">' + v + '</a>'
           }},
-          {name: 'select1', label: '选择1', type: 'select', required: true, options: {clearable: true}},
+          {name: 'select1', label: '选择1', type: 'select', required: true, options: {clearable: true,disabled: true}},
           {name: 'select2', label: '选择2', type: 'select', static: true, options: {clearable: true},
             help: '这是设置了select2_static的结果，未使用缺省机制'
           },
@@ -45,7 +46,14 @@ var ex_build_01 = new Vue({
           {name: 'select3', label: '选择3', type: 'select', required: true, multiple: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
-            ]}
+            ],
+            onChanging: function(value, selected) {
+              if (value === 'A' && !selected) {
+                self.$Message.info("Can't removed")
+                return false
+              }
+              return true
+            }},
           },
           {name: 'select4', label: '选择4', type: 'select', multiple: true, static: true, options: {choices: [
             {label:'选项一', value: 'A'},
@@ -80,7 +88,12 @@ var ex_build_01 = new Vue({
           {name: 'date2', label: '日期2', type: 'date', static: true},
           {name: 'date3', label: '日期1', required: true, type: 'datetime'},
           {name: 'date4', label: '日期2', type: 'datetime', static: true},
-          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {choices:
+          {name: 'daterange1', label: '日期范围1', required: true, type: 'datepickerrange', options: {type: 'month'}, rule: {type: 'array'}},
+          {name: 'daterange2', label: '日期范围2', required: true, type: 'datepickerrange', options: {type: 'year'}, rule: {type: 'array'}},
+          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {
+            checkStrictly: true,
+            onlyLeaf: false,
+            choices:
             [ {
                   id: 'fruits',
                   title: 'Fruits',
@@ -121,6 +134,14 @@ var ex_build_01 = new Vue({
           },
           {name: 'switch', label: '开关', type: 'i-switch'},
           {name: 'slider', label: '滑块', type: 'Slider', required: true, rule: {type: 'number'}},
+          {name: 'input1', label: '输入', type:'Input', options: {search: true, "enter-button": '查询'},
+            on: {'on-search': function () {
+              self.$Message.info('on-search')
+            },
+            'on-focus': function () {
+              self.$Message.info('on-focus')
+            }}
+          }
         ],
         layout: [
           ['str1', 'str2'],
@@ -134,8 +155,10 @@ var ex_build_01 = new Vue({
           ['text2'],
           ['date1', 'date2'],
           ['date3', 'date4'],
+          ['daterange1', 'daterange2'],
           ['tree1'],
-          ['switch', 'slider']
+          ['switch', 'slider'],
+          ['input1']
         ],
         boxComponent: 'Box',
         boxOptions: {widthBorder: false, headerClass: 'primary'},
@@ -146,7 +169,17 @@ var ex_build_01 = new Vue({
               }
             }],
             [{label: '校验', type:'primary', onClick: function(target, data){
-                target.validate(self.save)
+                //target.validate(self.save) 旧的写法，使用回调
+                //以下为新的写法，使用promise
+                target.validate().then(function(){
+                  self.save()
+                }).catch(function(error){
+                  self.save(error)
+                })
+              }
+            }],
+            [{label: '重置', type:'info', onClick: function(target, data){
+                target.reset()
               }
             }],
             [{label: '合并出错结果', type:'info', onClick: function(target, data){
@@ -267,3 +300,11 @@ var ex_build_01 = new Vue({
 | errors | 错误信息，方便从外部传入。key为字段名 | {} | 
 | rules | 单独定义的校验规则。key为字段名。它是在字段上定义的rule的一个补充 | {} |
 | choices | select字段的choices值。方便从外部传入 | {} |
+
+## 方法说明
+
+| 方法名 | 说明 | 返回值 |
+|----------|-----|------|
+| validate | 对Build的数据进行校验。支持回调模式 `validate(callback)` ,其中 `callback(error)` ，如果error为undefined时表示成功，error有值时，为最早一个出错信息。promise模式，可以在 `then()` 或 `catch((error)=>{})` 中继续处理成功或出错。| Promoise |
+| loadData | 装入数据，可用于刷新 | Promise 或 无 |
+

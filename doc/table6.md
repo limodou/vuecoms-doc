@@ -22,7 +22,7 @@ var loaddata = function(data, param, condition, callback) {
     d.push({id:5, name1:'A2', name2:'02', name3:'C1', name4:'D1', name5:'E2'})
     d.push({id:6, name1:'A1', name2:'01', name3:'C1', name4:'D1', name5:'E3'})
     callback(d, {total: 100})
-  }, 500)
+  }, 0)
 }
 var loadchoices = function(choices, callback) {
   console.log(choices)

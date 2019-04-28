@@ -39,7 +39,7 @@ var ex_table_01 = new Vue({
         {name:'name2', title:'Name2', width: 100},
         {name:'name3', title:'Name3', width:100},
         {name:'name4', title:'Name4', align:'center', width:400, html: false},
-        {name:'name5', title:'Name5', width:400, render: function(h, param) {
+        {name:'name5', title:'Name5', width:80, render: function(h, param) {
           var self = this
           return h('Checkbox', {
             props: {
@@ -89,10 +89,15 @@ var ex_table_01 = new Vue({
   data: function () {
     var self = this
     var table = {
-      nowrap: true,
+      nowrap: false,
       indexCol: true,
       theme: 'default',
       pagination: true,
+      multiHeaderSep: '//',
+      headerShow: false,
+      hoverShow: false,
+      total: 1,
+      page: 1,
       columns: [
         {name:'check', title:'#', width:40, fixed: 'left', render: function(h, param) {
           var self = this
@@ -108,10 +113,10 @@ var ex_table_01 = new Vue({
           })
         }},
         {name:'name1', title:'Name1', width:100, fixed: 'left'},
-        {name:'name2', title:'Name2', width: 100},
+        {name:'name2', title:'Name2 Name2中中中 中中中中 <i class="ivu-icon ivu-icon-logo-youtube"></i>', width: 100},
         {name:'name3', title:'Name3', width:100},
         {name:'name4', title:'Name4', align:'center', width:400, html: false},
-        {name:'name5', title:'Name5', width:400, render: function(h, param) {
+        {name:'name5', title:'Name5', width:80, render: function(h, param) {
           var self = this
           return h('Checkbox', {
             props: {
@@ -136,15 +141,20 @@ var ex_table_01 = new Vue({
             else
               self.$refs.grid.theme = 'default'
           }}
+        ],
+        [
+          {label: '切换表头', type: 'primary', onClick: function () {
+            self.$refs.grid.store.states.headerShow = !self.$refs.grid.store.states.headerShow
+          }}
         ]
       ]
     }
-    table.data.push({id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'<i>Hello</i>', name5:'E1', name6:'F1'})
-    table.data.push({id:2, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
-    table.data.push({id:3, check: 'A1', name1:'A1', name2:'B2', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
-    table.data.push({id:4, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
-    table.data.push({id:5, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
-    table.data.push({id:6, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
+    table.data.push({id:1, check: 'A1', name1:'A1', name2:0, name3:'C1', name4:'<i>Hello</i>', name5:'E1', name6:'F1'})
+    table.data.push({id:2, check: 'A1', name1:'A1', name2:'0', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:3, check: 'A1', name1:'A1', name2:'0', name3:'C1', name4:'D1', name5:'E1', name6:'F1'})
+    table.data.push({id:4, check: 'A2', name1:'A2', name2:'0', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
+    table.data.push({id:5, check: 'A2', name1:'A2', name2:'0', name3:'C1', name4:0, name5:'E2', name6:'F1'})
+    table.data.push({id:6, check: 'A1', name1:'A1', name2:'0', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
     return {table:table}
   }
 })

@@ -11,6 +11,8 @@ var ex_table_03 = new Vue({
     var table = {
       nowrap: true,
       draggable: true,
+      indexCol: true,
+      checkCol: true,
       clickSelect: true,
       columns: [
         {name:'name1', title:'Name1', width:200,
@@ -70,6 +72,7 @@ var ex_table_03 = new Vue({
     table.data.push({id:4, name1:'A4', name2:'B4', name3:'C4', name4:'D4'})
     table.data.push({id:5, name1:'A5', name2:'B5', name3:'C5', name4:'D5'})
     table.data.push({id:6, name1:'A6', name2:'B6', name3:'C6', name4:'D6'})
+    table.data.push({id:7, name1:'A7', name2:'B7', name3:'C7', name4:'D7'})
     return {table:table}
   },
   methods: {

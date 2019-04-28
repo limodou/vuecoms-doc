@@ -53,7 +53,7 @@ Vue.component('team', {
                         callback([{value:'D', label:'Test D', text: 'D'}, {value:'E', label:'Test E', text: 'E'}, {value:'F', label:'Test F', text: 'F'}])
                     }, 1000)
                   },
-                  getSelected: function(v, callback){
+                  remoteSelected: function(v, callback){
                     setTimeout(function(){
                       if (v && v.length > 0)
                         callback([{label: 'Test A', value: 'A'}])
@@ -61,13 +61,16 @@ Vue.component('team', {
                   },
                   onRenderLabel: function(item) {
                     return '<span class="item">' + item.text + ' - ' + item.label + '</span>'
+                  },
+                  onChanging: function(value, selected) {
+                    console.log(value, selected)
                   }
                 }
               }},
               {name: 'action', title: '操作', width: 250, render: function(h, param){
                 var buttons = [
-                  self.$refs.grid.defaultEditRender(h, param.row),
-                  self.$refs.grid.defaultDeleteRender(h, param.row),
+                  param.grid.defaultEditRender(h, param.row),
+                  param.grid.defaultDeleteRender(h, param.row),
                 ]
                 if (!param.row._editting) {
                   buttons.push(h('Button', 
@@ -81,7 +84,7 @@ Vue.component('team', {
                       },
                       on: {
                         click: function () {
-                          self.$refs.grid.store.addEditRow({name: param.row.name, members: param.row.members})
+                          param.grid.store.addEditRow({name: param.row.name, members: param.row.members})
                         }
                       }
                     }, '缺省增加')
@@ -96,7 +99,7 @@ Vue.component('team', {
             total: 1,
             buttons: [
               [{label: '增加角色', type:'primary', onClick: function(target, store){
-                store.addEditRow(null, true)
+                store.addEditRow(null)
               }}]
             ],
             onSaveRow: function (row, callback) {
@@ -303,11 +306,17 @@ var ex_build_02 = new Vue({
       ],
       onLoadData: function (url, param, callback) {
         var data = [
-          {sn: 'Test001', title: 'AAAAA', depart: 'BBBBB', contact: 'A'}
+          {sn: 'Test001', title: 'AAAAA', depart: 'BBBBB', contact: 'A'},
+          {sn: 'Test002', title: 'AAAAA', depart: 'BBBBB', contact: 'A'},
+          {sn: 'Test003', title: 'AAAAA', depart: 'BBBBB', contact: 'A'},
+          {sn: 'Test004', title: 'AAAAA', depart: 'BBBBB', contact: 'A'},
+          {sn: 'Test005', title: 'AAAAA', depart: 'BBBBB', contact: 'A'},
+          {sn: 'Test006', title: 'AAAAA', depart: 'BBBBB', contact: 'A'},
+          {sn: 'Test007', title: 'AAAAA', depart: 'BBBBB', contact: 'A'},
         ]
         setTimeout( function () {
           callback(data, {total:100})
-          }, 5000)
+          }, 0)
       },
     }
     return {data:data, 
@@ -326,7 +335,11 @@ var ex_build_02 = new Vue({
     var self = this
     setTimeout(function() {
       self.value.busirequires = [
-        {sn: 'Test001', title: 'AAAAA', depart: 'BBBBB', contact: 'CCCCC'}
+        {sn: 'Test001', title: 'AAAAA', depart: 'BBBBB', contact: 'CCCCC'},
+        {sn: 'Test002', title: 'AAAAA', depart: 'BBBBB', contact: 'CCCCC'},
+        {sn: 'Test003', title: 'AAAAA', depart: 'BBBBB', contact: 'CCCCC'},
+        {sn: 'Test004', title: 'AAAAA', depart: 'BBBBB', contact: 'CCCCC'},
+        {sn: 'Test005', title: 'AAAAA', depart: 'BBBBB', contact: 'CCCCC'},
       ]
     }, 1000)
     // setTimeout(function() {

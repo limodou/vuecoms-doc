@@ -15,15 +15,20 @@ Vuecoms
 * [基础控件](fields.md)
 * [Query]
    * [基本查询](query1.md)
+* [Uploader]
+   * [文件上传](uploader.md)
 * [Tree]
   * [树控件](tree1.md)
 * [TreeSelect]
   * [选择树控件](treeselect.md)
+* [CardList]
+  * [卡片列表](cardlist.md)
 * [Build]
   * [基本构建](build1.md)
   * [多段展示](build2.md)
   * [数据联动](build3.md)
   * [Select Rich](build4.md)
+  * [自定义Box](build5.md)
 * [Chart]
   * [EChart](chart.md)
 * [Editor]

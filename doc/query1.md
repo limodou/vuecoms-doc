@@ -1,13 +1,13 @@
 # 基本查询
 
 <div id="ex-query-01">
-  <query ref="query" :fields="fields" :layout="layout"
+  <Query ref="query" :fields="fields" :layout="layout"
     :choices="choices"
-    :default-value="defaultValue" :show-line="1"
+    :default-value="defaultValue" :show-line="2"
     :value="value"
     :label-width="labelWidth"
     :show-selected="true"
-    @on-query-change="handleQueryChange"></query>
+    @on-query-change="handleQueryChange"></Query>
     {{value}}
 </div>
 <script>
@@ -27,10 +27,20 @@ var ex_query_01 = new Vue({
         }
   },
   data: function () {
+        var self = this
         return {
           labelWidth: 120,
           fields: [
-                    {name: "str1", type: "string", label: "字符串1", placeholder: "请输入字符串1"},
+                    {name: "str1", type: "Year", label: "字符串1", static: true, placeholder: "请输入字符串1",
+                      options: {
+                        icon: "ios-clock-outline",
+                      },
+                      on: {
+                        'on-click': function () {
+                          self.$Message.info('on-click')
+                        }
+                      }
+                    },
                     {name: "str2", type: "string", label: "字符串2", placeholder: "请输入字符串2"},
                     {
                       name: "select1",
@@ -54,6 +64,7 @@ var ex_query_01 = new Vue({
                       label: "日期",
                       placeholder: "日期单选",
                       options: {
+                        // type: 'year',
                         confirm: true,
                         size: "default",
                         placement: "bottom",//top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end (default bottom-start)
@@ -128,12 +139,58 @@ var ex_query_01 = new Vue({
                         ]
                       }
                     },
+                    {
+                      name: "select_remote",
+                      type: "select",
+                      label: "远程选择",
+                      options: {
+                        remote: true,
+                        filterable: true,
+                        remoteMethod: function(term, callback) {
+                          setTimeout(function(){
+                            console.log('select_remote remoteMethod', term)
+                            callback([{label: 'Test A', value: 'A'}, {label: 'Test B', value: 'B'}])
+                          }, 500)
+                        },
+                        remoteSelected: function (v, callback) {
+                          if (v)
+                          setTimeout(function(){
+                            console.log('select_remote remoteSelected', v)
+                            callback([{label: 'Test A', value: 'A'}])
+                          }, 20)
+                        }
+                      }
+                    },
+                    {
+                      name: "select_remote2",
+                      type: "select",
+                      label: "远程选择2",
+                      multiple: true,
+                      options: {
+                        remote: true,
+                        filterable: true,
+                        remoteMethod: function(term, callback) {
+                          setTimeout(function(){
+                            console.log('select_remote2 remoteMethod', term)
+                            callback([{label: 'Test A', value: 'A'}, {label: 'Test B', value: 'B'}])
+                          }, 500)
+                        },
+                        remoteSelected: function (v, callback) {
+                          if (v)
+                          setTimeout(function(){
+                            console.log('select_remote2 remoteSelected', v)
+                            callback([{label: 'Test A', value: 'A'}])
+                          }, 20)
+                        }
+                      }
+                    },
                   ],
                   layout: [
                     ['str1', 'str2'],
                     ['select1', 'select2'],
                     ['datepicker', 'datepickerrange'],
-                    ['radio', 'checkbox']
+                    ['radio', 'checkbox'],
+                    ['select_remote', 'select_remote2']
                   ],
                   defaultValue: {
                     select1: 'city_003',
@@ -143,7 +200,9 @@ var ex_query_01 = new Vue({
                     radio: "1",
                   },
                   value: {
-                    datepickerrange: ['2018-04-20', '2018-04-22']
+                    datepickerrange: ['2018-04-20', '2018-04-22'],
+                    select_remote: 'A',
+                    select_remote2: ['A']
                   },
                   choices: {
                     select1: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {

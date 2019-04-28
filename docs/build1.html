@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=6306abe9">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=9424a245">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=f79d060b">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=cac0e1aa">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
-    <script src="lib/vue.js?t=11137295"></script>
-    <script src="lib/iview/iview.js?t=05ed700f"></script>
+    <script src="lib/vue.js?t=46ed8b2a"></script>
+    <script src="lib/iview/iview.js?t=4b109b10"></script>
     <script src="lib/echarts.common.min.js?t=cce08242"></script>
     <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=fa9f1bca"></script>
+    <script src="lib/vuecoms.js?t=6d49ad8c"></script>
     <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
     <title>基本构建 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
@@ -56,6 +56,12 @@
                 </li>
               </ul>
             </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
+                </li>
+              </ul>
+            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
@@ -68,11 +74,19 @@
                 </li>
               </ul>
             </li>
+            <li class="menu-item -level-1 -parent"><span class="title">CardList</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-cardlist" href="cardlist.html">卡片列表</a>
+                </li>
+              </ul>
+            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Build</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title -active link-build1" href="build1.html">基本构建</a>
                   <ul class="headings heading-list">
                     <li class="heading-item -depth-2"><a class="hlink link-" href="#">参数说明</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">方法说明</a>
                     </li>
                   </ul>
                 </li>
@@ -81,6 +95,8 @@
                 <li class="menu-item -level-2"><a class="link title  link-build3" href="build3.html">数据联动</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build4" href="build4.html">Select Rich</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
                 </li>
               </ul>
             </li>
@@ -146,13 +162,14 @@ var ex_build_01 = new Vue({
         title: '基本信息',
         labelWidth: 150,
         staticSuffix: '_static',
+        static: false,
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
             info: 'info信息', required: true, rule: {type: 'email'}},
           {name: 'str2', label: '静态字符串2', static: true, required: true, format: function(v){
             return '<a href="#">' + v + '</a>'
           }},
-          {name: 'select1', label: '选择1', type: 'select', required: true, options: {clearable: true}},
+          {name: 'select1', label: '选择1', type: 'select', required: true, options: {clearable: true,disabled: true}},
           {name: 'select2', label: '选择2', type: 'select', static: true, options: {clearable: true},
             help: '这是设置了select2_static的结果，未使用缺省机制'
           },
@@ -174,7 +191,14 @@ var ex_build_01 = new Vue({
           {name: 'select3', label: '选择3', type: 'select', required: true, multiple: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
-            ]}
+            ],
+            onChanging: function(value, selected) {
+              if (value === 'A' && !selected) {
+                self.$Message.info("Can't removed")
+                return false
+              }
+              return true
+            }},
           },
           {name: 'select4', label: '选择4', type: 'select', multiple: true, static: true, options: {choices: [
             {label:'选项一', value: 'A'},
@@ -209,7 +233,12 @@ var ex_build_01 = new Vue({
           {name: 'date2', label: '日期2', type: 'date', static: true},
           {name: 'date3', label: '日期1', required: true, type: 'datetime'},
           {name: 'date4', label: '日期2', type: 'datetime', static: true},
-          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {choices:
+          {name: 'daterange1', label: '日期范围1', required: true, type: 'datepickerrange', options: {type: 'month'}, rule: {type: 'array'}},
+          {name: 'daterange2', label: '日期范围2', required: true, type: 'datepickerrange', options: {type: 'year'}, rule: {type: 'array'}},
+          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {
+            checkStrictly: true,
+            onlyLeaf: false,
+            choices:
             [ {
                   id: 'fruits',
                   title: 'Fruits',
@@ -250,6 +279,14 @@ var ex_build_01 = new Vue({
           },
           {name: 'switch', label: '开关', type: 'i-switch'},
           {name: 'slider', label: '滑块', type: 'Slider', required: true, rule: {type: 'number'}},
+          {name: 'input1', label: '输入', type:'Input', options: {search: true, "enter-button": '查询'},
+            on: {'on-search': function () {
+              self.$Message.info('on-search')
+            },
+            'on-focus': function () {
+              self.$Message.info('on-focus')
+            }}
+          }
         ],
         layout: [
           ['str1', 'str2'],
@@ -263,8 +300,10 @@ var ex_build_01 = new Vue({
           ['text2'],
           ['date1', 'date2'],
           ['date3', 'date4'],
+          ['daterange1', 'daterange2'],
           ['tree1'],
-          ['switch', 'slider']
+          ['switch', 'slider'],
+          ['input1']
         ],
         boxComponent: 'Box',
         boxOptions: {widthBorder: false, headerClass: 'primary'},
@@ -275,7 +314,17 @@ var ex_build_01 = new Vue({
               }
             }],
             [{label: '校验', type:'primary', onClick: function(target, data){
-                target.validate(self.save)
+                //target.validate(self.save) 旧的写法，使用回调
+                //以下为新的写法，使用promise
+                target.validate().then(function(){
+                  self.save()
+                }).catch(function(error){
+                  self.save(error)
+                })
+              }
+            }],
+            [{label: '重置', type:'info', onClick: function(target, data){
+                target.reset()
               }
             }],
             [{label: '合并出错结果', type:'info', onClick: function(target, data){
@@ -430,10 +479,32 @@ var ex_build_01 = new Vue({
 </tr>
 </tbody>
 </table>
+<h2 id="">&#x65B9;&#x6CD5;&#x8BF4;&#x660E;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x65B9;&#x6CD5;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x8FD4;&#x56DE;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>validate</td>
+<td>&#x5BF9;Build&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#x3002;&#x652F;&#x6301;&#x56DE;&#x8C03;&#x6A21;&#x5F0F; <code>validate(callback)</code> ,&#x5176;&#x4E2D; <code>callback(error)</code> &#xFF0C;&#x5982;&#x679C;error&#x4E3A;undefined&#x65F6;&#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C;error&#x6709;&#x503C;&#x65F6;&#xFF0C;&#x4E3A;&#x6700;&#x65E9;&#x4E00;&#x4E2A;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x3002;promise&#x6A21;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; <code>then()</code> &#x6216; <code>catch((error)=&gt;{})</code> &#x4E2D;&#x7EE7;&#x7EED;&#x5904;&#x7406;&#x6210;&#x529F;&#x6216;&#x51FA;&#x9519;&#x3002;</td>
+<td>Promoise</td>
+</tr>
+<tr>
+<td>loadData</td>
+<td>&#x88C5;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x5237;&#x65B0;</td>
+<td>Promise &#x6216; &#x65E0;</td>
+</tr>
+</tbody>
+</table>
 
         </div>
         <div class="footer-nav">
-          <div class="left"><a href="treeselect.html"><span class="title">选择树控件</span></a></div>
+          <div class="left"><a href="cardlist.html"><span class="title">卡片列表</span></a></div>
           <div class="right"><a href="build2.html"><span class="label">Next: </span><span class="title">多段展示</span></a></div>
         </div>
       </div>
