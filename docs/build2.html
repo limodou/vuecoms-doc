@@ -3,16 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=f79d060b">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=cac0e1aa">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=8c83701e">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=4b109b10"></script>
-    <script src="lib/echarts.common.min.js?t=cce08242"></script>
-    <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=6d49ad8c"></script>
-    <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
+    <script src="lib/iview/iview.js?t=afe76fcb"></script>
+    <script src="lib/vuecoms.js?t=b64d2ae8"></script>
     <title>多段展示 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -23,6 +20,8 @@
         <li class="menu-item -level-0 -parent">
           <ul class="submenu">
             <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-changelog" href="changelog.html">变更记录</a>
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Box</span>
               <ul class="submenu">
@@ -48,8 +47,6 @@
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1"><a class="link title  link-fields" href="fields.html">基础控件</a>
-            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Query</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
@@ -59,12 +56,6 @@
             <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
                 </li>
               </ul>
             </li>
@@ -82,6 +73,8 @@
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Build</span>
               <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-fields" href="fields.html">基础控件</a>
+                </li>
                 <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title -active link-build2" href="build2.html">多段展示</a>
@@ -92,37 +85,19 @@
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
                 </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Chart</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-chart" href="chart.html">EChart</a>
+                <li class="menu-item -level-2"><a class="link title  link-build6" href="build6.html">自定义组件</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build7" href="build7.html">数据字典使用</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build8" href="build8.html">观查者模式</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build9" href="build9.html">输入输出转换</a>
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Editor</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-editor" href="editor.html">Editor</a>
-                </li>
-              </ul>
+            <li class="menu-item -level-1"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Grid</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-grid" href="grid.html">布局展示</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
-                </li>
-              </ul>
+            <li class="menu-item -level-1"><a class="link title  link-toast" href="toast.html">Toast</a>
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
               <ul class="submenu">
@@ -141,7 +116,7 @@
         <div class="markdown-body"><h1 id="">&#x591A;&#x6BB5;&#x5C55;&#x793A;</h1>
 <p>Build&#x63A7;&#x4EF6;&#x53EF;&#x4EE5;&#x5C55;&#x793A;&#x591A;&#x4E2A;&#x6BB5;&#x843D;&#x3002;</p>
 <div id="ex-build-02">
-  <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :label-width="labelWidth"></build>
+  <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :label-width="labelWidth" theme="tab" :show-box="false" :buttons="buttons"></build>
   <div>
     {{value}}
   </div>
@@ -162,17 +137,19 @@ var ex_build_02 = new Vue({
       {
         name: 'basic1',
         title: '基本信息1',
+        theme: 'border',
+        labelAlign: 'left',
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
-            info: 'info信息', required: true, rule: {type: 'email'}},
+            info: 'info信息', required: true, rule: {type: 'email'}, labelAlign: 'right'},
           {name: 'str2', label: '静态字符串2', static: true, required: true, convert: function(v){
             return '<a href="#">' + v + '</a>'
             }
           },
           {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices}},
           {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices}},
-          {name: 'rich1', label: '富文本', type: 'tinymce', options: { options: {height: 200}}},
-          {name: 'grid', label: '表格', type: 'Grid', options: {
+          // {name: 'rich1', label: '富文本', type: 'tinymce', options: { options: {height: 200}}},
+          {name: 'grid', label: '表格', type: 'Grid', labelDir: 'vertical', options: {
             data: {
               columns: [
                 {name:'name1', title:'Name1', width:100, fixed: 'left'},
@@ -186,7 +163,7 @@ var ex_build_02 = new Vue({
         layout: [
           ['str1', 'str2'],
           ['select1', 'select2'],
-          ['rich1'],
+          // ['rich1'],
           ['grid']
         ],
       },
@@ -208,33 +185,6 @@ var ex_build_02 = new Vue({
           ['select3', 'select4'],
         ]
       },
-      {
-        name: 'buttons',
-        buttons: [
-            [{label: '查看结果', type:'primary', onClick: function(target, data){
-                console.log(target, data)
-              }
-            }],
-            [{label: '校验', type:'primary', onClick: function(target, data){
-                self.$refs.build.validate(self.save)
-              }
-            }],
-            [{label: '合并出错结果', type:'info', onClick: function(target, data){
-                self.$refs.build.errors = {select1: '这是合并后的错误'}
-              }
-            }],
-            [{label: '隐藏基本信息2', type:'info', onClick: function(target, data){
-                //self.$refs.build = {select1: '这是合并后的错误'}
-                self.$set(self.$refs.build.data[2], 'hidden', !self.$refs.build.data[2].hidden)
-              }
-            }],
-            [
-              {component: 'u-select', props: {choices: [{label: 'Test A', value: 'A'}, {label: 'Test B', value: 'B'}], value: 'A'}, on: {input: function(v){self.$Message.info(v)}}}
-            ]
-          ],
-        size: 'default',
-        component: 'buttons'
-      }
     ]
     return {data:data, value: {
               select1: 'B',
@@ -258,6 +208,28 @@ var ex_build_02 = new Vue({
                 }
               }
             },
+            buttons: [
+              [{label: '查看结果', type:'primary', onClick: function(target, data){
+                  console.log(target, data)
+                }
+              }],
+              [{label: '校验', type:'primary', onClick: function(target, data){
+                  self.$refs.build.validate(self.save)
+                }
+              }],
+              [{label: '合并出错结果', type:'info', onClick: function(target, data){
+                  self.$refs.build.errors = {select1: '这是合并后的错误'}
+                }
+              }],
+              [{label: '隐藏基本信息2', type:'info', onClick: function(target, data){
+                  //self.$refs.build = {select1: '这是合并后的错误'}
+                  self.$set(self.$refs.build.data[2], 'hidden', !self.$refs.build.data[2].hidden)
+                }
+              }],
+              [
+                {component: 'u-select', props: {choices: [{label: 'Test A', value: 'A'}, {label: 'Test B', value: 'B'}], value: 'A'}, on: {input: function(v){self.$Message.info(v)}}}
+              ]
+            ],
             labelWidth: 200
           }
   },

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=8c83701e">
+    <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
+    <script src="assets/script.js?t=42463e55"></script>
+    <script src="lib/vue.js?t=46ed8b2a"></script>
+    <script src="lib/iview/iview.js?t=afe76fcb"></script>
+    <script src="lib/vuecoms.js?t=b64d2ae8"></script>
+    <title>观查者模式 - Vuecoms</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-changelog" href="changelog.html">变更记录</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Box</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-box1" href="box1.html">基本用法</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Table</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-table0" href="table0.html">表格说明</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table3" href="table3.html">表格拖动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table4" href="table4.html">表格行编辑</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table5" href="table5.html">Tree表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table6" href="table6.html">通用表格</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Query</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">TreeSelect</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-treeselect" href="treeselect.html">选择树控件</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">CardList</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-cardlist" href="cardlist.html">卡片列表</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Build</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-fields" href="fields.html">基础控件</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build3" href="build3.html">数据联动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build4" href="build4.html">Select Rich</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build6" href="build6.html">自定义组件</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build7" href="build7.html">数据字典使用</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title -active link-build8" href="build8.html">观查者模式</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build9" href="build9.html">输入输出转换</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-toast" href="toast.html">Toast</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-research_edit" href="research_edit.html">任务编辑</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-build8">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="">&#x89C2;&#x67E5;&#x8005;&#x6A21;&#x5F0F;</h1>
+<p>&#x5728;&#x5904;&#x7406;Build&#x65F6;&#x7ECF;&#x5E38;&#x4F1A;&#x9047;&#x5230;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x52A8;&#x6001;&#x6539;&#x53D8;&#x5B57;&#x6BB5;&#x7684;hidden, static, required&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x822C;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x901A;&#x8FC7; build.fields[name].[hidden|static|required] &#x6765;&#x4FEE;&#x6539;&#x5B83;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x4E0D;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x56E0;&#x6B64; Build &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x6839;&#x636E;&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#x6765;&#x81EA;&#x52A8;&#x8DDF;&#x8E2A;&#x53D8;&#x5316;&#x7684;&#x673A;&#x5236;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x4F60;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code>statusObject = {
+  status1: function () {
+    return &#x8868;&#x8FBE;&#x5F0F;1
+  },
+  status2: function () {
+    return &#x8868;&#x8FBE;&#x5F0F;2
+  },
+  status3: function () {
+    return &#x8868;&#x8FBE;&#x5F0F;3
+  }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x4F20;&#x5165;build&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#xFF1A; <code>:status-object=&quot;statusObject&quot;</code></p>
+<p>&#x5728;&#x5B9A;&#x4E49;fields&#x65F6;&#xFF0C;&#x5206;&#x522B;&#x4F7F;&#x7528;:</p>
+<pre><code>{name: &apos;str11&apos;, label: &apos;&#x5B57;&#x6BB5;11&apos;, help: &apos;&#x5F53;&#x9009;&#x62E9;1&#x52FE;&#x9009;&#x65F6;&#x53EF;&#x89C1;&apos;, showWhen: &apos;status1&apos;}&apos;
+{name: &apos;str2&apos;, label: &apos;&#x5B57;&#x6BB5;2&apos;, help: &apos;&#x5F53;&#x9009;&#x62E9;2&#x52FE;&#x9009;&#x65F6;&#x9759;&#x6001;&apos;, staticWhen: &apos;status2&apos;},
+{name: &apos;str3&apos;, label: &apos;&#x5B57;&#x6BB5;3&apos;, help: &apos;&#x5F53;&#x9009;&#x62E9;3&#x52FE;&#x9009;&#x65F6;&#x5FC5;&#x586B;&apos;, requiredWhen: &apos;status3&apos;},
+</code></pre>
+<p>&#x6765;&#x5173;&#x8054;&#x5B57;&#x6BB5;&#x4E0E;&#x72B6;&#x6001;&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<div id="ex-build-01">
+  <build ref="build" :data="data" :value="value" :status-object="statusObject"></build>
+  <div>{{value}}</div>
+</div>
+<script>
+var ex_build_01 = new Vue({
+  el: '#ex-build-01',
+  data: function () {
+    var self = this
+    var data = [
+      {
+        name: 'basic',
+        title: '基本信息',
+        fields: [
+          {name: 'check1', label: '选择1', type: 'checkbox'},
+          {name: 'check2', label: '选择2', type: 'checkbox'},
+          {name: 'check3', label: '选择3', type: 'checkbox'},
+          {name: 'str11', label: '字段11', help: '当选择1勾选时可见', showWhen: 'status1'},
+          {name: 'str12', label: '字段12', help: '当选择1勾选时可见', showWhen: 'status1'},
+          {name: 'str2', label: '字段2', help: '当选择2勾选时静态', staticWhen: 'status2'},
+          {name: 'str3', label: '字段3', help: '当选择3勾选时必填', requiredWhen: 'status3'},
+          {name: 'str4', label: '字段4', help: '当选择3勾选时处理', when: ['status3', function(v, field, value){
+            self.$Message.info('字段4被调用:'+v)
+          }]},
+          {name: 'str5', label: '字段5', help: '当选择2和3勾选时处理', when: [function(){return self.value.check2 && self.value.check3}, function(v, field, value){
+            self.$Message.info('字段5被调用:'+v)
+          }]},
+        ],
+        layout: [
+          ['check1'],
+          ['check2'],
+          ['check3'],
+          ['str11', 'str12'],
+          ['str2'],
+          ['str3'],
+          ['str4'],
+          ['str5'],
+        ]
+      },
+    ]
+    return {
+            data:data,
+            value: {},
+            statusObject: {
+              status1: function(){
+                return self.value.check1
+              },
+              status2: function(){
+                return self.value.check2
+              },
+              status3: function(){
+                return self.value.check3
+              },
+            }
+          }
+  },
+  // mounted () {
+  //   this.$watch(function(){return this.value.radio === '1'}, function(newVal, oldVal){
+  //     console.log('=====', newVal)
+  //   })
+  // }
+})
+</script>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="build7.html"><span class="title">数据字典使用</span></a></div>
+          <div class="right"><a href="build9.html"><span class="label">Next: </span><span class="title">输入输出转换</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

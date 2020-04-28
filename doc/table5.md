@@ -20,7 +20,7 @@ var ex_table_05 = new Vue({
       actionColumn: 'name6',
       idField: 'id',
       orderField: 'order',
-      // clickSelect: true,
+      clickSelect: true,
       // tree 参数
       tree: true,
       treeField: 'name4',
@@ -133,6 +133,14 @@ var ex_table_05 = new Vue({
               }
             }
           }
+        ],
+        [
+          {label: '全部展开', name: 'expandAll', type: 'primary', onClick: function(grid, store) {
+            grid.expand()
+          }},
+          {label: '全部收起', name: 'collapseAll', type: 'primary', onClick: function(grid, ststoreroe) {
+            grid.collapse()
+          }}
         ],
         [
           {label: '设置联动选择', name: 'select', type: 'primary', onClick: function (target, store) {

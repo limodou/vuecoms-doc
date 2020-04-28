@@ -3,16 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=f79d060b">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=cac0e1aa">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=8c83701e">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=4b109b10"></script>
-    <script src="lib/echarts.common.min.js?t=cce08242"></script>
-    <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=6d49ad8c"></script>
-    <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
+    <script src="lib/iview/iview.js?t=afe76fcb"></script>
+    <script src="lib/vuecoms.js?t=b64d2ae8"></script>
     <title>Dialog - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -23,6 +20,8 @@
         <li class="menu-item -level-0 -parent">
           <ul class="submenu">
             <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-changelog" href="changelog.html">变更记录</a>
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Box</span>
               <ul class="submenu">
@@ -48,8 +47,6 @@
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1"><a class="link title  link-fields" href="fields.html">基础控件</a>
-            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Query</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
@@ -59,12 +56,6 @@
             <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
                 </li>
               </ul>
             </li>
@@ -82,6 +73,8 @@
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Build</span>
               <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-fields" href="fields.html">基础控件</a>
+                </li>
                 <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
@@ -92,37 +85,25 @@
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
                 </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Chart</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-chart" href="chart.html">EChart</a>
+                <li class="menu-item -level-2"><a class="link title  link-build6" href="build6.html">自定义组件</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build7" href="build7.html">数据字典使用</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build8" href="build8.html">观查者模式</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build9" href="build9.html">输入输出转换</a>
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Editor</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-editor" href="editor.html">Editor</a>
+            <li class="menu-item -level-1"><a class="link title -active link-dialog" href="dialog.html">Dialog</a>
+              <ul class="headings heading-list">
+                <li class="heading-item -depth-2"><a class="hlink link-dollardialog" href="#dollardialog">示例一，$Dialog</a>
+                </li>
+                <li class="heading-item -depth-2"><a class="hlink link-dollarconfirmdialog" href="#dollarconfirmdialog">示例二，$ConfirmDialog</a>
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title -active link-dialog" href="dialog.html">Dialog</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Grid</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-grid" href="grid.html">布局展示</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
-                </li>
-              </ul>
+            <li class="menu-item -level-1"><a class="link title  link-toast" href="toast.html">Toast</a>
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
               <ul class="submenu">
@@ -139,28 +120,23 @@
           </div>
         </div>
         <div class="markdown-body"><h1 id="">&#x5BF9;&#x8BDD;&#x6846;</h1>
-<div id="ex-editor-01">
-  <i-button type="primary" @click="open=true">Show Modal</i-button>
-  <modal v-model="open" title="&#x5BF9;&#x8BDD;&#x6846;&#x6807;&#x9898;" width="1024" ref="modal">
-    <build ref="build" :data="data" :value="value"></build>
-    <div slot="footer">
-      <i-button type="text" size="large" @click.native="cancel">&#x53D6;&#x6D88;</i-button>
-      <i-button type="primary" size="large" :loading="buttonLoading" @click.native="ok">&#x786E;&#x5B9A;</i-button>
-    </div>
-  
-</modal></div>
+<p>&#x5BF9;&#x8BDD;&#x6846;&#x7684;&#x5904;&#x7406;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; iview &#x7684; Modal &#x7EC4;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x65B9;&#x4FBF;&#x7684;&#x5730;&#x65B9;&#x5C31;&#x662F;&#x9700;&#x8981;&#x5728;&#x4F7F;&#x7528;&#x5B83;&#x7684;&#x7EC4;&#x4EF6;&#x67D0;&#x4E2A;&#x5730;&#x65B9;&#x5B9A;&#x4E49;&#x3002;</p>
+<p>Vuecoms &#x63D0;&#x4F9B;&#x4E86;&#x901A;&#x7528;&#x7684;&#x5BF9;&#x8BDD;&#x6846;&#x7EC4;&#x4EF6;&#x4EE5;&#x53CA;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7ED1;&#x5B9A;&#x5230; Vue.prototype.$Dialog &#x548C; Vue.prototype.$ConfirmDialog &#x6765;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#xFF0C;&#x7B80;&#x5316;&#x4E86;&#x5BF9;&#x8BDD;&#x6846;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<h2 id="dollardialog">&#x793A;&#x4F8B;&#x4E00;&#xFF0C;$Dialog</h2>
+<div id="ex-dialog-01">
+  <i-button type="primary" @click="handleClick">Show Modal</i-button>
+</div>
 <script>
-var choices = [
-  {label:'选项一', value: 'A'},
-  {label:'选项二', value: 'B'},
-  ]
-var ex_editor_01 = new Vue({
-  el: '#ex-editor-01',
+var component = Vue.component('dialog', {
+  template: '<build ref="build" :data="data" :value="value"></build>',
+  props: ['value'],
   data: function () {
     var data = [
       {
         name: 'basic1',
         title: '基本信息1',
+        boxComponent: '',
+        static: true,
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
             info: 'info信息', required: true, rule: {type: 'email'}},
@@ -168,99 +144,325 @@ var ex_editor_01 = new Vue({
             return '<a href="#">' + v + '</a>'
             }
           },
-          {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices}},
-          {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices}},
-          {name: 'rich1', label: '富文本', type: 'tinymce', options: { options: {height: 200}}},
-          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {choices:
-            [ {
-                  id: 'fruits',
-                  title: 'Fruits',
-                  children: [ {
-                    id: 'apple',
-                    title: 'Apple',
-                  }, {
-                    id: 'grapes',
-                    title: 'Grapes',
-                  }, {
-                    id: 'pear',
-                    title: 'Pear',
-                  }, {
-                    id: 'strawberry',
-                    title: 'Strawberry',
-                  }, {
-                    id: 'watermelon',
-                    title: 'Watermelon',
-                  } ],
-                }, {
-                  id: 'vegetables',
-                  title: 'Vegetables',
-                  children: [ {
-                    id: 'corn',
-                    title: 'Corn',
-                  }, {
-                    id: 'carrot',
-                    title: 'Carrot',
-                  }, {
-                    id: 'eggplant',
-                    title: 'Eggplant',
-                  }, {
-                    id: 'tomato',
-                    title: 'Tomato',
-                  } ],
-                } ]
-              }
-          },
         ],
-        layout: [
-          ['str1', 'str2'],
-          ['select1', 'select2'],
-          ['tree1'],
-          ['rich1']
-        ],
-        boxComponent: ''
       }
     ]
     return {
-      open: false,
       data: data,
-      buttonLoading: false,
-      value: {
-        select1: 'B',
-        select2: 'A',
-        select3: ['A', 'B'],
-        select4: ['A', 'B'],
-      }
     }
-  },
+  }
+})
+var ex_dialog_01 = new Vue({
+  el: '#ex-dialog-01',
   methods: {
-    ok: function (){
-      this.buttonLoading = true
-      this.$refs.build.validate(this.save)
-    },
-    cancel: function (){
-      this.$refs.modal.close()
-    },
-    save: function(error) {
-      var self = this
-      if (error) {
-        this.buttonLoading = false
-        this.$Message.error(error)
-      } else {
-        setTimeout(function(){
-          self.buttonLoading = false
-          self.$refs.modal.close()
-          self.$Message.info('saved')
-        }, 1000)
-      }
+    handleClick: function () {
+      this.$Dialog({
+        title: '对话框标题',
+        component: component,
+        props: {
+          value: {str1: 'abc@gmail.com', str2: 'Demo'}
+        },
+        buttons: [
+          [
+            {
+              label: '关闭',
+              type: 'default',
+              onClick(target) {
+                target.close();
+              },
+            },
+          ],
+        ],
+      })
     }
   }
 })
 </script>
+<p>&#x6F14;&#x793A;&#x4E86;&#xFF1A;</p>
+<ol>
+<li>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7; <code>this.$Dialog</code> &#x76F4;&#x63A5;&#x5728;&#x5BF9;&#x8BDD;&#x6846;&#x52A0;&#x6253;&#x5F00;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5B9A;&#x4E49; Modal &#x4E86;</li>
+<li>&#x4F7F;&#x7528; $Dialog &#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x6309;&#x94AE;&#x3002;</li>
+</ol>
+<p>Dialog &#x5C5E;&#x6027; props (&#x548C; Modal &#x57FA;&#x672C;&#x7C7B;&#x4F3C;)</p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7F3A;&#x7701;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>component</td>
+<td>&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x7EC4;&#x4EF6;&#x540D;&#x79F0;&#xFF08;&#x9700;&#x8981;&#x5168;&#x5C40;&#x6CE8;&#x518C;&#xFF09;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;&#x6216;&#x5F02;&#x6B65;&#x7EC4;&#x4EF6;&#x3002;</td>
+<td>String</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>title</td>
+<td>&#x5BF9;&#x8BDD;&#x6846;&#x6807;&#x9898;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>props</td>
+<td>&#x4F20;&#x9012;&#x7ED9;&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684;&#x5C5E;&#x6027;</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>on</td>
+<td>&#x5C06;&#x8981;&#x6355;&#x83B7;&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;&#x53CA;&#x5904;&#x7406;&#x3002;key &#x662F;&#x4E8B;&#x4EF6;&#x540D;&#xFF0C;value &#x662F;&#x5904;&#x7406;&#x51FD;&#x6570;</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684; ref &#x7684;&#x540D;&#x5B57;</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>onOk</td>
+<td>&#x70B9;&#x51FB;&#x786E;&#x5B9A;&#x65F6;&#x8C03;&#x7528;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x5F53;&#x70B9;&#x51FB;&#x65F6;&#x786E;&#x5B9A;&#x6309;&#x94AE;&#x4F1A;&#x663E;&#x793A; loading &#x72B6;&#x6001;&#xFF0C;&#x5982;&#x679C; onOk &#x5B9A;&#x4E49;&#x4E86;&#xFF0C;&#x5219;&#x5F53;&#x5B83;&#x8FD4;&#x56DE; true &#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#x5BF9;&#x8BDD;&#x6846;&#x3002;&#x5982;&#x679C;&#x8FD4;&#x56DE; false&#xFF0C;&#x5219;&#x5BF9;&#x8BDD;&#x6846;&#x4ECD;&#x7136;&#x663E;&#x793A;&#xFF0C;loading &#x72B6;&#x6001;&#x53D6;&#x6D88;&#x3002;&#x5982;&#x679C;&#x672A;&#x5B9A;&#x4E49; onOk&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x5173;&#x95ED;&#x5BF9;&#x8BDD;&#x6846;. onOk &#x53EF;&#x4EE5;&#x662F; Promise &#x5BF9;&#x8C61;&#x3002;</td>
+<td>Function</td>
+<td>Promise</td>
+</tr>
+<tr>
+<td>onCancel</td>
+<td>&#x5F53;&#x70B9;&#x51FB;&#x53D6;&#x6D88;&#x65F6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; Promise &#x5BF9;&#x8C61;&#x3002;</td>
+<td>Function</td>
+<td>Promise</td>
+</tr>
+<tr>
+<td>buttons</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x6309;&#x94AE;&#x3002;&#x540C; Grid, Build &#x7684;&#x6309;&#x94AE;&#x5B9A;&#x4E49;&#x5F62;&#x5F0F;&#x76F8;&#x540C;&#x3002;</td>
+<td>Array</td>
+<td></td>
+</tr>
+<tr>
+<td>buttonSize</td>
+<td>&#x6309;&#x94AE;&#x5927;&#x5C0F;&#x3002;&#x53EF;&#x4EE5;&#x662F; large, small, default</td>
+<td>String</td>
+<td>&apos;default&apos;</td>
+</tr>
+<tr>
+<td>width</td>
+<td>&#x5BF9;&#x8BDD;&#x6846;&#x5BBD;&#x5EA6;&#xFF0C;&#x7528; px &#x8868;&#x793A;</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>closable</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;&#x53F3;&#x4E0A;&#x89D2;&#x5173;&#x95ED;&#x6309;&#x94AE;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>maskClosable</td>
+<td>&#x662F;&#x5426;&#x70B9;&#x51FB;&#x906E;&#x7F69;&#x65F6;&#x5173;&#x95ED;&#x5BF9;&#x8BDD;&#x6846;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>draggable</td>
+<td>&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x62D6;&#x52A8;&#x5BF9;&#x8BDD;&#x6846;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Dialog &#x65B9;&#x6CD5;</p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>close</td>
+<td>&#x5173;&#x95ED;&#x5F53;&#x524D;&#x5BF9;&#x8BDD;&#x6846;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dollarconfirmdialog">&#x793A;&#x4F8B;&#x4E8C;&#xFF0C;$ConfirmDialog</h2>
+<p>&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x8F93;&#x5165;&#x7684;&#x5BF9;&#x8BDD;&#x6846;&#xFF0C;&#x56E0;&#x6B64;&#x8981;&#x4F20;&#x5165; value &#x5C5E;&#x6027;&#xFF0C;&#x540C;&#x65F6;&#x8981;&#x6267;&#x884C;&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684; validate &#x548C; getData &#x65B9;&#x6CD5;&#xFF0C;&#x6765;&#x6821;&#x9A8C;&#x548C;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x3002;&#x7136;&#x540E;&#x5C06;&#x5F97;&#x5230;&#x7684;&#x6570;&#x636E;&#x4F20;&#x7ED9; onOk &#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C; onOk &#x5904;&#x7406;&#x6210;&#x529F;&#xFF0C;&#x5E94;&#x8FD4;&#x56DE; true&#x3002;validate &#x548C; getData &#x90FD;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x3002;</p>
+<div id="ex-dialog-02">
+  <i-button type="primary" @click="handleClick">Show Modal</i-button>
+</div>
+<script>
+var component = Vue.component('dialog', {
+  template: '<build ref="build" :data="data" :value="value"></build>',
+  props: ['value'],
+  data: function () {
+    var data = [
+      {
+        name: 'basic1',
+        title: '基本信息1',
+        boxComponent: '',
+        fields: [
+          {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
+            info: 'info信息', required: true, rule: {type: 'email'}},
+          {name: 'str2', label: '静态字符串2', static: true, required: true, convert: function(v){
+            return '<a href="#">' + v + '</a>'
+            }
+          },
+        ],
+      }
+    ]
+    return {
+      data: data,
+    }
+  },
+  methods: {
+    validate () {
+      return this.$refs.build.validate()
+    },
+    getData() {
+      return this.$refs.build.getData();
+    },
+  }
+})
+var ex_dialog_02 = new Vue({
+  el: '#ex-dialog-02',
+  methods: {
+    handleClick: function () {
+      this.$ConfirmDialog({
+        title: '对话框标题',
+        component: component,
+        props: {
+          value: {str1: 'abc@gmail.com', str2: 'Demo'}
+        },
+        onOk (data) {
+          console.log(data)
+          return true
+        }
+      })
+    }
+  }
+})
+</script>
+<p>ConfirmDialog &#x5C5E;&#x6027; props (&#x548C; Dialog &#x57FA;&#x672C;&#x7C7B;&#x4F3C;)</p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7F3A;&#x7701;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>component</td>
+<td>&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x7EC4;&#x4EF6;&#x540D;&#x79F0;&#xFF08;&#x9700;&#x8981;&#x5168;&#x5C40;&#x6CE8;&#x518C;&#xFF09;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;&#x6216;&#x5F02;&#x6B65;&#x7EC4;&#x4EF6;&#x3002;</td>
+<td>String</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>title</td>
+<td>&#x5BF9;&#x8BDD;&#x6846;&#x6807;&#x9898;</td>
+<td>String</td>
+<td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>props</td>
+<td>&#x4F20;&#x9012;&#x7ED9;&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684;&#x5C5E;&#x6027;</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>on</td>
+<td>&#x5C06;&#x8981;&#x6355;&#x83B7;&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;&#x53CA;&#x5904;&#x7406;&#x3002;key &#x662F;&#x4E8B;&#x4EF6;&#x540D;&#xFF0C;value &#x662F;&#x5904;&#x7406;&#x51FD;&#x6570;</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>&#x4F20;&#x5165;&#x7ED9;&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684; value &#x5C5E;&#x6027;</td>
+<td>Any</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684; ref &#x7684;&#x540D;&#x5B57;</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>onOk</td>
+<td>&#x70B9;&#x51FB;&#x786E;&#x5B9A;&#x65F6;&#x8C03;&#x7528;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x5F53;&#x70B9;&#x51FB;&#x65F6;&#x786E;&#x5B9A;&#x6309;&#x94AE;&#x4F1A;&#x663E;&#x793A; loading &#x72B6;&#x6001;&#xFF0C;&#x5982;&#x679C; onOk &#x5B9A;&#x4E49;&#x4E86;&#xFF0C;&#x5219;&#x5F53;&#x5B83;&#x8FD4;&#x56DE; true &#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#x5BF9;&#x8BDD;&#x6846;&#x3002;&#x5982;&#x679C;&#x8FD4;&#x56DE; false&#xFF0C;&#x5219;&#x5BF9;&#x8BDD;&#x6846;&#x4ECD;&#x7136;&#x663E;&#x793A;&#xFF0C;loading &#x72B6;&#x6001;&#x53D6;&#x6D88;&#x3002;&#x5982;&#x679C;&#x672A;&#x5B9A;&#x4E49; onOk&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x5173;&#x95ED;&#x5BF9;&#x8BDD;&#x6846;. onOk &#x53EF;&#x4EE5;&#x662F; Promise &#x5BF9;&#x8C61;&#x3002;</td>
+<td>Function</td>
+<td>Promise</td>
+</tr>
+<tr>
+<td>onCancel</td>
+<td>&#x5F53;&#x70B9;&#x51FB;&#x53D6;&#x6D88;&#x65F6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; Promise &#x5BF9;&#x8C61;&#x3002;</td>
+<td>Function</td>
+<td>Promise</td>
+</tr>
+<tr>
+<td>buttons</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x6309;&#x94AE;&#x3002;&#x540C; Grid, Build &#x7684;&#x6309;&#x94AE;&#x5B9A;&#x4E49;&#x5F62;&#x5F0F;&#x76F8;&#x540C;&#x3002;</td>
+<td>Array</td>
+<td></td>
+</tr>
+<tr>
+<td>buttonSize</td>
+<td>&#x6309;&#x94AE;&#x5927;&#x5C0F;&#x3002;&#x53EF;&#x4EE5;&#x662F; large, small, default</td>
+<td>String</td>
+<td>&apos;default&apos;</td>
+</tr>
+<tr>
+<td>width</td>
+<td>&#x5BF9;&#x8BDD;&#x6846;&#x5BBD;&#x5EA6;&#xFF0C;&#x7528; px &#x8868;&#x793A;</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>closable</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;&#x53F3;&#x4E0A;&#x89D2;&#x5173;&#x95ED;&#x6309;&#x94AE;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>maskClosable</td>
+<td>&#x662F;&#x5426;&#x70B9;&#x51FB;&#x906E;&#x7F69;&#x65F6;&#x5173;&#x95ED;&#x5BF9;&#x8BDD;&#x6846;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>draggable</td>
+<td>&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x62D6;&#x52A8;&#x5BF9;&#x8BDD;&#x6846;</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Dialog &#x65B9;&#x6CD5;</p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>close</td>
+<td>&#x5173;&#x95ED;&#x5F53;&#x524D;&#x5BF9;&#x8BDD;&#x6846;</td>
+</tr>
+</tbody>
+</table>
 
         </div>
         <div class="footer-nav">
-          <div class="left"><a href="editor.html"><span class="title">Editor</span></a></div>
-          <div class="right"><a href="grid.html"><span class="label">Next: </span><span class="title">布局展示</span></a></div>
+          <div class="left"><a href="build9.html"><span class="title">输入输出转换</span></a></div>
+          <div class="right"><a href="toast.html"><span class="label">Next: </span><span class="title">Toast</span></a></div>
         </div>
       </div>
     </div>

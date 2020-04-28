@@ -35,7 +35,7 @@ var ex_table_01 = new Vue({
             }
           })
         }},
-        {name:'name1', title:'Name1', width:100, fixed: 'left'},
+        {name:'name1', title:'Name1', width:100, fixed: 'left', sortable: true},
         {name:'name2', title:'Name2', width: 100},
         {name:'name3', title:'Name3', width:100},
         {name:'name4', title:'Name4', align:'center', width:400, html: false},
@@ -74,6 +74,7 @@ var ex_table_01 = new Vue({
     table.data.push({id:4, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
     table.data.push({id:5, check: 'A2', name1:'A2', name2:'B2', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
     table.data.push({id:6, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
+    table.data.push({id:7, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
     return {table:table}
   }
 })
@@ -94,8 +95,10 @@ var ex_table_01 = new Vue({
       theme: 'default',
       pagination: true,
       multiHeaderSep: '//',
-      headerShow: false,
+      headerShow: true,
       hoverShow: false,
+      sortMode: 'local',
+      param: {sortField: 'name1', 'sortDir': 'asc'},
       total: 1,
       page: 1,
       columns: [
@@ -112,7 +115,7 @@ var ex_table_01 = new Vue({
             }
           })
         }},
-        {name:'name1', title:'Name1', width:100, fixed: 'left'},
+        {name:'name1', title:'Name1', width:100, fixed: 'left', sortable: true},
         {name:'name2', title:'Name2 Name2中中中 中中中中 <i class="ivu-icon ivu-icon-logo-youtube"></i>', width: 100},
         {name:'name3', title:'Name3', width:100},
         {name:'name4', title:'Name4', align:'center', width:400, html: false},
@@ -155,6 +158,7 @@ var ex_table_01 = new Vue({
     table.data.push({id:4, check: 'A2', name1:'A2', name2:'0', name3:'C1', name4:'D1', name5:'E2', name6:'F1'})
     table.data.push({id:5, check: 'A2', name1:'A2', name2:'0', name3:'C1', name4:0, name5:'E2', name6:'F1'})
     table.data.push({id:6, check: 'A1', name1:'A1', name2:'0', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
+    table.data.push({id:7, check: 'A1', name1:'A1', name2:'0', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
     return {table:table}
   }
 })

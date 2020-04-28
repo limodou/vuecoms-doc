@@ -3,16 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=f79d060b">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=cac0e1aa">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=8c83701e">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=4b109b10"></script>
-    <script src="lib/echarts.common.min.js?t=cce08242"></script>
-    <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=6d49ad8c"></script>
-    <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
+    <script src="lib/iview/iview.js?t=afe76fcb"></script>
+    <script src="lib/vuecoms.js?t=b64d2ae8"></script>
     <title>选择树控件 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -23,6 +20,8 @@
         <li class="menu-item -level-0 -parent">
           <ul class="submenu">
             <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-changelog" href="changelog.html">变更记录</a>
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Box</span>
               <ul class="submenu">
@@ -48,8 +47,6 @@
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1"><a class="link title  link-fields" href="fields.html">基础控件</a>
-            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Query</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
@@ -62,16 +59,14 @@
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
-                </li>
-              </ul>
-            </li>
             <li class="menu-item -level-1 -parent"><span class="title">TreeSelect</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title -active link-treeselect" href="treeselect.html">选择树控件</a>
                   <ul class="headings heading-list">
+                    <li class="heading-item -depth-3"><a class="hlink link-" href="#">本地单选示例</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a class="hlink link-" href="#">本地多选示例</a>
+                    </li>
                     <li class="heading-item -depth-3"><a class="hlink link-" href="#">远程单选示例</a>
                     </li>
                     <li class="heading-item -depth-3"><a class="hlink link-" href="#">远程多选示例</a>
@@ -88,6 +83,8 @@
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Build</span>
               <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-fields" href="fields.html">基础控件</a>
+                </li>
                 <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
@@ -98,37 +95,19 @@
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
                 </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Chart</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-chart" href="chart.html">EChart</a>
+                <li class="menu-item -level-2"><a class="link title  link-build6" href="build6.html">自定义组件</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build7" href="build7.html">数据字典使用</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build8" href="build8.html">观查者模式</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build9" href="build9.html">输入输出转换</a>
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Editor</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-editor" href="editor.html">Editor</a>
-                </li>
-              </ul>
+            <li class="menu-item -level-1"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Grid</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-grid" href="grid.html">布局展示</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
-                </li>
-              </ul>
+            <li class="menu-item -level-1"><a class="link title  link-toast" href="toast.html">Toast</a>
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
               <ul class="submenu">
@@ -145,8 +124,9 @@
           </div>
         </div>
         <div class="markdown-body"><h1 id="">&#x6811;&#x9009;&#x62E9;&#x63A7;&#x4EF6;</h1>
+<h3 id="">&#x672C;&#x5730;&#x5355;&#x9009;&#x793A;&#x4F8B;</h3>
 <div id="ex-tree-01">
-  <tree-select :choices="choices" v-model="value" clearable="" filterable=""></tree-select>
+  <tree-select :choices="choices" v-model="value" clearable="" filterable="" transfer=""></tree-select>
   <pre>{{value}}</pre>
 </div>
 <script>
@@ -156,36 +136,36 @@ var ex_tree_01 = new Vue({
     var data = [
       {
         id: 'a',
-        title: 'parent 1',
+        title: '根结点',
         expand: true,
         children: [
           {
             id: 'a1',
-            title: 'parent 1-1 - long- long- long- long- long- long',
+            title: '父结点1',
             expand: true,
             children: [
               {
                 id: 'a1-1',
-                title: 'leaf 1-1-1- long- long- long- long- long- long'
+                title: '叶子一结点1-1'
               },
               {
                 id: 'a1-2',
-                title: 'leaf 1-1-2'
+                title: '叶子一结点1-2'
               }
             ]
           },
           {
             id: 'a2',
-            title: 'parent 1-2',
+            title: '父结点2',
             expand: true,
             children: [
               {
                 id: 'a2-1',
-                title: 'leaf 1-2-1'
+                title: '叶子二结点2-1'
               },
               {
                 id: 'a2-2',
-                title: 'leaf 1-2-1'
+                title: '叶子二结点2-2'
               }
             ]
           }
@@ -196,8 +176,9 @@ var ex_tree_01 = new Vue({
   }
 })
 </script>
+<h3 id="">&#x672C;&#x5730;&#x591A;&#x9009;&#x793A;&#x4F8B;</h3>
 <div id="ex-tree-02">
-  <tree-select :choices="choices" v-model="value" multiple filterable=""></tree-select>
+  <tree-select :choices="choices" v-model="value" multiple filterable="" transfer=""></tree-select>
   <pre>{{value}}</pre>
 </div>
 <script>
@@ -243,13 +224,13 @@ var ex_tree_02 = new Vue({
         ]
       }
     ]
-    return {choices: data, value:''}
+    return {choices: data, value:[]}
   }
 })
 </script>
 <h3 id="">&#x8FDC;&#x7A0B;&#x5355;&#x9009;&#x793A;&#x4F8B;</h3>
 <div id="ex-tree-03">
-  <tree-select :choices="choices" v-model="value" remote="" :remote-load-data="handleRemoteLoadData">
+  <tree-select :choices="choices" v-model="value" remote="" :remote-load-data="handleRemoteLoadData" transfer="">
   </tree-select>
   <pre>{{value}}</pre>
 </div>
@@ -292,7 +273,7 @@ var ex_tree_03 = new Vue({
 </script>
 <h3 id="">&#x8FDC;&#x7A0B;&#x591A;&#x9009;&#x793A;&#x4F8B;</h3>
 <div id="ex-tree-04">
-  <tree-select :choices="choices" v-model="value" multiple filterable="" remote="" :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData">
+  <tree-select :choices="choices" v-model="value" multiple filterable="" remote="" transfer="" :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData">
   </tree-select>
   <pre>{{value}}</pre>
 </div>
@@ -302,7 +283,7 @@ var ex_tree_04 = new Vue({
   data: function () {
     var data = [
     ]
-    return {choices: data, value:''}
+    return {choices: data, value:[]}
   },
   mounted: function () {
     var self = this
@@ -381,7 +362,7 @@ var ex_tree_04 = new Vue({
 
         </div>
         <div class="footer-nav">
-          <div class="left"><a href="tree1.html"><span class="title">树控件</span></a></div>
+          <div class="left"><a href="uploader.html"><span class="title">文件上传</span></a></div>
           <div class="right"><a href="cardlist.html"><span class="label">Next: </span><span class="title">卡片列表</span></a></div>
         </div>
       </div>

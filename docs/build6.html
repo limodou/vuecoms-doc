@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=8c83701e">
+    <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
+    <script src="assets/script.js?t=42463e55"></script>
+    <script src="lib/vue.js?t=46ed8b2a"></script>
+    <script src="lib/iview/iview.js?t=afe76fcb"></script>
+    <script src="lib/vuecoms.js?t=b64d2ae8"></script>
+    <title>自定义组件 - Vuecoms</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-changelog" href="changelog.html">变更记录</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Box</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-box1" href="box1.html">基本用法</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Table</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-table0" href="table0.html">表格说明</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table3" href="table3.html">表格拖动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table4" href="table4.html">表格行编辑</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table5" href="table5.html">Tree表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table6" href="table6.html">通用表格</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Query</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">TreeSelect</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-treeselect" href="treeselect.html">选择树控件</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">CardList</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-cardlist" href="cardlist.html">卡片列表</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Build</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-fields" href="fields.html">基础控件</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build3" href="build3.html">数据联动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build4" href="build4.html">Select Rich</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title -active link-build6" href="build6.html">自定义组件</a>
+                  <ul class="headings heading-list">
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">示例一，单一组件</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">示例二，复杂组件</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">示例三，自定义布局组件</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">示例四，复杂数组组件</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build7" href="build7.html">数据字典使用</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build8" href="build8.html">观查者模式</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build9" href="build9.html">输入输出转换</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-toast" href="toast.html">Toast</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-research_edit" href="research_edit.html">任务编辑</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-build6">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="">&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;</h1>
+<p>Build&#x652F;&#x6301;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#xFF0C;&#x5B9A;&#x4E49;&#x597D;&#x901A;&#x8FC7; <code>Vue.component(&apos;name&apos;, component)</code> &#x6CE8;&#x518C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5B9A;&#x4E49;field&#x65F6;&#xFF0C;type&#x5C5E;&#x6027;&#x5C31;&#x662F;&#x63A7;&#x4EF6;&#x540D;&#x79F0;&#x5373;&#x53EF;&#x3002;&#x4E3A;&#x4E86;&#x4E0E;Build&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;&#x9700;&#x8981;&#x5B9E;&#x73B0;v-model&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5373;&#xFF1A;props&#x4E2D;&#x542B;&#x6709;value&#x53C2;&#x6570;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x9700;&#x8981;&#x629B;&#x51FA; input &#x4E8B;&#x4EF6;&#x3002;&#x540C;&#x65F6;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x63A7;&#x4EF6;&#x672C;&#x8EAB;&#x5E94;&#x8BE5;&#x5BF9;value&#x7684;&#x53D8;&#x5316;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x4EE5;&#x66F4;&#x73B0;&#x5728;&#x5916;&#x90E8;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x65F6;&#x5373;&#x65F6;&#x66F4;&#x65B0;&#xFF0C;&#x56E0;&#x6B64;&#x6709;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x907F;&#x514D;&#x56E0;&#x76D1;&#x542C;value&#x53D8;&#x5316;&#x800C;&#x5BFC;&#x81F4;&#x7684;&#x6B7B;&#x5FAA;&#x73AF;&#x95EE;&#x9898;&#xFF08;&#x53EF;&#x4EE5;&#x5728;&#x5185;&#x90E8;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x4E0E;&#x5916;&#x90E8;&#x7684;value&#x503C;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x5F53;&#x6BD4;&#x8F83;&#x4E0D;&#x4E00;&#x81F4;&#x65F6;&#x624D;&#x7EE7;&#x7EED;&#x5904;&#x7406;&#xFF09;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x4E3B;&#x8981;&#x8003;&#x8651;&#x4EE5;&#x4E0B;&#x5904;&#x7406;&#xFF1A;</p>
+<ol>
+<li>props &#x8981;&#x5B9E;&#x73B0; value &#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x5904;&#x7406;&#x5B83;&#x7684;&#x53D8;&#x5316;</li>
+<li>&#x6570;&#x636E;&#x53D8;&#x5316;&#x65F6;&#x8981;&#x629B;&#x51FA; input &#x4E8B;&#x4EF6;</li>
+<li>&#x5982;&#x679C;&#x8003;&#x8651;&#x7EC4;&#x4EF6;&#x5206;&#x4E3A;&#x53EF;&#x7F16;&#x8F91;&#xFF0C;&#x9759;&#x6001;&#x5C55;&#x793A;&#x7684;&#x4E0D;&#x540C;&#x573A;&#x666F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; props &#x6DFB;&#x52A0; static &#x6216; mode &#x6765;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7684;&#x5904;&#x7406;&#x6A21;&#x5F0F;&#xFF0C;&#x5728;&#x5916;&#x90E8;&#x901A;&#x8FC7; options &#x4F20;&#x5165;&#x5373;&#x53EF;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x5355;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Build &#x7EDF;&#x4E00;&#x7684;&#x6821;&#x9A8C;&#x6765;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x7279;&#x522B;&#x5904;&#x7406;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x590D;&#x6742;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x6309;&#x4F8B;&#x4E8C;&#x548C;&#x4F8B;&#x56DB;&#x7684;&#x793A;&#x4F8B;&#x6765;&#x5904;&#x7406;&#xFF0C;&#x793A;&#x4F8B;&#x5206;&#x522B;&#x5C55;&#x793A;&#x4E86;&#x590D;&#x6742;&#x7EC4;&#x4EF6;&#x548C;&#x590D;&#x6742;&#x6570;&#x7EC4;&#x7EC4;&#x4EF6;&#x7684;&#x4F8B;&#x5B50;&#x3002;</li>
+</ol>
+<p>&#x4F5C;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#xFF0C;Build&#x4F1A;&#x4F20;&#x5165;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;value, validateResult, field&#x3002;&#x5176;&#x4E2D;value&#x662F;&#x5F53;&#x524D;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#xFF0C;validateResult&#x662F;&#x6574;&#x4E2A;Build&#x7684;&#x6821;&#x9A8C;&#x5BF9;&#x8C61;&#xFF0C;field&#x662F;&#x5F53;&#x524D;&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x4F8B;&#x4E09;&#x5C55;&#x793A;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x539F;&#x672C;&#x6309;layout&#x6765;&#x81EA;&#x52A8;&#x5E03;&#x5C40;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x6539;&#x4E3A;&#x5C40;&#x90E8;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#x3002;</p>
+<h2 id="">&#x793A;&#x4F8B;&#x4E00;&#xFF0C;&#x5355;&#x4E00;&#x7EC4;&#x4EF6;</h2>
+<p>&#x672C;&#x793A;&#x4F8B;&#x5C55;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#xFF0C;&#x624B;&#x673A;&#x9A8C;&#x8BC1;&#x7801;&#x7684;&#x7EC4;&#x4EF6;&#x3002;&#x4E0D;&#x8FC7;&#x8FD9;&#x4E9B;&#x793A;&#x4F8B;&#x672A;&#x5C55;&#x793A; value &#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x7684;&#x60C5;&#x5F62;&#xFF0C;&#x53EA;&#x662F;&#x7528;&#x4E8E;&#x8F93;&#x51FA; value&#x3002;</p>
+<div id="ex-build-00">
+  <build ref="build" :data="data" :value="value"></build>
+  <div>{{value}}</div>
+</div>
+<script>
+Vue.component('mobile-verify', {
+  template: [
+    '<Row>',
+    '<Col span="8"><Input :value="val" @input="handleInput"></Input></Col>',
+    '<Col span="5" offset="1"><Button type="primary" @click="handleClick" :loading="loading">{{btnText}}</Button></Col>',
+    '</Row>'].join(''),
+  props: ['value', 'validateResult', 'field'],
+  mounted: function () {
+    var self = this
+    this.validateResult[this.field.name].children = function (rule, value) {
+      if (!self.verifyCode) return '请获取验证码'
+      if (self.verifyCode && (value !== self.verifyCode)) return '验证码不正确'
+    }
+  },
+  data: function () {
+    return {val: '', verifyCode: '', btnText: '获取验证码', loading: false, timer: 60}
+  },
+  methods: {
+    timeout: function () {
+      if (this.timer === 58) {
+        this.verifyCode = '123456'
+        this.$Message.info('验证码为: '+this.verifyCode)
+        this.btnText = '获取验证码'
+        this.timer = 60
+        this.loading = false
+      } else {
+        this.loading = true
+        this.timer --
+        this.btnText = this.timer
+        setTimeout(this.timeout, 1000)
+      }
+    },
+    handleClick: function () {
+      this.loading = true
+      this.timeout()
+    },
+    handleInput: function (value) {
+      this.val = value
+      this.$emit('input', value)
+    }
+  },
+  watch: {
+    value: function (v) {
+      this.val = v
+    }
+  }
+})
+var ex_build_00 = new Vue({
+  el: '#ex-build-00',
+  data: function () {
+    var self = this
+    var data = [
+      {
+        name: 'basic',
+        title: '自定义组件示例一',
+        labelWidth: 150,
+        fields: [
+          {name: 'must', label: '是否必填', type: 'checkbox', onChange: function (value) {
+            self.$set(self.$refs.build.fields.verifyCode, 'required', !self.$refs.build.fields.verifyCode.required)
+          }},
+          {name: 'verifyCode', label: '手机验证码', type: 'mobile-verify'},
+        ],
+        // layout: [
+        //   ['verifyCode']
+        // ],
+        buttons: [
+          [{label: '查看结果', type:'primary', onClick: function(target, data){
+              target.validate().then(res => {
+                console.log(res)
+                self.$Message.success('校验成功')
+              })
+              // .catch(err => {
+              //   self.$Message.error(err)
+              // })
+              console.log(target, data)
+            }
+          }],
+          [{label: '重置', type:'primary', onClick: function(target, data){
+              target.reset()
+            }
+          }]
+        ],
+      },
+    ]
+    return {data:data, value: {}}
+  }
+})
+</script>
+<h2 id="">&#x793A;&#x4F8B;&#x4E8C;&#xFF0C;&#x590D;&#x6742;&#x7EC4;&#x4EF6;</h2>
+<p>&#x672C;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x8BC1;&#x4EF6;&#x53F7;&#x7801;&#xFF0C;&#x8BC1;&#x4EF6;&#x7C7B;&#x578B;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5BF9;&#x5E94;&#x4E8E;value&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x5982;&#xFF1A; <code>{type: &apos;&apos;, no: &apos;&apos;}</code>&#x3002;&#x5982;&#x679C;&#x8981;&#x5B9A;&#x4E49;&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x4E3B;&#x8981;&#x89E3;&#x51B3;&#x4EE5;&#x4E0B;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li>&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;</li>
+<li>&#x6821;&#x9A8C;&#x5904;&#x7406;</li>
+<li>&#x5C55;&#x793A;&#x5904;&#x7406;</li>
+</ol>
+<p>&#x901A;&#x8FC7;&#x5F15;&#x5165; FormBlock &#x7EC4;&#x4EF6;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86; makeFields &#x548C; makeValidateResult &#x51FD;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x7528;&#x4E8E;&#x751F;&#x6210; Build &#x9700;&#x8981;&#x7684;&#x5B57;&#x6BB5;&#x7ED3;&#x6784;&#x548C;&#x6821;&#x9A8C;&#x5BF9;&#x8C61;&#x3002;&#x56E0;&#x4E3A;&#x8981;&#x5F15;&#x7528; FormBlock &#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x6240;&#x4EE5;&#x793A;&#x4F8B;&#x662F;&#x5728; mounted &#x4E2D;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x7684;&#xFF0C;&#x901A;&#x8FC7; $refs &#x6765;&#x5F15;&#x7528;&#x5B9E;&#x4F8B;&#x3002;&#x672C;&#x4F8B;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x7684; validateResult &#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#x4E3A; validateResult1&#xFF0C;&#x5B83;&#x5C06;&#x4F5C;&#x4E3A;&#x5BF9;&#x5E94;&#x5B57;&#x6BB5;&#x7F3A;&#x7701;&#x6821;&#x9A8C;&#x5BF9;&#x8C61;&#x4E2D;&#x7684; children &#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#xFF1A; <code>this.validateResult[this.field.name].children = this.validateResult1</code> &#x6240;&#x793A;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x5B57;&#x6BB5;&#x7684;&#x5C55;&#x793A;&#xFF0C;&#x4F7F;&#x7528;&#x4E86; FormCell &#x7EC4;&#x4EF6;&#xFF0C;&#x5B83;&#x81EA;&#x5E26; label&#xFF0C;&#x5B57;&#x6BB5;&#x5C55;&#x793A;&#x548C;&#x51FA;&#x9519;&#x663E;&#x793A;&#x3002;</p>
+<div id="ex-build-01">
+  <build ref="build" :data="data" :value="value" :choices="choices" :errors="errors"></build>
+  <div>{{value}}</div>
+</div>
+<script>
+Vue.component('credentials', {
+  template: [
+    '<form-block ref="block">',
+    '<Row v-if="fields">',
+    '<Col span="12"><form-cell :col="fields[\'type\']" :value="value" :validateResult="validateResult1"></form-cell></Col>',
+    '<Col span="12"><form-cell :col="fields[\'no\']" :value="value" :validateResult="validateResult1"></form-cell></Col>',
+    '</Row>',
+    '</form-block>'].join(''),
+  props: ['value', 'validateResult', 'field'],
+  mounted: function () {
+    var self = this
+    var root = this.$refs.block
+    this.fields = root.makeFields([
+      {name: 'type', label: '证件类型', labelWidth: 150, type: 'select', required: true, options: {choices: [
+        {label: '身份证', value: '01'},
+        {label: '军官证', value: '02'},
+      ]}},
+      {name: 'no', label: '证件号码', labelWidth: 150, required: true, rule: 'idnumber'}
+    ])
+    this.validateResult1 = root.makeValidateResult(this.fields)
+    this.validateResult[this.field.name].children = this.validateResult1
+  },
+  data: function () {
+    return {fields: null, validateResult1: {}}
+  },
+})
+var ex_build_01 = new Vue({
+  el: '#ex-build-01',
+  data: function () {
+    var self = this
+    var data = [
+      {
+        name: 'basic',
+        title: '自定义组件示例二',
+        labelWidth: 150,
+        fields: [
+          {name: 'select1', label: '选择1', type: 'select', required: true, options: {clearable: true,
+              choices: [
+                {label:'选项一', value: 'A'},
+                {label:'选项二', value: 'B'},
+              ] 
+            },
+            onChange: function (value, alldata) {
+              self.$set(alldata, 'select2', value)
+            }
+          },
+          {name: 'select2', label: '选择2', type: 'select', static: true},
+          {name: 'custom', label: '', type: 'credentials', rule: 'any', showError: false}
+        ],
+        layout: [
+          ['select1', 'select2'],
+          ['custom']
+        ],
+        buttons: {
+          items: [
+            [{label: '查看结果', type:'primary', onClick: function(target, data){
+                target.validate().then(res => {
+                  console.log(res)
+                  self.$Message.success('校验成功')
+                }).catch(err => {
+                  self.$Message.error(err)
+                })
+                console.log(target, data)
+              }
+            }],
+            [{label: '重置', type:'primary', onClick: function(target, data){
+                target.reset()
+              }
+            }]
+          ],
+        }
+      },
+    ]
+    return {
+            data:data,
+            value: {
+              select1: '',
+              select2: '',
+              custom: {type: '01', no: ''},
+            },
+            choices: {
+              // select1: [],
+              select2: []
+            },
+            errors: {},
+          }
+  },
+  methods: {
+    save: function(error) {
+      if (error) {
+        this.$Message.error(error)
+      } else {
+        this.$Message.info('saved')
+      }
+    }
+  },
+  mounted: function () {
+    var self = this
+    setTimeout(function () {
+      self.$set(self.value, 'select2', 'A')
+    }, 50)
+    setTimeout(function () {
+      var c = [
+        {label:'选项一', value: 'A'},
+        {label:'选项二', value: 'B'},
+        {label:'选项三', value: 'C'}
+      ]
+      self.$set(self.choices, 'select2', c)
+    }, 1000)
+  }
+})
+</script>
+<h2 id="">&#x793A;&#x4F8B;&#x4E09;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#x7EC4;&#x4EF6;</h2>
+<p>&#x5BF9;&#x4E8E;&#x4E0D;&#x60F3;&#x91C7;&#x7528;&#x7F3A;&#x7701;&#x5E03;&#x5C40;&#x5C55;&#x793A;&#x7684;&#x573A;&#x5408;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#x3002;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#x7EC4;&#x4EF6;&#xFF0C;&#x5E76;&#x5728;&#x539F;Build&#x4E2D;&#x7684;layout&#x8FDB;&#x884C;&#x58F0;&#x660E;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code>layout: [
+  [&apos;select1&apos;, &apos;select2&apos;],
+  [{component: &apos;customlayout&apos;, fields: [&apos;type&apos;, &apos;no&apos;]}]
+],
+</code></pre>
+<p>&#x7B2C;&#x4E09;&#x884C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#x7684;&#x793A;&#x4F8B;&#x3002;&#x5B83;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x4E3A; customlayout &#xFF0C;&#x901A;&#x8FC7; component &#x6765;&#x5B9A;&#x4E49;&#x3002;&#x5BF9;&#x5E94;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5; &apos;type&apos;, &apos;no&apos;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x6539;&#x53D8;&#x6570;&#x636E;&#x7EC4;&#x6784;&#xFF0C;&#x5373;&#x4E0D;&#x9700;&#x8981;&#x7EC4;&#x4EF6;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x53EA;&#x662F;&#x5E03;&#x5C40;&#x4E0A;&#x8C03;&#x6574;&#xFF0C;&#x6B64;&#x65F6;&#x4E0D;&#x9002;&#x5408;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#x7EC4;&#x4EF6;&#x63A5;&#x53D7;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;value &#x4E3A; Build&#x7684;&#x503C;&#xFF0C; validateResult &#x4E3A;&#x6821;&#x9A8C;&#x5BF9;&#x8C61;&#xFF0C;col&#x4E3A;&#x5728;layout&#x4E2D;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x5982;&#x679C;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x4F1A;&#x8F6C;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x5E03;&#x5C40;&#x5BF9;&#x8C61;&#xFF09;&#xFF0C;fields&#x4E3A;&#x5E03;&#x5C40;&#x8981;&#x5904;&#x7406;&#x7684;&#x5B57;&#x6BB5;&#x5BF9;&#x8C61;&#x3002;&#x5B9A;&#x4E49;fields&#x65F6;&#xFF0C;&#x7528;&#x7684;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x6BCF;&#x9879;&#x90FD;&#x662F;&#x5BF9;&#x5E94;&#x5B57;&#x6BB5;&#x7684;name&#x503C;&#x3002;&#x8F6C;&#x4E3A;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x53D8;&#x6210;&#x5BF9;&#x8C61;&#x5F62;&#x5F0F;&#xFF0C;&#x5176;&#x503C;&#x662F;Build&#x4E2D;fields&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x6BB5;&#x5BF9;&#x8C61;&#x503C;&#x3002;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#x4F7F;&#x7528; fields[&apos;type&apos;]&#x548C;fields[&apos;no&apos;] &#x6765;&#x5206;&#x522B;&#x5F15;&#x7528;&#x8BC1;&#x4EF6;&#x7C7B;&#x578B;&#x548C;&#x8BC1;&#x4EF6;&#x53F7;&#x7801;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x3002;</p>
+<div id="ex-build-02">
+  <build ref="build" :data="data" :value="value" :choices="choices" :errors="errors"></build>
+  <div>{{value}}</div>
+</div>
+<script>
+Vue.component('customlayout', {
+  template: [
+    '<div style="border: 1px solid #ddd;padding: 15px 0;">',
+    '<div style="margin-left: 10px; font-size: 12px;">证件信息：</div>',
+    '<Row style="margin-bottom: 10px;">',
+    '<Col span="12"><form-cell :col="fields[\'type\']" :value="value" :validateResult="validateResult"></form-cell></Col>',
+    '</Row>',
+    '<Row>',
+    '<Col span="12"><form-cell :col="fields[\'no\']" :value="value" :validateResult="validateResult"></form-cell></Col>',
+    '</Row>',
+    '</div>'].join(''),
+  props: ['value', 'validateResult', 'col', 'fields']
+})
+var ex_build_02 = new Vue({
+  el: '#ex-build-02',
+  data: function () {
+    var self = this
+    var data = [
+      {
+        name: 'basic',
+        title: '自定义组件示例三',
+        labelWidth: 150,
+        fields: [
+          {name: 'select1', label: '选择1', type: 'select', required: true, options: {clearable: true,
+              // choices: [
+              //   {label:'选项一', value: 'A'},
+              //   {label:'选项二', value: 'B'},
+              // ] 
+            },
+            onChange: function (value, alldata) {
+              self.$set(alldata, 'select2', value)
+            }
+          },
+          {name: 'select2', label: '选择2', type: 'select', static: true},
+          {name: 'type', label: '证件类型', labelWidth: 150, type: 'select', required: true, options: {choices: [
+            {label: '身份证', value: '01'},
+            {label: '军官证', value: '02'},
+          ]}},
+          {name: 'no', label: '证件号码', labelWidth: 150, required: true, rule: 'idnumber'}
+        ],
+        layout: [
+          ['select1', 'select2'],
+          [{component: 'customlayout', fields: ['type', 'no']}]
+        ],
+        buttons: {
+          items: [
+            [{label: '查看结果', type:'primary', onClick: function(target, data){
+                target.validate().then(res => {
+                  console.log(res)
+                  self.$Message.success('校验成功')
+                }).catch(err => {
+                  self.$Message.error(err)
+                })
+                console.log(target, data)
+              }
+            }],
+            [{label: '重置', type:'primary', onClick: function(target, data){
+                target.reset()
+              }
+            }]
+          ],
+        }
+      },
+    ]
+    return {
+            data:data,
+            value: {
+              select1: '',
+              select2: '',
+              type: '01',
+              no: '',
+            },
+            choices: {
+              select1: [],
+              select2: []
+            },
+            errors: {},
+          }
+  },
+  methods: {
+    save: function(error) {
+      if (error) {
+        this.$Message.error(error)
+      } else {
+        this.$Message.info('saved')
+      }
+    }
+  },
+  mounted: function () {
+    var self = this
+    setTimeout(function () {
+      self.$set(self.value, 'select1', 'A')
+    }, 50)
+    setTimeout(function () {
+      var c = [
+        {label:'选项一', value: 'A'},
+        {label:'选项二', value: 'B'},
+        {label:'选项三', value: 'C'}
+      ]
+      self.$set(self.choices, 'select1', c)
+      self.$set(self.choices, 'select2', c)
+    }, 1000)
+  }
+})
+</script>
+<h2 id="">&#x793A;&#x4F8B;&#x56DB;&#xFF0C;&#x590D;&#x6742;&#x6570;&#x7EC4;&#x7EC4;&#x4EF6;</h2>
+<div id="ex-build-03">
+  <build ref="build" :data="data" :value="value" :choices="choices" :errors="errors"></build>
+  <div>{{value}}</div>
+</div>
+<style>
+.form-block {
+  border: 1px solid whitesmoke; padding-top: 10px;
+}
+.form-block:hover {
+  border: 1px solid #7dc1f5;
+}
+</style>
+<script>
+Vue.component('credentials2', {
+  template: [
+    '<form-block ref="block" class="form-block">',
+    '<Row v-if="fields" v-for="(v, index) of value" style="margin-bottom: 10px;">',
+    '<Col span="8"><form-cell :col="fields[\'type\']" :value="value[index]" :validateResult="validateResult1[index]"></form-cell></Col>',
+    '<Col span="10"><form-cell :col="fields[\'no\']" :value="value[index]" :validateResult="validateResult1[index]"></form-cell></Col>',
+    '<Col span="5" offset="1">',
+    '<Button type="primary" v-if="index===0" @click.prevent="handleAdd">增加证件</Button>',
+    '<Button type="error" v-if="index>0" @click.prevent="handleDelete(index)">删除</Button>',
+    '</Col>',
+    '</Row>',
+    '</form-block>'].join(''),
+  props: ['value', 'validateResult', 'field'],
+  mounted: function () {
+    var self = this
+    var root = this.$refs.block
+    this.fields = root.makeFields([
+      {name: 'type', label: '证件类型', labelWidth: 150, type: 'select', required: true, 
+        options: {choices: [
+          {label: '身份证', value: '01'},
+          {label: '军官证', value: '02'},
+        ]},
+        onChange: function(value){
+         console.log('change', value)
+        },
+        enableOnChange: true
+      },
+      {name: 'no', label: '证件号码', labelWidth: 150, required: true, rule: 'idnumber'}
+    ])
+    this.validateResult1 = [
+      root.makeValidateResult(this.fields),
+    ]
+    this.validateResult[this.field.name].children = this.validateResult1
+  },
+  data: function () {
+    return {fields: null, validateResult1: []}
+  },
+  methods: {
+    handleAdd: function() {
+      var root = this.$refs.block
+      this.value.push({type: '', no: ''})
+      this.validateResult1.push(root.makeValidateResult(this.fields))
+    },
+    handleDelete: function (index) {
+      this.value.splice(index, 1)
+      this.valudateResult1.splice(index, 1)
+    }
+  }
+})
+var ex_build_03 = new Vue({
+  el: '#ex-build-03',
+  data: function () {
+    var self = this
+    var data = [
+      {
+        name: 'basic',
+        title: '自定义组件示例四',
+        labelWidth: 150,
+        fields: [
+          {name: 'title', label: '名称', required: true, rule: {type: 'string', required: true, trim: true}},
+          {name: 'nation', label: '国籍', type: 'radio', required: true, 
+            onChange: function (value, model) {
+              console.log(value, model)
+              var required = false
+              if (value === '中国') required = true
+              self.$set(self.$refs.build.fields['location'], 'required', required)
+              self.$set(self.$refs.build.fields['zhmiao'], 'required', required)
+              self.$refs.build.setFieldRule('location')
+              self.$refs.build.setFieldRule('zhmiao')
+            },
+            options: {
+              choices: [
+                {label:'中国', value: '中国'},
+                {label:'其它', value: '其它'},
+              ],
+            }
+          },
+          {name: 'custom', label: '', type: 'credentials2', required: true, rule: {validate: function(rule, value, model) {
+            console.log('校验')
+          }}, showError: true},
+          {name: 'location', label: '籍贯', required: false},
+          {name: 'zhmiao', label: '政治面貌', required: false},
+        ],
+        layout: [
+          ['title'],
+          ['nation'],
+          ['custom'],
+          [{name: 'location', colspan: 8}],
+          [{name: 'zhmiao', colspan: 8}]
+        ],
+        buttons: {
+          items: [
+            [{label: '查看结果', type:'primary', onClick: function(target, data){
+                target.validate().then(res => {
+                  if (!res) {
+                    self.$Message.success('校验成功')
+                  }
+                }).catch(err => {
+                  self.$Message.error(err)
+                })
+                console.log(target, data)
+              }
+            }],
+            [{label: '重置', type:'primary', onClick: function(target, data){
+                target.reset()
+              }
+            }]
+          ],
+        }
+      },
+    ]
+    return {
+            data:data,
+            value: {
+              select1: '',
+              select2: '',
+              custom: [{type: '', no: ''}],
+            },
+            choices: {
+              select1: [],
+              select3: []
+            },
+            errors: {},
+          }
+  },
+  methods: {
+    save: function(error) {
+      if (error) {
+        this.$Message.error(error)
+      } else {
+        this.$Message.info('saved')
+      }
+    }
+  },
+  mounted: function () {
+    var self = this
+    setTimeout(function () {
+      self.$set(self.value, 'select1', 'A')
+    }, 50)
+    setTimeout(function () {
+      var c = [
+        {label:'选项一', value: 'A'},
+        {label:'选项二', value: 'B'},
+        {label:'选项三', value: 'C'}
+      ]
+      self.$set(self.choices, 'select1', c)
+    }, 1000)
+  }
+})
+</script>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="build5.html"><span class="title">自定义Box</span></a></div>
+          <div class="right"><a href="build7.html"><span class="label">Next: </span><span class="title">数据字典使用</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

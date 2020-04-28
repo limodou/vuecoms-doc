@@ -1,7 +1,9 @@
 # 树选择控件
 
+### 本地单选示例
+
 <div id="ex-tree-01">
-  <tree-select :choices="choices" v-model="value" clearable filterable></tree-select>
+  <tree-select :choices="choices" v-model="value" clearable filterable transfer></tree-select>
   <pre>{{value}}</pre>
 </div>
 <script>
@@ -11,36 +13,36 @@ var ex_tree_01 = new Vue({
     var data = [
       {
         id: 'a',
-        title: 'parent 1',
+        title: '根结点',
         expand: true,
         children: [
           {
             id: 'a1',
-            title: 'parent 1-1 - long- long- long- long- long- long',
+            title: '父结点1',
             expand: true,
             children: [
               {
                 id: 'a1-1',
-                title: 'leaf 1-1-1- long- long- long- long- long- long'
+                title: '叶子一结点1-1'
               },
               {
                 id: 'a1-2',
-                title: 'leaf 1-1-2'
+                title: '叶子一结点1-2'
               }
             ]
           },
           {
             id: 'a2',
-            title: 'parent 1-2',
+            title: '父结点2',
             expand: true,
             children: [
               {
                 id: 'a2-1',
-                title: 'leaf 1-2-1'
+                title: '叶子二结点2-1'
               },
               {
                 id: 'a2-2',
-                title: 'leaf 1-2-1'
+                title: '叶子二结点2-2'
               }
             ]
           }
@@ -52,8 +54,10 @@ var ex_tree_01 = new Vue({
 })
 </script>
 
+### 本地多选示例
+
 <div id="ex-tree-02">
-  <tree-select :choices="choices" v-model="value" multiple filterable></tree-select>
+  <tree-select :choices="choices" v-model="value" multiple filterable transfer></tree-select>
   <pre>{{value}}</pre>
 </div>
 <script>
@@ -99,7 +103,7 @@ var ex_tree_02 = new Vue({
         ]
       }
     ]
-    return {choices: data, value:''}
+    return {choices: data, value:[]}
   }
 })
 </script>
@@ -108,7 +112,7 @@ var ex_tree_02 = new Vue({
 
 <div id="ex-tree-03">
   <tree-select :choices="choices" v-model="value" remote
-    :remote-load-data="handleRemoteLoadData">
+    :remote-load-data="handleRemoteLoadData" transfer>
   </tree-select>
   <pre>{{value}}</pre>
 </div>
@@ -153,7 +157,7 @@ var ex_tree_03 = new Vue({
 ### 远程多选示例
 
 <div id="ex-tree-04">
-  <tree-select :choices="choices" v-model="value" multiple filterable remote
+  <tree-select :choices="choices" v-model="value" multiple filterable remote transfer
     :remote-query="handleRemoteQuery" :remote-load-data="handleRemoteLoadData">
   </tree-select>
   <pre>{{value}}</pre>
@@ -164,7 +168,7 @@ var ex_tree_04 = new Vue({
   data: function () {
     var data = [
     ]
-    return {choices: data, value:''}
+    return {choices: data, value:[]}
   },
   mounted: function () {
     var self = this

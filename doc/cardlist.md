@@ -36,7 +36,6 @@
         <card-item :data="item"></card-item>
       </card>
     </template>
-    <card slot="nodata">暂无数据</card>
   </card-list>
   <Buttons :buttons="buttons"></Buttons>
 </div>
@@ -46,7 +45,7 @@ Vue.component('card-item', {
   template: ['<div>',
     '<div style="font-size: 20px">{{data.id}}-{{data.title}}</div>',
     '<div style="font-size: 9px">',
-    '<i-button type="error" ghost size="small">{{data.status}}</i-button>',
+    '<Tag color="error" type="border">{{data.status}}</Tag>',
     ' <span>{{data.author}}</span>',
     ' <span>{{data.publishDate}}</span>',
     '</div>',
@@ -62,12 +61,14 @@ var ex_table_01 = new Vue({
       pagination: true,
       scroll: false,
       onLoadData: function(param, callback) {
-        console.log(param)
-        var data = []
-        for(var i=0, len=10; i<len; i++) {
-          data.push({id:no++, title: '测试文章', status: 'top', author: '人民网', publishDate: '18分钟前'})
-        }
-        callback(data, {total: 100})
+        setTimeout(function(){
+          console.log(param)
+          var data = []
+          for(var i=0, len=10; i<len; i++) {
+            data.push({id:(param.page - 1) * 10 + i + 1, title: '测试文章', status: 'top', author: '人民网', publishDate: '18分钟前'})
+          }
+          callback(data, {total: 100})
+        }, 1000)
       },
       query: {
         fields: [

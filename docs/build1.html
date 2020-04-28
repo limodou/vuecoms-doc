@@ -3,16 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=f79d060b">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=cac0e1aa">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=8c83701e">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=4b109b10"></script>
-    <script src="lib/echarts.common.min.js?t=cce08242"></script>
-    <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=6d49ad8c"></script>
-    <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
+    <script src="lib/iview/iview.js?t=afe76fcb"></script>
+    <script src="lib/vuecoms.js?t=b64d2ae8"></script>
     <title>基本构建 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -23,6 +20,8 @@
         <li class="menu-item -level-0 -parent">
           <ul class="submenu">
             <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-changelog" href="changelog.html">变更记录</a>
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Box</span>
               <ul class="submenu">
@@ -48,8 +47,6 @@
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1"><a class="link title  link-fields" href="fields.html">基础控件</a>
-            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Query</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
@@ -59,12 +56,6 @@
             <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
                 </li>
               </ul>
             </li>
@@ -82,11 +73,31 @@
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Build</span>
               <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-fields" href="fields.html">基础控件</a>
+                </li>
                 <li class="menu-item -level-2"><a class="link title -active link-build1" href="build1.html">基本构建</a>
                   <ul class="headings heading-list">
                     <li class="heading-item -depth-2"><a class="hlink link-" href="#">参数说明</a>
                     </li>
                     <li class="heading-item -depth-2"><a class="hlink link-" href="#">方法说明</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-validate" href="#validate">Validate说明</a>
+                      <ul class="heading-list -depth-2">
+                        <li class="heading-item -depth-3"><a class="hlink link-" href="#">规则定义</a>
+                        </li>
+                        <li class="heading-item -depth-3"><a class="hlink link-" href="#">规则类型</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">调用已有校验类型</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">在内置规则基础之上包装新的类型</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">出错信息模板</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">集成说明</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">旧版本兼容性</a>
                     </li>
                   </ul>
                 </li>
@@ -98,37 +109,19 @@
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
                 </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Chart</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-chart" href="chart.html">EChart</a>
+                <li class="menu-item -level-2"><a class="link title  link-build6" href="build6.html">自定义组件</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build7" href="build7.html">数据字典使用</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build8" href="build8.html">观查者模式</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build9" href="build9.html">输入输出转换</a>
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Editor</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-editor" href="editor.html">Editor</a>
-                </li>
-              </ul>
+            <li class="menu-item -level-1"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Grid</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-grid" href="grid.html">布局展示</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
-                </li>
-              </ul>
+            <li class="menu-item -level-1"><a class="link title  link-toast" href="toast.html">Toast</a>
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
               <ul class="submenu">
@@ -146,7 +139,7 @@
         </div>
         <div class="markdown-body"><h1 id="">&#x57FA;&#x672C;&#x6784;&#x5EFA;</h1>
 <div id="ex-build-01">
-  <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :choices="choices"></build>
+  <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :choices="choices" :box-options="boxOptions"></build>
   <div>
     {{value}}
   </div>
@@ -164,8 +157,8 @@ var ex_build_01 = new Vue({
         staticSuffix: '_static',
         static: false,
         fields: [
-          {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
-            info: 'info信息', required: true, rule: {type: 'email'}},
+          {name: 'str1', label: '字符串1', placeholder: '请输入...', static: false, help: '帮助信息',
+            info: 'info信息', required: true, rule: {type: 'email'}, options: {appendText:'单位'}},
           {name: 'str2', label: '静态字符串2', static: true, required: true, format: function(v){
             return '<a href="#">' + v + '</a>'
           }},
@@ -173,7 +166,7 @@ var ex_build_01 = new Vue({
           {name: 'select2', label: '选择2', type: 'select', static: true, options: {clearable: true},
             help: '这是设置了select2_static的结果，未使用缺省机制'
           },
-          {name: 'select1_1', label: '远程选择1', type: 'select', type: 'select', options: {
+          {name: 'select1_1', label: '远程选择1', type: 'select', options: {
             clearable: true,
             filterable: true, 
             remote: true, 
@@ -227,17 +220,31 @@ var ex_build_01 = new Vue({
           },
           {name: 'checkbox1', label: '选择9', type: 'checkbox', required: true},
           {name: 'checkbox2', label: '选择10', type: 'checkbox', static: true},
-          {name: 'text1', label: '文本1', type: 'text', required: true, rule:{max:20}, help: '最多输入20个汉字'},
+          {name: 'text1', label: '文本1', type: 'text', required: true, rule: {max:20}, help: '最多输入20个汉字'},
           {name: 'text2', label: '文本2', type: 'text', static: true, rule:{max:20}, help: '最多输入20个汉字'},
-          {name: 'date1', label: '日期1', required: true, type: 'date'},
+          {name: 'date1', label: '日期1', required: true, type: 'date', rule: 'date', options: {type: 'year', convert: true}},
           {name: 'date2', label: '日期2', type: 'date', static: true},
-          {name: 'date3', label: '日期1', required: true, type: 'datetime'},
-          {name: 'date4', label: '日期2', type: 'datetime', static: true},
-          {name: 'daterange1', label: '日期范围1', required: true, type: 'datepickerrange', options: {type: 'month'}, rule: {type: 'array'}},
+          {name: 'date3', label: '日期3', required: true, type: 'datetime', rule: {type: 'date'}, options: {convert: true}},
+          {name: 'date4', label: '日期4', type: 'datetime', static: true},
+          {name: 'daterange1', label: '日期范围1', required: true, type: 'datepickerrange', rule: {type: 'array'},
+          options: {
+            type: 'datetime',
+            convert: false,
+            width: 160,
+            disabledBegin: function(d) {
+              var now = new Date()
+              now.setHours(0)
+              now.setMinutes(0)
+              now.setSeconds(0)
+              now.setMilliseconds(0)
+              return d < now
+            }
+          }},
           {name: 'daterange2', label: '日期范围2', required: true, type: 'datepickerrange', options: {type: 'year'}, rule: {type: 'array'}},
           {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {
             checkStrictly: true,
             onlyLeaf: false,
+            labelInValue: true,
             choices:
             [ {
                   id: 'fruits',
@@ -286,7 +293,18 @@ var ex_build_01 = new Vue({
             'on-focus': function () {
               self.$Message.info('on-focus')
             }}
-          }
+          },
+          {name: 'autocomplete', label: '自动完成', type: 'AutoComplete', options: {
+            transfer: true,
+            remoteMethod: function (query, callback) {
+              callback(['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+                'Colorado', 'Connecticut', 'Delaware', 'District of columbia', 'Florida'])
+            },
+            filterMethod: function (v, item) {
+              if (!v) return true
+              return item.toUpperCase().indexOf(v.toUpperCase()) > -1
+            }
+          }}
         ],
         layout: [
           ['str1', 'str2'],
@@ -303,7 +321,7 @@ var ex_build_01 = new Vue({
           ['daterange1', 'daterange2'],
           ['tree1'],
           ['switch', 'slider'],
-          ['input1']
+          ['input1', 'autocomplete']
         ],
         boxComponent: 'Box',
         boxOptions: {widthBorder: false, headerClass: 'primary'},
@@ -317,6 +335,16 @@ var ex_build_01 = new Vue({
                 //target.validate(self.save) 旧的写法，使用回调
                 //以下为新的写法，使用promise
                 target.validate().then(function(){
+                  self.save()
+                }).catch(function(error){
+                  self.save(error)
+                })
+              }
+            }],
+            [{label: '部分校验', type:'primary', onClick: function(target, data){
+                //target.validate(self.save) 旧的写法，使用回调
+                //以下为新的写法，使用promise
+                target.validate({fields: ['str1', 'checkboxgroup1']}).then(function(){
                   self.save()
                 }).catch(function(error){
                   self.save(error)
@@ -345,16 +373,19 @@ var ex_build_01 = new Vue({
               }
             }],
             [{label: '提交测试', type:'info', name: 'submit', onClick: function(target, data){
-                console.log(this)
-                this.disabled = true
-                this.btns.submit.loading = true
-                var self = this
+                var submit = target.btns.submit
+                submit.disabled = true
+                submit.loading = true
                 setTimeout(function () {
-                  self.btns.submit.loading = false
-                  self.disabled = false
+                  submit.loading = false
+                  submit.disabled = false
                 }, 5000)
               }
-            }]
+            }],
+            [{label: '点击隐藏按钮', name: 'hideBtn', onClick: function(target){
+              var btn = target.btns.hideBtn;
+              self.$set(btn, 'hidden', true)
+            }}]
           ],
           size: ''
         }
@@ -384,14 +415,18 @@ var ex_build_01 = new Vue({
               select1_1: {label: '选择X', value: 'X'},
               select3: ['A', 'B'],
               select4: ['A', 'B'],
+              radio1: 'A',
               radio2: 'A',
               checkboxgroup2: ['A', 'B'],
               checkbox2: 'B',
               text1: 'Line 1\nLine 2',
               text2: 'Line 3\nLine 4\nLine 5\nLine 6\nLine 7\nLine 8',
+              date1: '',
               date2: '2017-12-12',
+              date3: '2017-12-12 12:01:28',
               date4: '2017-12-12 12:01:28',
-              tree1: ['apple', 'grapes']
+              daterange1: ['2018-06-03 14:23:00', '2018-06-05 13:10:15'],
+              tree1: [{label: 'Apple', value: 'apple', level: 2}, {label: 'Grapes', value: 'grapes', level: 3}]
             },
             choices: {
                 select1: [
@@ -400,13 +435,15 @@ var ex_build_01 = new Vue({
             },
             errors: {},
             rules: {
-              str1: function(rule, value, callback, source, options) {
+              str1: function(rule, value, source) {
                 if (value !== 'abc@gmail.com') {
-                  callback (new Error('邮件地址必须为 abc@gmail.com'))
-                } else {
-                  callback()
+                  return '邮件地址必须为 abc@gmail.com'
                 }
               }
+            },
+            boxOptions: {
+              openIcon: 'ios-arrow-down',
+              closeIcon: 'ios-arrow-forward'
             }
           }
   },
@@ -477,6 +514,36 @@ var ex_build_01 = new Vue({
 <td>select&#x5B57;&#x6BB5;&#x7684;choices&#x503C;&#x3002;&#x65B9;&#x4FBF;&#x4ECE;&#x5916;&#x90E8;&#x4F20;&#x5165;</td>
 <td>{}</td>
 </tr>
+<tr>
+<td>showBox</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A; Box &#x7EC4;&#x4EF6;</td>
+<td>true</td>
+</tr>
+<tr>
+<td>buttons</td>
+<td>&#x72EC;&#x7ACB;&#x4E8E; section(&#x6BB5;&#x843D;&#x4E2D;&#x5B9A;&#x4E49;&#x7684; buttons)&#xFF0C;&#x4E3A;&#x6574;&#x4E2A; Build &#x7684;&#x6309;&#x94AE;&#x533A;&#x3002;</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>theme</td>
+<td>&#x98CE;&#x683C;&#x3002;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x4E24;&#x79CD;&#xFF0C;&#x7F3A;&#x7701;&#x7684; &apos;default&apos; &#x548C; &apos;tab&apos; &#x65B9;&#x5F0F;&#x3002;</td>
+<td>default</td>
+</tr>
+<tr>
+<td>labelDir</td>
+<td>&#x6807;&#x7B7E;&#x662F;&#x6C34;&#x5E73;&#x8FD8;&#x662F;&#x5782;&#x76F4;&#x5E03;&#x5C40;&#xFF08;horizental &#x6216; vertical)</td>
+<td>horizental</td>
+</tr>
+<tr>
+<td>labelAlign</td>
+<td>&#x6807;&#x7B7E;&#x6587;&#x5B57;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#xFF0C;&#x4E3A; : left, right, center</td>
+<td>right</td>
+</tr>
+<tr>
+<td>statusObject</td>
+<td>&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x65F6;&#x6307;&#x5B9A; showWhen &#x65F6;&#x5BF9;&#x5E94;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x8BE6;&#x89C1; <a href="build9.html">&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x8F6C;&#x6362;</a></td>
+<td>null</td>
+</tr>
 </tbody>
 </table>
 <h2 id="">&#x65B9;&#x6CD5;&#x8BF4;&#x660E;</h2>
@@ -491,20 +558,293 @@ var ex_build_01 = new Vue({
 <tbody>
 <tr>
 <td>validate</td>
-<td>&#x5BF9;Build&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#x3002;&#x652F;&#x6301;&#x56DE;&#x8C03;&#x6A21;&#x5F0F; <code>validate(callback)</code> ,&#x5176;&#x4E2D; <code>callback(error)</code> &#xFF0C;&#x5982;&#x679C;error&#x4E3A;undefined&#x65F6;&#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C;error&#x6709;&#x503C;&#x65F6;&#xFF0C;&#x4E3A;&#x6700;&#x65E9;&#x4E00;&#x4E2A;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x3002;promise&#x6A21;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; <code>then()</code> &#x6216; <code>catch((error)=&gt;{})</code> &#x4E2D;&#x7EE7;&#x7EED;&#x5904;&#x7406;&#x6210;&#x529F;&#x6216;&#x51FA;&#x9519;&#x3002;</td>
-<td>Promoise</td>
+<td>&#x5BF9;Build&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#x3002;&#x652F;&#x6301;&#x56DE;&#x8C03;&#x6A21;&#x5F0F; <code>validate(callback)</code> ,&#x5176;&#x4E2D; <code>callback(error)</code> &#xFF0C;&#x5982;&#x679C;error&#x4E3A;undefined&#x65F6;&#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C;error&#x6709;&#x503C;&#x65F6;&#xFF0C;&#x4E3A;&#x6700;&#x65E9;&#x4E00;&#x4E2A;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x3002;promise&#x6A21;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728; <code>then()</code> &#x6216; <code>catch((error)=&gt;{})</code> &#x4E2D;&#x7EE7;&#x7EED;&#x5904;&#x7406;&#x6210;&#x529F;&#x6216;&#x51FA;&#x9519;&#x3002;<br><code>validate(callback)</code>&#x8FD8;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E3A;<code>validate(options)</code>&#xFF0C;options &#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#xFF1A;callback &#x6216; fields&#x3002;callback &#x5C31;&#x662F;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;fields &#x4E3A;&#x5F85;&#x6821;&#x9A8C;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x6570;&#x7EC4;&#x3002;&#x5F53;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x6821;&#x9A8C;&#x5168;&#x90E8;&#x5B57;&#x6BB5;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x79CD;&#x6821;&#x9A8C;&#x65B9;&#x5F0F;&#x3002;</td>
+<td>Promise</td>
 </tr>
 <tr>
-<td>loadData</td>
-<td>&#x88C5;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x5237;&#x65B0;</td>
-<td>Promise &#x6216; &#x65E0;</td>
+<td>reset</td>
+<td>&#x91CD;&#x7F6E;&#x8868;&#x5355;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>setFieldRule</td>
+<td>&#x91CD;&#x7F6E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#xFF0C;&#x53C2;&#x6570;&#x4E3A; name &#x5B57;&#x6BB5;&#x540D;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>validateField</td>
+<td>&#x6821;&#x9A8C;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x53C2;&#x6570;&#x4E3A; name &#x5B57;&#x6BB5;&#x540D;</td>
+<td>&#x65E0;</td>
 </tr>
 </tbody>
 </table>
+<h2 id="validate">Validate&#x8BF4;&#x660E;</h2>
+<p>Build&#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x6821;&#x9A8C;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5BF9;Build&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#x3002;&#x5728;Build&#x4E2D;&#x4F7F;&#x7528;validate&#x652F;&#x6301;&#x4E24;&#x79CD;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ol>
+<li>
+<p>&#x5728;&#x5B9A;&#x4E49;Field&#x65F6;&#x5B9A;&#x4E49;&#xFF0C;&#x5982;&#xFF1A; <code>{name: &apos;field&apos;, rule: {type: &apos;string&apos;}}</code></p>
+</li>
+<li>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;rules&#xFF0C;&#x4F5C;&#x4E3A;&#x4E0E;data&#x5E73;&#x7EA7;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x5165;Build&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;</p>
+<pre><code>rules: {
+  field: {type: &apos;string&apos;, min: 4}
+}
+</code></pre>
+</li>
+</ol>
+<h3 id="">&#x89C4;&#x5219;&#x5B9A;&#x4E49;</h3>
+<p>&#x89C4;&#x5219; (rule) &#x53EF;&#x4EE5;&#x652F;&#x6301;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5BF9;&#x8C61;&#xFF0C;&#x6821;&#x9A8C;&#x51FD;&#x6570;&#x548C;&#x6570;&#x7EC4;&#x3002;</p>
+<ul>
+<li>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#xFF1A;&#x5C31;&#x662F;&#x89C4;&#x5219;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#xFF1A;{name: &apos;field&apos;, rule: &apos;string&apos;}</p>
+</li>
+<li>
+<p>&#x5BF9;&#x8C61;&#x5F62;&#x5F0F;&#xFF1A;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x4E00;&#x822C;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<ul>
+<li>
+<p>type &#x8868;&#x793A;&#x7C7B;&#x578B;&#x540D;&#x79F0;</p>
+</li>
+<li>
+<p>validate &#x8868;&#x793A;&#x6821;&#x9A8C;&#x51FD;&#x6570;&#xFF0C;&#x5F62;&#x5F0F;&#x4E3A; <code>(rule, value, model)</code> &#x5176;&#x4E2D; rule &#x4E3A;&#x89C4;&#x5219;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#xFF0C;value&#x4E3A;&#x5F85;&#x6821;&#x9A8C;&#x7684;&#x5B57;&#x6BB5;&#x503C;&#xFF0C;model&#x4E3A;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x68C0;&#x67E5;&#x9664;&#x5F85;&#x6821;&#x9A8C;&#x5B57;&#x6BB5;&#x4EE5;&#x5916;&#x7684;&#x503C;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;</p>
+<ul>
+<li>&#x6210;&#x529F;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x8FD4;&#x56DE; undefined, null &#x4E3A;&#x7A7A;&#x7684;&#x503C;</li>
+<li>&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x63CF;&#x8FF0;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5982;: <code>&apos;&#x51FA;&#x9519;&#x4FE1;&#x606F;&apos;</code></li>
+<li>&#x51FA;&#x9519;&#x5F02;&#x5E38;&#x5982;&#xFF1A;<code>new Error(&apos;&#x51FA;&#x9519;&#x4FE1;&#x606F;&apos;)</code></li>
+<li>Promise &#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x6A21;&#x5F0F;&#xFF0C;&#x5176;&#x4E2D; <code>resolve()</code> &#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C; <code>reject(&apos;&#x51FA;&#x9519;&#x4FE1;&#x606F;&apos;)</code> &#x8868;&#x793A;&#x51FA;&#x9519;</li>
+</ul>
+</li>
+<li>
+<p>&#x89C4;&#x5219;&#x7684;&#x5176;&#x5B83;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x9700;&#x8981;&#x53C2;&#x8003;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;</p>
+</li>
+<li>
+<p><code>makeError(msgid, expected, actual)</code> &#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;msgid&#x5BF9;&#x5E94;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x540E;&#x9762;&#x518D;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;</p>
+</li>
+<li>
+<p>messages &#x7528;&#x4E8E;&#x7C7B;&#x578B;&#x89C4;&#x5219;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#x6216;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x6A21;&#x677F;</p>
+</li>
+</ul>
+</li>
+<li>
+<p>&#x6821;&#x9A8C;&#x51FD;&#x6570;: &#x5982;&#x540C;&#x4E0A;&#x9762;&#x7684; validate &#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6821;&#x9A8C;&#xFF0C;&#x53C8;&#x6CA1;&#x6709;&#x6CE8;&#x518C;&#x7C7B;&#x578B;&#x7684;&#x65F6;&#x5019;&#x3002;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8F6C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x3002;</p>
+</li>
+<li>
+<p>&#x6570;&#x7EC4;&#x662F;&#x7528;&#x4E8E;&#x6709;&#x591A;&#x4E2A;&#x6821;&#x9A8C;&#x65F6;&#xFF0C;&#x6BCF;&#x9879;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x4E0A;&#x9762;&#x7C7B;&#x578B;&#x7684;&#x7EC4;&#x5408;</p>
+</li>
+</ul>
+<h3 id="">&#x89C4;&#x5219;&#x7C7B;&#x578B;</h3>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x4F7F;&#x7528;&#xFF0C;validate&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x4E14;&#x6709;&#x4E9B;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x53C2;&#x6570;&#x3002;&#x5982;&#x679C;&#x8981;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x548C;&#x53C2;&#x6570;&#xFF0C;&#x5728;&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x65F6;&#x5E94;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x5F62;&#x5F0F;&#xFF0C;&#x4EE5;&#x5B57;&#x7B26;&#x4E32;&#x6821;&#x9A8C;&#x4E3A;&#x4F8B;&#xFF1A;</p>
+<pre><code>{
+  type: &apos;string&apos;,
+  min: 6
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x8868;&#x793A;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6700;&#x5C0F;&#x957F;&#x5EA6;&#x9700;&#x8981;&#x4E3A;6&#x3002;</p>
+<p>&#x9884;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>any &#x8868;&#x793A;&#x4EFB;&#x610F;&#x7C7B;&#x578B;</p>
+<ul>
+<li>required &#x5FC5;&#x8F93;&#x9879;&#xFF0C;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#x503C;</li>
+</ul>
+<p>array &#x8868;&#x793A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;</p>
+<ul>
+<li>required &#x5FC5;&#x8F93;&#x9879;&#xFF0C;&#x957F;&#x5EA6;&#x4E0D;&#x80FD;&#x4E3A;0</li>
+<li>min &#x6700;&#x5C0F;&#x957F;&#x5EA6;&#x9700;&#x8981;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x6B64;&#x503C;</li>
+<li>max &#x6700;&#x5927;&#x957F;&#x5EA6;&#x9700;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x6B64;&#x503C;</li>
+<li>length &#x957F;&#x5EA6;&#x5FC5;&#x987B;&#x7B49;&#x4E8E;&#x6B64;&#x503C;</li>
+<li>contains &#x6570;&#x7EC4;&#x9700;&#x8981;&#x5305;&#x542B;&#x67D0;&#x4E2A;&#x503C;&#xFF0C;&#x6CE8;&#x610F;&#x662F;&#x4E00;&#x4E2A;&#x503C;</li>
+<li>enum &#x6570;&#x7EC4;&#x9700;&#x8981;&#x5305;&#x542B;&#x67D0;&#x4E2A;&#x6570;&#x7EC4;</li>
+</ul>
+<p>boolean &#x8868;&#x793A;&#x5E03;&#x5C14;&#x7C7B;&#x578B;</p>
+<ul>
+<li>convert &#x8868;&#x793A;&#x662F;&#x5426;&#x5728;&#x6BD4;&#x8F83;&#x524D;&#x5148;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8F6C;&#x6362;&#xFF0C;&#x4E9B;&#x8F6C;&#x6362;&#x4E0D;&#x5F71;&#x54CD;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5BF9;&#x4E8E;&#x975E;&#x5E03;&#x5C14;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x662F; <code>1, 0, &quot;1&quot;, &quot;0&quot;, &quot;true&quot;, &quot;false&quot;, &quot;on&quot;, &quot;off&quot;</code>&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;&#x4E0D;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</li>
+</ul>
+<p>&#x5982;&#x679C; convert &#x4E0D;&#x4E3A;true&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x662F;&#x5E03;&#x5C14;&#x7C7B;&#x578B;&#x624D;&#x80FD;&#x901A;&#x8FC7;&#x6821;&#x9A8C;</p>
+<p>date &#x8868;&#x793A;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#xFF0C;&#x5305;&#x62EC;&#x65F6;&#x5206;&#x79D2;</p>
+<ul>
+<li>convert &#x8868;&#x793A;&#x662F;&#x5426;&#x5728;&#x6BD4;&#x8F83;&#x524D;&#x5148;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x3002;&#x8F6C;&#x6362;&#x65F6;&#x76EE;&#x524D;&#x662F;&#x4F7F;&#x7528; <code>new Date(d)</code> &#x7684;&#x65B9;&#x5F0F;&#x3002;&#x7F3A;&#x7701;&#x4E3A;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</li>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+</ul>
+<p>email &#x6821;&#x9A8C;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x662F;&#x90AE;&#x4EF6;&#x683C;&#x5F0F;&#xFF0C;&#x7F3A;&#x7701;&#x662F;&#x91C7;&#x7528;&#x975E;&#x7CBE;&#x786E;&#x6821;&#x9A8C;&#xFF0C;&#x5373;&#x6709; <code>@</code> &#x7B26;&#x57FA;&#x672C;&#x4E0A;&#x5C31;&#x8BA4;&#x4E3A;&#x662F;&#x90AE;&#x4EF6;&#xFF0C;&#x7CBE;&#x786E;&#x65B9;&#x5F0F;&#x5BF9;&#x6821;&#x9A8C;&#x5408;&#x6CD5;&#x5B57;&#x7B26;&#x53CA;&#x57DF;&#x540D;&#x8981;&#x5305;&#x542B; <code>.</code></p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+<li>precise &#x7CBE;&#x786E;&#x6821;&#x9A8C;</li>
+</ul>
+<p>enum &#x6821;&#x9A8C;&#x5F53;&#x524D;&#x503C;&#x662F;&#x5426;&#x5728;&#x67D0;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;</p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+<li>values &#x4E3A;&#x5F85;&#x68C0;&#x67E5;&#x7684;&#x6570;&#x7EC4;</li>
+</ul>
+<p>number &#x6821;&#x9A8C;&#x6570;&#x503C;&#x7C7B;&#x578B;</p>
+<ul>
+<li>convert &#x8868;&#x793A;&#x662F;&#x5426;&#x5728;&#x6BD4;&#x8F83;&#x524D;&#x5148;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x3002;&#x7F3A;&#x7701;&#x4E0D;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x3002;</li>
+<li>min &#x5F53;&#x524D;&#x503C;&#x8981;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x6700;&#x5C0F;&#x503C;</li>
+<li>max &#x5F53;&#x524D;&#x503C;&#x8981;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x6700;&#x5927;&#x503C;</li>
+<li>range &#x5F53;&#x524D;&#x503C;&#x8981;&#x5728;range&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5982;&#xFF1A; <code>[2, 5]</code></li>
+<li>equal &#x5F53;&#x524D;&#x503C;&#x8981;&#x7B49;&#x4E8E;equal&#x7684;&#x503C;</li>
+<li>notequal &#x5F53;&#x524D;&#x503C;&#x4E0D;&#x80FD;&#x5F85;&#x4E8E;notequal&#x7684;&#x503C;</li>
+<li>integer &#x5F53;&#x524D;&#x503C;&#x9700;&#x8981;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x6570;</li>
+<li>positive &#x5F53;&#x524D;&#x503C;&#x9700;&#x8981;&#x662F;&#x4E00;&#x4E2A;&#x6B63;&#x6570;</li>
+<li>negative &#x5F53;&#x524D;&#x503C;&#x9700;&#x8981;&#x662F;&#x4E00;&#x4E2A;&#x8D1F;&#x6570;</li>
+</ul>
+<p>object &#x6821;&#x9A8C;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;</p>
+<ul>
+<li>strict &#x68C0;&#x67E5;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x5305;&#x542B; props &#x4E2D;&#x5BF9;&#x5E94;&#x7684;key&#x503C;</li>
+<li>props &#x8FD9;&#x4E2A;&#x9700;&#x8981;&#x4E0E;strict&#x8054;&#x52A8;&#xFF0C;&#x5B83;&#x672C;&#x8EAB;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5B83;&#x7684;keys&#x5BF9;&#x5F53;&#x524D;&#x503C;&#x7684;key&#x8FDB;&#x884C;&#x68C0;&#x67E5;</li>
+</ul>
+<p>string &#x6821;&#x9A8C;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;</p>
+<ul>
+<li>trim &#x5904;&#x7406;&#x524D;&#x5148;&#x53BB;&#x9664;&#x524D;&#x540E;&#x7A7A;&#x683C;</li>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;, &#x6821;&#x9A8C;&#x65F6;&#x76EE;&#x524D;&#x672A;&#x81EA;&#x52A8;&#x6267;&#x884C; trim</li>
+<li>min &#x6700;&#x5C0F;&#x957F;&#x5EA6;&#x9700;&#x8981;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x6B64;&#x503C;</li>
+<li>max &#x6700;&#x5927;&#x957F;&#x5EA6;&#x9700;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x6B64;&#x503C;</li>
+<li>length &#x957F;&#x5EA6;&#x5FC5;&#x987B;&#x7B49;&#x4E8E;&#x6B64;&#x503C;</li>
+<li>range &#x5F53;&#x524D;&#x503C;&#x8981;&#x5728;range&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5982;&#xFF1A; <code>[&apos;2&apos;, &apos;5&apos;]</code></li>
+<li>pattern &#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x793A;&#x5F0F;&#x5BF9;&#x5F53;&#x524D;&#x503C;&#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x6B63;&#x5219;&#x8868;&#x793A;&#x5F0F;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5219;&#x81EA;&#x52A8;&#x8F6C;&#x4E3A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x6709;&#x6B63;&#x5219;&#x8868;&#x793A;&#x5F0F;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; patternFlags &#x6765;&#x8BBE;&#x7F6E;</li>
+<li>contains &#x68C0;&#x67E5;&#x5F53;&#x524D;&#x503C;&#x662F;&#x5426;&#x5305;&#x542B;contians&#x6240;&#x7ED9;&#x51FA;&#x7684;&#x5B50;&#x4E32;</li>
+<li>enum &#x68C0;&#x67E5;&#x5F53;&#x524D;&#x503C;&#x662F;&#x5426;&#x4E3A;&#x5728;enum&#x7ED9;&#x51FA;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5B50;&#x4E32;</li>
+<li>numeric &#x68C0;&#x67E5;&#x5F53;&#x524D;&#x503C;&#x662F;&#x5426;&#x4E3A;&#x6570;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x5E26;&#x8D1F;&#x53F7;&#x548C;&#x5C0F;&#x6570;&#x70B9;</li>
+<li>integer &#x68C0;&#x67E5;&#x5F53;&#x524D;&#x503C;&#x662F;&#x5426;&#x53EA;&#x5305;&#x542B;&#x6570;&#x5B57;</li>
+<li>alpha &#x68C0;&#x67E5;&#x5F53;&#x524D;&#x503C;&#x662F;&#x5426;&#x4E3A;&#x5927;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;</li>
+<li>alphanum &#x68C0;&#x67E5;&#x5F53;&#x524D;&#x503C;&#x662F;&#x5426;&#x4E3A;&#x5927;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;</li>
+<li>alphadash &#x68C0;&#x67E5;&#x5F53;&#x524D;&#x503C;&#x662F;&#x5426;&#x4E3A;&#x5927;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#xFF0C;&#x6570;&#x5B57;&#xFF0C;&#x51CF;&#x53F7;&#x548C;&#x4E0B;&#x5212;&#x7EBF;</li>
+</ul>
+<p>url &#x68C0;&#x67E5;&#x662F;&#x5426;&#x4E3A;&#x94FE;&#x63A5;&#xFF0C;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x662F;&#x4EE5; http:// &#x6216; https:// &#x5F00;&#x59CB;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+</ul>
+<p>idnumber &#x68C0;&#x67E5;&#x662F;&#x5426;&#x4E3A;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;18&#x4F4D;</p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+</ul>
+<p>mobile &#x68C0;&#x67E5;&#x662F;&#x5426;&#x4E3A;&#x624B;&#x673A;&#x53F7;</p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+</ul>
+<p>telephone &#x68C0;&#x67E5;&#x662F;&#x5426;&#x4E3A;&#x56FA;&#x5B9A;&#x7535;&#x8BDD;&#x53F7;&#x7801;</p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+</ul>
+<p>ip &#x6821;&#x9A8C;&#x662F;&#x5426;&#x4E3A;IP&#x5730;&#x5740;</p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+<li>ipv4 &#x6821;&#x9A8C;&#x662F;&#x5426;IPV4</li>
+<li>ipv6 &#x6821;&#x9A8C;&#x662F;&#x5426;IPV6</li>
+</ul>
+<p>password &#x6821;&#x9A8C;&#x5BC6;&#x7801;</p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+<li>min &#x6700;&#x5C0F;&#x957F;&#x5EA6;&#x9700;&#x8981;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x6B64;&#x503C;</li>
+<li>max &#x6700;&#x5927;&#x957F;&#x5EA6;&#x9700;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x6B64;&#x503C;</li>
+<li>range &#x5BC6;&#x7801;&#x957F;&#x5EA6;&#x8981;&#x5728;range&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5982;&#xFF1A; <code>[8, 20]</code></li>
+</ul>
+<p>realname &#x6821;&#x9A8C;&#x59D3;&#x540D;</p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+<li>hz &#x662F;&#x5426;&#x5FC5;&#x987B;&#x662F;&#x6C49;&#x5B57;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x4EE5;&#x662F;&#x5168;&#x6C49;&#x5B57;&#xFF0C;&#x6216;&#x5168;&#x82F1;&#x6587;+&#x6570;&#x5B57;&#xFF0C;&#x53CA;&#x4E2D;&#x82F1;&#x6587;&#x7684;&#x70B9;</li>
+</ul>
+<p>socialCreditCode &#x793E;&#x4F1A;&#x7EDF;&#x4E00;&#x4FE1;&#x7528;&#x4EE3;&#x7801; <a href="https://zh.wikisource.org/zh-hans/GB_32100-2015_%E6%B3%95%E4%BA%BA%E5%92%8C%E5%85%B6%E4%BB%96%E7%BB%84%E7%BB%87%E7%BB%9F%E4%B8%80%E7%A4%BE%E4%BC%9A%E4%BF%A1%E7%94%A8%E4%BB%A3%E7%A0%81%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99">&#x53C2;&#x8003;</a></p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+</ul>
+<p>zipcode &#x90AE;&#x653F;&#x7F16;&#x7801;</p>
+<ul>
+<li>required &#x5FC5;&#x586B;&#x6821;&#x9A8C;</li>
+</ul>
+<h2 id="">&#x8C03;&#x7528;&#x5DF2;&#x6709;&#x6821;&#x9A8C;&#x7C7B;&#x578B;</h2>
+<p>&#x5982;&#x679C;&#x60F3;&#x8C03;&#x7528;&#x5185;&#x7F6E;&#x5DF2;&#x6709;&#x7684;&#x7C7B;&#x578B;&#x6821;&#x9A8C;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5982;&#x4E0B;&#x5B9A;&#x4E49; zipcode &#x7684;&#x6821;&#x9A8C;&#xFF1A;</p>
+<pre><code>async function (rule, value, model) {
+  const r = Object.assign({}, rule, {type: &apos;string&apos;, length: 6, integer: true})
+  let res
+  try {
+    res = await this.validateRule(r, value, model)
+  } catch (e) {
+    res = e
+  }
+  if (res)
+      return r.makeError(&apos;zipcode&apos;)
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;validator&#x4F1A;&#x81EA;&#x52A8;&#x5411;&#x51FD;&#x6570;&#x4E2D;&#x6CE8;&#x5165;this&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x539F;&#x6765;&#x7684;rule&#x4E2D;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x6CE8;&#x5165;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#xFF1A;</p>
+<ul>
+<li>field &#x5B57;&#x6BB5;&#x540D;</li>
+<li>fullfield &#x5B57;&#x6BB5;&#x663E;&#x793A;&#x540D;</li>
+<li>makeError &#x751F;&#x6210;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x7684;&#x51FD;&#x6570;</li>
+</ul>
+<p>&#x6240;&#x4EE5;&#x901A;&#x8FC7;Object.assign&#x53EF;&#x4EE5;&#x5C06;&#x8BA1;&#x5212;&#x4F7F;&#x7528;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x539F;&#x6CE8;&#x5165;&#x7684;&#x89C4;&#x5219;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x5408;&#x5E76;&#xFF0C;&#x4EE5;&#x751F;&#x6210;&#x76EE;&#x6807;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x4F7F;&#x7528;async/await&#x7528;&#x4EE5;&#x5B9E;&#x73B0;Promise&#x7684;&#x5904;&#x7406;&#xFF0C;&#x7ED3;&#x679C;res&#x5982;&#x679C;&#x6709;&#x503C;&#xFF0C;&#x5219;&#x8868;&#x793A;&#x51FA;&#x9519;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x539F;&#x7C7B;&#x578B;&#x6821;&#x9A8C;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x65B0;&#x751F;&#x6210;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x9664;&#x4F7F;&#x7528;async/await&#x5916;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Promise&#xFF0C;&#x8FD4;&#x56DE;&#x65F6;&#x5E94;&#x8FD4;&#x56DE;Promise&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x4F7F;&#x7528;Promise&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>function (rule, value, model) {
+  const r = Object.assign({}, rule, {type: &apos;string&apos;, length: 6, integer: true})
+  return new Promise((resolve, reject) =&gt; {
+    this.validateRule(r, value, model).then((res) =&gt; {
+      if (res)
+        resolve(r.makeError(&apos;zipcode&apos;))
+      else
+        resolve()
+    }).catch((err)=&gt;{
+      reject(r.makeError(&apos;zipcode&apos;))
+    })
+  })
+}
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x5904;&#x7406;&#x53EA;&#x662F;&#x5BF9;&#x73B0;&#x6709;&#x6821;&#x9A8C;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x5305;&#x88C5;&#x7684;&#x7B80;&#x5355;&#x60C5;&#x51B5;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>useRule</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5982; zipcode &#x7684;&#x6821;&#x9A8C;&#x53EF;&#x4EE5;&#x6539;&#x4E3A;&#xFF1A;</p>
+<pre><code>async function (rule, value, model) {
+  return this.useRule({type: &apos;string&apos;, length: 6, integer: true}, rule, value,model, (err)=&gt;{
+    return rule.makeError(&apos;zipcode&apos;)
+  })
+}
+</code></pre>
+<p>useRule &#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x76EE;&#x6807;&#x6821;&#x9A8C;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x540E;&#x9762; rule, value, model &#x90FD;&#x662F;&#x539F;&#x6765;&#x6821;&#x9A8C;&#x51FD;&#x6570;&#x4F20;&#x5165;&#x7684;&#xFF0C;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x8FD4;&#x56DE;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;rule.makeError&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x3002;</p>
+<h2 id="">&#x5728;&#x5185;&#x7F6E;&#x89C4;&#x5219;&#x57FA;&#x7840;&#x4E4B;&#x4E0A;&#x5305;&#x88C5;&#x65B0;&#x7684;&#x7C7B;&#x578B;</h2>
+<p>&#x5229;&#x7528;&#x4E0A;&#x9762;&#x7684; <code>validateRule</code> &#x6216; <code>useRule</code> &#x53EF;&#x4EE5;&#x5728;&#x67D0;&#x4E2A;&#x57FA;&#x672C;&#x7684;&#x7C7B;&#x578B;&#x4E4B;&#x4E0A;&#x5C01;&#x88C5;&#x65B0;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5982; zipcode &#x5C31;&#x662F;&#x5728; string &#x57FA;&#x7840;&#x4E4B;&#x4E0A;</p>
+<h2 id="">&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x6A21;&#x677F;</h2>
+<p>&#x5F53;&#x6821;&#x9A8C;&#x51FA;&#x9519;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6821;&#x9A8C;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x5185;&#x7F6E;&#x6216;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x53CD;&#x6620;&#x51FA;&#x9519;&#x53CA;i18n&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x7FFB;&#x8BD1;&#x8FC7;&#x6216;&#x5408;&#x6210;&#x4E86;&#x53C2;&#x6570;&#x53CA;&#x503C;&#x7684;&#x51FA;&#x9519;&#x63CF;&#x8FF0;&#xFF0C;&#x6240;&#x4EE5;&#x7ED9;&#x6BCF;&#x4E00;&#x4E2A;&#x51FA;&#x9519;&#x7684;&#x8BF4;&#x660E;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;message&#x4FE1;&#x606F;&#xFF0C;&#x76EE;&#x524D;&#x662F;&#x653E;&#x5728; <code>validator/messages</code> &#x4E0B;&#xFF0C;&#x76EE;&#x524D;&#x7F3A;&#x7701;&#x63D0;&#x4F9B;&#x4E86;&#x4E2D;&#x6587;&#x548C;&#x82F1;&#x6587;&#x7684;&#x7FFB;&#x8BD1;&#xFF0C;&#x53EA;&#x662F;&#x5305;&#x542B;&#x5185;&#x7F6E;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x5927;&#x6982;&#x7684;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;</p>
+<pre><code>stringMin: &quot;{field} &#x957F;&#x5EA6;&#x9700;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; {expected} &#x957F;&#x5EA6;&#xFF01;&quot;,
+</code></pre>
+<p>&#x4E00;&#x4E2A;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x4F1A;&#x6709;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li>field &#x8868;&#x793A;&#x5B57;&#x6BB5;&#x6C49;&#x5B57;&#x540D;&#x79F0;</li>
+<li>expected &#x671F;&#x671B;&#x7684;&#x503C;</li>
+<li>actual &#x5B9E;&#x9645;&#x503C;</li>
+</ul>
+<p>&#x5176;&#x4E2D;field&#x662F;&#x7531;validate&#x6846;&#x67B6;&#x7ED9;&#x51FA;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x5C06;&#x5B57;&#x6BB5;&#x540D;&#x8F6C;&#x4E3A;&#x6C49;&#x5B57;&#x3002;expected, actual&#x662F;&#x5728;&#x5185;&#x7F6E;&#x7684;&#x6821;&#x9A8C;&#x51FD;&#x6570;&#x4E2D;&#x63D0;&#x4F9B;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x5F53;&#x4F60;&#x81EA;&#x5DF2;&#x5199;&#x65B0;&#x7684;&#x7C7B;&#x578B;&#x65F6;&#x8981;&#x81EA;&#x5DF2;&#x5B9A;&#x4E49;msgid&#x53CA;&#x5BF9;&#x5E94;&#x7684;&#x671F;&#x671B;&#x503C;&#x548C;&#x5B9E;&#x9645;&#x503C;&#x3002;</p>
+<h2 id="">&#x96C6;&#x6210;&#x8BF4;&#x660E;</h2>
+<p>&#x96C6;&#x6210;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#xFF1A;</p>
+<ol>
+<li>&#x521D;&#x59CB;&#x5316;</li>
+<li>&#x6269;&#x5C55;&#x65B0;&#x7684;&#x6821;&#x9A8C;&#x7C7B;&#x578B;&#x53CA;&#x5B9A;&#x5236;&#x51FA;&#x9519;&#x4FE1;&#x606F;</li>
+</ol>
+<p>&#x5982;&#x679C;&#x4E0D;&#x5BF9;validate&#x8FDB;&#x884C;&#x4EFB;&#x4F55;&#x4FEE;&#x6539;&#xFF0C;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x7279;&#x522B;&#x7684;&#x521D;&#x59CB;&#x5316;&#x3002;vuecoms&#x4F1A;&#x81EA;&#x52A8;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8981;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#x548C;&#x5B9A;&#x5236;&#xFF0C;&#x9996;&#x5148;&#x53EF;&#x4EE5;&#x6A21;&#x4EFF;validate&#x7684;&#x65B9;&#x5F0F;&#x7F16;&#x5199;&#x65B0;&#x7684;&#x6821;&#x9A8C;&#x7C7B;&#x578B;&#xFF0C;&#x540C;&#x65F6;&#x5B9A;&#x4E49;&#x65B0;&#x7684;&#x6D88;&#x606F;&#x6A21;&#x677F;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5176;&#x7EC4;&#x7EC7;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code>import newtype from &apos;./newtype&apos;
+{
+  rules: {
+    type: newtype
+  },
+  messages: {
+    &#x6D88;&#x606F;&#x6807;&#x8BC6;: &apos;&#x6D88;&#x606F;&#x6A21;&#x677F; {field}&apos;
+  }
+}
+</code></pre>
+<p>&#x5728; main.js &#x4E2D;&#x5F15;&#x5165; vuecoms &#xFF0C;&#x7136;&#x540E;&#x521D;&#x59CB;&#x5316;&#xFF1A;</p>
+<pre><code>import Vue from &apos;vue&apos;
+import Vuecoms from &apos;vuecoms&apos;
+import customRules from &apos;customRules&apos;
+
+Vue.use(vuecoms, customRules)
+</code></pre>
+<h2 id="">&#x65E7;&#x7248;&#x672C;&#x517C;&#x5BB9;&#x6027;</h2>
+<ol>
+<li>&#x5BF9;&#x4E8E; Vuecoms 2.X &#x53CA;&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;rules&#x65B9;&#x6CD5;&#x4E3A; <code>(rule, value, callback, source, options)</code> &#x800C;2.X&#x4E4B;&#x540E;&#x7B80;&#x5316;&#x4E3A;&#xFF1A; <code>(rule, value, model)</code> &#x3002;</li>
+<li>&#x4EE5;&#x524D;&#x5728;&#x6821;&#x9A8C;&#x51FA;&#x9519;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528; callback &#xFF0C;&#x5982;&#xFF1A; <code>callback (new Error(&apos;&#x51FA;&#x9519;&#x4FE1;&#x606F;&apos;))</code>, &#x5982;&#x679C;&#x6210;&#x529F;&#x5219;&#x8FD4;&#x56DE; <code>callback()</code> &#x3002;&#x5BF9;&#x4E8E;2.X&#xFF0C;&#x6210;&#x529F;&#x76F4;&#x63A5; <code>return</code>, &#x51FA;&#x9519;&#x53EF;&#x4EE5; <code>return &apos;&#x51FA;&#x9519;&#x4FE1;&#x606F;&apos;</code> &#x6216; <code>return new Error(&apos;&#x51FA;&#x9519;&#x4FE1;&#x606F;&apos;)</code>&#x3002;</li>
+<li>&#x540C;&#x65F6;&#x539F;&#x6765;&#x4E0D;&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#xFF0C;&#x73B0;&#x5728;&#x5219;&#x652F;&#x6301;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>rule.makeError(msgid, expected, actual)</code> &#x6765;&#x8C03;&#x7528;&#x9519;&#x8BEF;&#x751F;&#x6210;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x51FA;&#x9519;&#x6A21;&#x677F;&#x3002;</li>
+</ol>
 
         </div>
         <div class="footer-nav">
-          <div class="left"><a href="cardlist.html"><span class="title">卡片列表</span></a></div>
+          <div class="left"><a href="fields.html"><span class="title">基础控件</span></a></div>
           <div class="right"><a href="build2.html"><span class="label">Next: </span><span class="title">多段展示</span></a></div>
         </div>
       </div>

@@ -47,7 +47,8 @@ var ex_table_04 = new Vue({
           showTitle: function(value) {
             return value
           },
-          editor: {type: 'date', options: function(value, name, row) {
+          editor: {type: 'date', rule: {type: 'any', required: true}, 
+          options: function(value, name, row) {
             return {
               options: {
                 disabledDate: function (date) {
@@ -74,26 +75,26 @@ var ex_table_04 = new Vue({
       ],
       buttons: [
         [
-          {label: '新建', type:'primary', onClick: function(target, store){
-              store.addEditRow({name2: 'A'})
+          {label: '新建', type:'primary', onClick: function(grid){
+              grid.addEditRow({name2: 'A'})
             }
           }
         ],
-        [{label: '查看结果', type:'primary', onClick: function(target, store){
-            console.table(store.states.data)
+        [{label: '查看结果', type:'primary', onClick: function(grid){
+            console.table(grid.store.states.data)
           }}],
-        [{label: '显示注释', type:'primary', onClick: function(target, store){
-              store.setComment(1, 'name3', '这是评论')
+        [{label: '显示注释', type:'primary', onClick: function(grid){
+              grid.setComment(1, 'name3', '这是评论')
             }},
-        {label: '隐藏注释', type:'primary', onClick: function(target, store){
-              store.removeComment(1, 'name3')
+        {label: '隐藏注释', type:'primary', onClick: function(grid){
+              grid.removeComment(1, 'name3')
             }}
           ],
-        [{label: '显示Class', type:'primary', onClick: function(target, store){
-              store.setClass(3, 'name3', 'ivu-btn-error')
+        [{label: '显示Class', type:'primary', onClick: function(grid){
+              grid.setClass(3, 'name3', 'ivu-btn-error')
             }},
-        {label: '删除Class', type:'primary', onClick: function(target, store){
-              store.removeClass(3, 'name3')
+        {label: '删除Class', type:'primary', onClick: function(grid){
+              grid.removeClass(3, 'name3')
             }}
           ],
         [
@@ -110,7 +111,7 @@ var ex_table_04 = new Vue({
         [
           {label: '隐藏按钮', type: 'primary', name: 'hiddenBtn', hidden: true},
           {label: '切换隐藏按钮', type: 'primary', onClick: function(grid, store){
-            this.$set(this.btns['hiddenBtn'], 'hidden', !this.btns['hiddenBtn'].hidden)
+            self.$set(grid.btns['hiddenBtn'], 'hidden', !grid.btns['hiddenBtn'].hidden)
           }},
         ]
       ],
@@ -126,6 +127,9 @@ var ex_table_04 = new Vue({
             callback('error', {name1: '不正确'})
           }, 500)
         }
+      },
+      onError: function (error) {
+        self.$Message.error('数据有问题，请先修改')
       },
       onDeleteRow: function (row, callback) {
         self.$Message.info("delete")

@@ -26,7 +26,7 @@ var ex_build_01 = new Vue({
               self.$set(alldata, 'select2', value)
             }
           },
-          {name: 'select2', label: '选择2', type: 'str', static: true},
+          {name: 'select2', label: '选择2', type: 'select', static: true},
           {name: 'select3', label: '选择3', type: 'select', required: true, multiple: true, options: {clearable: true,
               // choices: [
               //   {label:'选项一', value: 'A'},
@@ -58,6 +58,7 @@ var ex_build_01 = new Vue({
             },
             choices: {
               select1: [],
+              select2: [],
               select3: []
             },
             errors: {},
@@ -84,8 +85,12 @@ var ex_build_01 = new Vue({
         {label:'选项二', value: 'B'},
         {label:'选项三', value: 'C'}
       ]
-      self.$set(self.choices, 'select1', c)
-      self.$set(self.choices, 'select3', c)
+      self.$refs.build.setChoices('select1', c)
+      self.$refs.build.setChoices('select2', c)
+      self.$refs.build.setChoices('select3', c)
+      // self.$set(self.choices, 'select1', c)
+      // self.$set(self.choices, 'select2', c)
+      // self.$set(self.choices, 'select3', c)
     }, 1000)
   }
 })

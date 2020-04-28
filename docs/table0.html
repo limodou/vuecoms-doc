@@ -3,16 +3,13 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
-    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=f79d060b">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=cac0e1aa">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=8c83701e">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=4b109b10"></script>
-    <script src="lib/echarts.common.min.js?t=cce08242"></script>
-    <script src="lib/tinymce/tinymce.js?t=bde8ac84"></script>
-    <script src="lib/vuecoms.js?t=6d49ad8c"></script>
-    <script src="lib/vue-grid-layout.umd.min.js?t=2e045535"></script>
+    <script src="lib/iview/iview.js?t=afe76fcb"></script>
+    <script src="lib/vuecoms.js?t=b64d2ae8"></script>
     <title>表格说明 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -23,6 +20,8 @@
         <li class="menu-item -level-0 -parent">
           <ul class="submenu">
             <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-changelog" href="changelog.html">变更记录</a>
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Box</span>
               <ul class="submenu">
@@ -37,6 +36,8 @@
                     <li class="heading-item -depth-2"><a class="hlink link-" href="#">基本用法</a>
                     </li>
                     <li class="heading-item -depth-2"><a class="hlink link-data" href="#data">data参数说明</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">表格方法说明</a>
                     </li>
                     <li class="heading-item -depth-2"><a class="hlink link-" href="#">表头列定义说明</a>
                     </li>
@@ -62,8 +63,6 @@
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1"><a class="link title  link-fields" href="fields.html">基础控件</a>
-            </li>
             <li class="menu-item -level-1 -parent"><span class="title">Query</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
@@ -73,12 +72,6 @@
             <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Tree</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-tree1" href="tree1.html">树控件</a>
                 </li>
               </ul>
             </li>
@@ -96,6 +89,8 @@
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">Build</span>
               <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-fields" href="fields.html">基础控件</a>
+                </li>
                 <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
@@ -106,37 +101,19 @@
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
                 </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Chart</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-chart" href="chart.html">EChart</a>
+                <li class="menu-item -level-2"><a class="link title  link-build6" href="build6.html">自定义组件</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build7" href="build7.html">数据字典使用</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build8" href="build8.html">观查者模式</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build9" href="build9.html">输入输出转换</a>
                 </li>
               </ul>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Editor</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-editor" href="editor.html">Editor</a>
-                </li>
-              </ul>
+            <li class="menu-item -level-1"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
             </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Dialog</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">Grid</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-grid" href="grid.html">布局展示</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item -level-1 -parent"><span class="title">动态模板</span>
-              <ul class="submenu">
-                <li class="menu-item -level-2"><a class="link title  link-template" href="template.html">Template</a>
-                </li>
-              </ul>
+            <li class="menu-item -level-1"><a class="link title  link-toast" href="toast.html">Toast</a>
             </li>
             <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
               <ul class="submenu">
@@ -213,9 +190,15 @@
 </tr>
 <tr>
 <td>theme</td>
-<td>&#x663E;&#x793A;&#x6837;&#x5F0F;&#x3002;&#x76EE;&#x524D;&#x652F;&#x6301;&#xFF1A; &apos;default&apos;, &apos;simple&apos;&#x3002;simple &#x5219;&#x6CA1;&#x6709;&#x5217;&#x7684;&#x7AD6;&#x7EBF;&#x3002;</td>
+<td>&#x663E;&#x793A;&#x6837;&#x5F0F;&#x3002;&#x76EE;&#x524D;&#x652F;&#x6301;&#xFF1A; &apos;default&apos;, &apos;simple&apos;, &apos;mini&apos; (3.4&#x65B0;&#x589E;)&#x3002;simple &#x5219;&#x6CA1;&#x6709;&#x5217;&#x7684;&#x7AD6;&#x7EBF;&#x3002;mini &#x5219;&#x8868;&#x5934;&#x4E0D;&#x662F;&#x7070;&#x8272;&#x80CC;&#x666F;</td>
 <td>Enum</td>
 <td>&apos;default&apos;</td>
+</tr>
+<tr>
+<td>zebra</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;&#x6591;&#x9A6C;&#x7EBF; (3.4&#x65B0;&#x589E;)</td>
+<td>Boolean</td>
+<td>true</td>
 </tr>
 <tr>
 <td>checkCol</td>
@@ -234,6 +217,18 @@
 <td>checkbox&#x5217;&#x7684;&#x6807;&#x9898;</td>
 <td>String</td>
 <td>&apos;&apos;</td>
+</tr>
+<tr>
+<td>columnAlign</td>
+<td>&#x7F3A;&#x7701;&#x5217;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x67D0;&#x5217;&#x5355;&#x72EC;&#x5728;column&#x4E2D;&#x8BBE;&#x7F6E;align</td>
+<td>String</td>
+<td>&apos;center&apos;</td>
+</tr>
+<tr>
+<td>columnHeaderAlign</td>
+<td>&#x7F3A;&#x7701;&#x5217;&#x5934;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x67D0;&#x5217;&#x5355;&#x72EC;&#x5728;column&#x4E2D;&#x8BBE;&#x7F6E;headerAlign</td>
+<td>String</td>
+<td>&apos;center&apos;</td>
 </tr>
 <tr>
 <td>indexCol</td>
@@ -255,7 +250,13 @@
 </tr>
 <tr>
 <td>cellTitle</td>
-<td>&#x662F;&#x5426;&#x5C06;&#x5355;&#x5143;&#x683C;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;title&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x9F20;&#x6807;&#x653E;&#x4E0A;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x663E;&#x793A;Tip</td>
+<td>&#x662F;&#x5426;&#x5C06;&#x5355;&#x5143;&#x683C;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;title&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x9F20;&#x6807;&#x653E;&#x4E0A;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x663E;&#x793A;Tip&#x3002;&#x8FD9;&#x662F;&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#x3002;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x67D0;&#x4E2A;column&#x4E0A;&#x5355;&#x72EC;&#x8BBE;&#x7F6E;showTitle&#x5C5E;&#x6027;&#x6765;&#x5207;&#x6362;&#x3002;</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>headerTitle</td>
+<td>&#x662F;&#x5426;&#x5C06;&#x8868;&#x5934;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;title&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x9F20;&#x6807;&#x653E;&#x4E0A;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x663E;&#x793A;Tip&#x3002;&#x8FD9;&#x662F;&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#x3002;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x67D0;&#x4E2A;column&#x4E0A;&#x5355;&#x72EC;&#x8BBE;&#x7F6E;showHeaderTitle&#x5C5E;&#x6027;&#x6765;&#x5207;&#x6362;&#x3002;</td>
 <td>Boolean</td>
 <td>true</td>
 </tr>
@@ -555,6 +556,29 @@
 </tr>
 </tbody>
 </table>
+<h2 id="">&#x8868;&#x683C;&#x65B9;&#x6CD5;&#x8BF4;&#x660E;</h2>
+<p>&#x5728;Grid&#x7EC4;&#x4EF6;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x662F;&#x76F4;&#x63A5;&#x5B9A;&#x4E49;&#x5728;Grid&#x7EC4;&#x4EF6;&#x4E0A;&#x7684;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x662F;&#x901A;&#x8FC7;store&#x6765;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x901A;&#x8FC7;mapMethod&#x6620;&#x5C04;&#x5230;Grid&#x4E0A;&#x7684;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;Grid&#x6765;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x65B9;&#x6CD5;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x8FD4;&#x56DE;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>go</td>
+<td>&#x8C03;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x9875;&#xFF0C;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x5E26;&#x53C2;&#x6570;&#x3002;&#x539F;&#x578B;&#x4E3A;&#xFF1A; <code>go(page, opts)</code> &#xFF0C;&#x5176;&#x4E2D;page&#x4E3A;&#x6307;&#x5B9A;&#x9875;&#x53F7;&#xFF0C;opts&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x5B83;&#x5C06;&#x5408;&#x5E76;&#x5230;store.param&#x4E0A;&#xFF0C;&#x8FD9;&#x6837;&#x5728; <code>onLoadData</code> &#x56DE;&#x8C03;&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E86;&#x3002;&#x8FD9;&#x5757;&#x548C;&#x4EE5;&#x524D;&#x7684;&#x7248;&#x672C;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF0C;&#x539F;&#x6765;&#x6CA1;&#x6709;opts&#x53C2;&#x6570;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x8D77;&#x5230;&#x5237;&#x65B0;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x8C61;</td>
+<td>&#x65E0;</td>
+</tr>
+<tr>
+<td>loadData</td>
+<td>&#x91CD;&#x65B0;&#x88C5;&#x8F7D;&#x6570;&#x636E;&#x3002;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x6216;url&#xFF0C;&#x5982; <code>loadData({parent:123})</code> &#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x91CC;&#x5982;&#x679C;&#x6709;&#x53C2;&#x6570;&#x4F1A;&#x4E0E;store.param&#x5408;&#x5E76;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x8D77;&#x6765;&#x3002;</td>
+<td>&#x65E0;</td>
+</tr>
+</tbody>
+</table>
 <h2 id="">&#x8868;&#x5934;&#x5217;&#x5B9A;&#x4E49;&#x8BF4;&#x660E;</h2>
 <table>
 <thead>
@@ -589,6 +613,12 @@
 <td>&#x5217;&#x7684;&#x6587;&#x5B57;&#x5BF9;&#x9F50;&#x3002;&#x53EF;&#x9009;&#x503C;&#x4E3A;: &apos;left&apos;, &apos;right&apos;, &apos;center&apos;</td>
 <td>Enum</td>
 <td>&apos;center&apos;</td>
+</tr>
+<tr>
+<td>headerAlign</td>
+<td>&#x672C;&#x5217;&#x8868;&#x5934;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#x3002;&#x7F3A;&#x7701;&#x4F7F;&#x7528;columnHeaderAlign&#x7684;&#x8BBE;&#x7F6E;&#x3002;</td>
+<td>Enum</td>
+<td>&apos;&apos;</td>
 </tr>
 <tr>
 <td>hidden</td>
@@ -631,6 +661,18 @@
 <td>&#x81EA;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x5316;&#x51FD;&#x6570;&#x3002;&#x4E0E;render&#x4E0D;&#x540C;&#x3002;render&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x65B0;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x800C;format&#x53EA;&#x8F93;&#x51FA;HTML&#x3002;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x9700;&#x8981;&#x5BF9;&#x5355;&#x5143;&#x683C;&#x5185;&#x5BB9;&#x505A;&#x6587;&#x672C;&#x52A0;&#x5DE5;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;format&#xFF0C;&#x5982;&#xFF1A;&#x52A0;&#x989C;&#x8272;&#xFF0C;&#x94FE;&#x63A5;&#x4E4B;&#x7C7B;&#x7684;&#x3002;&#x8C03;&#x7528;&#x5F62;&#x5F0F;&#x4E3A;&#xFF1A;format: function(value, column, row)&#x3002; <br>&#x65B0;&#x589E;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#xFF0C;&#x5982; <code>&apos;&lt;a href=&quot;/view/${row.id}&quot;&gt;${row.title}&lt;/a&gt;&apos;</code></td>
 <td>Function|String</td>
 <td>null</td>
+</tr>
+<tr>
+<td>showTitle</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;&#x67D0;&#x5217;&#x7684;title&#x5C5E;&#x6027;&#x3002;</td>
+<td>Boolean&#xFF0C;Undefined</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>showHeaderTitle</td>
+<td>&#x662F;&#x5426;&#x663E;&#x793A;&#x67D0;&#x5217;&#x7684;&#x8868;&#x5934;title&#x5C5E;&#x6027;&#x3002;</td>
+<td>Boolean&#xFF0C;Undefined</td>
+<td>undefined</td>
 </tr>
 </tbody>
 </table>

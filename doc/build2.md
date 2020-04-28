@@ -3,7 +3,9 @@
 Build控件可以展示多个段落。
 
 <div id="ex-build-02">
-  <build ref="build" :data="data" :value="value" :errors="errors" :rules="rules" :label-width="labelWidth"></build>
+  <build ref="build" :data="data" :value="value" 
+    :errors="errors" :rules="rules" :label-width="labelWidth"
+    theme="tab" :show-box="false" :buttons="buttons"></build>
   <div>
     {{value}}
   </div>
@@ -24,17 +26,19 @@ var ex_build_02 = new Vue({
       {
         name: 'basic1',
         title: '基本信息1',
+        theme: 'border',
+        labelAlign: 'left',
         fields: [
           {name: 'str1', label: '字符串1', placeholder: '请输入...', help: '帮助信息',
-            info: 'info信息', required: true, rule: {type: 'email'}},
+            info: 'info信息', required: true, rule: {type: 'email'}, labelAlign: 'right'},
           {name: 'str2', label: '静态字符串2', static: true, required: true, convert: function(v){
             return '<a href="#">' + v + '</a>'
             }
           },
           {name: 'select1', label: '选择', type: 'select', required: true, options: {choices: choices}},
           {name: 'select2', label: '选择', type: 'select', static: true, options: {choices: choices}},
-          {name: 'rich1', label: '富文本', type: 'tinymce', options: { options: {height: 200}}},
-          {name: 'grid', label: '表格', type: 'Grid', options: {
+          // {name: 'rich1', label: '富文本', type: 'tinymce', options: { options: {height: 200}}},
+          {name: 'grid', label: '表格', type: 'Grid', labelDir: 'vertical', options: {
             data: {
               columns: [
                 {name:'name1', title:'Name1', width:100, fixed: 'left'},
@@ -48,7 +52,7 @@ var ex_build_02 = new Vue({
         layout: [
           ['str1', 'str2'],
           ['select1', 'select2'],
-          ['rich1'],
+          // ['rich1'],
           ['grid']
         ],
       },
@@ -70,33 +74,6 @@ var ex_build_02 = new Vue({
           ['select3', 'select4'],
         ]
       },
-      {
-        name: 'buttons',
-        buttons: [
-            [{label: '查看结果', type:'primary', onClick: function(target, data){
-                console.log(target, data)
-              }
-            }],
-            [{label: '校验', type:'primary', onClick: function(target, data){
-                self.$refs.build.validate(self.save)
-              }
-            }],
-            [{label: '合并出错结果', type:'info', onClick: function(target, data){
-                self.$refs.build.errors = {select1: '这是合并后的错误'}
-              }
-            }],
-            [{label: '隐藏基本信息2', type:'info', onClick: function(target, data){
-                //self.$refs.build = {select1: '这是合并后的错误'}
-                self.$set(self.$refs.build.data[2], 'hidden', !self.$refs.build.data[2].hidden)
-              }
-            }],
-            [
-              {component: 'u-select', props: {choices: [{label: 'Test A', value: 'A'}, {label: 'Test B', value: 'B'}], value: 'A'}, on: {input: function(v){self.$Message.info(v)}}}
-            ]
-          ],
-        size: 'default',
-        component: 'buttons'
-      }
     ]
     return {data:data, value: {
               select1: 'B',
@@ -120,6 +97,28 @@ var ex_build_02 = new Vue({
                 }
               }
             },
+            buttons: [
+              [{label: '查看结果', type:'primary', onClick: function(target, data){
+                  console.log(target, data)
+                }
+              }],
+              [{label: '校验', type:'primary', onClick: function(target, data){
+                  self.$refs.build.validate(self.save)
+                }
+              }],
+              [{label: '合并出错结果', type:'info', onClick: function(target, data){
+                  self.$refs.build.errors = {select1: '这是合并后的错误'}
+                }
+              }],
+              [{label: '隐藏基本信息2', type:'info', onClick: function(target, data){
+                  //self.$refs.build = {select1: '这是合并后的错误'}
+                  self.$set(self.$refs.build.data[2], 'hidden', !self.$refs.build.data[2].hidden)
+                }
+              }],
+              [
+                {component: 'u-select', props: {choices: [{label: 'Test A', value: 'A'}, {label: 'Test B', value: 'B'}], value: 'A'}, on: {input: function(v){self.$Message.info(v)}}}
+              ]
+            ],
             labelWidth: 200
           }
   },

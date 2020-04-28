@@ -1,2 +1,9 @@
 node_modules
 itm
+docs/lib/iview/types
+doc/lib/iview/types
+docs/lib/iview/locale
+docs/lib/tinymce
+doc/lib/iview/locale
+doc/lib/tinymce
+*.ipynb

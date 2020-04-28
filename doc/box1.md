@@ -3,9 +3,23 @@
 生成一个Box组件。
 
 <div id="ex-box-01">
-  <Box title="这是标题" :removerable="removerable"
+  <Box title="这是标题" :removable="removable"
     :theme="theme"
+    :height="height"
     :with-border="border" :header-class="headerClass">
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
+    <p>这是内容</p>
     <p>这是内容</p>
     <p>这是内容</p>
     <p>这是内容</p>
@@ -50,9 +64,10 @@
 | withFooterBorder | 是否显示表尾border | true |
 | headerClass | 表头样式，可以选 primary, success, warning, danger, default, info | '' |
 | collapse | 是否显示收缩工具 | true |
-| removerable | 是否显示删除工具 | false | 
+| removable | 是否显示删除工具 | false | 
 | headerAlign | 标题区对齐方式 | 'left' |
-| theme | Box风格。可以支持 'card' 风格 | '' |
+| theme | Box风格。可以支持 'card' 风格, simple | '' |
+| height | Body的高度。可以是数值或字符串，如使用 'calc(100% - 51px)' | '' |
 
 <script>
 var ex_box_01 = new Vue({
@@ -61,8 +76,9 @@ var ex_box_01 = new Vue({
     border: true,
     displayBorder: '隐藏表头线',
     headerClass: '',
-    removerable: true,
-    theme: 'default'
+    removable: true,
+    theme: 'default',
+    height: 300
   },
   methods: {
     handleBorder: function() {
@@ -78,6 +94,7 @@ var ex_box_01 = new Vue({
     },
     handleTheme: function () {
       if (this.theme === 'default') this.theme = 'card'
+      if (this.theme === 'card') this.theme = 'simple'
       else this.theme = 'default'
     }
   }

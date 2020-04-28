@@ -7,23 +7,19 @@
     :value="value"
     :label-width="labelWidth"
     :show-selected="true"
-    @on-query-change="handleQueryChange"></Query>
+    @on-query-change="handleQueryChange"
+    @input="handleInput"></Query>
     {{value}}
 </div>
 <script>
 var ex_query_01 = new Vue({
   el: '#ex-query-01',
   methods: {
-        changed: function (data) {
-          console.log(data);
-          return true;
-        },
-        submit: function(data){
-          console.log("submit event => ",data);
-          return true
-        },
         handleQueryChange: function (change) {
           console.log(change)
+        },
+        handleInput: function (value) {
+          console.log(value)
         }
   },
   data: function () {
@@ -68,42 +64,45 @@ var ex_query_01 = new Vue({
                         confirm: true,
                         size: "default",
                         placement: "bottom",//top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end (default bottom-start)
-                        disabledDate: function (date) {
-                          return date && date.valueOf() < Date.now() - 86400000;
-                        },
-                        shortcuts: [
-                          {
-                            text: 'Today',
-                            value: function() {
-                              return new Date();
-                            },
-                            onClick: function(picker){
-                              this.$Message.info('Click today');
-                            }
+                        options: {
+                          disabledDate: function (date) {
+                            console.log(date)
+                            return date && date.valueOf() < Date.now() - 86400000;
                           },
-                          {
-                            text: 'Yesterday',
-                            value: function(){
-                              var date = new Date();
-                              date.setTime(date.getTime() - 3600 * 1000 * 24);
-                              return date;
+                          shortcuts: [
+                            {
+                              text: 'Today',
+                              value: function() {
+                                return new Date();
+                              },
+                              onClick: function(picker){
+                                this.$Message.info('Click today');
+                              }
                             },
-                            onClick: function(picker){
-                              this.$Message.info('Click yesterday');
-                            }
-                          },
-                          {
-                            text: 'One week',
-                            value: function(){
-                              var date = new Date();
-                              date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-                              return date;
+                            {
+                              text: 'Yesterday',
+                              value: function(){
+                                var date = new Date();
+                                date.setTime(date.getTime() - 3600 * 1000 * 24);
+                                return date;
+                              },
+                              onClick: function(picker){
+                                this.$Message.info('Click yesterday');
+                              }
                             },
-                            onClick: function(picker){
-                              this.$Message.info('Click a week ago');
+                            {
+                              text: 'One week',
+                              value: function(){
+                                var date = new Date();
+                                date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+                                return date;
+                              },
+                              onClick: function(picker){
+                                this.$Message.info('Click a week ago');
+                              }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
                     },
                     {
@@ -185,46 +184,36 @@ var ex_query_01 = new Vue({
                       }
                     },
                   ],
-                  layout: [
-                    ['str1', 'str2'],
-                    ['select1', 'select2'],
-                    ['datepicker', 'datepickerrange'],
-                    ['radio', 'checkbox'],
-                    ['select_remote', 'select_remote2']
-                  ],
-                  defaultValue: {
-                    select1: 'city_003',
-                    select2: ["city_001"],
-                    str1: "Hello World!!!",
-                    checkbox: ["1","2"],
-                    radio: "1",
-                  },
-                  value: {
-                    datepickerrange: ['2018-04-20', '2018-04-22'],
-                    select_remote: 'A',
-                    select_remote2: ['A']
-                  },
-                  choices: {
-                    select1: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {
-                      label: "洛杉矶",
-                      value: "city_003"
-                    }],
-                    select2: [
-                      {label: "西雅图", value: "city_001"},
-                      {label: "旧金山", value: "city_002"},
-                      {label: "洛杉矶", value: "city_003"}
-                    ],
-                  },
-                  buttons: {
-                    align: "center",//按钮左中右 start center end 默认 end
-                    submit: {
-                      label: "点此查询",
-                    },
-                    clear: {
-                      label: "点此清除",
-                      show:false
-                    }
-                  }
+          layout: [
+            ['str1', 'str2'],
+            ['select1', 'select2'],
+            ['datepicker', 'datepickerrange'],
+            ['radio', 'checkbox'],
+            ['select_remote', 'select_remote2']
+          ],
+          defaultValue: {
+            select1: 'city_003',
+            select2: ["city_001"],
+            str1: "Hello World!!!",
+            checkbox: ["1","2"],
+            radio: "1",
+          },
+          value: {
+            datepickerrange: ['2018-04-20', '2018-04-22'],
+            select_remote: 'A',
+            select_remote2: ['A']
+          },
+          choices: {
+            select1: [{label: "西雅图", value: "city_001"}, {label: "旧金山", value: "city_002"}, {
+              label: "洛杉矶",
+              value: "city_003"
+            }],
+            select2: [
+              {label: "西雅图", value: "city_001"},
+              {label: "旧金山", value: "city_002"},
+              {label: "洛杉矶", value: "city_003"}
+            ],
+          },
         }
       },
 })

@@ -21,14 +21,18 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | nowrap | 是否自动换行 | Boolean | false |
 | width | 表格宽度。如果为 'auto' 时， 会根据父元素宽度自动调整 | Number\|'auto'| 'auto' |
 | height | 表格高度。如果为 'auto' 时，会根据内容高度自动调整 | Number\|'auto' | 'auto' |
-| theme | 显示样式。目前支持： 'default', 'simple'。simple 则没有列的竖线。 | Enum | 'default' |
+| theme | 显示样式。目前支持： 'default', 'simple', 'mini' (3.4新增)。simple 则没有列的竖线。mini 则表头不是灰色背景 | Enum | 'default' |
+| zebra | 是否显示斑马线 (3.4新增) | Boolean | true |
 | checkCol | 是否显示checkbox列 | Boolean | false |
 | checkColWidth | checkbox列的宽度 | Number | 30 |
 | checkColTitle | checkbox列的标题 | String | '' |
+| columnAlign | 缺省列的对齐方式，也可以针对某列单独在column中设置align | String | 'center' |
+| columnHeaderAlign | 缺省列头的对齐方式，也可以针对某列单独在column中设置headerAlign | String | 'center' |
 | indexCol | 是否显示序号列 | Boolean | false |
 | indexColWidth | 序号列的宽度 | Number | 40 |
 | indexColTitle | 序号列的标题 | String | '#' |
-| cellTitle | 是否将单元格内容作为title属性，这样当鼠标放上时，可以显示Tip | Boolean | true |
+| cellTitle | 是否将单元格内容作为title属性，这样当鼠标放上时，可以显示Tip。这是全局设置。还可以在某个column上单独设置showTitle属性来切换。 | Boolean | true |
+| headerTitle | 是否将表头内容作为title属性，这样当鼠标放上时，可以显示Tip。这是全局设置。还可以在某个column上单独设置showHeaderTitle属性来切换。 | Boolean | true |
 | idField | 表格数据名唯一字段的字段名。用于定位某一行，比如删除 | String | 'id' |
 | orderField | 排序字段名 | String | 'order' |
 | multiSelect | 是否多选 | Boolean | false |
@@ -84,6 +88,15 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | onDeleteRow | 删除行的确认 function (row, callback), callback(flag, data) |
 | onRowEditRender | 行编辑对应的编辑按钮列的自定义渲染回调函数 function (h, row) h 为create函数，row为数据行。当返回 null 时，使用缺省的渲染函数，需要自行渲染时，应返回一个render调用结果，如： render('div', '本行不可编辑') |
 
+## 表格方法说明
+
+在Grid组件，有一些是直接定义在Grid组件上的，有一些是通过store来定义的，通过mapMethod映射到Grid上的，也可以直接使用Grid来直接调用。
+
+| 方法名 | 说明 | 返回值 |
+|----------|-----|------|
+| go | 调转到指定页，同时可以带参数。原型为： `go(page, opts)` ，其中page为指定页号，opts为一个对象。它将合并到store.param上，这样在 `onLoadData` 回调时就可以使用了。这块和以前的版本有所不同，原来没有opts参数。它可以起到刷新的作用，象 | 无 |
+| loadData | 重新装载数据。可以传入参数或url，如 `loadData({parent:123})` 。注意，这里如果有参数会与store.param合并，并保存起来。 | 无 |
+
 ## 表头列定义说明
 
 | 属性参数名 | 说明 | 数据类型 | 缺省值 |
@@ -92,6 +105,7 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | width | 列宽度。当不提供时，表示自适应宽度。 | Number | 0 |
 | sortable | 是否显示排度指示。为 true 时，在字段标题右侧会显示一个图标，可以用来控制排序值。 | Boolean | false |
 | align | 列的文字对齐。可选值为: 'left', 'right', 'center' | Enum | 'center' |
+| headerAlign | 本列表头的对齐方式。缺省使用columnHeaderAlign的设置。 | Enum | '' |
 | hidden | 是否隐藏。可以控制某列是否显示。 | Boolean | false |
 | fixed | 浮动位置。可选值为: 'left', 'right', '' | Enum | '' |
 | html | 是否对内容进行转义。render不受此控制。format的结果受控制。 | Boolean | true |
@@ -99,6 +113,8 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | editor | 如果可以编辑，则为编辑器的定义对象。它符合Build的字段定义规则。详情参见 Build的字段定义说明。| Object | {} |
 | render | 自定义渲染函数。形式为 render: function(h, param)，其中h 为createElement函数。param为上下文参数，其值为：<br/>{<br/>value: 单元格的值<br/>column: 单元格定义对象<br/>row: 单元格所在行的数据对象<br/>grid: 所属grid对象<br/>}| Function | null |
 | format | 自定义格式化函数。与render不同。render可以生成新的控件，而format只输出HTML。所以只要需要对单元格内容做文本加工的，可以使用format，如：加颜色，链接之类的。调用形式为：format: function(value, column, row)。 <br/>新增字符串形式，如 `'<a href="/view/${row.id}">${row.title}</a>'`| Function\|String | null |
+| showTitle | 是否显示某列的title属性。| Boolean，Undefined | undefined |
+| showHeaderTitle | 是否显示某列的表头title属性。| Boolean，Undefined | undefined |
 
 ## 表格按钮定义说明
 

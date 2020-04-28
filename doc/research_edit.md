@@ -165,23 +165,32 @@ var ex_build_02 = new Vue({
               indexCol: true,
               checkColTitle: '',
               idField: 'sn',
+              editMode: 'row',
+              actionColumn: 'action',
               columns: [
                 {name: 'sn', title: '业务要求编号', width: 150},
                 {name: 'title', title: '业务要求名称', align: 'left'},
                 {name: 'depart', title: '提出部门', width: 200},
                 {name: 'contact', title: '联系人', width: 100},
-                {name: 'action', title: '操作', width: 60, render: function (h, param){
-                  return h('i-button', {
-                    on: {
-                      click: function(value) {
-                        console.log(param)
-                      }
-                    },
-                    props: {
-                      size: 'small',
-                      type: 'error'
-                    }
-                  }, '删除')
+                {name: 'action', title: '操作', width: 120, fixed: 'right', render: function (h, param){
+                var buttons = [
+                  param.grid.defaultEditRender(h, param.row),
+                  // param.grid.defaultDeleteRender(h, param.row),
+                ]
+                return h('div', {
+                  'class': 'u-cell-text'
+                }, buttons)
+                  // return h('i-button', {
+                  //   on: {
+                  //     click: function(value) {
+                  //       console.log(param)
+                  //     }
+                  //   },
+                  //   props: {
+                  //     size: 'small',
+                  //     type: 'error'
+                  //   }
+                  // }, '删除')
                 }}
               ],
               pagination: true,

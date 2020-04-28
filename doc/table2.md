@@ -1,5 +1,17 @@
 # 复杂表格
 
+<style>
+.u-query{
+  display: inline-block;
+}
+.memo{
+  vertical-align: top;
+  font-size: 14px;
+  margin-bottom: 12px;
+  height: 36px;
+  line-height: 36px;
+}
+</style>
 <div id="ex-table-02">
   <div>
     <input ref="loading" v-model="loading_text" style="display:inline-block"></input>
@@ -13,6 +25,7 @@
     @on-selected-all="handleSelectedAll"
     @on-deselected-all="handleDeselectedAll"
     @on-query-change="handleQueryChange">
+    <span slot="afterQuery" class="memo">备注</span>
     </Grid>
   <div>Selected: {{selected}}</div>
   <div>Param: {{param}}</div>
@@ -30,6 +43,7 @@ var ex_table_02 = new Vue({
       multiSelect: true,
       resizable: true,
       pagination: true,
+      pageSize: 50,
       pageSizeOpts: [10, 30, 50],
       total: 80,
       height: 300,
@@ -37,13 +51,15 @@ var ex_table_02 = new Vue({
       checkCol: true,
       idField: 'id',
       orderField: 'order',
+      clickSelect: true,
       checkColWidth: 120,
       checkColTitle: 'Check All',
+      headerTitle: true,
       indexCol: true,
       // selectedRowClass: '',
       param: {
         str1: "Hello World!!!",
-        tree: '1'
+        tree: {label: 'children1', value: 'children1'}
       },
       buttons: [
         [
@@ -109,15 +125,21 @@ var ex_table_02 = new Vue({
           {label: '清除所有选中', type: 'primary', onClick: function (target, store){
             store.deselectAll()
           }}
+        ],
+        [
+          {label: '点击后消失', name: 'hiddenBtn', type: 'primary', onClick: function (target, store){
+            self.$set(target.btns.hiddenBtn, 'hidden', true)
+          }}
         ]
       ],
-      rightButtons: [
-        [{label: '下载'}]
-      ],
+      rightButtons: {items: [
+        [{label: '下载', size: 'small', type: 'primary'}]
+      ], size: 'default'},
       bottomButtons: [
         [{'label': '导出'}]
       ],
       onLoadData: function (url, param, callback) {
+        console.log(param)
         self.param = param
         var data = []
         for (var i = 0; i < param.pageSize; i++) {
@@ -188,9 +210,11 @@ var ex_table_02 = new Vue({
       value.push(row)
     }
     table.query = {
+      firstLayoutAlign: 'left',
       fields: [
         {name: "str1", type: "string", label: "字符串1", placeholder: "请输入字符串1"},
         {name: "tree", type: "treeselect", label: "机构", options: {
+          labelInValue: true,
           remote: true,
           'remote-load-data': function (item, callback) {
             if (!item) {
@@ -221,15 +245,12 @@ var ex_table_02 = new Vue({
       layout: [
         ['str1', 'tree']
       ],
-      buttons: {
-        align: "center",//按钮左中右 start center end 默认 end
-        submit: {
-          label: "点此查询",
-        },
-        clear: {
-          label: "点此清除"
-        }
-      },
+      // buttons: [
+      //   [{name: 'submit', label: '点击查询'}],
+      //   [{name: 'download', label: '下载', onClick: function(target){
+      //     self.$Message.info('点击了下载')
+      //   }}],
+      // ],
       choices: {}
     }
     return {
