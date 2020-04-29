@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=afe76fcb"></script>
-    <script src="lib/vuecoms.js?t=b64d2ae8"></script>
+    <script src="lib/iview/iview.js?t=391d8613"></script>
+    <script src="lib/vuecoms.js?t=f8e7dd61"></script>
     <title>Dialog - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -127,7 +127,7 @@
   <i-button type="primary" @click="handleClick">Show Modal</i-button>
 </div>
 <script>
-var component = Vue.component('dialog', {
+var component = Vue.component('dialog-form1', {
   template: '<build ref="build" :data="data" :value="value"></build>',
   props: ['value'],
   data: function () {
@@ -219,12 +219,6 @@ var ex_dialog_01 = new Vue({
 <td></td>
 </tr>
 <tr>
-<td>name</td>
-<td>&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684; ref &#x7684;&#x540D;&#x5B57;</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
 <td>onOk</td>
 <td>&#x70B9;&#x51FB;&#x786E;&#x5B9A;&#x65F6;&#x8C03;&#x7528;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x5F53;&#x70B9;&#x51FB;&#x65F6;&#x786E;&#x5B9A;&#x6309;&#x94AE;&#x4F1A;&#x663E;&#x793A; loading &#x72B6;&#x6001;&#xFF0C;&#x5982;&#x679C; onOk &#x5B9A;&#x4E49;&#x4E86;&#xFF0C;&#x5219;&#x5F53;&#x5B83;&#x8FD4;&#x56DE; true &#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#x5BF9;&#x8BDD;&#x6846;&#x3002;&#x5982;&#x679C;&#x8FD4;&#x56DE; false&#xFF0C;&#x5219;&#x5BF9;&#x8BDD;&#x6846;&#x4ECD;&#x7136;&#x663E;&#x793A;&#xFF0C;loading &#x72B6;&#x6001;&#x53D6;&#x6D88;&#x3002;&#x5982;&#x679C;&#x672A;&#x5B9A;&#x4E49; onOk&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x5173;&#x95ED;&#x5BF9;&#x8BDD;&#x6846;. onOk &#x53EF;&#x4EE5;&#x662F; Promise &#x5BF9;&#x8C61;&#x3002;</td>
 <td>Function</td>
@@ -295,7 +289,7 @@ var ex_dialog_01 = new Vue({
   <i-button type="primary" @click="handleClick">Show Modal</i-button>
 </div>
 <script>
-var component = Vue.component('dialog', {
+var component = Vue.component('dialog-form2', {
   template: '<build ref="build" :data="data" :value="value"></build>',
   props: ['value'],
   data: function () {
@@ -385,12 +379,6 @@ var ex_dialog_02 = new Vue({
 <td>value</td>
 <td>&#x4F20;&#x5165;&#x7ED9;&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684; value &#x5C5E;&#x6027;</td>
 <td>Any</td>
-<td></td>
-</tr>
-<tr>
-<td>name</td>
-<td>&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x7684; ref &#x7684;&#x540D;&#x5B57;</td>
-<td>String</td>
 <td></td>
 </tr>
 <tr>

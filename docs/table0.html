@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=afe76fcb"></script>
-    <script src="lib/vuecoms.js?t=b64d2ae8"></script>
+    <script src="lib/iview/iview.js?t=391d8613"></script>
+    <script src="lib/vuecoms.js?t=f8e7dd61"></script>
     <title>表格说明 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -540,7 +540,7 @@
 </tr>
 <tr>
 <td>onSaveRow</td>
-<td>&#x4FDD;&#x5B58;&#x884C;&#x65F6;&#x8C03;&#x7528; function (row, callback)&#x3002;&#x5F53;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x65F6;&#xFF0C;&#x9700;&#x8C03;&#x7528; callback &#xFF0C;&#x683C;&#x5F0F;&#x4E3A; callback(flag, data)&#x3002;&#x5176;&#x4E2D; flag &#x4E3A; &apos;ok&apos; &#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C;&#x5219;data&#x4E3A;&#x6700;&#x540E;&#x7684;&#x6570;&#x636E;&#x3002; &apos;error&apos; &#x8868;&#x793A;&#x6709;&#x9519;&#x8BEF;&#xFF0C; &#x5219;data&#x4E3A;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x3002;</td>
+<td>&#x4FDD;&#x5B58;&#x884C;&#x65F6;&#x8C03;&#x7528; function (row, callback, rawrow)&#x3002;&#x5F53;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x65F6;&#xFF0C;&#x9700;&#x8C03;&#x7528; callback &#xFF0C;&#x683C;&#x5F0F;&#x4E3A; callback(flag, data)&#x3002;&#x5176;&#x4E2D; flag &#x4E3A; &apos;ok&apos; &#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C;&#x5219;data&#x4E3A;&#x6700;&#x540E;&#x7684;&#x6570;&#x636E;&#x3002; &apos;error&apos; &#x8868;&#x793A;&#x6709;&#x9519;&#x8BEF;&#xFF0C; &#x5219;data&#x4E3A;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x3002;row &#x662F;&#x5E72;&#x51C0;&#x6570;&#x636E;&#xFF0C;&#x53BB;&#x6389;&#x4E86;_&#x5F00;&#x5934;&#xFF0C;&#x53CA;_static &#x7ED3;&#x5C3E;&#x7684;&#x6570;&#x636E;&#x3002;&#x800C; rawrow &#x662F;&#x539F;&#x59CB;&#x6570;&#x636E;&#x3002;&#x6709;&#x65F6;&#x5728;&#x5904;&#x7406;&#x8868;&#x683C;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4FDD;&#x7559; _rowKey &#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x65B0;&#x589E;&#x5B57;&#x6BB5;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x7684; id &#x503C;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7; _rowKey &#x6765;&#x5B9A;&#x4F4D;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x6267;&#x884C; grid.updateRow &#x65F6;&#x53EF;&#x80FD;&#x9700;&#x8981;_rowKey&#x3002;&#x8FD9;&#x65F6;&#x5C31;&#x9700;&#x8981; rawrow &#x7684;&#x6570;&#x636E;&#x4E86;&#x3002;&#xFF08;3.4&#x4F18;&#x5316;)</td>
 </tr>
 <tr>
 <td>onSaveCol</td>

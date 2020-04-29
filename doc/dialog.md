@@ -10,7 +10,7 @@ Vuecoms 提供了通用的对话框组件以及可以通过绑定到 Vue.prototy
   <i-button type="primary" @click="handleClick">Show Modal</i-button>
 </div>
 <script>
-var component = Vue.component('dialog', {
+var component = Vue.component('dialog-form1', {
   template: '<build ref="build" :data="data" :value="value"></build>',
   props: ['value'],
   data: function () {
@@ -75,7 +75,6 @@ Dialog 属性 props (和 Modal 基本类似)
 | title | 对话框标题 | String | '' |
 | props | 传递给底层组件的属性 | Object | |
 | on | 将要捕获底层组件的事件及处理。key 是事件名，value 是处理函数 | Object | |
-| name | 底层组件的 ref 的名字 | String | |
 | onOk | 点击确定时调用的回调函数。当点击时确定按钮会显示 loading 状态，如果 onOk 定义了，则当它返回 true 时，会自动关闭对话框。如果返回 false，则对话框仍然显示，loading 状态取消。如果未定义 onOk，则直接关闭对话框. onOk 可以是 Promise 对象。 | Function|Promise | |
 | onCancel | 当点击取消时的回调函数，可以是 Promise 对象。 | Function|Promise | |
 | buttons | 自定义按钮。同 Grid, Build 的按钮定义形式相同。 | Array | |
@@ -99,7 +98,7 @@ Dialog 方法
   <i-button type="primary" @click="handleClick">Show Modal</i-button>
 </div>
 <script>
-var component = Vue.component('dialog', {
+var component = Vue.component('dialog-form2', {
   template: '<build ref="build" :data="data" :value="value"></build>',
   props: ['value'],
   data: function () {
@@ -160,7 +159,6 @@ ConfirmDialog 属性 props (和 Dialog 基本类似)
 | props | 传递给底层组件的属性 | Object | |
 | on | 将要捕获底层组件的事件及处理。key 是事件名，value 是处理函数 | Object | |
 | value | 传入给底层组件的 value 属性 | Any | |
-| name | 底层组件的 ref 的名字 | String | |
 | onOk | 点击确定时调用的回调函数。当点击时确定按钮会显示 loading 状态，如果 onOk 定义了，则当它返回 true 时，会自动关闭对话框。如果返回 false，则对话框仍然显示，loading 状态取消。如果未定义 onOk，则直接关闭对话框. onOk 可以是 Promise 对象。 | Function|Promise | |
 | onCancel | 当点击取消时的回调函数，可以是 Promise 对象。 | Function|Promise | |
 | buttons | 自定义按钮。同 Grid, Build 的按钮定义形式相同。 | Array | |

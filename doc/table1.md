@@ -61,6 +61,8 @@ var ex_table_01 = new Vue({
           {label: '切换样式', type: 'primary', onClick: function () {
             if (self.$refs.grid.theme === 'default')
               self.$refs.grid.theme = 'simple'
+            else if (self.$refs.grid.theme === 'simple')
+              self.$refs.grid.theme = 'mini'
             else
               self.$refs.grid.theme = 'default'
           }}

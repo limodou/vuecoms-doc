@@ -2,7 +2,7 @@
 
 ## V3.4
 * Grid theme 新增 mini 风格，去掉表头的灰色背景，同时增加 zebra 参数，用控制是否显示表格行斑马线，缺省为 true
-* 优化 Toast 点击关闭时，会调用两次 onClose 的 BUG
+* 修复 Toast 点击关闭时，会调用两次 onClose 的 BUG
 * 在 Vue.prototype 上增加 $Dialog 和 $ConfirmDialog 方法，用于打开对话框，详情参见对话框说明
 * Build 字段定义中的 type 可以直接传 component 对象，不用声明成全局的了。例如：
 
@@ -15,6 +15,14 @@
     ]
     ```
 
+* 对于 staticField 的处理，会将内容(display)中的 tag 去除
+* 优化 flatChoices 组件，对多选进行了处理
+* 修复了 Cell 在处理 onEnableEdit 时的参数错误
+* Grid 在调用 onSaveRow 时，增加了第三个参数，第一个是干净的数据，第二个是原始的数据。主要是原始的数据对于表格行，可能有些_开头的数据是有特殊作用的，比如_rowKey
+* deepCopy 解决循环的问题
+* 校验规则 realname 增加 EN 的参数
+* 修复树型表格，当一级节点为不可选中时，全选状态不正确的BUG
+* select 组件的 rich 改为 labelInValue 保持和 iview 一致。原 rich 还保留
 
 ## V3.3
 

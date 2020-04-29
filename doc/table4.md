@@ -84,10 +84,10 @@ var ex_table_04 = new Vue({
             console.table(grid.store.states.data)
           }}],
         [{label: '显示注释', type:'primary', onClick: function(grid){
-              grid.setComment(1, 'name3', '这是评论')
+              grid.setComment(4, 'name3', '这是评论')
             }},
         {label: '隐藏注释', type:'primary', onClick: function(grid){
-              grid.removeComment(1, 'name3')
+              grid.removeComment(4, 'name3')
             }}
           ],
         [{label: '显示Class', type:'primary', onClick: function(grid){

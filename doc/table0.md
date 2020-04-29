@@ -83,7 +83,7 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | onSelect | 在选择行前执行，返回为true，则允许选中。传入参数为 (row, flag) flag 为true表示选中，为false表示取消选中|
 | onDeselect | 在取消选择行前执行，返回为true，则允许取消选中。如果不提供，则当onSelect存在时会调用onSelect。传入参数为 row |
 | onCheckable | 是否显示checkbox |
-| onSaveRow | 保存行时调用 function (row, callback)。当执行完毕时，需调用 callback ，格式为 callback(flag, data)。其中 flag 为 'ok' 表示成功，则data为最后的数据。 'error' 表示有错误， 则data为出错信息。 |
+| onSaveRow | 保存行时调用 function (row, callback, rawrow)。当执行完毕时，需调用 callback ，格式为 callback(flag, data)。其中 flag 为 'ok' 表示成功，则data为最后的数据。 'error' 表示有错误， 则data为出错信息。row 是干净数据，去掉了_开头，及_static 结尾的数据。而 rawrow 是原始数据。有时在处理表格数据时，可能需要保留 _rowKey 。这是因为新增字段可能没有对应的 id 值，需要通过 _rowKey 来定位。所以在执行 grid.updateRow 时可能需要_rowKey。这时就需要 rawrow 的数据了。（3.4优化) |
 | onSaveCol | 保存单元格时调用 function (row, callback)。当执行完毕时，需调用 callback ，格式为 callback(flag, data)。其中 flag 为 'ok' 表示成功，则data为最后的数据。 'error' 表示有错误， 则data为出错信息。 |
 | onDeleteRow | 删除行的确认 function (row, callback), callback(flag, data) |
 | onRowEditRender | 行编辑对应的编辑按钮列的自定义渲染回调函数 function (h, row) h 为create函数，row为数据行。当返回 null 时，使用缺省的渲染函数，需要自行渲染时，应返回一个render调用结果，如： render('div', '本行不可编辑') |

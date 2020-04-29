@@ -21,6 +21,7 @@ var ex_table_05 = new Vue({
       idField: 'id',
       orderField: 'order',
       clickSelect: true,
+      checkStrictly: false,
       // tree 参数
       tree: true,
       treeField: 'name4',
@@ -176,6 +177,11 @@ var ex_table_05 = new Vue({
       onMove: function(order, callback) {
         console.log('order', order)
         callback(true)
+      },
+      onCheckable: function(row) {
+        if (row.id === 1) {
+          return false
+        } return true
       }
     }
     table.data = [
@@ -183,6 +189,9 @@ var ex_table_05 = new Vue({
       {id:6, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1'}
     ]
     return {table:table}
-  }
+  },
+  mounted: function () {
+    this.$refs.grid.setSelection([6])
+  },
 })
 </script>

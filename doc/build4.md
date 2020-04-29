@@ -39,8 +39,7 @@ var ex_build_01 = new Vue({
               }
             },
             onChange: function (value, alldata) {
-              console.log('aaaaaa', value)
-              self.$set(alldata, 'str', value.value || '')
+              self.$set(alldata, 'str', value.label || '')
             }
           },
           {name: 'str', label: '选择2', type: 'str', static: true},
