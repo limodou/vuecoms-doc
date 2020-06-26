@@ -13,6 +13,7 @@ Vuecoms 3.4
   * [表格行编辑](table4.md)
   * [Tree表格](table5.md)
   * [通用表格](table6.md)
+  * [表格过滤](table7.md)
 * [Query]
    * [基本查询](query1.md)
 * [Uploader]

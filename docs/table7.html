@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=08daf893">
+    <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
+    <script src="assets/script.js?t=42463e55"></script>
+    <script src="lib/vue.js?t=46ed8b2a"></script>
+    <script src="lib/iview/iview.js?t=34b3b732"></script>
+    <script src="lib/vuecoms.js?t=8b5d3ee2"></script>
+    <title>表格过滤 - Vuecoms</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">Vuecoms</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-changelog" href="changelog.html">变更记录</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Box</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-box1" href="box1.html">基本用法</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Table</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-table0" href="table0.html">表格说明</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table1" href="table1.html">简单表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table3" href="table3.html">表格拖动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table4" href="table4.html">表格行编辑</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table5" href="table5.html">Tree表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-table6" href="table6.html">通用表格</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title -active link-table7" href="table7.html">表格过滤</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Query</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-query1" href="query1.html">基本查询</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-uploader" href="uploader.html">文件上传</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">TreeSelect</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-treeselect" href="treeselect.html">选择树控件</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">CardList</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-cardlist" href="cardlist.html">卡片列表</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Build</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-fields" href="fields.html">基础控件</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build1" href="build1.html">基本构建</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build2" href="build2.html">多段展示</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build3" href="build3.html">数据联动</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build4" href="build4.html">Select Rich</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build5" href="build5.html">自定义Box</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build6" href="build6.html">自定义组件</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build7" href="build7.html">数据字典使用</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build8" href="build8.html">观查者模式</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-build9" href="build9.html">输入输出转换</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-dialog" href="dialog.html">Dialog</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-toast" href="toast.html">Toast</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">综合示例</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-research_edit" href="research_edit.html">任务编辑</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-table7">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="">&#x8868;&#x683C;&#x8FC7;&#x6EE4;</h1>
+<p>&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x5728;Grid &#x4E2D;&#x4F7F;&#x7528;&#x5217;&#x7684;&#x8FC7;&#x6EE4;&#x673A;&#x5236;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x5728;&#x5B9A;&#x4E49; Column &#x65F6;&#x4F20;&#x5165; <code>filterable</code> &#x5C5E;&#x6027;&#xFF0C;&#x5C31;&#x8C61;&#x662F; editor &#x7C7B;&#x4F3C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x6307;&#x5B9A;&#x7C7B;&#x578B;(type)&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x989D;&#x5916;&#x7684;&#x7EC4;&#x4EF6;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x5728; <code>options</code> &#x4E2D;&#x4F20;&#x5165;&#x3002;&#x5982;&#x679C;&#x63D0;&#x4F9B;&#x4E86; <code>label</code>&#xFF0C;&#x5219;&#x4F1A;&#x663E;&#x793A;&#x5728;&#x5F39;&#x51FA;&#x5C42;&#x7684;&#x4E0A;&#x9762;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#x5E38;&#x89C1;&#x7684;&#x4E0B;&#x62C9;&#x9009;&#x62E9;&#xFF0C;vuecoms &#x7F16;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x53EB; flat-select &#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5B9A;&#x4E49;&#x8868;&#x5934;&#x5217;&#x65F6;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A;</p>
+<pre><code class="lang-js">{<span class="hljs-attr">name</span>:<span class="pl-s">&apos;name2&apos;</span>, <span class="hljs-attr">title</span>:<span class="pl-s">&apos;Name2&apos;</span>, <span class="hljs-attr">width</span>:<span class="hljs-number">200</span>, <span class="hljs-attr">filterable</span>: {
+  <span class="hljs-attr">type</span>: <span class="pl-s">&apos;flat-select&apos;</span>,
+  <span class="hljs-attr">options</span>: {
+    <span class="hljs-attr">choices</span>: [
+      {<span class="hljs-attr">value</span>: <span class="pl-s">&apos;&apos;</span>, <span class="hljs-attr">label</span>: <span class="pl-s">&apos;&#x5168;&#x90E8;&apos;</span>},
+      {<span class="hljs-attr">value</span>: <span class="pl-s">&apos;&gt;B3&apos;</span>, <span class="hljs-attr">label</span>: <span class="pl-s">&apos;&#x5927;&#x4E8E; B3&apos;</span>},
+      {<span class="hljs-attr">value</span>: <span class="pl-s">&apos;&lt;=B3&apos;</span>, <span class="hljs-attr">label</span>: <span class="pl-s">&apos;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; B3&apos;</span>}
+    ]
+  }
+}},
+</code></pre>
+<p>&#x5728;&#x5C55;&#x793A;&#x65F6;&#xFF0C;&#x4F1A;&#x5728;&#x8868;&#x5934;&#x5217;&#x540D;&#x79F0;&#x7684;&#x53F3;&#x4FA7;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6F0F;&#x6597;&#x7684;&#x56FE;&#x6807;&#xFF0C;&#x5F53;&#x663E;&#x793A;&#x4E3A;&#x6D45;&#x7070;&#x8272;&#x65F6;&#xFF0C;&#x8868;&#x793A;&#x672A;&#x8F93;&#x5165;&#x6761;&#x4EF6;&#xFF0C;&#x5F53;&#x663E;&#x793A;&#x4E3A;&#x6DF1;&#x8272;&#x586B;&#x5165;&#x56FE;&#x6807;&#x65F6;&#xFF0C;&#x8868;&#x793A;&#x7528;&#x6237;&#x8F93;&#x5165;&#x4E86;&#x6761;&#x4EF6;&#x3002;</p>
+<p>&#x8FC7;&#x6EE4;&#x5668;&#x5728;&#x7528;&#x6237;&#x8F93;&#x5165;&#x65F6;&#xFF0C;&#x4F1A;&#x7ACB;&#x5373;&#x89E6;&#x53D1;&#x67E5;&#x8BE2;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4F20;&#x5165; <code>onLoadData</code> &#x7684; <code>param</code> &#x53C2;&#x6570;&#x4E2D;&#x3002;&#x5982;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#xFF0C;&#x5F53;&#x9009;&#x62E9;&#x4E86; &quot;&#x5927;&#x4E8E; B3&quot;&#x65F6;&#xFF0C;&#x5728; <code>param</code> &#x4E2D;&#x4F1A;&#x6709; <code>{name2: &apos;&gt;B3&apos;}</code> &#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x56E0;&#x6B64;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x6765;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x8FC7;&#x6EE4;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x5219;&#x6F14;&#x793A;&#x4E86;&#x51E0;&#x79CD;&#x8FC7;&#x6EE4;&#x7EC4;&#x4EF6;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x524D;&#x7AEF;&#x5206;&#x9875;&#x53CA;&#x8FC7;&#x6EE4;&#x3002;&#x662F;&#x901A;&#x8FC7; <code>onLoadData</code> &#x6765;&#x5904;&#x7406;&#x7684;&#x3002;</p>
+<div id="ex-table-07">
+  <grid ref="table" :data="table"></grid>
+</div>
+<script>
+var ex_table_07 = new Vue({
+  el: '#ex-table-07',
+  data: function () {
+    var self = this
+    var table = {
+      nowrap: true,
+      draggable: true,
+      indexCol: true,
+      checkCol: true,
+      clickSelect: true,
+      columns: [
+        {name:'name1', title:'Name1', width:200},
+        {name:'name2', title:'Name2', width:200, filterable: {
+          type: 'flat-select',
+          options: {
+            choices: [
+              {value: '', label: '全部'},
+              {value: '>B3', label: '大于 B3'},
+              {value: '<=B3', label: '小于等于 B3'}
+            ]
+          }
+        }},
+        {name:'name3', title:'Name3', width:200, filterable: {
+          label: '输入名称',
+          options: {
+            clearable: true
+          }
+        }},
+        {name:'name4', title:'Name4', width:200, filterable: {
+          type: 'flat-select',
+          options: {
+            multiple: true,
+            choices: [
+              {value: '>D3', label: '大于 D3'},
+              {value: '=D3', label: '等于 D3'},
+              {value: '<D3', label: '小于 D3'},
+            ]
+          }
+        }},
+      ],
+      onLoadData: function (url, param, callback) {
+        console.log('===== param =====', param)
+        let filters = []
+        var f_name2 = function(item) {
+          if (!param.name2) return true
+          if (param.name2 === '>B3') return item.name2>'B3'
+          return item.name2 <= 'B3'
+        }
+        filters.push(f_name2)
+        var f_name3 = function(item) {
+          if (!param.name3) return true
+          return item.name3.indexOf(param.name3) > -1
+        }
+        filters.push(f_name3)
+        var f_name4 = function(item) {
+          if (!param.name4) return true
+          var flag = false
+          for(let i=0, len=param.name4.length; i<len; i++) {
+            var c = param.name4[i]
+            if (c === '>D3') flag = flag || item.name4>'D3'
+            else if (c === '=D3') flag = flag || item.name4 === 'D3'
+            else flag = flag || item.name4 < 'D3'
+          }
+          return flag
+        }
+        filters.push(f_name4)
+        var d = self.data.filter(function(item){
+          var flag = true
+          for(var i=0, len=filters.length; i<len; i++) {
+            flag = flag && filters[i](item)
+          }
+          return flag
+        })
+        callback(d, {total: d.length})
+      }
+    }
+    var data = []
+    data.push({id:1, name1:'A1', name2:'B1', name3:'C1', name4:'D1'})
+    data.push({id:2, name1:'A2', name2:'B2', name3:'C2', name4:'D2'})
+    data.push({id:3, name1:'A3', name2:'B3', name3:'C3', name4:'D3'})
+    data.push({id:4, name1:'A4', name2:'B4', name3:'C4', name4:'D4'})
+    data.push({id:5, name1:'A5', name2:'B5', name3:'C5', name4:'D5'})
+    data.push({id:6, name1:'A6', name2:'B6', name3:'C6', name4:'D6'})
+    data.push({id:7, name1:'A7', name2:'B7', name3:'C7', name4:'D7'})
+    return {table:table, data: data}
+  },
+  methods: {
+    handleDrag: function (v) {
+      console.log(v)
+    }
+  }
+})
+</script>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="table6.html"><span class="title">通用表格</span></a></div>
+          <div class="right"><a href="query1.html"><span class="label">Next: </span><span class="title">基本查询</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

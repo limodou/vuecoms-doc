@@ -179,6 +179,17 @@ var ex_table_02 = new Vue({
     table.columns.push({
       name: 'title',
       title: '合并/Very Long Title Test',
+      filterable: {
+          type: 'flat-select',
+          options: {
+            choices: [
+              {value: '', label: '全部'},
+              {value: '>25', label: '大于25条'},
+              {value: '<25', label: '小于25条'}
+            ]
+          }
+      },
+      width: 100,
       sortable: true,
       fixed: 'left',
       showTitle: false,

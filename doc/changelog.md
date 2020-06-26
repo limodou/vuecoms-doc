@@ -1,5 +1,24 @@
 # 修改记录
 
+## V3.5
+* 修复 Grid 在 tree 模式下，checkbox 选中状态的处理 BUG
+* 修复 Grid 的 onSaveRow 在行编辑处理时，未将回调返回的数据与正在编辑的数据进行合并的 BUG
+* 扩充 Dialog 和 ConfirmDialog 的参数，使其基本与 iview 一致
+* 优化 List.group 公共方法，增加 visit 的回调
+* 优化 Select 的 onCreateItem 可以是 Promise
+* 修复 checkbox 静态展示不正确的 BUG
+* 优化 Build 中 string 的校验属性 trim 缺省生效
+* 优化 Build 中字段生成的 key 的机制，为自动生成
+* 优化 Build 的 date 组件中的日期格式可以使用 options.format 的设置，而不再写死
+* 修复 Grid 在作为 Build 的嵌入组件时，当 value 发生变化时，对于已经存在的 selectedRows 的数据处理不正确的 BUG
+* 修复分页组件跳转页号 Input 可以输入字母的 BUG
+* 增加 Grid 表头列可以配置过滤器的功能，通过 filterable 属性，类似于行编辑 editor 的配置方式
+* 增加 flat-select 组件，支持多选用于过滤器中
+* 将 grid 等配置独立出来，可以通过 vue.$vuecomsConfig 来进行覆盖，进行定制化处理
+* 优化了 clickoutside 对多元素的绑定，用在过滤器的 dropdown 弹出框里
+* 对 query 的展示收起的文本也可以定制，可以用于客户化
+* 对 vuecoms 提供的 input 组件增加对原生 iview 的事件的处理，通过 $listeners
+
 ## V3.4
 * Grid theme 新增 mini 风格，去掉表头的灰色背景，同时增加 zebra 参数，用控制是否显示表格行斑马线，缺省为 true
 * 修复 Toast 点击关闭时，会调用两次 onClose 的 BUG

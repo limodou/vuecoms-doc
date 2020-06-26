@@ -839,7 +839,7 @@ var _keys = __webpack_require__(17);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _stringify = __webpack_require__(45);
+var _stringify = __webpack_require__(37);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -1117,7 +1117,7 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 
 var global = __webpack_require__(9);
 var core = __webpack_require__(6);
-var ctx = __webpack_require__(42);
+var ctx = __webpack_require__(43);
 var hide = __webpack_require__(28);
 var PROTOTYPE = 'prototype';
 
@@ -1459,7 +1459,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TYPE_VALUE_RESOLVER_MAP = exports.DEFAULT_FORMATS = exports.formatDateLabels = exports.initTimeDate = exports.nextMonth = exports.prevMonth = exports.siblingMonth = exports.getFirstDayOfMonth = exports.getDayCountOfMonth = exports.parseDate = exports.formatDate = exports.isInRange = exports.clearHours = exports.toDate = undefined;
 
-var _slicedToArray2 = __webpack_require__(38);
+var _slicedToArray2 = __webpack_require__(39);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -1895,7 +1895,7 @@ module.exports = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(21);
-var createDesc = __webpack_require__(43);
+var createDesc = __webpack_require__(44);
 module.exports = __webpack_require__(24) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
@@ -2069,6 +2069,12 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = { "default": __webpack_require__(345), __esModule: true };
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -2216,7 +2222,7 @@ function simpleCheckForValidColor(data) {
 }
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2273,7 +2279,7 @@ exports.default = function () {
 }();
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
@@ -2284,7 +2290,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
@@ -2297,7 +2303,7 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -2308,7 +2314,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
@@ -2334,7 +2340,7 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -2348,7 +2354,7 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2370,12 +2376,6 @@ __webpack_require__(93)(String, 'String', function (iterated) {
   return { value: point, done: false };
 });
 
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(345), __esModule: true };
 
 /***/ }),
 /* 46 */
@@ -2929,7 +2929,7 @@ module.exports = __webpack_require__(6).getIteratorMethod = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(41);
+var cof = __webpack_require__(42);
 var TAG = __webpack_require__(11)('toStringTag');
 // ES3 wrong here
 var ARG = cof(function () { return arguments; }()) == 'Arguments';
@@ -3135,7 +3135,7 @@ var _handleEscapeMixin = __webpack_require__(143);
 
 var _handleEscapeMixin2 = _interopRequireDefault(_handleEscapeMixin);
 
-var _utils = __webpack_require__(37);
+var _utils = __webpack_require__(38);
 
 var _dom = __webpack_require__(14);
 
@@ -3881,7 +3881,7 @@ module.exports = function (object, names) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(41);
+var cof = __webpack_require__(42);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -4368,7 +4368,7 @@ module.exports = document && document.documentElement;
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has = __webpack_require__(26);
-var toObject = __webpack_require__(39);
+var toObject = __webpack_require__(40);
 var IE_PROTO = __webpack_require__(63)('IE_PROTO');
 var ObjectProto = Object.prototype;
 
@@ -4399,7 +4399,7 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var pIE = __webpack_require__(51);
-var createDesc = __webpack_require__(43);
+var createDesc = __webpack_require__(44);
 var toIObject = __webpack_require__(27);
 var toPrimitive = __webpack_require__(68);
 var has = __webpack_require__(26);
@@ -8623,7 +8623,7 @@ var _assign = __webpack_require__(13);
 
 var _assign2 = _interopRequireDefault(_assign);
 
-var _stringify = __webpack_require__(45);
+var _stringify = __webpack_require__(37);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -10169,7 +10169,7 @@ var _prefixMixin = __webpack_require__(48);
 
 var _prefixMixin2 = _interopRequireDefault(_prefixMixin);
 
-var _utils = __webpack_require__(37);
+var _utils = __webpack_require__(38);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11684,7 +11684,7 @@ var _prefixMixin = __webpack_require__(48);
 
 var _prefixMixin2 = _interopRequireDefault(_prefixMixin);
 
-var _utils = __webpack_require__(37);
+var _utils = __webpack_require__(38);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11846,7 +11846,7 @@ var _prefixMixin = __webpack_require__(48);
 
 var _prefixMixin2 = _interopRequireDefault(_prefixMixin);
 
-var _utils = __webpack_require__(37);
+var _utils = __webpack_require__(38);
 
 var _dom = __webpack_require__(14);
 
@@ -11948,7 +11948,7 @@ var _prefixMixin = __webpack_require__(48);
 
 var _prefixMixin2 = _interopRequireDefault(_prefixMixin);
 
-var _utils = __webpack_require__(37);
+var _utils = __webpack_require__(38);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12048,7 +12048,7 @@ var _prefixMixin = __webpack_require__(48);
 
 var _prefixMixin2 = _interopRequireDefault(_prefixMixin);
 
-var _utils = __webpack_require__(37);
+var _utils = __webpack_require__(38);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12243,11 +12243,11 @@ var _typeof2 = __webpack_require__(15);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
-var _stringify = __webpack_require__(45);
+var _stringify = __webpack_require__(37);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
-var _slicedToArray2 = __webpack_require__(38);
+var _slicedToArray2 = __webpack_require__(39);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -13255,7 +13255,7 @@ var _extends2 = __webpack_require__(29);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _slicedToArray2 = __webpack_require__(38);
+var _slicedToArray2 = __webpack_require__(39);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -14436,7 +14436,7 @@ var _defineProperty2 = __webpack_require__(2);
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
-var _slicedToArray2 = __webpack_require__(38);
+var _slicedToArray2 = __webpack_require__(39);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -14807,7 +14807,7 @@ var _defineProperty2 = __webpack_require__(2);
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
-var _slicedToArray2 = __webpack_require__(38);
+var _slicedToArray2 = __webpack_require__(39);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -15865,7 +15865,7 @@ module.exports = function (O, D) {
 /* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ctx = __webpack_require__(42);
+var ctx = __webpack_require__(43);
 var invoke = __webpack_require__(431);
 var html = __webpack_require__(96);
 var cel = __webpack_require__(67);
@@ -15908,7 +15908,7 @@ if (!setTask || !clearTask) {
     delete queue[id];
   };
   // Node.js 0.8-
-  if (__webpack_require__(41)(process) == 'process') {
+  if (__webpack_require__(42)(process) == 'process') {
     defer = function (id) {
       process.nextTick(ctx(run, id, 1));
     };
@@ -20452,7 +20452,7 @@ var _isFinite = __webpack_require__(144);
 
 var _isFinite2 = _interopRequireDefault(_isFinite);
 
-var _slicedToArray2 = __webpack_require__(38);
+var _slicedToArray2 = __webpack_require__(39);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -21427,7 +21427,7 @@ var _getIterator2 = __webpack_require__(30);
 
 var _getIterator3 = _interopRequireDefault(_getIterator2);
 
-var _stringify = __webpack_require__(45);
+var _stringify = __webpack_require__(37);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -25796,6 +25796,10 @@ var _assign = __webpack_require__(13);
 
 var _assign2 = _interopRequireDefault(_assign);
 
+var _stringify = __webpack_require__(37);
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
 var _getIterator2 = __webpack_require__(30);
 
 var _getIterator3 = _interopRequireDefault(_getIterator2);
@@ -25957,6 +25961,11 @@ exports.default = {
         onlyLeaf: {
             type: Boolean,
             default: true
+        },
+
+        parentDisabledWhenOnlyLeaf: {
+            type: Boolean,
+            default: true
         }
     },
     data: function data() {
@@ -26001,7 +26010,7 @@ exports.default = {
                     for (var _iterator = (0, _getIterator3.default)(parent), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                         var c = _step.value;
 
-                        c.disabled = Boolean(this.onlyLeaf && (c.children && c.children.length || 'loading' in c && !c.loadding));
+                        c.disabled = Boolean(this.onlyLeaf && this.parentDisabledWhenOnlyLeaf && (c.children && c.children.length || 'loading' in c && !c.loadding));
                         if (c.children && c.children.length) {
                             f(c.children);
                         }
@@ -26035,7 +26044,7 @@ exports.default = {
         showPlaceholder: function showPlaceholder() {
             var status = false;
 
-            if (!this.model || Array.isArray(this.model) && this.model.length === 0) {
+            if (!this.model || (0, _stringify2.default)(this.model) === '{}' || Array.isArray(this.model) && this.model.length === 0) {
                 status = true;
             }
             return status;
@@ -26139,6 +26148,14 @@ exports.default = {
                 this.removeTag(this.model.length - 1);
             }
         },
+        reset: function reset() {
+            var model = this.multiple ? [] : this.labelInValue ? {} : '';
+            this.currentData = [];
+            this.oldData = null;
+            this.selectedSingle = '';
+            this.selectedMultiple = [];
+            this.model = model;
+        },
         clearSingleSelect: function clearSingleSelect() {
             var _this3 = this;
 
@@ -26189,36 +26206,56 @@ exports.default = {
                 }
             }
         },
+        pushData: function pushData(model, selectedMultiple, node) {
+            selectedMultiple.push((0, _assign2.default)({}, node, { value: node.id || node.title, label: node.title }));
+            model.push(node.id);
+        },
         handleChecked: function handleChecked(items, node) {
-            var _this4 = this;
-
             if (this.multiple) {
-                var model = this.model.slice();
+                var model = [];
+                var selectedMultiple = [];
+                var hasChildren = void 0;
+                var _iteratorNormalCompletion2 = true;
+                var _didIteratorError2 = false;
+                var _iteratorError2 = undefined;
 
-                if (node.checked) {
-                    if ((this.onlyLeaf && !node[this.childrenKey] || !this.onlyLeaf) && this.model.indexOf(node.id) === -1) {
-                        this.selectedMultiple.push((0, _assign2.default)({}, node, { value: node.id || node.title, label: node.title }));
-                        model.push(node.id);
-                        this.model = model;
+                try {
+                    for (var _iterator2 = (0, _getIterator3.default)(items), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                        var item = _step2.value;
+
+                        hasChildren = item[this.childrenKey] ? item[this.childrenKey].length : null;
+                        if (this.onlyLeaf) {
+                            if (!hasChildren) {
+                                this.pushData(model, selectedMultiple, item);
+                            }
+                        } else {
+                            this.pushData(model, selectedMultiple, item);
+                        }
                     }
-                } else {
-                    this.selectedMultiple = this.selectedMultiple.filter(function (x) {
-                        (0, _newArrowCheck3.default)(this, _this4);
-                        return x.value !== node.id;
-                    }.bind(this));
-                    var index = this.model.indexOf(node.id);
-                    if (index > -1) {
-                        model.splice(index, 1);
-                        this.model = model;
+                } catch (err) {
+                    _didIteratorError2 = true;
+                    _iteratorError2 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                            _iterator2.return();
+                        }
+                    } finally {
+                        if (_didIteratorError2) {
+                            throw _iteratorError2;
+                        }
                     }
                 }
+
+                this.selectedMultiple = selectedMultiple;
+                this.model = model;
             }
         },
         deselect: function deselect(value) {
-            var _this5 = this;
+            var _this4 = this;
 
             var _search = function (parent) {
-                (0, _newArrowCheck3.default)(this, _this5);
+                (0, _newArrowCheck3.default)(this, _this4);
 
                 if (parent.id === value) {
                     if (this.multiple) {
@@ -26230,60 +26267,60 @@ exports.default = {
                     return true;
                 } else {
                     if (parent[this.childrenKey] && parent[this.childrenKey].length > 0) {
-                        var _iteratorNormalCompletion2 = true;
-                        var _didIteratorError2 = false;
-                        var _iteratorError2 = undefined;
+                        var _iteratorNormalCompletion3 = true;
+                        var _didIteratorError3 = false;
+                        var _iteratorError3 = undefined;
 
                         try {
-                            for (var _iterator2 = (0, _getIterator3.default)(parent[this.childrenKey]), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                                var item = _step2.value;
+                            for (var _iterator3 = (0, _getIterator3.default)(parent[this.childrenKey]), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                                var item = _step3.value;
 
                                 if (_search(item)) return true;
                             }
                         } catch (err) {
-                            _didIteratorError2 = true;
-                            _iteratorError2 = err;
+                            _didIteratorError3 = true;
+                            _iteratorError3 = err;
                         } finally {
                             try {
-                                if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                                    _iterator2.return();
+                                if (!_iteratorNormalCompletion3 && _iterator3.return) {
+                                    _iterator3.return();
                                 }
                             } finally {
-                                if (_didIteratorError2) {
-                                    throw _iteratorError2;
+                                if (_didIteratorError3) {
+                                    throw _iteratorError3;
                                 }
                             }
                         }
                     }
                 }
             }.bind(this);
-            var _iteratorNormalCompletion3 = true;
-            var _didIteratorError3 = false;
-            var _iteratorError3 = undefined;
+            var _iteratorNormalCompletion4 = true;
+            var _didIteratorError4 = false;
+            var _iteratorError4 = undefined;
 
             try {
-                for (var _iterator3 = (0, _getIterator3.default)(this.currentData), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-                    var item = _step3.value;
+                for (var _iterator4 = (0, _getIterator3.default)(this.currentData), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+                    var item = _step4.value;
 
                     if (_search(item)) return true;
                 }
             } catch (err) {
-                _didIteratorError3 = true;
-                _iteratorError3 = err;
+                _didIteratorError4 = true;
+                _iteratorError4 = err;
             } finally {
                 try {
-                    if (!_iteratorNormalCompletion3 && _iterator3.return) {
-                        _iterator3.return();
+                    if (!_iteratorNormalCompletion4 && _iterator4.return) {
+                        _iterator4.return();
                     }
                 } finally {
-                    if (_didIteratorError3) {
-                        throw _iteratorError3;
+                    if (_didIteratorError4) {
+                        throw _iteratorError4;
                     }
                 }
             }
         },
         rebuild: function rebuild() {
-            var _this6 = this;
+            var _this5 = this;
 
             var keys = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ['title'];
 
@@ -26291,26 +26328,26 @@ exports.default = {
             var stack = [];
             var query = this.query;
             var insertData = function (stack, node) {
-                (0, _newArrowCheck3.default)(this, _this6);
+                (0, _newArrowCheck3.default)(this, _this5);
 
                 var p = tree;
                 var found = void 0;
-                var _iteratorNormalCompletion4 = true;
-                var _didIteratorError4 = false;
-                var _iteratorError4 = undefined;
+                var _iteratorNormalCompletion5 = true;
+                var _didIteratorError5 = false;
+                var _iteratorError5 = undefined;
 
                 try {
-                    for (var _iterator4 = (0, _getIterator3.default)(stack), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-                        var item = _step4.value;
+                    for (var _iterator5 = (0, _getIterator3.default)(stack), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+                        var item = _step5.value;
 
                         found = false;
-                        var _iteratorNormalCompletion5 = true;
-                        var _didIteratorError5 = false;
-                        var _iteratorError5 = undefined;
+                        var _iteratorNormalCompletion6 = true;
+                        var _didIteratorError6 = false;
+                        var _iteratorError6 = undefined;
 
                         try {
-                            for (var _iterator5 = (0, _getIterator3.default)(p), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-                                var c = _step5.value;
+                            for (var _iterator6 = (0, _getIterator3.default)(p), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+                                var c = _step6.value;
 
                                 if (c.id === item.id) {
                                     if (!c[this.childrenKey]) c[this.childrenKey] = [];
@@ -26320,16 +26357,16 @@ exports.default = {
                                 }
                             }
                         } catch (err) {
-                            _didIteratorError5 = true;
-                            _iteratorError5 = err;
+                            _didIteratorError6 = true;
+                            _iteratorError6 = err;
                         } finally {
                             try {
-                                if (!_iteratorNormalCompletion5 && _iterator5.return) {
-                                    _iterator5.return();
+                                if (!_iteratorNormalCompletion6 && _iterator6.return) {
+                                    _iterator6.return();
                                 }
                             } finally {
-                                if (_didIteratorError5) {
-                                    throw _iteratorError5;
+                                if (_didIteratorError6) {
+                                    throw _iteratorError6;
                                 }
                             }
                         }
@@ -26346,16 +26383,16 @@ exports.default = {
                         }
                     }
                 } catch (err) {
-                    _didIteratorError4 = true;
-                    _iteratorError4 = err;
+                    _didIteratorError5 = true;
+                    _iteratorError5 = err;
                 } finally {
                     try {
-                        if (!_iteratorNormalCompletion4 && _iterator4.return) {
-                            _iterator4.return();
+                        if (!_iteratorNormalCompletion5 && _iterator5.return) {
+                            _iterator5.return();
                         }
                     } finally {
-                        if (_didIteratorError4) {
-                            throw _iteratorError4;
+                        if (_didIteratorError5) {
+                            throw _iteratorError5;
                         }
                     }
                 }
@@ -26370,36 +26407,36 @@ exports.default = {
             }.bind(this);
 
             var match = function (node) {
-                (0, _newArrowCheck3.default)(this, _this6);
-                var _iteratorNormalCompletion6 = true;
-                var _didIteratorError6 = false;
-                var _iteratorError6 = undefined;
+                (0, _newArrowCheck3.default)(this, _this5);
+                var _iteratorNormalCompletion7 = true;
+                var _didIteratorError7 = false;
+                var _iteratorError7 = undefined;
 
                 try {
-                    for (var _iterator6 = (0, _getIterator3.default)(keys), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
-                        var k = _step6.value;
+                    for (var _iterator7 = (0, _getIterator3.default)(keys), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+                        var k = _step7.value;
 
                         if (node[k] && (node[k] + '').indexOf(query) > -1) {
                             return true;
                         }
                     }
                 } catch (err) {
-                    _didIteratorError6 = true;
-                    _iteratorError6 = err;
+                    _didIteratorError7 = true;
+                    _iteratorError7 = err;
                 } finally {
                     try {
-                        if (!_iteratorNormalCompletion6 && _iterator6.return) {
-                            _iterator6.return();
+                        if (!_iteratorNormalCompletion7 && _iterator7.return) {
+                            _iterator7.return();
                         }
                     } finally {
-                        if (_didIteratorError6) {
-                            throw _iteratorError6;
+                        if (_didIteratorError7) {
+                            throw _iteratorError7;
                         }
                     }
                 }
             }.bind(this);
             var find = function (parent) {
-                (0, _newArrowCheck3.default)(this, _this6);
+                (0, _newArrowCheck3.default)(this, _this5);
 
                 if (!parent[this.childrenKey] || parent[this.childrenKey] && parent[this.childrenKey].length === 0) {
                     if ((this.multiple && this.model.indexOf(parent.id) === -1 || !this.multiple && self.model !== parent.id) && match(parent)) insertData(stack, parent);
@@ -26408,27 +26445,27 @@ exports.default = {
                         if (match(parent)) insertData(stack, parent);
                     }
                     stack.push(parent);
-                    var _iteratorNormalCompletion7 = true;
-                    var _didIteratorError7 = false;
-                    var _iteratorError7 = undefined;
+                    var _iteratorNormalCompletion8 = true;
+                    var _didIteratorError8 = false;
+                    var _iteratorError8 = undefined;
 
                     try {
-                        for (var _iterator7 = (0, _getIterator3.default)(parent[this.childrenKey]), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-                            var c = _step7.value;
+                        for (var _iterator8 = (0, _getIterator3.default)(parent[this.childrenKey]), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+                            var c = _step8.value;
 
                             find(c);
                         }
                     } catch (err) {
-                        _didIteratorError7 = true;
-                        _iteratorError7 = err;
+                        _didIteratorError8 = true;
+                        _iteratorError8 = err;
                     } finally {
                         try {
-                            if (!_iteratorNormalCompletion7 && _iterator7.return) {
-                                _iterator7.return();
+                            if (!_iteratorNormalCompletion8 && _iterator8.return) {
+                                _iterator8.return();
                             }
                         } finally {
-                            if (_didIteratorError7) {
-                                throw _iteratorError7;
+                            if (_didIteratorError8) {
+                                throw _iteratorError8;
                             }
                         }
                     }
@@ -26437,27 +26474,27 @@ exports.default = {
                 }
             }.bind(this);
             if (this.oldData && this.oldData.length > 0) {
-                var _iteratorNormalCompletion8 = true;
-                var _didIteratorError8 = false;
-                var _iteratorError8 = undefined;
+                var _iteratorNormalCompletion9 = true;
+                var _didIteratorError9 = false;
+                var _iteratorError9 = undefined;
 
                 try {
-                    for (var _iterator8 = (0, _getIterator3.default)(this.oldData), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
-                        var item = _step8.value;
+                    for (var _iterator9 = (0, _getIterator3.default)(this.oldData), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+                        var item = _step9.value;
 
                         find(item);
                     }
                 } catch (err) {
-                    _didIteratorError8 = true;
-                    _iteratorError8 = err;
+                    _didIteratorError9 = true;
+                    _iteratorError9 = err;
                 } finally {
                     try {
-                        if (!_iteratorNormalCompletion8 && _iterator8.return) {
-                            _iterator8.return();
+                        if (!_iteratorNormalCompletion9 && _iterator9.return) {
+                            _iterator9.return();
                         }
                     } finally {
-                        if (_didIteratorError8) {
-                            throw _iteratorError8;
+                        if (_didIteratorError9) {
+                            throw _iteratorError9;
                         }
                     }
                 }
@@ -26465,76 +26502,76 @@ exports.default = {
             return tree;
         },
         checkItems: function checkItems() {
-            var _this7 = this;
+            var _this6 = this;
 
             var find = function (parent) {
-                (0, _newArrowCheck3.default)(this, _this7);
+                (0, _newArrowCheck3.default)(this, _this6);
 
                 if (this.model.indexOf(parent.id) > -1) {
                     var changed = { checked: true, nodeKey: parent.nodeKey };
                     this.$refs.selector.handleCheck(changed);
                 }
                 if (parent[this.childrenKey] && parent[this.childrenKey].length > 0) {
-                    var _iteratorNormalCompletion9 = true;
-                    var _didIteratorError9 = false;
-                    var _iteratorError9 = undefined;
+                    var _iteratorNormalCompletion10 = true;
+                    var _didIteratorError10 = false;
+                    var _iteratorError10 = undefined;
 
                     try {
-                        for (var _iterator9 = (0, _getIterator3.default)(parent[this.childrenKey]), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
-                            var c = _step9.value;
+                        for (var _iterator10 = (0, _getIterator3.default)(parent[this.childrenKey]), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+                            var c = _step10.value;
 
                             find(c);
                         }
                     } catch (err) {
-                        _didIteratorError9 = true;
-                        _iteratorError9 = err;
+                        _didIteratorError10 = true;
+                        _iteratorError10 = err;
                     } finally {
                         try {
-                            if (!_iteratorNormalCompletion9 && _iterator9.return) {
-                                _iterator9.return();
+                            if (!_iteratorNormalCompletion10 && _iterator10.return) {
+                                _iterator10.return();
                             }
                         } finally {
-                            if (_didIteratorError9) {
-                                throw _iteratorError9;
+                            if (_didIteratorError10) {
+                                throw _iteratorError10;
                             }
                         }
                     }
                 }
             }.bind(this);
-            var _iteratorNormalCompletion10 = true;
-            var _didIteratorError10 = false;
-            var _iteratorError10 = undefined;
+            var _iteratorNormalCompletion11 = true;
+            var _didIteratorError11 = false;
+            var _iteratorError11 = undefined;
 
             try {
-                for (var _iterator10 = (0, _getIterator3.default)(this.currentData), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
-                    var item = _step10.value;
+                for (var _iterator11 = (0, _getIterator3.default)(this.currentData), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
+                    var item = _step11.value;
 
                     find(item);
                 }
             } catch (err) {
-                _didIteratorError10 = true;
-                _iteratorError10 = err;
+                _didIteratorError11 = true;
+                _iteratorError11 = err;
             } finally {
                 try {
-                    if (!_iteratorNormalCompletion10 && _iterator10.return) {
-                        _iterator10.return();
+                    if (!_iteratorNormalCompletion11 && _iterator11.return) {
+                        _iterator11.return();
                     }
                 } finally {
-                    if (_didIteratorError10) {
-                        throw _iteratorError10;
+                    if (_didIteratorError11) {
+                        throw _iteratorError11;
                     }
                 }
             }
         },
         loadData: function loadData(item, callback) {
-            var _this8 = this;
+            var _this7 = this;
 
             if (!this.remoteLoadData) return;
             if (item && callback) {
                 this.remoteLoadData(item, callback);
             } else {
                 var cb = function (data) {
-                    (0, _newArrowCheck3.default)(this, _this8);
+                    (0, _newArrowCheck3.default)(this, _this7);
 
                     this.currentData = data;
                     this.notFound = this.currentData.length === 0;
@@ -26545,61 +26582,16 @@ exports.default = {
         },
         isSelected: function isSelected(item) {
             if (this.multiple) {
-                var _iteratorNormalCompletion11 = true;
-                var _didIteratorError11 = false;
-                var _iteratorError11 = undefined;
-
-                try {
-                    for (var _iterator11 = (0, _getIterator3.default)(this.selectedMultiple), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
-                        var c = _step11.value;
-
-                        if (item.id === c.value) {
-                            return true;
-                        }
-                    }
-                } catch (err) {
-                    _didIteratorError11 = true;
-                    _iteratorError11 = err;
-                } finally {
-                    try {
-                        if (!_iteratorNormalCompletion11 && _iterator11.return) {
-                            _iterator11.return();
-                        }
-                    } finally {
-                        if (_didIteratorError11) {
-                            throw _iteratorError11;
-                        }
-                    }
-                }
-            } else {
-                if (item.title === this.selectedSingle) {
-                    return true;
-                }
-            }
-        },
-        handleRemoteLoadData: function handleRemoteLoadData(item, callback) {
-            this.loadData(item, callback);
-        },
-        handleUpdatePopper: function handleUpdatePopper() {
-            var _this9 = this;
-
-            var walk = function (data) {
-                (0, _newArrowCheck3.default)(this, _this9);
                 var _iteratorNormalCompletion12 = true;
                 var _didIteratorError12 = false;
                 var _iteratorError12 = undefined;
 
                 try {
-                    for (var _iterator12 = (0, _getIterator3.default)(data), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
-                        var item = _step12.value;
+                    for (var _iterator12 = (0, _getIterator3.default)(this.selectedMultiple), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
+                        var c = _step12.value;
 
-                        if (this.isSelected(item)) {
-                            this.$set(item, 'checked', true);
-
-                            this.$set(item, 'selected', true);
-                        }
-                        if (item[this.childrenKey] && item[this.childrenKey].length > 0) {
-                            walk(item[this.childrenKey]);
+                        if (item.id === c.value) {
+                            return true;
                         }
                     }
                 } catch (err) {
@@ -26616,12 +26608,62 @@ exports.default = {
                         }
                     }
                 }
+            } else {
+                if (item.title === this.selectedSingle) {
+                    return true;
+                }
+            }
+        },
+        handleRemoteLoadData: function handleRemoteLoadData(item, callback) {
+            this.loadData(item, callback);
+        },
+        handleUpdatePopper: function handleUpdatePopper() {
+            var _this8 = this;
+
+            var walk = function (data) {
+                (0, _newArrowCheck3.default)(this, _this8);
+                var _iteratorNormalCompletion13 = true;
+                var _didIteratorError13 = false;
+                var _iteratorError13 = undefined;
+
+                try {
+                    for (var _iterator13 = (0, _getIterator3.default)(data), _step13; !(_iteratorNormalCompletion13 = (_step13 = _iterator13.next()).done); _iteratorNormalCompletion13 = true) {
+                        var item = _step13.value;
+
+                        var flag = this.isSelected(item);
+                        if (this.multiple) {
+                            if (!item.checked) {
+                                this.$set(item, 'checked', flag);
+                            }
+                        } else {
+                            if (!item.selected) {
+                                this.$set(item, 'selected', flag);
+                            }
+                        }
+                        if (item[this.childrenKey] && item[this.childrenKey].length > 0) {
+                            walk(item[this.childrenKey]);
+                        }
+                    }
+                } catch (err) {
+                    _didIteratorError13 = true;
+                    _iteratorError13 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion13 && _iterator13.return) {
+                            _iterator13.return();
+                        }
+                    } finally {
+                        if (_didIteratorError13) {
+                            throw _iteratorError13;
+                        }
+                    }
+                }
             }.bind(this);
 
             walk(this.currentData);
         },
         doQuery: function doQuery(val) {
-            var _this10 = this;
+            var _this9 = this;
 
             if (this.remote && this.remoteQuery) {
                 if (val) {
@@ -26629,7 +26671,7 @@ exports.default = {
                         this.oldData = this.currentData;
                     }
                     var cb = function (data) {
-                        (0, _newArrowCheck3.default)(this, _this10);
+                        (0, _newArrowCheck3.default)(this, _this9);
 
                         this.currentData = data;
                         this.notFound = this.currentData.length === 0;
@@ -26665,14 +26707,17 @@ exports.default = {
         value: {
             immediate: true,
             handler: function handler(val) {
-                var _this11 = this;
+                var _this10 = this;
 
+                if (this.multiple) {
+                    if (!val) val = [];
+                }
                 if ((0, _assist.deepCompare)(val, this.model)) return;
                 var model = this.model;
                 if (this.labelInValue) {
                     if (this.multiple) {
                         this.model = val.map(function (x) {
-                            (0, _newArrowCheck3.default)(this, _this11);
+                            (0, _newArrowCheck3.default)(this, _this10);
                             return x.value;
                         }.bind(this));
                         this.currentLabel = val.slice();
@@ -26687,28 +26732,28 @@ exports.default = {
                     this.query = '';
                     this.selectedMultiple = [];
                     this.$nextTick(function () {
-                        (0, _newArrowCheck3.default)(this, _this11);
-                        var _iteratorNormalCompletion13 = true;
-                        var _didIteratorError13 = false;
-                        var _iteratorError13 = undefined;
+                        (0, _newArrowCheck3.default)(this, _this10);
+                        var _iteratorNormalCompletion14 = true;
+                        var _didIteratorError14 = false;
+                        var _iteratorError14 = undefined;
 
                         try {
-                            for (var _iterator13 = (0, _getIterator3.default)(model), _step13; !(_iteratorNormalCompletion13 = (_step13 = _iterator13.next()).done); _iteratorNormalCompletion13 = true) {
-                                var item = _step13.value;
+                            for (var _iterator14 = (0, _getIterator3.default)(model), _step14; !(_iteratorNormalCompletion14 = (_step14 = _iterator14.next()).done); _iteratorNormalCompletion14 = true) {
+                                var item = _step14.value;
 
                                 this.deselect(item);
                             }
                         } catch (err) {
-                            _didIteratorError13 = true;
-                            _iteratorError13 = err;
+                            _didIteratorError14 = true;
+                            _iteratorError14 = err;
                         } finally {
                             try {
-                                if (!_iteratorNormalCompletion13 && _iterator13.return) {
-                                    _iterator13.return();
+                                if (!_iteratorNormalCompletion14 && _iterator14.return) {
+                                    _iterator14.return();
                                 }
                             } finally {
-                                if (_didIteratorError13) {
-                                    throw _iteratorError13;
+                                if (_didIteratorError14) {
+                                    throw _iteratorError14;
                                 }
                             }
                         }
@@ -26719,7 +26764,7 @@ exports.default = {
                         this.query = '';
                         this.selectedSingle = '';
                         this.$nextTick(function () {
-                            (0, _newArrowCheck3.default)(this, _this11);
+                            (0, _newArrowCheck3.default)(this, _this10);
 
                             this.deselect(model);
                         }.bind(this));
@@ -26784,9 +26829,6 @@ exports.default = {
                 if (this.filterable) {
                     if (this.multiple) {
                         this.$refs.input.focus();
-                        if (!this.query) {
-                            this.checkItems();
-                        }
                     } else {
                         if (!this.autoComplete) this.$refs.input.select();
                     }
@@ -27215,7 +27257,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 (0, _elementDataset2.default)();
 
 var API = (0, _extends3.default)({
-    version: '3.3.3',
+    version: '3.4.0',
     locale: _index2.default.use,
     i18n: _index2.default.i18n,
     install: install,
@@ -27245,8 +27287,8 @@ module.exports = __webpack_require__(6).Object.keys;
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
-var toObject = __webpack_require__(39);
-var $keys = __webpack_require__(40);
+var toObject = __webpack_require__(40);
+var $keys = __webpack_require__(41);
 
 __webpack_require__(66)('keys', function () {
   return function keys(it) {
@@ -27322,10 +27364,10 @@ $export($export.S + $export.F, 'Object', { assign: __webpack_require__(256) });
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(40);
+var getKeys = __webpack_require__(41);
 var gOPS = __webpack_require__(69);
 var pIE = __webpack_require__(51);
-var toObject = __webpack_require__(39);
+var toObject = __webpack_require__(40);
 var IObject = __webpack_require__(87);
 var $assign = Object.assign;
 
@@ -27536,7 +27578,7 @@ module.exports = { "default": __webpack_require__(266), __esModule: true };
 /* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(44);
+__webpack_require__(45);
 __webpack_require__(54);
 module.exports = __webpack_require__(70).f('iterator');
 
@@ -27571,7 +27613,7 @@ module.exports = function (TO_STRING) {
 "use strict";
 
 var create = __webpack_require__(95);
-var descriptor = __webpack_require__(43);
+var descriptor = __webpack_require__(44);
 var setToStringTag = __webpack_require__(53);
 var IteratorPrototype = {};
 
@@ -27590,7 +27632,7 @@ module.exports = function (Constructor, NAME, next) {
 
 var dP = __webpack_require__(21);
 var anObject = __webpack_require__(22);
-var getKeys = __webpack_require__(40);
+var getKeys = __webpack_require__(41);
 
 module.exports = __webpack_require__(24) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
@@ -27702,12 +27744,12 @@ var isArray = __webpack_require__(278);
 var anObject = __webpack_require__(22);
 var toIObject = __webpack_require__(27);
 var toPrimitive = __webpack_require__(68);
-var createDesc = __webpack_require__(43);
+var createDesc = __webpack_require__(44);
 var _create = __webpack_require__(95);
 var gOPNExt = __webpack_require__(279);
 var $GOPD = __webpack_require__(99);
 var $DP = __webpack_require__(21);
-var $keys = __webpack_require__(40);
+var $keys = __webpack_require__(41);
 var gOPD = $GOPD.f;
 var dP = $DP.f;
 var gOPN = gOPNExt.f;
@@ -27982,7 +28024,7 @@ var meta = module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(40);
+var getKeys = __webpack_require__(41);
 var gOPS = __webpack_require__(69);
 var pIE = __webpack_require__(51);
 module.exports = function (it) {
@@ -28003,7 +28045,7 @@ module.exports = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
-var cof = __webpack_require__(41);
+var cof = __webpack_require__(42);
 module.exports = Array.isArray || function isArray(arg) {
   return cof(arg) == 'Array';
 };
@@ -28053,7 +28095,7 @@ __webpack_require__(71)('observable');
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(54);
-__webpack_require__(44);
+__webpack_require__(45);
 module.exports = __webpack_require__(283);
 
 
@@ -28359,7 +28401,7 @@ module.exports = __webpack_require__(6).Object.getPrototypeOf;
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
-var toObject = __webpack_require__(39);
+var toObject = __webpack_require__(40);
 var $getPrototypeOf = __webpack_require__(97);
 
 __webpack_require__(66)('getPrototypeOf', function () {
@@ -29818,7 +29860,7 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 /* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(44);
+__webpack_require__(45);
 __webpack_require__(348);
 module.exports = __webpack_require__(6).Array.from;
 
@@ -29829,9 +29871,9 @@ module.exports = __webpack_require__(6).Array.from;
 
 "use strict";
 
-var ctx = __webpack_require__(42);
+var ctx = __webpack_require__(43);
 var $export = __webpack_require__(10);
-var toObject = __webpack_require__(39);
+var toObject = __webpack_require__(40);
 var call = __webpack_require__(126);
 var isArrayIter = __webpack_require__(127);
 var toLength = __webpack_require__(61);
@@ -29874,7 +29916,7 @@ $export($export.S + $export.F * !__webpack_require__(128)(function (iter) { Arra
 "use strict";
 
 var $defineProperty = __webpack_require__(21);
-var createDesc = __webpack_require__(43);
+var createDesc = __webpack_require__(44);
 
 module.exports = function (object, index, value) {
   if (index in object) $defineProperty.f(object, index, createDesc(0, value));
@@ -31069,7 +31111,7 @@ module.exports = { "default": __webpack_require__(390), __esModule: true };
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(54);
-__webpack_require__(44);
+__webpack_require__(45);
 module.exports = __webpack_require__(391);
 
 
@@ -32488,7 +32530,7 @@ var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(100);
-__webpack_require__(44);
+__webpack_require__(45);
 __webpack_require__(54);
 __webpack_require__(428);
 __webpack_require__(435);
@@ -32504,7 +32546,7 @@ module.exports = __webpack_require__(6).Promise;
 
 var LIBRARY = __webpack_require__(52);
 var global = __webpack_require__(9);
-var ctx = __webpack_require__(42);
+var ctx = __webpack_require__(43);
 var classof = __webpack_require__(73);
 var $export = __webpack_require__(10);
 var isObject = __webpack_require__(32);
@@ -32798,7 +32840,7 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 /* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ctx = __webpack_require__(42);
+var ctx = __webpack_require__(43);
 var call = __webpack_require__(126);
 var isArrayIter = __webpack_require__(127);
 var anObject = __webpack_require__(22);
@@ -32856,7 +32898,7 @@ var macrotask = __webpack_require__(179).set;
 var Observer = global.MutationObserver || global.WebKitMutationObserver;
 var process = global.process;
 var Promise = global.Promise;
-var isNode = __webpack_require__(41)(process) == 'process';
+var isNode = __webpack_require__(42)(process) == 'process';
 
 module.exports = function () {
   var head, last, notify;
@@ -34413,7 +34455,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.messages = undefined;
 
-var _stringify = __webpack_require__(45);
+var _stringify = __webpack_require__(37);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -41847,8 +41889,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_fd225326_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__ = __webpack_require__(620);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_fd225326_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_fd225326_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b56c678_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__ = __webpack_require__(620);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b56c678_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b56c678_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(0);
 /* script */
 
@@ -41866,8 +41908,8 @@ var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tree_select_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_fd225326_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__["render"],
-  __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_fd225326_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__["staticRenderFns"],
+  __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b56c678_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__["render"],
+  __WEBPACK_IMPORTED_MODULE_1__babel_loader_sourceMap_node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b56c678_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tree_select_vue__["staticRenderFns"],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,

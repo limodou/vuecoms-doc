@@ -24,6 +24,7 @@ var ex_table_04 = new Vue({
       multiSelect: true,
       static: false,
       pagination: true,
+      combineCols: [['name1', 'name2']],
       total: 6,
       columns: [
         {name:'name1', title:'Name1', width:120, editor: {type: 'string', onChange: function(v, row){
@@ -118,14 +119,18 @@ var ex_table_04 = new Vue({
       data: [],
       onSaveRow: function (row, callback) {
         self.$Message.info("save")
-        if (row.name1 === 'ok') {
-          setTimeout(function() {
-            callback('ok', row)
-          }, 500)
+        if (row.id ===1) {
+          if (row.name1 === 'ok') {
+            setTimeout(function() {
+              callback('ok', row)
+            }, 500)
+          } else {
+            setTimeout(function() {
+              callback('error', {name1: '不正确'})
+            }, 500)
+          }
         } else {
-          setTimeout(function() {
-            callback('error', {name1: '不正确'})
-          }, 500)
+          callback('ok', row)
         }
       },
       onError: function (error) {
@@ -142,10 +147,10 @@ var ex_table_04 = new Vue({
       }
     }
     table.data.push({id:1, name1:'Field-A1', name2:'A', name3:'Field-C1', name4:'Field-D1', name5: 'A', name6: 'Select A'})
-    table.data.push({id:2, name1:'Field-A2', name2:'B', name3:'Field-C2', name4:'Field-D2', name5: 'B', name6: 'Select B'})
+    table.data.push({id:2, name1:'Field-A1', name2:'B', name3:'Field-C2', name4:'Field-D2', name5: 'B', name6: 'Select B'})
     table.data.push({id:3, name1:'Field-A3', name2:'A', name3:'Field-C3', name4:'Field-D3', name5: 'C', name6: 'Select C'})
-    table.data.push({id:4, name1:'Field-A4', name2:'B', name3:'Field-C4', name4:'Field-D4', name5: 'D', name6: 'Select D'})
-    table.data.push({id:5, name1:'Field-A5', name2:'A', name3:'Field-C5', name4:'Field-D5', name5: 'E', name6: 'Select E'})
+    table.data.push({id:4, name1:'Field-A3', name2:'A', name3:'Field-C4', name4:'Field-D4', name5: 'D', name6: 'Select D'})
+    table.data.push({id:5, name1:'Field-A3', name2:'B', name3:'Field-C5', name4:'Field-D5', name5: 'E', name6: 'Select E'})
     table.data.push({id:6, name1:'Field-A6', name2:'A', name3:'Field-C6', name4:'Field-D6', name5: 'F', name6: 'Select F'})
     return {table:table}
   }

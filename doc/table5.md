@@ -21,7 +21,7 @@ var ex_table_05 = new Vue({
       idField: 'id',
       orderField: 'order',
       clickSelect: true,
-      checkStrictly: false,
+      checkStrictly: true,
       // tree 参数
       tree: true,
       treeField: 'name4',
@@ -151,23 +151,29 @@ var ex_table_05 = new Vue({
           }
         ]
       ],
-      onLoadData: function(url, param, callback) {
-        if (param.parent) {
-          var d = []
-          var id
-          var isParent = false
-          for (var i=1; i<5; i++) {
-            id = param.parent+'-'+i
-            d.push({id:id, check: 'A'+id, name1:'A'+id, name2:'B'+id, name3:'C'+id, name4:'D'+id, name5:'E'+id, order: order++}
-            )
-          }
-          setTimeout(function () {
-            callback(d)
-          }, 0)
-        } else {
-          callback()
-        }
-      },
+      // onLoadData: function(url, param, callback) {
+      //   if (param.parent) {
+      //     var d = []
+      //     var id
+      //     var isParent = false
+      //     for (var i=1; i<5; i++) {
+      //       id = param.parent+'-'+i
+      //       var row = {id:id, check: 'A'+id, name1:'A'+id, name2:'B'+id, name3:'C'+id, name4:'D'+id, name5:'E'+id, order: order++}
+      //       if (id === '1-1') {
+      //         var nid = id + '-1'
+      //         row.children = [
+      //           {id:nid, check: 'A'+nid, name1:'A'+nid, name2:'B'+nid, name3:'C'+nid, name4:'D'+nid, name5:'E'+nid, order: order++}
+      //         ]
+      //       }
+      //       d.push(row)
+      //     }
+      //     setTimeout(function () {
+      //       callback(d)
+      //     }, 0)
+      //   } else {
+      //     callback()
+      //   }
+      // },
       onSaveRow: function (row, callback) {
         callback('ok', row)
       },
@@ -179,19 +185,52 @@ var ex_table_05 = new Vue({
         callback(true)
       },
       onCheckable: function(row) {
-        if (row.id === 1) {
+        if (row.id === 1||row.id === 11||row.id === 2||
+        row.id === '1-1'||row.id === 3||row.id === '3-1'||
+        row.id === '4-1'||row.id === 4||row.id === '4-2'||
+        row.id === 5||row.id === 7||row.id === '7-1'||row.id === '7-1-1'||row.id === '7-1-2'||
+        row.id === '3-1-1'||row.id === 6||row.id === '6-1') {
           return false
         } return true
       }
     }
     table.data = [
-      {id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', order: order++, children: []},
-      {id:6, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1'}
+      {id:1, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', order: order++, children: [
+      {id:'1-1', check: 'A'+1, name1:'A'+1, name2:'B'+1, name3:'C'+1, name4:'D'+1, name5:'E'+1, order: order++}
+      ]},
+      {id:2, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', order: order++, children: [
+      {id:'2-1', check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', order: order++}
+      ]},
+      {id:3, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1',children:[
+        {id:'3-1', check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1',children:[
+            {id:'3-1-1', check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1',}]
+        }]},
+      {id:4, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', order: order++, children: [
+      {id:'4-1', check: 'A'+1, name1:'A'+1, name2:'B'+1, name3:'C'+1, name4:'D'+1, name5:'E'+1, order: order++},
+      {id:'4-2', check: 'A'+1, name1:'A'+1, name2:'B'+1, name3:'C'+1, name4:'D'+1, name5:'E'+1, order: order++},
+      ]},
+      {id:5, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E1', order: order++, children: [
+      {id:'5-1', check: 'A'+1, name1:'A'+1, name2:'B'+1, name3:'C'+1, name4:'D'+1, name5:'E'+1, order: order++},
+      {id:'5-2', check: 'A'+1, name1:'A'+1, name2:'B'+1, name3:'C'+1, name4:'D'+1, name5:'E'+1, order: order++},
+      ]},
+      {id:6, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1',children:[
+        {id:'6-1', check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1',children:[
+            {id:'6-1-1', check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1',}
+        
+      ]}]},
+      {id:7, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1',children:[
+        {id:'7-1', check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1',children:[
+            {id:'7-1-1', check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1',},
+            {id:'7-1-2', check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1',}
+        
+      ]}]},
+      {id:11, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1'},
+      {id:12, check: 'A1', name1:'A1', name2:'B1', name3:'C1', name4:'D1', name5:'E3', order: order++,name6:'F1'}
     ]
     return {table:table}
   },
   mounted: function () {
-    this.$refs.grid.setSelection([6])
+    this.$refs.grid.setSelection([12])
   },
 })
 </script>
