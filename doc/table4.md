@@ -152,6 +152,7 @@ var ex_table_04 = new Vue({
     table.data.push({id:4, name1:'Field-A3', name2:'A', name3:'Field-C4', name4:'Field-D4', name5: 'D', name6: 'Select D'})
     table.data.push({id:5, name1:'Field-A3', name2:'B', name3:'Field-C5', name4:'Field-D5', name5: 'E', name6: 'Select E'})
     table.data.push({id:6, name1:'Field-A6', name2:'A', name3:'Field-C6', name4:'Field-D6', name5: 'F', name6: 'Select F'})
+    table.data.push({id:6, name1:'Field-A6', name2:'A', name3:'Field-C6', name4:'Field-D6', name5: 'F', name6: 'Select F'})
     return {table:table}
   }
 })

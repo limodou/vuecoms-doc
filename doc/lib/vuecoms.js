@@ -17499,7 +17499,15 @@ function () {
         }
       }
 
-      this.sendInputEvent();
+      this.sendInputEvent(); // 增加当无数据时的向前翻页或刷新的处理
+
+      if (this.states.data.length === 0) {
+        if (this.states.page < this.states.total) {
+          this.grid.loadData();
+        } else if (this.states.page > 1) {
+          this.grid.go(this.states.page - 1);
+        }
+      }
     }
   }, {
     key: "getKey",
