@@ -96,6 +96,7 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 |----------|-----|------|
 | go | 调转到指定页，同时可以带参数。原型为： `go(page, opts)` ，其中page为指定页号，opts为一个对象。它将合并到store.param上，这样在 `onLoadData` 回调时就可以使用了。这块和以前的版本有所不同，原来没有opts参数。它可以起到刷新的作用，象 | 无 |
 | loadData | 重新装载数据。可以传入参数或url，如 `loadData({parent:123})` 。注意，这里如果有参数会与store.param合并，并保存起来。 | 无 |
+| reset_query | 重新设置查询条件，可以传入要初始化的参数值， reset_query(value)，如果为空，则为重置的效果 | 无 |
 
 ## 表头列定义说明
 
@@ -161,7 +162,7 @@ query: {
 | choices | 对于字段为下拉列表时，当choices为异步处理时，可以通过设置这个值来异步修改对应字段的下拉值。如：<br/>`choices: {select1: []}`| Object | 非必填 |
 | submitText | 提交查询的按钮名称 | String | `'查询'` | 
 | resetText | 重置查询的按钮名称。如果为空，则不显示 | String | `'重置'` | 
-| parseUrl | 是否自动根据URL来解析查询字段的值。| Boolean | true |
+| parseUrl | 是否自动根据URL来解析查询字段的值。| Boolean | false |
 
 ## 表格Store方法说明
 

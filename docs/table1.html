@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=08daf893">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=789f542a">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=34b3b732"></script>
-    <script src="lib/vuecoms.js?t=36eddf2d"></script>
+    <script src="lib/iview/iview.js?t=d6fc1368"></script>
+    <script src="lib/vuecoms.js?t=4a78391a"></script>
     <title>简单表格 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -209,7 +209,7 @@ var ex_table_01 = new Vue({
       nowrap: false,
       indexCol: true,
       theme: 'default',
-      pagination: true,
+      pagination: false,
       multiHeaderSep: '//',
       headerShow: true,
       hoverShow: false,
@@ -232,7 +232,7 @@ var ex_table_01 = new Vue({
           })
         }},
         {name:'name1', title:'Name1', width:100, fixed: 'left', sortable: true},
-        {name:'name2', title:'Name2 Name2中中中 中中中中 <i class="ivu-icon ivu-icon-logo-youtube"></i>', width: 100},
+        {name:'name2', title:'Name2 Name2中中中 中中中中 <i class="ivu-icon ivu-icon-ios-help" title="hello"></i>', width: 100},
         {name:'name3', title:'Name3', width:100},
         {name:'name4', title:'Name4', align:'center', width:400, html: false},
         {name:'name5', title:'Name5', width:80, render: function(h, param) {

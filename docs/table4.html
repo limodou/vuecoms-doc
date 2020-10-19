@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=08daf893">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=789f542a">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=34b3b732"></script>
-    <script src="lib/vuecoms.js?t=36eddf2d"></script>
+    <script src="lib/iview/iview.js?t=d6fc1368"></script>
+    <script src="lib/vuecoms.js?t=4a78391a"></script>
     <title>表格行编辑 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -120,13 +120,14 @@
   <row>
   <i-col span="1">&#xA0;</i-col>
   <i-col span="23">
-  <grid ref="table" :data="table">
+  <grid ref="table" :data="table" :choices="choices">
     <h3 slot="beforeQuery" style="text-align:center" id="">&#x53EF;&#x7F16;&#x8F91;&#x8868;&#x683C;</h3>
   </grid>
   </i-col>
   </row>
 </div>
 <script>
+var i=0
 var ex_table_04 = new Vue({
   el: '#ex-table-04',
   data: function () {
@@ -157,14 +158,24 @@ var ex_table_04 = new Vue({
           choices: [['A', 'Test A'], ['B', 'Test B']]
           }}
         },
-        {name:'name3', title:'Name3', width:200, editor: {type: 'i-switch'}},
+        {name:'name3', title:'Name3', width:200, editor: {type: 'i-switch',
+          onChange(value, data){
+            if (i === 0){
+                self.$set(self.choices, 'name5', [{value: 'A', label: 'AAAA'}, {value: 'B', label: 'BBBB'}])
+                i++
+            }
+            else if (i > 0){
+                self.$set(self.choices, 'name5', [{value: 'C', label: 'CCCC'}, {value: 'D', label: 'DDDD'}])
+            }
+          },
+        }},
         {name:'name4', title:'Name4', width:200, format: function (value, column, row)   {
             return '<a href="#">' + value + '</a>'
           },
           showTitle: function(value) {
             return value
           },
-          editor: {type: 'date', rule: {type: 'any', required: true}, 
+          editor: {type: 'date', rule: {type: 'any', required: true},
           options: function(value, name, row) {
             return {
               options: {
@@ -178,16 +189,11 @@ var ex_table_04 = new Vue({
             }
           }}
         },
-        {name:'name5', title:'Select', width: 150, editor: {type: 'select', labelField: 'name6', options: {
-          filterable: true,
-          remote: true,
-          remoteMethod: function(term, callback){
-            setTimeout(function(){
-            callback([{label: 'Select A', value: 'A'}, {label: 'Select B', value: 'B'}, {label: 'Select C', value: 'C'}])
-            },100)
-          }
+        {name:'name5', title:'Select', width: 150, editor: {type: 'select', labelField: 'name6'}},
+        {name:'name6', title:'Name6', width: 150, hidden: false, editor: {type: 'TimePicker', options: {
+          transfer: true,
+          type: 'timerange'
         }}},
-        {name:'name6', title:'Name6', width: 150, hidden: false, editor: {type: 'str', static: true}},
         {name:'Action', title:'Name5', fixed: 'right', width: 120}
       ],
       buttons: [
@@ -262,14 +268,16 @@ var ex_table_04 = new Vue({
         }
       }
     }
-    table.data.push({id:1, name1:'Field-A1', name2:'A', name3:'Field-C1', name4:'Field-D1', name5: 'A', name6: 'Select A'})
-    table.data.push({id:2, name1:'Field-A1', name2:'B', name3:'Field-C2', name4:'Field-D2', name5: 'B', name6: 'Select B'})
-    table.data.push({id:3, name1:'Field-A3', name2:'A', name3:'Field-C3', name4:'Field-D3', name5: 'C', name6: 'Select C'})
-    table.data.push({id:4, name1:'Field-A3', name2:'A', name3:'Field-C4', name4:'Field-D4', name5: 'D', name6: 'Select D'})
-    table.data.push({id:5, name1:'Field-A3', name2:'B', name3:'Field-C5', name4:'Field-D5', name5: 'E', name6: 'Select E'})
-    table.data.push({id:6, name1:'Field-A6', name2:'A', name3:'Field-C6', name4:'Field-D6', name5: 'F', name6: 'Select F'})
-    table.data.push({id:6, name1:'Field-A6', name2:'A', name3:'Field-C6', name4:'Field-D6', name5: 'F', name6: 'Select F'})
-    return {table:table}
+    table.data.push({id:1, name1:'Field-A1', name2:'A', name3:'Field-C1', name4:'Field-D1', name5: 'A', name6: ''})
+    table.data.push({id:2, name1:'Field-A1', name2:'B', name3:'Field-C2', name4:'Field-D2', name5: 'B', name6: ''})
+    table.data.push({id:3, name1:'Field-A3', name2:'A', name3:'Field-C3', name4:'Field-D3', name5: 'C', name6: ''})
+    table.data.push({id:4, name1:'Field-A3', name2:'A', name3:'Field-C4', name4:'Field-D4', name5: 'D', name6: ''})
+    table.data.push({id:5, name1:'Field-A3', name2:'B', name3:'Field-C5', name4:'Field-D5', name5: 'E', name6: ''})
+    table.data.push({id:6, name1:'Field-A6', name2:'A', name3:'Field-C6', name4:'Field-D6', name5: 'F', name6: ''})
+    table.data.push({id:6, name1:'Field-A6', name2:'A', name3:'Field-C6', name4:'Field-D6', name5: 'F', name6: ''})
+    return {table:table, choices: {
+      name5: []
+    }}
   }
 })
 </script>
