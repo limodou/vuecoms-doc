@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=d6fc1368"></script>
-    <script src="lib/vuecoms.js?t=4a78391a"></script>
+    <script src="lib/iview/iview.js?t=f0bbb634"></script>
+    <script src="lib/vuecoms.js?t=a0423853"></script>
     <title>简单表格 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -209,7 +209,7 @@ var ex_table_01 = new Vue({
       nowrap: false,
       indexCol: true,
       theme: 'default',
-      pagination: false,
+      pagination: true,
       multiHeaderSep: '//',
       headerShow: true,
       hoverShow: false,
@@ -232,8 +232,12 @@ var ex_table_01 = new Vue({
           })
         }},
         {name:'name1', title:'Name1', width:100, fixed: 'left', sortable: true},
-        {name:'name2', title:'Name2 Name2中中中 中中中中 <i class="ivu-icon ivu-icon-ios-help" title="hello"></i>', width: 100},
-        {name:'name3', title:'Name3', width:100},
+        {name:'name2', title:'Name2 Name2中中中 中中中中 <i class="ivu-icon ivu-icon-logo-youtube"></i>', width: 100},
+        {name:'name3', title:'Name3', headerRender: function(h, param){
+          return h('Button', {props: {type: 'primary', size: 'small'}, on: {click: function(){
+            self.$Message.info('按钮点击事件')
+          }}}, '自定义表头')
+        }, width:100},
         {name:'name4', title:'Name4', align:'center', width:400, html: false},
         {name:'name5', title:'Name5', width:80, render: function(h, param) {
           var self = this

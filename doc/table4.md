@@ -114,6 +114,11 @@ var ex_table_04 = new Vue({
           {label: '切换隐藏按钮', type: 'primary', onClick: function(grid, store){
             self.$set(grid.btns['hiddenBtn'], 'hidden', !grid.btns['hiddenBtn'].hidden)
           }},
+        ],
+        [
+          {label: '是否行编辑状态', type: 'primary', name: 'editingBtn', onClick: function(grid){
+            self.$Message.info(grid.isEditing()+'')
+          }},
         ]
       ],
       data: [],

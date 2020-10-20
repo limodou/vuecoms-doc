@@ -119,7 +119,11 @@ var ex_table_01 = new Vue({
         }},
         {name:'name1', title:'Name1', width:100, fixed: 'left', sortable: true},
         {name:'name2', title:'Name2 Name2中中中 中中中中 <i class="ivu-icon ivu-icon-logo-youtube"></i>', width: 100},
-        {name:'name3', title:'Name3', width:100},
+        {name:'name3', title:'Name3', headerRender: function(h, param){
+          return h('Button', {props: {type: 'primary', size: 'small'}, on: {click: function(){
+            self.$Message.info('按钮点击事件')
+          }}}, '自定义表头')
+        }, width:100},
         {name:'name4', title:'Name4', align:'center', width:400, html: false},
         {name:'name5', title:'Name5', width:80, render: function(h, param) {
           var self = this

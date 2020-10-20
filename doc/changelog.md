@@ -1,5 +1,23 @@
 # 修改记录
 
+## V3.7
+* Grid parseUrl缺省值改为 false
+* Grid 实现表头自定义渲染
+* Grid 增加 isEditing 函数，返回当前是否存在处于行编辑的行
+
+## V3.6.1
+* 优化 Dialog 在删除时，执行 $destroy 的处理
+
+## V3.6
+* 调整 Build Label 在对齐时的星号位置
+* Query 增加 setValue ，可以直接赋初始值
+* Grid 增加 validateRow(row) 用于校验行编辑的数据
+* Grid 增加当无数据时，向前翻页或刷新处理
+* Grid 修复当 addRow 时，使用 before 时没有插在最前面的问题
+* Grid 增加 onRowClass 的回调用于设置 tr 的属性
+* validator 优化自定义错误消息的处理
+* 优化 upload clear 方法，增加 emit 参数，用于指示是否抛出事件
+
 ## V3.5
 * 修复 Grid 在 tree 模式下，checkbox 选中状态的处理 BUG
 * 修复 Grid 的 onSaveRow 在行编辑处理时，未将回调返回的数据与正在编辑的数据进行合并的 BUG

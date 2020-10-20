@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=d6fc1368"></script>
-    <script src="lib/vuecoms.js?t=4a78391a"></script>
+    <script src="lib/iview/iview.js?t=f0bbb634"></script>
+    <script src="lib/vuecoms.js?t=a0423853"></script>
     <title>表格说明 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -659,7 +659,7 @@
 </tr>
 <tr>
 <td>render</td>
-<td>&#x81EA;&#x5B9A;&#x4E49;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x3002;&#x5F62;&#x5F0F;&#x4E3A; render: function(h, param)&#xFF0C;&#x5176;&#x4E2D;h &#x4E3A;createElement&#x51FD;&#x6570;&#x3002;param&#x4E3A;&#x4E0A;&#x4E0B;&#x6587;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#xFF1A;<br>{<br>value: &#x5355;&#x5143;&#x683C;&#x7684;&#x503C;<br>column: &#x5355;&#x5143;&#x683C;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;<br>row: &#x5355;&#x5143;&#x683C;&#x6240;&#x5728;&#x884C;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;<br>grid: &#x6240;&#x5C5E;grid&#x5BF9;&#x8C61;<br>}</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x3002;&#x5F62;&#x5F0F;&#x4E3A; render: function(h, param)&#xFF0C;&#x5176;&#x4E2D;h &#x4E3A;createElement&#x51FD;&#x6570;&#x3002;param&#x4E3A;&#x4E0A;&#x4E0B;&#x6587;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#xFF1A;<br>{<br>value: &#x5355;&#x5143;&#x683C;&#x7684;&#x503C;<br>column: &#x8868;&#x5934;&#x5217;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;<br>row: &#x5355;&#x5143;&#x683C;&#x6240;&#x5728;&#x884C;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x8C61;<br>grid: &#x6240;&#x5C5E;grid&#x5BF9;&#x8C61;<br>}</td>
 <td>Function</td>
 <td>null</td>
 </tr>
@@ -679,6 +679,12 @@
 <td>showHeaderTitle</td>
 <td>&#x662F;&#x5426;&#x663E;&#x793A;&#x67D0;&#x5217;&#x7684;&#x8868;&#x5934;title&#x5C5E;&#x6027;&#x3002;</td>
 <td>Boolean&#xFF0C;Undefined</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>headerRender</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x8868;&#x5934;&#x5217;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x3002;&#x539F;&#x578B;&#x4E3A; function(h, param)&#xFF0C;&#x5176;&#x4E2D; h &#x8868;&#x793A; createElement &#x51FD;&#x6570;&#xFF0C;param &#x4E3A;&#x4E0A;&#x4E0B;&#x6587;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#xFF1A;<br>{<br>column: &#x8868;&#x5934;&#x5217;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;<br>grid: &#x6240;&#x5C5E; grid &#x5BF9;&#x8C61;<br>}</td>
+<td>Function</td>
 <td>undefined</td>
 </tr>
 </tbody>
@@ -945,6 +951,11 @@
 <td>getColumn</td>
 <td>getColumn (name)<br>&#x83B7;&#x5F97;&#x6307;&#x5B9A;&#x540D;&#x5B57;&#x7684;&#x8868;&#x5934;</td>
 <td>Object</td>
+</tr>
+<tr>
+<td>isEditing</td>
+<td>&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x6B63;&#x5728;&#x884C;&#x7F16;&#x8F91;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x5305;&#x62EC;&#x65B0;&#x589E;&#x548C;&#x4FEE;&#x6539;</td>
+<td>Boolean</td>
 </tr>
 </tbody>
 </table>

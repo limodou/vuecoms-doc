@@ -112,10 +112,11 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | html | 是否对内容进行转义。render不受此控制。format的结果受控制。 | Boolean | true |
 | resizable | 是否可以拖拽改变宽度。| Boolean | true |
 | editor | 如果可以编辑，则为编辑器的定义对象。它符合Build的字段定义规则。详情参见 Build的字段定义说明。| Object | {} |
-| render | 自定义渲染函数。形式为 render: function(h, param)，其中h 为createElement函数。param为上下文参数，其值为：<br/>{<br/>value: 单元格的值<br/>column: 单元格定义对象<br/>row: 单元格所在行的数据对象<br/>grid: 所属grid对象<br/>}| Function | null |
+| render | 自定义渲染函数。形式为 render: function(h, param)，其中h 为createElement函数。param为上下文参数，其值为：<br/>{<br/>value: 单元格的值<br/>column: 表头列定义对象<br/>row: 单元格所在行的数据对象<br/>grid: 所属grid对象<br/>}| Function | null |
 | format | 自定义格式化函数。与render不同。render可以生成新的控件，而format只输出HTML。所以只要需要对单元格内容做文本加工的，可以使用format，如：加颜色，链接之类的。调用形式为：format: function(value, column, row)。 <br/>新增字符串形式，如 `'<a href="/view/${row.id}">${row.title}</a>'`| Function\|String | null |
 | showTitle | 是否显示某列的title属性。| Boolean，Undefined | undefined |
 | showHeaderTitle | 是否显示某列的表头title属性。| Boolean，Undefined | undefined |
+| headerRender | 自定义表头列渲染函数。原型为 function(h, param)，其中 h 表示 createElement 函数，param 为上下文参数，其值为：<br/>{<br/>column: 表头列定义对象<br/>grid: 所属 grid 对象<br/>}| Function | undefined |
 
 ## 表格按钮定义说明
 
@@ -191,3 +192,4 @@ query: {
 | addEditRow | addEditRow (row, parent, position, isChild=false)<br/>它和addRow类似，只不过添加之后会自动进行行编辑状态。 | Object |
 | addEditChildRow | addEditChildRow (row, parent, position) <br/>添加可编辑的子结点。 | Object |
 | getColumn | getColumn (name)<br/>获得指定名字的表头 | Object |
+| isEditing | 返回当前是否存在正在行编辑的状态，包括新增和修改 | Boolean |
