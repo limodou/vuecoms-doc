@@ -9,7 +9,7 @@
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
     <script src="lib/iview/iview.js?t=f0bbb634"></script>
-    <script src="lib/vuecoms.js?t=a0423853"></script>
+    <script src="lib/vuecoms.js?t=1fb4de9f"></script>
     <title>简单表格 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -34,6 +34,10 @@
                 <li class="menu-item -level-2"><a class="link title  link-table0" href="table0.html">表格说明</a>
                 </li>
                 <li class="menu-item -level-2"><a class="link title -active link-table1" href="table1.html">简单表格</a>
+                  <ul class="headings heading-list">
+                    <li class="heading-item -depth-2"><a class="hlink link-yuan" href="#yuan">横向单元格合并</a>
+                    </li>
+                  </ul>
                 </li>
                 <li class="menu-item -level-2"><a class="link title  link-table2" href="table2.html">复杂表格</a>
                 </li>
@@ -133,10 +137,17 @@ var ex_table_01 = new Vue({
   data: function () {
     var self = this
     var table = {
-      nowrap: true,
+      nowrap: false,
       indexCol: true,
       theme: &apos;default&apos;,
       pagination: true,
+      multiHeaderSep: &apos;//&apos;,
+      headerShow: true,
+      hoverShow: false,
+      sortMode: &apos;local&apos;,
+      param: {sortField: &apos;name1&apos;, &apos;sortDir&apos;: &apos;asc&apos;},
+      total: 1,
+      page: 1,
       columns: [
         {name:&apos;check&apos;, title:&apos;#&apos;, width:40, fixed: &apos;left&apos;, render: function(h, param) {
           var self = this
@@ -152,8 +163,12 @@ var ex_table_01 = new Vue({
           })
         }},
         {name:&apos;name1&apos;, title:&apos;Name1&apos;, width:100, fixed: &apos;left&apos;, sortable: true},
-        {name:&apos;name2&apos;, title:&apos;Name2&apos;, width: 100},
-        {name:&apos;name3&apos;, title:&apos;Name3&apos;, width:100},
+        {name:&apos;name2&apos;, title:&apos;Name2 Name2&#x4E2D;&#x4E2D;&#x4E2D; &#x4E2D;&#x4E2D;&#x4E2D;&#x4E2D; <i class="ivu-icon ivu-icon-logo-youtube"></i>&apos;, width: 100},
+        {name:&apos;name3&apos;, title:&apos;Name3&apos;, headerRender: function(h, param){
+          return h(&apos;Button&apos;, {props: {type: &apos;primary&apos;, size: &apos;small&apos;}, on: {click: function(){
+            self.$Message.info(&apos;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&apos;)
+          }}}, &apos;&#x81EA;&#x5B9A;&#x4E49;&#x8868;&#x5934;&apos;)
+        }, width:100},
         {name:&apos;name4&apos;, title:&apos;Name4&apos;, align:&apos;center&apos;, width:400, html: false},
         {name:&apos;name5&apos;, title:&apos;Name5&apos;, width:80, render: function(h, param) {
           var self = this
@@ -177,28 +192,30 @@ var ex_table_01 = new Vue({
           {label: &apos;&#x5207;&#x6362;&#x6837;&#x5F0F;&apos;, type: &apos;primary&apos;, onClick: function () {
             if (self.$refs.grid.theme === &apos;default&apos;)
               self.$refs.grid.theme = &apos;simple&apos;
-            else if (self.$refs.grid.theme === &apos;simple&apos;)
-              self.$refs.grid.theme = &apos;mini&apos;
             else
               self.$refs.grid.theme = &apos;default&apos;
+          }}
+        ],
+        [
+          {label: &apos;&#x5207;&#x6362;&#x8868;&#x5934;&apos;, type: &apos;primary&apos;, onClick: function () {
+            self.$refs.grid.store.states.headerShow = !self.$refs.grid.store.states.headerShow
           }}
         ]
       ]
     }
-<pre><code>table.data.push({id:1, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;B1&apos;, name3:&apos;C1&apos;, name4:&apos;&lt;i&gt;Hello&lt;/i&gt;&apos;, name5:&apos;E1&apos;, name6:&apos;F1&apos;})
-table.data.push({id:2, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;B1&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E1&apos;, name6:&apos;F1&apos;})
-table.data.push({id:3, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;B2&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E1&apos;, name6:&apos;F1&apos;})
-table.data.push({id:4, check: &apos;A2&apos;, name1:&apos;A2&apos;, name2:&apos;B2&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E2&apos;, name6:&apos;F1&apos;})
-table.data.push({id:5, check: &apos;A2&apos;, name1:&apos;A2&apos;, name2:&apos;B2&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E2&apos;, name6:&apos;F1&apos;})
-table.data.push({id:6, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;B1&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E3&apos;, name6:&apos;F1&apos;})
-table.data.push({id:7, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;B1&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E3&apos;, name6:&apos;F1&apos;})
-return {table:table}
-</code></pre>
-<p>}
+    table.data.push({id:1, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:0, name3:&apos;C1&apos;, name4:&apos;<i>Hello</i>&apos;, name5:&apos;E1&apos;, name6:&apos;F1&apos;})
+    table.data.push({id:2, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;0&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E1&apos;, name6:&apos;F1&apos;})
+    table.data.push({id:3, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;0&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E1&apos;, name6:&apos;F1&apos;})
+    table.data.push({id:4, check: &apos;A2&apos;, name1:&apos;A2&apos;, name2:&apos;0&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E2&apos;, name6:&apos;F1&apos;})
+    table.data.push({id:5, check: &apos;A2&apos;, name1:&apos;A2&apos;, name2:&apos;0&apos;, name3:&apos;C1&apos;, name4:0, name5:&apos;E2&apos;, name6:&apos;F1&apos;})
+    table.data.push({id:6, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;0&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E3&apos;, name6:&apos;F1&apos;})
+    table.data.push({id:7, check: &apos;A1&apos;, name1:&apos;A1&apos;, name2:&apos;0&apos;, name3:&apos;C1&apos;, name4:&apos;D1&apos;, name5:&apos;E3&apos;, name6:&apos;F1&apos;})
+    return {table:table}
+  }
 })
-</p></pre>
-</tab-pane>
-</tabs><p></p>
+      </pre>
+    </tab-pane>
+  </tabs>
 </div>
 <script>
 var ex_table_01 = new Vue({
@@ -280,6 +297,47 @@ var ex_table_01 = new Vue({
     table.data.push({id:6, check: 'A1', name1:'A1', name2:'0', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
     table.data.push({id:7, check: 'A1', name1:'A1', name2:'0', name3:'C1', name4:'D1', name5:'E3', name6:'F1'})
     return {table:table}
+  }
+})
+</script>
+<h2 id="yuan">&#x6A2A;&#x5411;&#x5355;&#x5143;&#x683C;&#x5408;&#x5E76;</h2>
+<p>&#x5F53;&#x5355;&#x5143;&#x683C;&#x7684;&#x53D6;&#x503C;&#x4E3A; <code>&apos;--&apos;</code> &#x65F6;&#xFF0C;&#x5C06;&#x5408;&#x5E76;&#x81F3;&#x524D;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x683C;&#x4E0A;&#x3002;&#x4E0E;&#x6A2A;&#x5411;&#x5355;&#x5143;&#x683C;&#x5408;&#x5E76;&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;&#x6709;&#xFF1A;</p>
+<ul>
+<li><code>colspan</code> &#x7F3A;&#x7701;&#x662F; <code>false</code>&#xFF0C;&#x5F53;&#x4E3A; <code>true</code> &#x65F6;&#x542F;&#x7528;&#x6A2A;&#x5411;&#x5408;&#x5E76;</li>
+<li><code>colspanDelimeter</code> &#x7F3A;&#x7701;&#x662F; <code>&apos;--&apos;</code>&#xFF0C;&#x53EF;&#x4EE5;&#x6362;&#x6210;&#x5176;&#x5B83;&#x7684;&#x3002;&#x8868;&#x793A;&#x6B64;&#x5355;&#x5143;&#x5408;&#x5C06;&#x5408;&#x5E76;&#x81F3;&#x524D;&#x4E00;&#x4E2A;&#x975E; <code>&apos;--&apos;</code> &#x7684;&#x5355;&#x5143;&#x683C;&#x4E0A;&#x3002;</li>
+</ul>
+<p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x7684;&#x6570;&#x636E;&#x4E3A;&#xFF1A;</p>
+<pre><code>        {name1: &apos;A1&apos;, name2: &apos;--&apos;, name3: &apos;--&apos;, name4: &apos;1&apos;},
+        {name1: &apos;A1&apos;, name2: &apos;--&apos;, name3: &apos;--&apos;, name4: &apos;2&apos;},
+        {name1: &apos;A1&apos;, name2: &apos;A2&apos;, name3: &apos;A3&apos;, name4: &apos;3&apos;},
+        {name1: &apos;A1&apos;, name2: &apos;--&apos;, name3: &apos;A3&apos;, name4: &apos;4&apos;},
+        {name1: &apos;A1&apos;, name2: &apos;A2&apos;, name3: &apos;--&apos;, name4: &apos;5&apos;},
+</code></pre>
+<div id="ex-table-02">
+  <grid :data="data" ref="grid"></grid>
+</div>
+<script>
+var ex_table_02 = new Vue({
+  el: '#ex-table-02',
+  data: function () {
+    var data = {
+      colspan: true,
+      columns: [
+        {name:'name1', title:'Name1', width:100, align: 'left'},
+        {name:'name2', title:'Name2', width: 100},
+        {name:'name3', title:'Name3'},
+        {name:'name4', title:'Name4'},
+      ],
+      combineCols:[['name1']],
+      data: [
+        {name1: 'A1', name2: '--', name3: '--', name4: '1'},
+        {name1: 'A1', name2: '--', name3: '--', name4: '2'},
+        {name1: 'A1', name2: 'A2', name3: 'A3', name4: '3'},
+        {name1: 'A1', name2: '--', name3: 'A3', name4: '4'},
+        {name1: 'A1', name2: 'A2', name3: '--', name4: '5'},
+      ],
+    }
+    return {data:data}
   }
 })
 </script>

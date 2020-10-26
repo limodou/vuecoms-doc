@@ -75,6 +75,8 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | multiHeaderSep | 多行表头分隔符 | String | '/' |
 | hoverShow | 当鼠标移动时，是否显示hover的样式 | Boolean | true |
 | checkStrictly | 当Grid为树型结构时，设置为 true 时，选择父结点不会自动选择子结点。为 false 时，选择父结点会自动联动选择子结点 | Boolean | true |
+| colspan | 是否启动单元格横向合并，不能与纵向单元格合并混合 | Boolean | false |
+| colspanDelimeter | 单元格横向合并字符串，缺省为 '--'， 表示要与合并到前面单元格 | String | '--' |
 
 
 | 回调函数名 | 说明 |
