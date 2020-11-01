@@ -149,6 +149,12 @@ var ex_table_04 = new Vue({
         if (row.id === 3) {
           return h('div', '本行不可编辑')
         }
+      },
+      onEditing: function (row) {
+        console.log('进入编辑状态', row)
+      },
+      onCancelEdit: function (row) {
+        console.log('取消编辑状态', row)
       }
     }
     table.data.push({id:1, name1:'Field-A1', name2:'A', name3:'Field-C1', name4:'Field-D1', name5: 'A', name6: 'Select A'})
