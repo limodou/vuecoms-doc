@@ -89,6 +89,7 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | onSaveCol | 保存单元格时调用 function (row, callback)。当执行完毕时，需调用 callback ，格式为 callback(flag, data)。其中 flag 为 'ok' 表示成功，则data为最后的数据。 'error' 表示有错误， 则data为出错信息。 |
 | onDeleteRow | 删除行的确认 function (row, callback), callback(flag, data) |
 | onRowEditRender | 行编辑对应的编辑按钮列的自定义渲染回调函数 function (h, row) h 为create函数，row为数据行。当返回 null 时，使用缺省的渲染函数，需要自行渲染时，应返回一个render调用结果，如： render('div', '本行不可编辑') |
+| onBeforeEditing | 进入行编辑状态之前的回调函数 function (row): row 为待编辑的行。触发条件为：执行 addEditRow 方法或点击内置的编辑按钮时。当返回 true 时会继续处理，false 时直接返回 |
 | onEditing | 进入行编辑状态时的回调函数 function (row): row 为待编辑的行。触发条件为：执行 addEditRow 方法或点击内置的编辑按钮时 |
 | onCancelEdit | 点击内置的行编辑取消按钮时才会触发。function (row): row 为待取消编辑的行。目前不能影响取消动作。如果是非内置的行编辑取消按钮，则要自行实现取消的处理。此事件可能无效 |
 

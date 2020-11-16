@@ -9,7 +9,7 @@
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
     <script src="lib/iview/iview.js?t=f0bbb634"></script>
-    <script src="lib/vuecoms.js?t=fb28798b"></script>
+    <script src="lib/vuecoms.js?t=83381b58"></script>
     <title>表格说明 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -567,6 +567,10 @@
 <tr>
 <td>onRowEditRender</td>
 <td>&#x884C;&#x7F16;&#x8F91;&#x5BF9;&#x5E94;&#x7684;&#x7F16;&#x8F91;&#x6309;&#x94AE;&#x5217;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6E32;&#x67D3;&#x56DE;&#x8C03;&#x51FD;&#x6570; function (h, row) h &#x4E3A;create&#x51FD;&#x6570;&#xFF0C;row&#x4E3A;&#x6570;&#x636E;&#x884C;&#x3002;&#x5F53;&#x8FD4;&#x56DE; null &#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x7F3A;&#x7701;&#x7684;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x884C;&#x6E32;&#x67D3;&#x65F6;&#xFF0C;&#x5E94;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;render&#x8C03;&#x7528;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#xFF1A; render(&apos;div&apos;, &apos;&#x672C;&#x884C;&#x4E0D;&#x53EF;&#x7F16;&#x8F91;&apos;)</td>
+</tr>
+<tr>
+<td>onBeforeEditing</td>
+<td>&#x8FDB;&#x5165;&#x884C;&#x7F16;&#x8F91;&#x72B6;&#x6001;&#x4E4B;&#x524D;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570; function (row): row &#x4E3A;&#x5F85;&#x7F16;&#x8F91;&#x7684;&#x884C;&#x3002;&#x89E6;&#x53D1;&#x6761;&#x4EF6;&#x4E3A;&#xFF1A;&#x6267;&#x884C; addEditRow &#x65B9;&#x6CD5;&#x6216;&#x70B9;&#x51FB;&#x5185;&#x7F6E;&#x7684;&#x7F16;&#x8F91;&#x6309;&#x94AE;&#x65F6;&#x3002;&#x5F53;&#x8FD4;&#x56DE; true &#x65F6;&#x4F1A;&#x7EE7;&#x7EED;&#x5904;&#x7406;&#xFF0C;false &#x65F6;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;</td>
 </tr>
 <tr>
 <td>onEditing</td>

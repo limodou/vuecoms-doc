@@ -1,5 +1,11 @@
 # 修改记录
 
+## V3.7.4
+
+* RadioGroup, CheckboxGroup, Select 增加对 disabled 的支持。在 choices 中指定 disabled 即可。
+## V3.7.3
+
+* Grid 增加 onBeforeEditing 事件回调，当返回 true 时可以继续编辑，否则直接退出
 ## V3.7.2
 
 * Grid 增加 onEditing 和  onCancelEdit 事件回调，分别对应进入行编辑状态和取消行编辑状态的事件处理。

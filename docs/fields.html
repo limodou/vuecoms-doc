@@ -9,7 +9,7 @@
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
     <script src="lib/iview/iview.js?t=f0bbb634"></script>
-    <script src="lib/vuecoms.js?t=fb28798b"></script>
+    <script src="lib/vuecoms.js?t=83381b58"></script>
     <title>基础控件 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -118,7 +118,7 @@
         <div class="markdown-body"><h1 id="">&#x57FA;&#x7840;&#x63A7;&#x4EF6;&#x8BF4;&#x660E;</h1>
 <p>&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x5B9E;&#x73B0;&#x754C;&#x9762;&#x751F;&#x6210;&#xFF0C;vuecoms&#x5BF9;iview&#x7684;&#x63A7;&#x4EF6;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x5305;&#x88C5;&#x53CA;&#x6269;&#x5C55;&#xFF0C;&#x4EE5;&#x4E0B;&#x4E3A;&#x5E38;&#x89C1;&#x7684;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x3002;</p>
 <div id="ex-build-01">
-  <build ref="build" :data="data" :value="value"></build>
+  <build ref="build" :data="data" :value="value" :choices="choices"></build>
   <div>
     {{value}}
   </div>
@@ -136,7 +136,7 @@ var ex_build_01 = new Vue({
         fields: [
           {name: 'str1', label: '输入框-string', placeholder: '请输入...', static: false, help: '帮助信息',
             info: 'info信息', required: true, rule: {type: 'email'}},
-          {name: 'select1', label: '选择-select', type: 'select', required: true, options: {clearable: true,disabled: true}},
+          {name: 'select1', label: '选择-select', type: 'select', required: true, options: {clearable: true}},
           {name: 'select1_1', label: '远程选择-select', type: 'select', options: {
             clearable: true,
             filterable: true, 
@@ -182,11 +182,13 @@ var ex_build_01 = new Vue({
           {name: 'radio1', label: 'Radio选择-radio', type: 'radio', required: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
+            {label: '不可选项', value: 'C', disabled: true}
             ]}
           },
           {name: 'checkboxgroup1', label: 'Checkbox多选-checkboxgroup', type: 'checkboxgroup', multiple: true, required: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
+            {label: '不可选项', value: 'C', disabled: true}
             ]}
           },
           {name: 'checkbox1', label: '单选框-checkbox', type: 'checkbox', required: true},
@@ -288,7 +290,8 @@ var ex_build_01 = new Vue({
             },
             choices: {
                 select1: [
-                  {label:'选项一', value: 'A'}
+                  {label:'选项一', value: 'A'},
+                  {label: '不可选项', value: 'B', disabled: true}
                 ]
             },
             errors: {},

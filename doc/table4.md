@@ -150,6 +150,10 @@ var ex_table_04 = new Vue({
           return h('div', '本行不可编辑')
         }
       },
+      onBeforeEditing: function (row) {
+        console.log('进入编辑状态之前', row)
+        return true
+      },
       onEditing: function (row) {
         console.log('进入编辑状态', row)
       },

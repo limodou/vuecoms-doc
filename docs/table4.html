@@ -9,7 +9,7 @@
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
     <script src="lib/iview/iview.js?t=f0bbb634"></script>
-    <script src="lib/vuecoms.js?t=fb28798b"></script>
+    <script src="lib/vuecoms.js?t=83381b58"></script>
     <title>表格行编辑 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -265,6 +265,10 @@ var ex_table_04 = new Vue({
         if (row.id === 3) {
           return h('div', '本行不可编辑')
         }
+      },
+      onBeforeEditing: function (row) {
+        console.log('进入编辑状态之前', row)
+        return true
       },
       onEditing: function (row) {
         console.log('进入编辑状态', row)

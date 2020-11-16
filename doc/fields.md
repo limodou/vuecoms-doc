@@ -3,7 +3,7 @@
 为了更好实现界面生成，vuecoms对iview的控件进行了一定的包装及扩展，以下为常见的字段类型。
 
 <div id="ex-build-01">
-  <build ref="build" :data="data" :value="value"></build>
+  <build ref="build" :data="data" :value="value" :choices="choices"></build>
   <div>
     {{value}}
   </div>
@@ -21,7 +21,7 @@ var ex_build_01 = new Vue({
         fields: [
           {name: 'str1', label: '输入框-string', placeholder: '请输入...', static: false, help: '帮助信息',
             info: 'info信息', required: true, rule: {type: 'email'}},
-          {name: 'select1', label: '选择-select', type: 'select', required: true, options: {clearable: true,disabled: true}},
+          {name: 'select1', label: '选择-select', type: 'select', required: true, options: {clearable: true}},
           {name: 'select1_1', label: '远程选择-select', type: 'select', options: {
             clearable: true,
             filterable: true, 
@@ -67,11 +67,13 @@ var ex_build_01 = new Vue({
           {name: 'radio1', label: 'Radio选择-radio', type: 'radio', required: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
+            {label: '不可选项', value: 'C', disabled: true}
             ]}
           },
           {name: 'checkboxgroup1', label: 'Checkbox多选-checkboxgroup', type: 'checkboxgroup', multiple: true, required: true, options: {choices: [
             {label:'选项一', value: 'A'},
             {label:'选项二', value: 'B'},
+            {label: '不可选项', value: 'C', disabled: true}
             ]}
           },
           {name: 'checkbox1', label: '单选框-checkbox', type: 'checkbox', required: true},
@@ -173,7 +175,8 @@ var ex_build_01 = new Vue({
             },
             choices: {
                 select1: [
-                  {label:'选项一', value: 'A'}
+                  {label:'选项一', value: 'A'},
+                  {label: '不可选项', value: 'B', disabled: true}
                 ]
             },
             errors: {},
