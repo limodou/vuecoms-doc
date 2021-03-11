@@ -154,11 +154,15 @@ var ex_table_02 = new Vue({
           }, 0)
       },
       onSelect: function (row) {
+        console.log('onSelect', row)
         var r = row.id !== 1
         if (!r) {
           self.$Message.info('本行不能选择')
         }
         return r
+      },
+      onSelectAll: function (flag) {
+        console.log('onSelectAll', flag)
       },
       onCheckable: function (row) {
         var r = row.id !== 2 && row.id !==3

@@ -1,5 +1,19 @@
 # 修改记录
 
+## V3.7.7
+
+* CardList 增加 addRow, removeRow 方法
+* UploaderFile 组件 增加 manual 参数可以手动控制是否自动打开文件浏览窗口。通过 onBeforeOpen(el) 可以响应在打开之前的事件回调。通过调用组件的 open() 方法来手工打开文件浏览窗口。
+## V3.7.6
+
+* Grid 增加 onSelectAll(flag) 事件回调，用于处理当点击全选时的事件回调。flag 为 true或 false 表示全选或全不选。当 onSelectAll 定义存在时，点击全选中，onSelect 和 onDeselect 不会被调用
+* 修复 Grid 页码录入时，可以录入非数字的 Bug
+
+## V3.7.5
+
+* FormCell 的自动校验加上了100毫秒的延迟处理
+* iview 的 treeSelect 支持在数据中加入disabled 的状态，将会与是否允许选择父结点
+
 ## V3.7.4
 
 * RadioGroup, CheckboxGroup, Select 增加对 disabled 的支持。在 choices 中指定 disabled 即可。

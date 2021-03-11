@@ -15,7 +15,23 @@
   <ul>
     <li v-for="f in files">{{f.name}} ---> {{f.active ? f.progress + '%' : f.status}}</li>
   </ul>
-  <i-button @click="handleClick">HTML5直接上传</i-button>
+      <uploader-file
+  ref='uploader1'
+  post-action="http://localhost:8000/upload"
+  @input="handleFiles1"
+  :on-success="onSuccess"
+  :on-start="onStart"
+  :on-upload="onUpload"
+  :on-delete="onDelete"
+  :on-error="onError"
+  :on-progress="onProgress"
+  :on-before-open="onBeforeOpen"
+  :manual="true"
+  >手动上传文件</uploader-file>
+    <ul>
+    <li v-for="f in files1">{{f.name}} ---> {{f.active ? f.progress + '%' : f.status}}</li>
+  </ul>
+  <i-button @click="handleClick">HTML5直接上传</i-button><br/><br/>
 </div>
 
 <script>
@@ -23,10 +39,14 @@ var ex_uploader_01 = new Vue({
   el: '#ex-uploader-01',
   data: {
     files: [],
+    files1: []
   },
   methods: {
     handleFiles: function (v){
       this.files = v
+    },
+    handleFiles1: function (v){
+      this.files1 = v
     },
     onStart: function(newFile){
       console.log('start', newFile)
@@ -55,7 +75,33 @@ var ex_uploader_01 = new Vue({
       }}).then(function(r){
         console.log('success', r)
       })
+    },
+    onBeforeOpen: function (el) {
+      alert('上传前')
+      el.open()
     }
   }
 })
 </script>
+
+文件上传组件目前可以支持单个文件上传，暂不支持多文件上传
+## 参数说明
+
+| 属性参数名 | 说明 | 类型 | 缺省值 |
+|----------|-----|------|------|
+| postAction | 提交到后台的地址 | String | 必填 |
+| manual | 是否手工触发打开文件浏览窗口 | Boolean | False |
+| onSuccess | 成功处理事件回调 onSuccess(success, newFile)，success 为成功状态，类型为 Boolean，成功为 true。newFile 是上后成功后的文件对象 |  Function | null |
+| onStart | 开始上传事件回调 onStart(newFile)，newFile 是将要上传的文件对象 |  Function | null |
+| onUpload | 上传事件回调 onUpload(newFile)，newFile 是将要上传的文件对象 |  Function | null |
+| onUpload | 成功处理事件回调 onUpload(newFile)，newFile 是将要删除的文件对象 |  Function | null |
+| onError | 出错处理事件回调 onError(error, newFile)，error 为出错状态，类型为 Boolean，出错为 true。newFile 是正在处理的文件对象 |  Function | null |
+| onProgress | 上传进度处理事件回调 onProgress(progress, newFile)， progress 为处理进度，类型为 Number。newFile 是正在处理的文件对象 |  Function | null |
+| onBeforeOpen | 打开文件前事件回调 onBeforeOpen(el)，el 是上传组件对象，可以调用它的 open() 方法，手动打开文件浏览窗口进行文件上传 |  Function | null |
+
+
+## 方法说明
+
+| 方法名 | 说明 | 返回值 |
+|----------|-----|------|
+| open | 手动打开文件浏览窗口 | 无 |

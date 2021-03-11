@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=789f542a">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=131136da">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=f0bbb634"></script>
-    <script src="lib/vuecoms.js?t=83381b58"></script>
+    <script src="lib/iview/iview.js?t=2412c51d"></script>
+    <script src="lib/vuecoms.js?t=1da5e897"></script>
     <title>文件上传 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -58,6 +58,12 @@
             <li class="menu-item -level-1 -parent"><span class="title">Uploader</span>
               <ul class="submenu">
                 <li class="menu-item -level-2"><a class="link title -active link-uploader" href="uploader.html">文件上传</a>
+                  <ul class="headings heading-list">
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">参数说明</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-" href="#">方法说明</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>
@@ -121,17 +127,25 @@
   <ul>
     <li v-for="f in files">{{f.name}} ---&gt; {{f.active ? f.progress + &apos;%&apos; : f.status}}</li>
   </ul>
-  <i-button @click="handleClick">HTML5&#x76F4;&#x63A5;&#x4E0A;&#x4F20;</i-button>
+      <uploader-file ref="uploader1" post-action="http://localhost:8000/upload" @input="handleFiles1" :on-success="onSuccess" :on-start="onStart" :on-upload="onUpload" :on-delete="onDelete" :on-error="onError" :on-progress="onProgress" :on-before-open="onBeforeOpen" :manual="true">&#x624B;&#x52A8;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;</uploader-file>
+    <ul>
+    <li v-for="f in files1">{{f.name}} ---&gt; {{f.active ? f.progress + &apos;%&apos; : f.status}}</li>
+  </ul>
+  <i-button @click="handleClick">HTML5&#x76F4;&#x63A5;&#x4E0A;&#x4F20;</i-button><br><br>
 </div>
 <script>
 var ex_uploader_01 = new Vue({
   el: '#ex-uploader-01',
   data: {
     files: [],
+    files1: []
   },
   methods: {
     handleFiles: function (v){
       this.files = v
+    },
+    handleFiles1: function (v){
+      this.files1 = v
     },
     onStart: function(newFile){
       console.log('start', newFile)
@@ -160,10 +174,99 @@ var ex_uploader_01 = new Vue({
       }}).then(function(r){
         console.log('success', r)
       })
+    },
+    onBeforeOpen: function (el) {
+      alert('上传前')
+      el.open()
     }
   }
 })
 </script>
+<p>&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x7EC4;&#x4EF6;&#x76EE;&#x524D;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#xFF0C;&#x6682;&#x4E0D;&#x652F;&#x6301;&#x591A;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;</p>
+<h2 id="">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7F3A;&#x7701;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>postAction</td>
+<td>&#x63D0;&#x4EA4;&#x5230;&#x540E;&#x53F0;&#x7684;&#x5730;&#x5740;</td>
+<td>String</td>
+<td>&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>manual</td>
+<td>&#x662F;&#x5426;&#x624B;&#x5DE5;&#x89E6;&#x53D1;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x6D4F;&#x89C8;&#x7A97;&#x53E3;</td>
+<td>Boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>onSuccess</td>
+<td>&#x6210;&#x529F;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03; onSuccess(success, newFile)&#xFF0C;success &#x4E3A;&#x6210;&#x529F;&#x72B6;&#x6001;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; Boolean&#xFF0C;&#x6210;&#x529F;&#x4E3A; true&#x3002;newFile &#x662F;&#x4E0A;&#x540E;&#x6210;&#x529F;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+<tr>
+<td>onStart</td>
+<td>&#x5F00;&#x59CB;&#x4E0A;&#x4F20;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03; onStart(newFile)&#xFF0C;newFile &#x662F;&#x5C06;&#x8981;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+<tr>
+<td>onUpload</td>
+<td>&#x4E0A;&#x4F20;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03; onUpload(newFile)&#xFF0C;newFile &#x662F;&#x5C06;&#x8981;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+<tr>
+<td>onUpload</td>
+<td>&#x6210;&#x529F;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03; onUpload(newFile)&#xFF0C;newFile &#x662F;&#x5C06;&#x8981;&#x5220;&#x9664;&#x7684;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+<tr>
+<td>onError</td>
+<td>&#x51FA;&#x9519;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03; onError(error, newFile)&#xFF0C;error &#x4E3A;&#x51FA;&#x9519;&#x72B6;&#x6001;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; Boolean&#xFF0C;&#x51FA;&#x9519;&#x4E3A; true&#x3002;newFile &#x662F;&#x6B63;&#x5728;&#x5904;&#x7406;&#x7684;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+<tr>
+<td>onProgress</td>
+<td>&#x4E0A;&#x4F20;&#x8FDB;&#x5EA6;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03; onProgress(progress, newFile)&#xFF0C; progress &#x4E3A;&#x5904;&#x7406;&#x8FDB;&#x5EA6;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; Number&#x3002;newFile &#x662F;&#x6B63;&#x5728;&#x5904;&#x7406;&#x7684;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+<tr>
+<td>onBeforeOpen</td>
+<td>&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x524D;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03; onBeforeOpen(el)&#xFF0C;el &#x662F;&#x4E0A;&#x4F20;&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5B83;&#x7684; open() &#x65B9;&#x6CD5;&#xFF0C;&#x624B;&#x52A8;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x6D4F;&#x89C8;&#x7A97;&#x53E3;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;</td>
+<td>Function</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h2 id="">&#x65B9;&#x6CD5;&#x8BF4;&#x660E;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x65B9;&#x6CD5;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+<th>&#x8FD4;&#x56DE;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open</td>
+<td>&#x624B;&#x52A8;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x6D4F;&#x89C8;&#x7A97;&#x53E3;</td>
+<td>&#x65E0;</td>
+</tr>
+</tbody>
+</table>
 
         </div>
         <div class="footer-nav">

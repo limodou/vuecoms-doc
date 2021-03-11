@@ -8945,12 +8945,12 @@ module.exports = !__webpack_require__("9e1e") && !__webpack_require__("79e5")(fu
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vue-upload-component/FileUpload.vue?vue&type=template&id=48b659dd&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{class:_vm.className},[_vm._t("default"),_c('label',{attrs:{"for":_vm.inputId || _vm.name}}),_c('input-file',{ref:"file"})],2)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vue-upload-component/FileUpload.vue?vue&type=template&id=046cbcfc&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{class:_vm.className},[_vm._t("default"),_c('label',{attrs:{"for":_vm.inputId || _vm.name},on:{"click":_vm.handleClick}}),_c('input-file',{ref:"file"})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/vue-upload-component/FileUpload.vue?vue&type=template&id=48b659dd&
+// CONCATENATED MODULE: ./src/components/vue-upload-component/FileUpload.vue?vue&type=template&id=046cbcfc&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/date/now.js
 var now = __webpack_require__("0a0d");
@@ -9726,11 +9726,13 @@ var component = Object(componentNormalizer["a" /* default */])(
 //
 //
 //
+//
+//
 
 
 var CHUNK_DEFAULT_OPTIONS = {
   headers: {},
-  action: '',
+  action: "",
   minSize: 1048576,
   maxActive: 3,
   maxRetries: 5,
@@ -9746,12 +9748,16 @@ var CHUNK_DEFAULT_OPTIONS = {
     },
     name: {
       type: String,
-      default: 'file'
+      default: "file"
     },
     accept: {
       type: String
     },
     capture: {},
+    // 是否手工触发
+    manual: {
+      default: false
+    },
     multiple: {
       type: Boolean
     },
@@ -9821,7 +9827,8 @@ var CHUNK_DEFAULT_OPTIONS = {
       default: function _default() {
         return CHUNK_DEFAULT_OPTIONS;
       }
-    }
+    },
+    onBeforeOpen: {}
   },
   data: function data() {
     return {
@@ -9843,18 +9850,18 @@ var CHUNK_DEFAULT_OPTIONS = {
    * @return {[type]} [description]
    */
   mounted: function mounted() {
-    var input = document.createElement('input');
-    input.type = 'file';
+    var input = document.createElement("input");
+    input.type = "file";
     input.multiple = true; // html5 特征
 
     if (window.FormData && input.files) {
       // 上传目录特征
-      if (typeof input.webkitdirectory === 'boolean' || typeof input.directory === 'boolean') {
+      if (typeof input.webkitdirectory === "boolean" || typeof input.directory === "boolean") {
         this.features.directory = true;
       } // 拖拽特征
 
 
-      if (this.features.html5 && typeof input.ondrop !== 'undefined') {
+      if (this.features.html5 && typeof input.ondrop !== "undefined") {
         this.features.drop = true;
       }
     } else {
@@ -9919,7 +9926,7 @@ var CHUNK_DEFAULT_OPTIONS = {
       return assign_default()(CHUNK_DEFAULT_OPTIONS, this.chunk);
     },
     className: function className() {
-      return ['file-uploads', this.features.html5 ? 'file-uploads-html5' : 'file-uploads-html4', this.features.directory && this.directory ? 'file-uploads-directory' : undefined, this.features.drop && this.drop ? 'file-uploads-drop' : undefined];
+      return ["file-uploads", this.features.html5 ? "file-uploads-html5" : "file-uploads-html4", this.features.directory && this.directory ? "file-uploads-directory" : undefined, this.features.drop && this.drop ? "file-uploads-drop" : undefined];
     }
   },
   watch: {
@@ -9976,7 +9983,7 @@ var CHUNK_DEFAULT_OPTIONS = {
         var files = this.files;
         this.files = []; // 清除input value
 
-        this.$refs.file.$el.value = ''; // 定位
+        this.$refs.file.$el.value = ""; // 定位
 
         this.maps = {}; // 事件
 
@@ -9997,7 +10004,7 @@ var CHUNK_DEFAULT_OPTIONS = {
         return false;
       }
 
-      if (Object(esm_typeof["a" /* default */])(id) === 'object') {
+      if (Object(esm_typeof["a" /* default */])(id) === "object") {
         return this.maps[id.id] || false;
       }
 
@@ -10023,7 +10030,7 @@ var CHUNK_DEFAULT_OPTIONS = {
           file = {
             file: file,
             size: file.size,
-            name: file.webkitRelativePath || file.relativePath || file.name || 'unknown',
+            name: file.webkitRelativePath || file.relativePath || file.name || "unknown",
             type: file.type
           };
         }
@@ -10033,9 +10040,9 @@ var CHUNK_DEFAULT_OPTIONS = {
         if (file.fileObject === false) {// false
         } else if (file.fileObject) {
           fileObject = true;
-        } else if (typeof Element !== 'undefined' && file.el instanceof Element) {
+        } else if (typeof Element !== "undefined" && file.el instanceof Element) {
           fileObject = true;
-        } else if (typeof Blob !== 'undefined' && file.file instanceof Blob) {
+        } else if (typeof Blob !== "undefined" && file.file instanceof Blob) {
           fileObject = true;
         }
 
@@ -10043,17 +10050,17 @@ var CHUNK_DEFAULT_OPTIONS = {
           file = Object(objectSpread["a" /* default */])({
             fileObject: true,
             size: -1,
-            name: 'Filename',
-            type: '',
+            name: "Filename",
+            type: "",
             active: false,
-            error: '',
+            error: "",
             success: false,
             putAction: this.putAction,
             postAction: this.postAction,
             timeout: this.timeout
           }, file, {
             response: {},
-            progress: '0.00',
+            progress: "0.00",
             // 只读
             speed: 0 // 只读
             // xhr: false,                // 只读
@@ -10141,7 +10148,7 @@ var CHUNK_DEFAULT_OPTIONS = {
           });
         }
       } else {
-        var names = el.value.replace(/\\/g, '/').split('/');
+        var names = el.value.replace(/\\/g, "/").split("/");
         delete el.__vuex__;
         files.push({
           name: names[names.length - 1],
@@ -10212,7 +10219,7 @@ var CHUNK_DEFAULT_OPTIONS = {
     getEntry: function getEntry(entry) {
       var _this2 = this;
 
-      var path = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+      var path = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
       return new promise_default.a(function (resolve, reject) {
         if (entry.isFile) {
           entry.file(function (file) {
@@ -10238,7 +10245,7 @@ var CHUNK_DEFAULT_OPTIONS = {
                   return readEntries();
                 }
 
-                _this2.getEntry(entries[i], path + entry.name + '/').then(function (results) {
+                _this2.getEntry(entries[i], path + entry.name + "/").then(function (results) {
                   files.push.apply(files, _toConsumableArray(results));
                   forEach(i + 1);
                 });
@@ -10289,7 +10296,7 @@ var CHUNK_DEFAULT_OPTIONS = {
         var index = files.indexOf(file);
 
         if (index === -1) {
-          console.error('remove', file);
+          console.error("remove", file);
           return false;
         }
 
@@ -10313,7 +10320,7 @@ var CHUNK_DEFAULT_OPTIONS = {
 
 
         if (file.fileObject && file.active && !newFile.active && !newFile.error && !newFile.success) {
-          newFile.error = 'abort';
+          newFile.error = "abort";
         }
 
         if (this.emitFilter(newFile, file)) {
@@ -10324,7 +10331,7 @@ var CHUNK_DEFAULT_OPTIONS = {
         var index = files.indexOf(file);
 
         if (index === -1) {
-          console.error('update', file);
+          console.error("update", file);
           return false;
         }
 
@@ -10344,7 +10351,7 @@ var CHUNK_DEFAULT_OPTIONS = {
     // 预处理 事件 过滤器
     emitFilter: function emitFilter(newFile, oldFile) {
       var isPrevent = false;
-      this.$emit('input-filter', newFile, oldFile, function () {
+      this.$emit("input-filter", newFile, oldFile, function () {
         isPrevent = true;
         return isPrevent;
       });
@@ -10352,7 +10359,7 @@ var CHUNK_DEFAULT_OPTIONS = {
     },
     // 处理后 事件 分发
     emitFile: function emitFile(newFile, oldFile) {
-      this.$emit('input-file', newFile, oldFile);
+      this.$emit("input-file", newFile, oldFile);
 
       if (newFile && newFile.fileObject && newFile.active && (!oldFile || !oldFile.active)) {
         this.uploading++; // 激活
@@ -10420,19 +10427,19 @@ var CHUNK_DEFAULT_OPTIONS = {
         }
       }
 
-      this.$emit('input', files);
+      this.$emit("input", files);
     },
     // 上传
     upload: function upload(id) {
       var file = this.get(id); // 被删除
 
       if (!file) {
-        return promise_default.a.reject('not_exists');
+        return promise_default.a.reject("not_exists");
       } // 不是文件对象
 
 
       if (!file.fileObject) {
-        return promise_default.a.reject('file_object');
+        return promise_default.a.reject("file_object");
       } // 有错误直接响应
 
 
@@ -10448,27 +10455,27 @@ var CHUNK_DEFAULT_OPTIONS = {
 
       var extensions = this.extensions;
 
-      if (extensions && (extensions.length || typeof extensions.length === 'undefined')) {
-        if (Object(esm_typeof["a" /* default */])(extensions) !== 'object' || !(extensions instanceof RegExp)) {
-          if (typeof extensions === 'string') {
-            extensions = extensions.split(',').map(function (value) {
+      if (extensions && (extensions.length || typeof extensions.length === "undefined")) {
+        if (Object(esm_typeof["a" /* default */])(extensions) !== "object" || !(extensions instanceof RegExp)) {
+          if (typeof extensions === "string") {
+            extensions = extensions.split(",").map(function (value) {
               return value.trim();
             }).filter(function (value) {
               return value;
             });
           }
 
-          extensions = new RegExp('\\.(' + extensions.join('|').replace(/\./g, '\\.') + ')$', 'i');
+          extensions = new RegExp("\\.(" + extensions.join("|").replace(/\./g, "\\.") + ")$", "i");
         }
 
         if (file.name.search(extensions) === -1) {
-          return promise_default.a.reject('extension');
+          return promise_default.a.reject("extension");
         }
       } // 大小
 
 
       if (this.size > 0 && file.size >= 0 && file.size > this.size) {
-        return promise_default.a.reject('size');
+        return promise_default.a.reject("size");
       }
 
       if (this.customAction) {
@@ -10493,7 +10500,7 @@ var CHUNK_DEFAULT_OPTIONS = {
         return this.uploadHtml4(file);
       }
 
-      return promise_default.a.reject('No action configured');
+      return promise_default.a.reject("No action configured");
     },
 
     /**
@@ -10523,13 +10530,13 @@ var CHUNK_DEFAULT_OPTIONS = {
         value = file.data[key];
 
         if (value !== null && value !== undefined) {
-          querys.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+          querys.push(encodeURIComponent(key) + "=" + encodeURIComponent(value));
         }
       }
 
-      var queryString = querys.length ? (file.putAction.indexOf('?') === -1 ? '?' : '&') + querys.join('&') : '';
+      var queryString = querys.length ? (file.putAction.indexOf("?") === -1 ? "?" : "&") + querys.join("&") : "";
       var xhr = new XMLHttpRequest();
-      xhr.open('PUT', file.putAction + queryString);
+      xhr.open("PUT", file.putAction + queryString);
       return this.uploadXhr(xhr, file, file.file);
     },
     uploadHtml5: function uploadHtml5(file) {
@@ -10539,7 +10546,7 @@ var CHUNK_DEFAULT_OPTIONS = {
       for (var key in file.data) {
         value = file.data[key];
 
-        if (value && Object(esm_typeof["a" /* default */])(value) === 'object' && typeof value.toString !== 'function') {
+        if (value && Object(esm_typeof["a" /* default */])(value) === "object" && typeof value.toString !== "function") {
           if (value instanceof File) {
             form.append(key, value, value.name);
           } else {
@@ -10552,7 +10559,7 @@ var CHUNK_DEFAULT_OPTIONS = {
 
       form.append(this.name, file.file, file.file.filename || file.name);
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', this.postAction);
+      xhr.open("POST", this.postAction);
       return this.uploadXhr(xhr, file, form);
     },
     uploadXhr: function uploadXhr(xhr, _file, body) {
@@ -10622,12 +10629,12 @@ var CHUNK_DEFAULT_OPTIONS = {
           file = _this4.get(file); // 不存在直接响应
 
           if (!file) {
-            return reject('not_exists');
+            return reject("not_exists");
           } // 不是文件对象
 
 
           if (!file.fileObject) {
-            return reject('file_object');
+            return reject("file_object");
           } // 有错误自动响应
 
 
@@ -10637,7 +10644,7 @@ var CHUNK_DEFAULT_OPTIONS = {
 
 
           if (!file.active) {
-            return reject('abort');
+            return reject("abort");
           } // 已完成 直接相应
 
 
@@ -10648,37 +10655,37 @@ var CHUNK_DEFAULT_OPTIONS = {
           var data = {};
 
           switch (e.type) {
-            case 'timeout':
-            case 'abort':
+            case "timeout":
+            case "abort":
               data.error = e.type;
               break;
 
-            case 'error':
+            case "error":
               if (!xhr.status) {
-                data.error = 'network';
+                data.error = "network";
               } else if (xhr.status >= 500) {
-                data.error = 'server';
+                data.error = "server";
               } else if (xhr.status >= 400) {
-                data.error = 'denied';
+                data.error = "denied";
               }
 
               break;
 
             default:
               if (xhr.status >= 500) {
-                data.error = 'server';
+                data.error = "server";
               } else if (xhr.status >= 400) {
-                data.error = 'denied';
+                data.error = "denied";
               } else {
-                data.progress = '100.00';
+                data.progress = "100.00";
               }
 
           }
 
           if (xhr.responseText) {
-            var contentType = xhr.getResponseHeader('Content-Type');
+            var contentType = xhr.getResponseHeader("Content-Type");
 
-            if (contentType && contentType.indexOf('/json') !== -1) {
+            if (contentType && contentType.indexOf("/json") !== -1) {
               data.response = JSON.parse(xhr.responseText);
             } else {
               data.response = xhr.responseText;
@@ -10730,30 +10737,30 @@ var CHUNK_DEFAULT_OPTIONS = {
         }
       };
 
-      var iframe = document.createElement('iframe');
-      iframe.id = 'upload-iframe-' + file.id;
-      iframe.name = 'upload-iframe-' + file.id;
-      iframe.src = 'about:blank';
-      iframe.setAttribute('style', 'width:1px;height:1px;top:-999em;position:absolute; margin-top:-999em;');
-      var form = document.createElement('form');
+      var iframe = document.createElement("iframe");
+      iframe.id = "upload-iframe-" + file.id;
+      iframe.name = "upload-iframe-" + file.id;
+      iframe.src = "about:blank";
+      iframe.setAttribute("style", "width:1px;height:1px;top:-999em;position:absolute; margin-top:-999em;");
+      var form = document.createElement("form");
       form.action = this.postAction;
-      form.name = 'upload-form-' + file.id;
-      form.setAttribute('method', 'POST');
-      form.setAttribute('target', 'upload-iframe-' + file.id);
-      form.setAttribute('enctype', 'multipart/form-data');
+      form.name = "upload-form-" + file.id;
+      form.setAttribute("method", "POST");
+      form.setAttribute("target", "upload-iframe-" + file.id);
+      form.setAttribute("enctype", "multipart/form-data");
       var value;
       var input;
 
       for (var key in file.data) {
         value = file.data[key];
 
-        if (value && Object(esm_typeof["a" /* default */])(value) === 'object' && typeof value.toString !== 'function') {
+        if (value && Object(esm_typeof["a" /* default */])(value) === "object" && typeof value.toString !== "function") {
           value = stringify_default()(value);
         }
 
         if (value !== null && value !== undefined) {
-          input = document.createElement('input');
-          input.type = 'hidden';
+          input = document.createElement("input");
+          input.type = "hidden";
           input.name = key;
           input.value = value;
           form.appendChild(input);
@@ -10794,7 +10801,7 @@ var CHUNK_DEFAULT_OPTIONS = {
           }); // 不存在
 
           if (!file) {
-            return reject('not_exists');
+            return reject("not_exists");
           } // 定时检查
 
 
@@ -10811,7 +10818,7 @@ var CHUNK_DEFAULT_OPTIONS = {
             }
 
             iframe.onabort({
-              type: file ? 'abort' : 'not_exists'
+              type: file ? "abort" : "not_exists"
             });
           }, 100);
           var complete;
@@ -10830,16 +10837,16 @@ var CHUNK_DEFAULT_OPTIONS = {
             } // 关闭 esc 事件
 
 
-            document.body.removeEventListener('keydown', onKeydown);
+            document.body.removeEventListener("keydown", onKeydown);
             file = _this5.get(file); // 不存在直接响应
 
             if (!file) {
-              return reject('not_exists');
+              return reject("not_exists");
             } // 不是文件对象
 
 
             if (!file.fileObject) {
-              return reject('file_object');
+              return reject("file_object");
             } // 有错误自动响应
 
 
@@ -10849,7 +10856,7 @@ var CHUNK_DEFAULT_OPTIONS = {
 
 
             if (!file.active) {
-              return reject('abort');
+              return reject("abort");
             } // 已完成 直接相应
 
 
@@ -10861,17 +10868,17 @@ var CHUNK_DEFAULT_OPTIONS = {
             var data = {};
 
             switch (e.type) {
-              case 'abort':
-                data.error = 'abort';
+              case "abort":
+                data.error = "abort";
                 break;
 
-              case 'error':
+              case "error":
                 if (file.error) {
                   data.error = file.error;
                 } else if (response === null) {
-                  data.error = 'network';
+                  data.error = "network";
                 } else {
-                  data.error = 'denied';
+                  data.error = "denied";
                 }
 
                 break;
@@ -10880,15 +10887,15 @@ var CHUNK_DEFAULT_OPTIONS = {
                 if (file.error) {
                   data.error = file.error;
                 } else if (data === null) {
-                  data.error = 'network';
+                  data.error = "network";
                 } else {
-                  data.progress = '100.00';
+                  data.progress = "100.00";
                 }
 
             }
 
             if (response !== null) {
-              if (response && response.substr(0, 1) === '{' && response.substr(response.length - 1, 1) === '}') {
+              if (response && response.substr(0, 1) === "{" && response.substr(response.length - 1, 1) === "}") {
                 try {
                   response = JSON.parse(response);
                 } catch (err) {}
@@ -10913,7 +10920,7 @@ var CHUNK_DEFAULT_OPTIONS = {
           iframe.onerror = fn;
           iframe.onabort = fn; // 禁止 esc 键
 
-          document.body.addEventListener('keydown', onKeydown); // 提交
+          document.body.addEventListener("keydown", onKeydown); // 提交
 
           form.submit();
         }, 50);
@@ -10966,17 +10973,17 @@ var CHUNK_DEFAULT_OPTIONS = {
 
       if (this.dropElement) {
         try {
-          document.removeEventListener('dragenter', this.onDragenter, false);
-          document.removeEventListener('dragleave', this.onDragleave, false);
-          document.removeEventListener('drop', this.onDocumentDrop, false);
-          this.dropElement.removeEventListener('dragover', this.onDragover, false);
-          this.dropElement.removeEventListener('drop', this.onDrop, false);
+          document.removeEventListener("dragenter", this.onDragenter, false);
+          document.removeEventListener("dragleave", this.onDragleave, false);
+          document.removeEventListener("drop", this.onDocumentDrop, false);
+          this.dropElement.removeEventListener("dragover", this.onDragover, false);
+          this.dropElement.removeEventListener("drop", this.onDrop, false);
         } catch (e) {}
       }
 
       if (!el) {
         el = false;
-      } else if (typeof el === 'string') {
+      } else if (typeof el === "string") {
         el = document.querySelector(el) || this.$root.$el.querySelector(el);
       } else if (el === true) {
         el = this.$parent.$el;
@@ -10985,11 +10992,11 @@ var CHUNK_DEFAULT_OPTIONS = {
       this.dropElement = el;
 
       if (this.dropElement) {
-        document.addEventListener('dragenter', this.onDragenter, false);
-        document.addEventListener('dragleave', this.onDragleave, false);
-        document.addEventListener('drop', this.onDocumentDrop, false);
-        this.dropElement.addEventListener('dragover', this.onDragover, false);
-        this.dropElement.addEventListener('drop', this.onDrop, false);
+        document.addEventListener("dragenter", this.onDragenter, false);
+        document.addEventListener("dragleave", this.onDragleave, false);
+        document.addEventListener("drop", this.onDocumentDrop, false);
+        this.dropElement.addEventListener("dragover", this.onDragover, false);
+        this.dropElement.addEventListener("drop", this.onDrop, false);
       }
     },
     onDragenter: function onDragenter(e) {
@@ -11009,9 +11016,9 @@ var CHUNK_DEFAULT_OPTIONS = {
         this.dropActive = true;
       } else if (!dt.types) {
         this.dropActive = true;
-      } else if (dt.types.indexOf && dt.types.indexOf('Files') !== -1) {
+      } else if (dt.types.indexOf && dt.types.indexOf("Files") !== -1) {
         this.dropActive = true;
-      } else if (dt.types.contains && dt.types.contains('Files')) {
+      } else if (dt.types.contains && dt.types.contains("Files")) {
         this.dropActive = true;
       }
     },
@@ -11022,7 +11029,7 @@ var CHUNK_DEFAULT_OPTIONS = {
         return;
       }
 
-      if (e.target.nodeName === 'HTML' || e.target === e.explicitOriginalTarget || !e.fromElement && (e.clientX <= 0 || e.clientY <= 0 || e.clientX >= window.innerWidth || e.clientY >= window.innerHeight)) {
+      if (e.target.nodeName === "HTML" || e.target === e.explicitOriginalTarget || !e.fromElement && (e.clientX <= 0 || e.clientY <= 0 || e.clientX >= window.innerWidth || e.clientY >= window.innerHeight)) {
         this.dropActive = false;
       }
     },
@@ -11035,6 +11042,18 @@ var CHUNK_DEFAULT_OPTIONS = {
     onDrop: function onDrop(e) {
       e.preventDefault();
       this.addDataTransfer(e.dataTransfer);
+    },
+    handleClick: function handleClick(e) {
+      if (this.onBeforeOpen) {
+        this.onBeforeOpen(this);
+      }
+
+      if (this.manual) {
+        e.preventDefault();
+      }
+    },
+    open: function open() {
+      this.$refs.file.$el.click();
     }
   }
 });
@@ -15759,12 +15778,12 @@ var UCell_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var UCell = (UCell_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Table/UHeaderCell.vue?vue&type=template&id=6f66f61f&
-var UHeaderCellvue_type_template_id_6f66f61f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"u-header-cell"},[(_vm.column.type === 'column')?_c('div',{staticClass:"u-table-header-header-cell",style:(_vm.trStyles(_vm.column))},[(_vm.column.headerRender)?_c('HeaderCellRender',{attrs:{"render":_vm.column.headerRender,"column":_vm.column}}):[_c('div',{staticClass:"u-table-header-cell-title",class:{ nowrap: _vm.nowrap }},[_c('span',{attrs:{"title":_vm.title},domProps:{"innerHTML":_vm._s(_vm.column.title)}}),(_vm.column.filterable && _vm.column.leaf)?_c('Filterable',{attrs:{"store":_vm.store,"column":_vm.column}}):_vm._e()],1),(_vm.column.sortable && _vm.column.leaf)?_c('Sort',{attrs:{"store":_vm.store,"column":_vm.column}}):_vm._e(),(_vm.resizable && _vm.column.resizable && _vm.column.leaf)?_c('div',{staticClass:"u-table-header-cell-resizer",on:{"mousedown":function($event){$event.stopPropagation();$event.preventDefault();return _vm.handleMouseDown(_vm.column, $event)}}}):_vm._e()]],2):_vm._e(),(_vm.column.type === 'check')?_c('div',{staticClass:"u-table-header-cell-title"},[(_vm.multiSelect)?_c('Checkbox',{attrs:{"value":_vm.checkAll,"indeterminate":_vm.indeterminate},nativeOn:{"click":function($event){$event.preventDefault();return _vm.handleCheckAll($event)}}}):_vm._e(),(_vm.column.title)?_c('span',[_vm._v(_vm._s(_vm.column.title))]):_vm._e()],1):_vm._e(),(_vm.column.type === 'index')?_c('div',{staticClass:"u-table-header-cell-title"},[(_vm.column.title)?_c('span',[_vm._v(_vm._s(_vm.column.title))]):_vm._e()]):_vm._e()])}
-var UHeaderCellvue_type_template_id_6f66f61f_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Table/UHeaderCell.vue?vue&type=template&id=11ed06ac&
+var UHeaderCellvue_type_template_id_11ed06ac_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"u-header-cell"},[(_vm.column.type === 'column')?_c('div',{staticClass:"u-table-header-header-cell",style:(_vm.trStyles(_vm.column))},[(_vm.column.headerRender)?_c('HeaderCellRender',{attrs:{"render":_vm.column.headerRender,"column":_vm.column}}):[_c('div',{staticClass:"u-table-header-cell-title",class:{ nowrap: _vm.nowrap }},[_c('span',{attrs:{"title":_vm.title},domProps:{"innerHTML":_vm._s(_vm.column.title)}}),(_vm.column.filterable && _vm.column.leaf)?_c('Filterable',{attrs:{"store":_vm.store,"column":_vm.column}}):_vm._e()],1),(_vm.column.sortable && _vm.column.leaf)?_c('Sort',{attrs:{"store":_vm.store,"column":_vm.column}}):_vm._e(),(_vm.resizable && _vm.column.resizable && _vm.column.leaf)?_c('div',{staticClass:"u-table-header-cell-resizer",on:{"mousedown":function($event){$event.stopPropagation();$event.preventDefault();return _vm.handleMouseDown(_vm.column, $event)}}}):_vm._e()]],2):_vm._e(),(_vm.column.type === 'check')?_c('div',{staticClass:"u-table-header-cell-title"},[(_vm.multiSelect)?_c('Checkbox',{attrs:{"value":_vm.checkAll,"indeterminate":_vm.indeterminate},nativeOn:{"click":function($event){$event.preventDefault();return _vm.handleCheckAll($event)}}}):_vm._e(),(_vm.column.title)?_c('span',[_vm._v(_vm._s(_vm.column.title))]):_vm._e()],1):_vm._e(),(_vm.column.type === 'index')?_c('div',{staticClass:"u-table-header-cell-title"},[(_vm.column.title)?_c('span',[_vm._v(_vm._s(_vm.column.title))]):_vm._e()]):_vm._e()])}
+var UHeaderCellvue_type_template_id_11ed06ac_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Table/UHeaderCell.vue?vue&type=template&id=6f66f61f&
+// CONCATENATED MODULE: ./src/components/Table/UHeaderCell.vue?vue&type=template&id=11ed06ac&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Table/USort.vue?vue&type=template&id=29dec304&
 var USortvue_type_template_id_29dec304_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"u-sort",class:{up:_vm.dir==='asc', down:_vm.dir==='desc'},on:{"click":function($event){$event.stopPropagation();$event.preventDefault();return _vm.handleSort($event)}}},[_c('i',{staticClass:"ivu-icon ivu-icon-md-arrow-dropup u-sort-up"}),_c('i',{staticClass:"ivu-icon ivu-icon-md-arrow-dropdown u-sort-down"})])}
@@ -16151,16 +16170,26 @@ var UFilter_component = Object(componentNormalizer["a" /* default */])(
       var result;
 
       if (this.indeterminate) {
-        this.store.selectAll();
+        this.store.selectAll(true); // 增加 onSelectAll 的事件回调
+
+        if (this.store.states.onSelectAll) {
+          this.store.states.onSelectAll(true);
+        }
+
         return;
       }
 
       this.checkAll = !this.checkAll;
 
       if (this.checkAll) {
-        this.store.selectAll();
+        this.store.selectAll(true);
       } else {
-        this.store.deselectAll();
+        this.store.deselectAll(true);
+      } // 增加 onSelectAll 的事件回调
+
+
+      if (this.store.states.onSelectAll) {
+        this.store.states.onSelectAll(this.checkAll);
       }
     },
     handleMouseDown: function handleMouseDown(column, e) {
@@ -16198,8 +16227,8 @@ var UHeaderCellvue_type_style_index_0_lang_less_ = __webpack_require__("8bc4");
 
 var UHeaderCell_component = Object(componentNormalizer["a" /* default */])(
   Table_UHeaderCellvue_type_script_lang_js_,
-  UHeaderCellvue_type_template_id_6f66f61f_render,
-  UHeaderCellvue_type_template_id_6f66f61f_staticRenderFns,
+  UHeaderCellvue_type_template_id_11ed06ac_render,
+  UHeaderCellvue_type_template_id_11ed06ac_staticRenderFns,
   false,
   null,
   null,
@@ -17110,6 +17139,8 @@ function () {
       // 装入数据回调函数，将传入 function (url, param, callback)，当树型结构时，会传入parent字段
       onSelect: null,
       // 在选择行前执行，返回为True，则允许选中
+      onSelectAll: null,
+      // 全选事件回调，如果定义了，则在全选或全不选中，不会再调用 onSelect 回调
       onDeselect: null,
       // 在取消选择行前执行，返回为True，则允许取消选中
       onCheckable: null,
@@ -17441,7 +17472,7 @@ function () {
       var rows = [];
 
       var callback = function callback(row) {
-        if (_this5._deselect(row)) {
+        if (_this5._deselect(row, force)) {
           rows.push(row);
         }
       };
@@ -18210,14 +18241,14 @@ function () {
 }();
 
 /* harmony default export */ var UGridStore = (UGridStore_Store);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Table/pagination.vue?vue&type=template&id=410054f5&
-var paginationvue_type_template_id_410054f5_render = function () {
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Table/pagination.vue?vue&type=template&id=b9fddb26&
+var paginationvue_type_template_id_b9fddb26_render = function () {
 var _obj, _obj$1, _obj$2, _obj$3;
 var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"pagination"},[_c('ul',[(_vm.store.first)?_c('li',{staticClass:"ivu-btn ivu-btn-default",class:( _obj = {'disabled':!_vm.hasFirst}, _obj[_vm.sizeClass] = true, _obj ),attrs:{"title":_vm.store.first}},[_c('a',{on:{"click":function($event){$event.preventDefault();return _vm.handlePageClick(1)}}},[_vm._v(_vm._s(_vm.store.first))])]):_vm._e(),(_vm.store.prev)?_c('li',{staticClass:"ivu-btn ivu-btn-default",class:( _obj$1 = {'disabled':!_vm.hasPrev}, _obj$1[_vm.sizeClass] = true, _obj$1 ),attrs:{"title":_vm.store.prev}},[_c('a',{on:{"click":function($event){$event.preventDefault();return _vm.handlePageClick(_vm.current-1)}}},[_vm._v(_vm._s(_vm.store.prev))])]):_vm._e(),(_vm.store.next)?_c('li',{staticClass:"ivu-btn ivu-btn-default",class:( _obj$2 = {'disabled':!_vm.hasNext}, _obj$2[_vm.sizeClass] = true, _obj$2 ),attrs:{"title":_vm.store.next}},[_c('a',{on:{"click":function($event){$event.preventDefault();return _vm.handlePageClick(_vm.current+1)}}},[_vm._v(_vm._s(_vm.store.next))])]):_vm._e(),(_vm.store.last)?_c('li',{staticClass:"ivu-btn ivu-btn-default",class:( _obj$3 = {'disabled':!_vm.hasLast}, _obj$3[_vm.sizeClass] = true, _obj$3 ),attrs:{"title":_vm.store.last}},[_c('a',{on:{"click":function($event){$event.preventDefault();return _vm.handlePageClick(_vm.pages)}}},[_vm._v(_vm._s(_vm.store.last))])]):_vm._e(),_c('Dropdown',{staticClass:"ivu-btn ivu-btn-default",class:_vm.sizeClass,attrs:{"transfer":""},on:{"on-click":_vm.handlePageSize}},[_c('a',[_vm._v("\n        "+_vm._s(_vm.limit)+"条/页\n        "),_c('Icon',{attrs:{"type":"ios-arrow-down"}})],1),_c('DropdownMenu',{attrs:{"slot":"list"},slot:"list"},_vm._l((_vm.store.pageSizeOpts),function(x){return _c('DropdownItem',{key:x,attrs:{"name":x}},[_vm._v(_vm._s(x)+"条/页")])}),1)],1),_c('li',{staticClass:"ivu-btn ivu-btn-text page-input",class:_vm.sizeClass},[_vm._v("\n    跳至\n      "),_c('input',{ref:"page",attrs:{"type":"text","size":_vm.inputSize},domProps:{"value":_vm.current},on:{"keypress":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.handleEnter($event)},"keyup":_vm.handleKeyUp,"input":_vm.handleInput,"focus":_vm.handleFocus}}),_vm._v("\n    页\n    ")])],1),_vm._t("default"),_c('span',{staticClass:"page-total"},[_vm._v("共 "+_vm._s(_vm.pages)+" 页/"+_vm._s(_vm.store.total)+" 条记录")])],2)}
-var paginationvue_type_template_id_410054f5_staticRenderFns = []
+var paginationvue_type_template_id_b9fddb26_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Table/pagination.vue?vue&type=template&id=410054f5&
+// CONCATENATED MODULE: ./src/components/Table/pagination.vue?vue&type=template&id=b9fddb26&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/number/is-nan.js
 var is_nan = __webpack_require__("bfb3");
@@ -18343,7 +18374,7 @@ var parse_int_default = /*#__PURE__*/__webpack_require__.n(parse_int);
     },
     handleKeyUp: function handleKeyUp(event) {
       var keycode = event.which;
-      var val = /\d+/.test(event.key);
+      var val = /^\d+$/.test(event.key);
 
       if (val || event.ctrlKey && (keycode == 88 || keycode == 89 || keycode == 90) || event.keyCode === 46 || event.keyCode === 8) {
         this.handleInput(event);
@@ -18353,7 +18384,7 @@ var parse_int_default = /*#__PURE__*/__webpack_require__.n(parse_int);
     },
     handleInput: function handleInput(event) {
       var value = event.target.value;
-      var val = /\d+/.test(value);
+      var val = /^\d+$/.test(value);
 
       if (!val) {
         value = '1';
@@ -18398,8 +18429,8 @@ var paginationvue_type_style_index_0_lang_less_ = __webpack_require__("253f");
 
 var pagination_component = Object(componentNormalizer["a" /* default */])(
   Table_paginationvue_type_script_lang_js_,
-  paginationvue_type_template_id_410054f5_render,
-  paginationvue_type_template_id_410054f5_staticRenderFns,
+  paginationvue_type_template_id_b9fddb26_render,
+  paginationvue_type_template_id_b9fddb26_staticRenderFns,
   false,
   null,
   null,
@@ -22899,12 +22930,12 @@ var Build_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var Build = (Build_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Build/Section.vue?vue&type=template&id=2e540806&
-var Sectionvue_type_template_id_2e540806_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.boxComponent)?_c(_vm.boxComponent,_vm._b({tag:"component",staticClass:"u-layout",class:_vm.themeClasses,attrs:{"title":_vm.title}},'component',_vm.boxOptions,false),[_vm._l((_vm.rows),function(row,i){return _c('Row',{key:i,staticClass:"u-layout-row"},_vm._l((row),function(col,j){return _c('Col',{key:col._id,attrs:{"span":col.colspan}},[(!col.hidden)?_c(col.component,{tag:"component",attrs:{"col":col,"value":_vm.value,"validate-result":_vm.validateResult,"label-dir":_vm.labelDir,"label-align":_vm.labelAlign,"static-suffix":_vm.staticSuffix,"root":"Build","fields":col.fields}}):_vm._e()],1)}),1)}),(_vm.buttons)?_c('Row',{staticClass:"u-build-buttons",attrs:{"slot":"footer"},slot:"footer"},[_c('Buttons',{attrs:{"buttons":_vm.btns,"data":_vm.value,"size":_vm.size,"target":_vm.$parent}})],1):_vm._e()],2):_c('div',{staticClass:"u-layout",class:_vm.themeClasses},_vm._l((_vm.rows),function(row,i){return _c('Row',{key:i,staticClass:"u-layout-row"},_vm._l((row),function(col,j){return _c('Col',{key:col._id,attrs:{"span":col.colspan}},[(!col.hidden)?_c(col.component,{tag:"component",attrs:{"col":col,"value":_vm.value,"validate-result":_vm.validateResult,"label-dir":_vm.labelDir,"label-align":_vm.labelAlign,"static-suffix":_vm.staticSuffix,"root":_vm.Build,"fields":col.fields}}):_vm._e()],1)}),1)}),1)}
-var Sectionvue_type_template_id_2e540806_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Build/Section.vue?vue&type=template&id=20323e64&
+var Sectionvue_type_template_id_20323e64_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.boxComponent)?_c(_vm.boxComponent,_vm._b({tag:"component",staticClass:"u-layout",class:_vm.themeClasses,attrs:{"title":_vm.title}},'component',_vm.boxOptions,false),[_vm._l((_vm.rows),function(row,i){return _c('Row',{key:i,staticClass:"u-layout-row"},_vm._l((row),function(col,j){return _c('Col',{key:col.id,attrs:{"span":col.colspan}},[(!col.hidden)?_c(col.component,{tag:"component",attrs:{"col":col,"value":_vm.value,"validate-result":_vm.validateResult,"label-dir":_vm.labelDir,"label-align":_vm.labelAlign,"static-suffix":_vm.staticSuffix,"root":"Build","fields":col.fields}}):_vm._e()],1)}),1)}),(_vm.buttons)?_c('Row',{staticClass:"u-build-buttons",attrs:{"slot":"footer"},slot:"footer"},[_c('Buttons',{attrs:{"buttons":_vm.btns,"data":_vm.value,"size":_vm.size,"target":_vm.$parent}})],1):_vm._e()],2):_c('div',{staticClass:"u-layout",class:_vm.themeClasses},_vm._l((_vm.rows),function(row,i){return _c('Row',{key:i,staticClass:"u-layout-row"},_vm._l((row),function(col,j){return _c('Col',{key:col.id,attrs:{"span":col.colspan}},[(!col.hidden)?_c(col.component,{tag:"component",attrs:{"col":col,"value":_vm.value,"validate-result":_vm.validateResult,"label-dir":_vm.labelDir,"label-align":_vm.labelAlign,"static-suffix":_vm.staticSuffix,"root":_vm.Build,"fields":col.fields}}):_vm._e()],1)}),1)}),1)}
+var Sectionvue_type_template_id_20323e64_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Build/Section.vue?vue&type=template&id=2e540806&
+// CONCATENATED MODULE: ./src/components/Build/Section.vue?vue&type=template&id=20323e64&
 
 // CONCATENATED MODULE: ./src/components/Build/sectionMixin.js
 
@@ -23059,7 +23090,10 @@ var sectionMixin_id = 1;
               }
 
               if (!field.hidden) {
-                field._id = sectionMixin_id++;
+                if (!field.id) {
+                  field.id = sectionMixin_id++;
+                }
+
                 new_r.push(field);
               }
             }
@@ -23166,8 +23200,8 @@ var Sectionvue_type_style_index_0_lang_less_ = __webpack_require__("8425");
 
 var Section_component = Object(componentNormalizer["a" /* default */])(
   Build_Sectionvue_type_script_lang_js_,
-  Sectionvue_type_template_id_2e540806_render,
-  Sectionvue_type_template_id_2e540806_staticRenderFns,
+  Sectionvue_type_template_id_20323e64_render,
+  Sectionvue_type_template_id_20323e64_staticRenderFns,
   false,
   null,
   null,
@@ -23844,12 +23878,12 @@ var DatepickerRange_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var DatepickerRange = (DatepickerRange_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/UploaderFile.vue?vue&type=template&id=83d2a8fe&
-var UploaderFilevue_type_template_id_83d2a8fe_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('FileUpload',{ref:"upload",class:_vm.customClass,attrs:{"post-action":_vm.postAction,"size":_vm.size,"multiple":_vm.multiple,"headers":_vm.headers,"data":_vm.data,"value":_vm.value,"extensions":_vm.extensions,"input-id":_vm.inputId,"accept":_vm.accept,"inputId":_vm.inputId,"name":_vm.name},on:{"input":_vm.handleUpdateFiles,"input-file":_vm.handleInputFile}},[_vm._t("default")],2)}
-var UploaderFilevue_type_template_id_83d2a8fe_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/UploaderFile.vue?vue&type=template&id=47f3d7e1&
+var UploaderFilevue_type_template_id_47f3d7e1_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('FileUpload',{ref:"upload",class:_vm.customClass,attrs:{"post-action":_vm.postAction,"size":_vm.size,"multiple":_vm.multiple,"headers":_vm.headers,"data":_vm.data,"value":_vm.value,"extensions":_vm.extensions,"input-id":_vm.inputId,"accept":_vm.accept,"inputId":_vm.inputId,"name":_vm.name,"manual":_vm.manual,"on-before-open":_vm.onBeforeOpen},on:{"input":_vm.handleUpdateFiles,"input-file":_vm.handleInputFile}},[_vm._t("default")],2)}
+var UploaderFilevue_type_template_id_47f3d7e1_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/UploaderFile.vue?vue&type=template&id=83d2a8fe&
+// CONCATENATED MODULE: ./src/components/UploaderFile.vue?vue&type=template&id=47f3d7e1&
 
 // EXTERNAL MODULE: ./src/components/vue-upload-component/index.js
 var vue_upload_component = __webpack_require__("2143");
@@ -23861,6 +23895,8 @@ var vue_upload_component_default = /*#__PURE__*/__webpack_require__.n(vue_upload
 
 var _name$components$prop;
 
+//
+//
 //
 //
 //
@@ -23905,6 +23941,7 @@ var _name$components$prop;
         return uuid();
       }
     },
+    manual: false,
     name: {},
     extensions: {},
     postAction: {},
@@ -23929,8 +23966,9 @@ var _name$components$prop;
     // 出错
     onUpload: {},
     // 上传
-    onDelete: {} // 删除
-
+    onDelete: {},
+    // 删除
+    onBeforeOpen: {}
   }
 }, Object(defineProperty["a" /* default */])(_name$components$prop, "components", {
   FileUpload: vue_upload_component_default.a
@@ -24013,6 +24051,9 @@ var _name$components$prop;
   },
   clear: function clear() {
     this.$refs.upload.clear();
+  },
+  open: function open() {
+    this.$refs.upload.open();
   }
 }), _name$components$prop);
 // CONCATENATED MODULE: ./src/components/UploaderFile.vue?vue&type=script&lang=js&
@@ -24027,8 +24068,8 @@ var _name$components$prop;
 
 var UploaderFile_component = Object(componentNormalizer["a" /* default */])(
   components_UploaderFilevue_type_script_lang_js_,
-  UploaderFilevue_type_template_id_83d2a8fe_render,
-  UploaderFilevue_type_template_id_83d2a8fe_staticRenderFns,
+  UploaderFilevue_type_template_id_47f3d7e1_render,
+  UploaderFilevue_type_template_id_47f3d7e1_staticRenderFns,
   false,
   null,
   null,
@@ -24037,12 +24078,12 @@ var UploaderFile_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var UploaderFile = (UploaderFile_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/CardList/CardList.vue?vue&type=template&id=557a8561&
-var CardListvue_type_template_id_557a8561_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"u-card-list"},[_vm._t("beforeQuery"),(_vm.store.query)?_c('Query',_vm._b({ref:"query",on:{"input":_vm.handleQuerySubmit,"on-query-change":_vm.handleQueryChange}},'Query',_vm.store.query,false)):_vm._e(),(_vm.store.data.length === 0 && !_vm.store.loading)?_c('div',[_vm._t("nodata",[_c('div',{staticClass:"ivu-spin",domProps:{"innerHTML":_vm._s(_vm.store.nodata)}})])],2):_vm._e(),(_vm.store.data.length === 0 && _vm.store.loading)?_c('div',[_vm._t("loading",[_c('div',{staticClass:"ivu-spin",domProps:{"innerHTML":_vm._s(_vm.store.loadingText)}})])],2):_vm._e(),(_vm.store.scroll)?_c('Scroll',{attrs:{"on-reach-bottom":_vm.handleReachBottom}},[_vm._t("default",null,{"data":_vm.store.data})],2):[_vm._t("default",null,{"data":_vm.store.data}),(_vm.store.pagination && _vm.store.data.length > 0)?_c('Pagination',{ref:"pagination",attrs:{"store":_vm.store},on:{"on-page":_vm.handlePage,"on-page-size":_vm.handlePageSize}},[_c('Buttons',{ref:"bottomButtons",attrs:{"buttons":_vm.store.bottomButtons,"target":this}})],1):_vm._e()],_vm._t("afterList")],2)}
-var CardListvue_type_template_id_557a8561_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/CardList/CardList.vue?vue&type=template&id=010e76ed&
+var CardListvue_type_template_id_010e76ed_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"u-card-list"},[_vm._t("beforeQuery"),(_vm.store.query)?_c('Query',_vm._b({ref:"query",on:{"input":_vm.handleQuerySubmit,"on-query-change":_vm.handleQueryChange}},'Query',_vm.store.query,false)):_vm._e(),_vm._t("beforeList"),(_vm.store.data.length === 0 && !_vm.store.loading)?_c('div',[_vm._t("nodata",[_c('div',{staticClass:"ivu-spin",domProps:{"innerHTML":_vm._s(_vm.store.nodata)}})])],2):_vm._e(),(_vm.store.data.length === 0 && _vm.store.loading)?_c('div',[_vm._t("loading",[_c('div',{staticClass:"ivu-spin",domProps:{"innerHTML":_vm._s(_vm.store.loadingText)}})])],2):_vm._e(),(_vm.store.scroll)?_c('Scroll',{attrs:{"on-reach-bottom":_vm.handleReachBottom}},[_vm._t("default",null,{"data":_vm.store.data})],2):[_vm._t("default",null,{"data":_vm.store.data}),(_vm.store.pagination && _vm.store.data.length > 0)?_c('Pagination',{ref:"pagination",attrs:{"store":_vm.store},on:{"on-page":_vm.handlePage,"on-page-size":_vm.handlePageSize}},[_c('Buttons',{ref:"bottomButtons",attrs:{"buttons":_vm.store.bottomButtons,"target":this}})],1):_vm._e()],_vm._t("afterList")],2)}
+var CardListvue_type_template_id_010e76ed_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/CardList/CardList.vue?vue&type=template&id=557a8561&
+// CONCATENATED MODULE: ./src/components/CardList/CardList.vue?vue&type=template&id=010e76ed&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/CardList/CardList.vue?vue&type=script&lang=js&
 
@@ -24078,6 +24119,15 @@ var CardListvue_type_template_id_557a8561_staticRenderFns = []
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -24115,6 +24165,7 @@ var CardListvue_type_script_lang_js_rowKey = 1;
       query: null,
       pagination: true,
       pageSize: 10,
+      pageBtnSize: "small",
       total: 0,
       start: 1,
       data: [],
@@ -24123,15 +24174,15 @@ var CardListvue_type_script_lang_js_rowKey = 1;
         pageSize: 10
       },
       page: 1,
-      prev: '上一页',
-      next: '下一页',
+      prev: "上一页",
+      next: "下一页",
       pageSizeOpts: [10, 20, 30],
       autoLoad: true,
       onLoadData: null,
       bottomButtons: [],
       loadingText: '<i class="ivu-load-loop ivu-icon ivu-icon-ios-loading"></i> 正在装入...',
       loading: false,
-      nodata: '暂无数据',
+      nodata: "暂无数据",
       scroll: false,
       // 是否无限滚动,
       toEnd: false // 是否到头（用于滚动模式）
@@ -24166,7 +24217,7 @@ var CardListvue_type_script_lang_js_rowKey = 1;
       var _this2 = this;
 
       this.$nextTick(function () {
-        _this2.$set(_this2.store.param, 'page', page);
+        _this2.$set(_this2.store.param, "page", page);
 
         _this2.store.page = page;
         _this2.store.start = (page - 1) * _this2.store.pageSize + 1;
@@ -24178,7 +24229,7 @@ var CardListvue_type_script_lang_js_rowKey = 1;
       var _this3 = this;
 
       this.$nextTick(function () {
-        _this3.$set(_this3.store.param, 'pageSize', size);
+        _this3.$set(_this3.store.param, "pageSize", size);
 
         _this3.store.pageSize = size;
         _this3.store.start = (_this3.store.page - 1) * size + 1;
@@ -24187,7 +24238,7 @@ var CardListvue_type_script_lang_js_rowKey = 1;
       });
     },
     handleQueryChange: function handleQueryChange(change) {
-      this.$emit('on-query-change', change);
+      this.$emit("on-query-change", change);
     },
     handleReachBottom: function handleReachBottom() {
       if (!this.store.scroll) {
@@ -24237,7 +24288,7 @@ var CardListvue_type_script_lang_js_rowKey = 1;
           _this4.$nextTick(function () {
             _this4.showLoading(false);
 
-            _this4.$emit('input', _this4.store.data);
+            _this4.sendInputEvent();
 
             resolve(data);
           });
@@ -24261,12 +24312,12 @@ var CardListvue_type_script_lang_js_rowKey = 1;
       this.store.page = 1;
       this.store.start = 1;
       this.store.data = [];
-      this.$set(this.store.param, 'page', 1);
+      this.$set(this.store.param, "page", 1);
       this.loadData();
     },
     showLoading: function showLoading() {
       var loading = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-      var text = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+      var text = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
       this.store.loading = loading;
 
       if (text) {
@@ -24310,6 +24361,63 @@ var CardListvue_type_script_lang_js_rowKey = 1;
           }
         }
       }
+    },
+    getPosition: function getPosition(row, list) {
+      if (!row || !list || list && list.length === 0) return -1;
+      return list.indexOf(row);
+    },
+    // 新加记录有一个 _new 属性
+    // parent 用于处理添加子结点
+    // position = 'before', 'after'
+    addRow: function addRow(row, item) {
+      var position = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "after";
+      var pos, data;
+
+      if (!item) {
+        data = this.store.data;
+        pos = -1;
+
+        if (position === "before") {
+          pos = 0;
+        }
+      } else {
+        pos = this.getPosition(item, this.store.data);
+      }
+
+      if (position === "after") utils_list.add(data, row, pos);else utils_list.insert(data, pos, row);
+      this.store.total += 1;
+      this.sendInputEvent();
+      return row;
+    },
+    sendInputEvent: function sendInputEvent() {
+      this.$emit("input", this.store.data);
+    },
+    removeRow: function removeRow(row) {
+      var d;
+      d = this.store.data;
+      var index = this.getPosition(row, this.store.data);
+      var deleted = d.splice(index, 1);
+      this.store.total -= 1;
+      this.sendInputEvent(); // 增加当无数据时的向前翻页或刷新的处理
+
+      if (this.store.data.length === 0) {
+        var pages = Math.ceil(this.store.total / this.store.pageSize);
+
+        if (this.store.page < pages) {
+          this.loadData();
+        } else if (this.store.page > 1) {
+          this.go(this.store.page - 1);
+        }
+      }
+
+      return deleted;
+    },
+    updateRow: function updateRow(row, newRow) {
+      var d;
+      d = this.store.data;
+      var index = this.getPosition(row, this.store.data);
+      var deleted = d.splice(index, 1, newRow);
+      this.sendInputEvent();
     }
   },
   watch: {
@@ -24368,8 +24476,8 @@ var CardListvue_type_script_lang_js_rowKey = 1;
 
 var CardList_component = Object(componentNormalizer["a" /* default */])(
   CardList_CardListvue_type_script_lang_js_,
-  CardListvue_type_template_id_557a8561_render,
-  CardListvue_type_template_id_557a8561_staticRenderFns,
+  CardListvue_type_template_id_010e76ed_render,
+  CardListvue_type_template_id_010e76ed_staticRenderFns,
   false,
   null,
   null,
@@ -25117,23 +25225,23 @@ var PASSWORD = "^(?=.*[a-zA-Z])(?=.*\\\d)(?=.*[~!@#$%^&*()_+`\\\-={}\\\[\\]:\\\"
     var range;
     var expected;
     var type;
+    var length = value.length;
 
-    if (rule.min && rule.max) {
-      range = "{".concat(rule.min, ",").concat(rule.max, "}$");
-      expected = "".concat(rule.min, "-").concat(rule.max);
+    if (rule.min && rule.max && (length < rule.min || length > rule.max)) {
       type = 'passwordRange';
-    } else if (rule.min) {
-      range = "{".concat(rule.min, ",}$");
+      return rule.makeError(type, expected);
+    } else if (rule.min && length < rule.min) {
       expected = rule.min;
       type = 'passwordMin';
-    } else if (rule.max) {
-      range = "{,".concat(rule.max, "}$");
+      return rule.makeError(type, expected);
+    } else if (rule.max && length > rule.max) {
       expected = rule.max;
       type = 'passwordMax';
-    } else if (rule.range) {
-      range = "{".concat(rule.range[0], ",").concat(rule.range[1], "}$");
+      return rule.makeError(type, expected);
+    } else if (rule.range && (length < rule.range[0] || length > rule.range[1])) {
       expected = "".concat(rule.range[0], "-").concat(rule.range[1]);
       type = 'passwordRange';
+      return rule.makeError(type, expected);
     } else {
       range = '*$';
       type = 'password';
@@ -26187,12 +26295,12 @@ var Dialog_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var Dialog = (Dialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Dialog/Loading-Dialog.vue?vue&type=template&id=7a3d1094&
-var Loading_Dialogvue_type_template_id_7a3d1094_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Modal',_vm._b({attrs:{"loading":_vm.loading},on:{"on-cancel":_vm.handleCancel,"on-ok":_vm.handleOk},model:{value:(_vm.show),callback:function ($$v) {_vm.show=$$v},expression:"show"}},'Modal',_vm.$attrs,false),[_vm._t("default"),(_vm.buttons)?_c('div',{attrs:{"slot":"footer"},slot:"footer"},[_c('Buttons',{ref:"buttons",attrs:{"buttons":_vm.buttons,"target":this,"size":_vm.buttonSize}},[_vm._v("返回")])],1):_vm._e()],2)}
-var Loading_Dialogvue_type_template_id_7a3d1094_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Dialog/Loading-Dialog.vue?vue&type=template&id=21e9ea5c&
+var Loading_Dialogvue_type_template_id_21e9ea5c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Modal',_vm._b({attrs:{"loading":_vm.loading},on:{"on-cancel":_vm.handleCancel,"on-ok":_vm.handleOk},model:{value:(_vm.show),callback:function ($$v) {_vm.show=$$v},expression:"show"}},'Modal',_vm.$attrs,false),[_vm._t("default"),(_vm.buttons)?_c('div',{attrs:{"slot":"footer"},slot:"footer"},[_c('Buttons',{ref:"buttons",attrs:{"buttons":_vm.buttons,"target":this,"size":_vm.buttonSize}},[_vm._v("返回")])],1):_vm._e()],2)}
+var Loading_Dialogvue_type_template_id_21e9ea5c_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Dialog/Loading-Dialog.vue?vue&type=template&id=7a3d1094&
+// CONCATENATED MODULE: ./src/components/Dialog/Loading-Dialog.vue?vue&type=template&id=21e9ea5c&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Dialog/Loading-Dialog.vue?vue&type=script&lang=js&
 
@@ -26214,6 +26322,7 @@ var Loading_Dialogvue_type_template_id_7a3d1094_staticRenderFns = []
 //
 //
 /* harmony default export */ var Loading_Dialogvue_type_script_lang_js_ = ({
+  inheritAttrs: false,
   props: {
     onOk: {},
     onCancel: {},
@@ -26347,8 +26456,8 @@ var Loading_Dialogvue_type_template_id_7a3d1094_staticRenderFns = []
 
 var Loading_Dialog_component = Object(componentNormalizer["a" /* default */])(
   Dialog_Loading_Dialogvue_type_script_lang_js_,
-  Loading_Dialogvue_type_template_id_7a3d1094_render,
-  Loading_Dialogvue_type_template_id_7a3d1094_staticRenderFns,
+  Loading_Dialogvue_type_template_id_21e9ea5c_render,
+  Loading_Dialogvue_type_template_id_21e9ea5c_staticRenderFns,
   false,
   null,
   null,
@@ -26357,12 +26466,12 @@ var Loading_Dialog_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var Loading_Dialog = (Loading_Dialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Dialog/Confirm-Dialog.vue?vue&type=template&id=3133409c&
-var Confirm_Dialogvue_type_template_id_3133409c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('loading-dialog',_vm._b({attrs:{"on-ok":_vm.handleOk,"on-cancel":_vm.onCancel,"buttons":_vm.buttons,"buttonSize":_vm.buttonSize}},'loading-dialog',_vm.$attrs,false),[_c(_vm.component,_vm._g(_vm._b({ref:"build",tag:"componet",attrs:{"value":_vm.current}},'componet',_vm.props,false),_vm.on))],1)}
-var Confirm_Dialogvue_type_template_id_3133409c_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6da17298-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Dialog/Confirm-Dialog.vue?vue&type=template&id=7926b74e&
+var Confirm_Dialogvue_type_template_id_7926b74e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('loading-dialog',_vm._b({attrs:{"on-ok":_vm.handleOk,"on-cancel":_vm.onCancel,"buttons":_vm.buttons,"buttonSize":_vm.buttonSize}},'loading-dialog',_vm.$attrs,false),[_c(_vm.component,_vm._g(_vm._b({ref:"build",tag:"componet",attrs:{"value":_vm.current}},'componet',_vm.props,false),_vm.on))],1)}
+var Confirm_Dialogvue_type_template_id_7926b74e_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Dialog/Confirm-Dialog.vue?vue&type=template&id=3133409c&
+// CONCATENATED MODULE: ./src/components/Dialog/Confirm-Dialog.vue?vue&type=template&id=7926b74e&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Dialog/Confirm-Dialog.vue?vue&type=script&lang=js&
 
@@ -26383,6 +26492,7 @@ var Confirm_Dialogvue_type_template_id_3133409c_staticRenderFns = []
 //
 
 /* harmony default export */ var Confirm_Dialogvue_type_script_lang_js_ = ({
+  inheritAttrs: false,
   props: {
     component: {},
     // 调用表单，传给它一个 value
@@ -26493,8 +26603,8 @@ var Confirm_Dialogvue_type_template_id_3133409c_staticRenderFns = []
 
 var Confirm_Dialog_component = Object(componentNormalizer["a" /* default */])(
   Dialog_Confirm_Dialogvue_type_script_lang_js_,
-  Confirm_Dialogvue_type_template_id_3133409c_render,
-  Confirm_Dialogvue_type_template_id_3133409c_staticRenderFns,
+  Confirm_Dialogvue_type_template_id_7926b74e_render,
+  Confirm_Dialogvue_type_template_id_7926b74e_staticRenderFns,
   false,
   null,
   null,

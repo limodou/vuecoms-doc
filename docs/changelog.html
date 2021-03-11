@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=789f542a">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=131136da">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=f0bbb634"></script>
-    <script src="lib/vuecoms.js?t=83381b58"></script>
+    <script src="lib/iview/iview.js?t=2412c51d"></script>
+    <script src="lib/vuecoms.js?t=1da5e897"></script>
     <title>变更记录 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -23,6 +23,12 @@
             </li>
             <li class="menu-item -level-1"><a class="link title -active link-changelog" href="changelog.html">变更记录</a>
               <ul class="headings heading-list">
+                <li class="heading-item -depth-2"><a class="hlink link-v3.7.7" href="#v3.7.7">V3.7.7</a>
+                </li>
+                <li class="heading-item -depth-2"><a class="hlink link-v3.7.6" href="#v3.7.6">V3.7.6</a>
+                </li>
+                <li class="heading-item -depth-2"><a class="hlink link-v3.7.5" href="#v3.7.5">V3.7.5</a>
+                </li>
                 <li class="heading-item -depth-2"><a class="hlink link-v3.7.4" href="#v3.7.4">V3.7.4</a>
                 </li>
                 <li class="heading-item -depth-2"><a class="hlink link-v3.7.3" href="#v3.7.3">V3.7.3</a>
@@ -144,6 +150,21 @@
           </div>
         </div>
         <div class="markdown-body"><h1 id="">&#x4FEE;&#x6539;&#x8BB0;&#x5F55;</h1>
+<h2 id="v3.7.7">V3.7.7</h2>
+<ul>
+<li>CardList &#x589E;&#x52A0; addRow, removeRow &#x65B9;&#x6CD5;</li>
+<li>UploaderFile &#x7EC4;&#x4EF6; &#x589E;&#x52A0; manual &#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x63A7;&#x5236;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x6D4F;&#x89C8;&#x7A97;&#x53E3;&#x3002;&#x901A;&#x8FC7; onBeforeOpen(el) &#x53EF;&#x4EE5;&#x54CD;&#x5E94;&#x5728;&#x6253;&#x5F00;&#x4E4B;&#x524D;&#x7684;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;&#x3002;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x7684; open() &#x65B9;&#x6CD5;&#x6765;&#x624B;&#x5DE5;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x6D4F;&#x89C8;&#x7A97;&#x53E3;&#x3002;</li>
+</ul>
+<h2 id="v3.7.6">V3.7.6</h2>
+<ul>
+<li>Grid &#x589E;&#x52A0; onSelectAll(flag) &#x4E8B;&#x4EF6;&#x56DE;&#x8C03;&#xFF0C;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x5F53;&#x70B9;&#x51FB;&#x5168;&#x9009;&#x65F6;&#x7684;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;&#x3002;flag &#x4E3A; true&#x6216; false &#x8868;&#x793A;&#x5168;&#x9009;&#x6216;&#x5168;&#x4E0D;&#x9009;&#x3002;&#x5F53; onSelectAll &#x5B9A;&#x4E49;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x70B9;&#x51FB;&#x5168;&#x9009;&#x4E2D;&#xFF0C;onSelect &#x548C; onDeselect &#x4E0D;&#x4F1A;&#x88AB;&#x8C03;&#x7528;</li>
+<li>&#x4FEE;&#x590D; Grid &#x9875;&#x7801;&#x5F55;&#x5165;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5F55;&#x5165;&#x975E;&#x6570;&#x5B57;&#x7684; Bug</li>
+</ul>
+<h2 id="v3.7.5">V3.7.5</h2>
+<ul>
+<li>FormCell &#x7684;&#x81EA;&#x52A8;&#x6821;&#x9A8C;&#x52A0;&#x4E0A;&#x4E86;100&#x6BEB;&#x79D2;&#x7684;&#x5EF6;&#x8FDF;&#x5904;&#x7406;</li>
+<li>iview &#x7684; treeSelect &#x652F;&#x6301;&#x5728;&#x6570;&#x636E;&#x4E2D;&#x52A0;&#x5165;disabled &#x7684;&#x72B6;&#x6001;&#xFF0C;&#x5C06;&#x4F1A;&#x4E0E;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x9009;&#x62E9;&#x7236;&#x7ED3;&#x70B9;</li>
+</ul>
 <h2 id="v3.7.4">V3.7.4</h2>
 <ul>
 <li>RadioGroup, CheckboxGroup, Select &#x589E;&#x52A0;&#x5BF9; disabled &#x7684;&#x652F;&#x6301;&#x3002;&#x5728; choices &#x4E2D;&#x6307;&#x5B9A; disabled &#x5373;&#x53EF;&#x3002;</li>

@@ -104,10 +104,15 @@ var ex_build_01 = new Vue({
             }
           }},
           {name: 'daterange2', label: '日期范围2', required: true, type: 'datepickerrange', options: {type: 'year'}, rule: {type: 'array'}},
-          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {
+          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, 
+          onChange: function (value) {
+              console.log('tree-select', value)
+            },
+            options: {
             checkStrictly: true,
-            onlyLeaf: false,
+            onlyLeaf: true,
             labelInValue: true,
+            parentDisabledWhenOnlyLeaf: false,
             choices:
             [ {
                   id: 'fruits',
@@ -127,6 +132,7 @@ var ex_build_01 = new Vue({
                   }, {
                     id: 'watermelon',
                     title: 'Watermelon',
+                    disabled: true
                   } ],
                 }, {
                   id: 'vegetables',
@@ -271,7 +277,7 @@ var ex_build_01 = new Vue({
     return {
             data:data,
             value: {
-              str1: 'email@gmail.com',
+              str1: '',
               str2: 'aaa',
               select1: 'A',
               select2_static: '静态结果',

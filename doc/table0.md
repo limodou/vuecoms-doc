@@ -84,6 +84,7 @@ vuecoms表格是集：表格、查询条件、分页等控件于一体的控件�
 | onLoadData | 装入数据回调函数，将传入 function (url, param, callback)，当树型结构时，会变为(parent(idField), row(当前结点))。其中param会包含：<br/>分页变量: pageSize(每页条数), page(当前页)<br/>排序字段: sortField(排序字段名), sortDir(排序方向asc, desc))<br/>查询变量: 这个是和query对应的。<br/><br/>callback(rows, param) callback用于在处理后返回数据。例如：callback(rows, {total: 总条数}) |
 | onSelect | 在选择行前执行，返回为true，则允许选中。传入参数为 (row, flag) flag 为true表示选中，为false表示取消选中|
 | onDeselect | 在取消选择行前执行，返回为true，则允许取消选中。如果不提供，则当onSelect存在时会调用onSelect。传入参数为 row |
+| onSelectAll | 当全选时的回调，传入参数为 (flag)，为 true 时表示全选中，为 false 表示全不选中。如果定义此回调，则在点击全选时，对于 onSelect 和 onDeselect 不再调用|
 | onCheckable | 是否显示checkbox |
 | onSaveRow | 保存行时调用 function (row, callback, rawrow)。当执行完毕时，需调用 callback ，格式为 callback(flag, data)。其中 flag 为 'ok' 表示成功，则data为最后的数据。 'error' 表示有错误， 则data为出错信息。row 是干净数据，去掉了_开头，及_static 结尾的数据。而 rawrow 是原始数据。有时在处理表格数据时，可能需要保留 _rowKey 。这是因为新增字段可能没有对应的 id 值，需要通过 _rowKey 来定位。所以在执行 grid.updateRow 时可能需要_rowKey。这时就需要 rawrow 的数据了。（3.4优化) |
 | onSaveCol | 保存单元格时调用 function (row, callback)。当执行完毕时，需调用 callback ，格式为 callback(flag, data)。其中 flag 为 'ok' 表示成功，则data为最后的数据。 'error' 表示有错误， 则data为出错信息。 |
@@ -180,8 +181,8 @@ query: {
 | toggle | toggle(row, force=false) <br/>切换选中/不选中状态。force为强制切换。 | 无 |
 | select | select(row, force=false) <br/>选中某行。如果定义了 onSelect() 回调，则当force为false时会通用onSelect进行校验，如果onSelect返回true，则可以选中，否则不可以选中。当force为true时，不会调用onSelect方法。 | 无 |
 | selectAll | selectAll(force=false) <br/>全选。 | 无 |
-| deselect | dselect(row, force=false) <br/>取消选择。| 无 |
-| deselectAll | deselectAll(force=false) <br/>全部取消选择。 |无 |
+| deselect | dselect(row, force=false) <br/>取消选择。force 为 false 表示如果存在 onSelect 则调用| 无 |
+| deselectAll | deselectAll(force=false) <br/>全部取消选择。 force 为 false 表示如果存在 onSelect 则调用|无 |
 | getSelection | getSelection() <br/>获取选中记录的idField数组。注意，此函数会使用idField对应的字段，缺省为 'id' | Array |
 | getSelectedRows | getSelectedRows() <br/>获取选中记录的对象数组 | Array |
 | setSelection | setSelection (selection, force=true) <br/>设置选中行。selection为行对应的idField的数组。| 无 |

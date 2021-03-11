@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style.css?t=615badd5">
     <link rel="stylesheet" href="lib/iview/styles/iview.css?t=946d3e80">
-    <link rel="stylesheet" href="lib/vuecoms.css?t=789f542a">
+    <link rel="stylesheet" href="lib/vuecoms.css?t=131136da">
     <link rel="stylesheet" href="lib/custom.css?t=eeac6279">
     <script src="assets/script.js?t=42463e55"></script>
     <script src="lib/vue.js?t=46ed8b2a"></script>
-    <script src="lib/iview/iview.js?t=f0bbb634"></script>
-    <script src="lib/vuecoms.js?t=83381b58"></script>
+    <script src="lib/iview/iview.js?t=2412c51d"></script>
+    <script src="lib/vuecoms.js?t=1da5e897"></script>
     <title>基本构建 - Vuecoms</title>
     <meta name="viewport" content="width=device-width">
   </head>
@@ -243,10 +243,15 @@ var ex_build_01 = new Vue({
             }
           }},
           {name: 'daterange2', label: '日期范围2', required: true, type: 'datepickerrange', options: {type: 'year'}, rule: {type: 'array'}},
-          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, options: {
+          {name: 'tree1', label: '树选择', required: true, type: 'treeselect', multiple: true, 
+          onChange: function (value) {
+              console.log('tree-select', value)
+            },
+            options: {
             checkStrictly: true,
-            onlyLeaf: false,
+            onlyLeaf: true,
             labelInValue: true,
+            parentDisabledWhenOnlyLeaf: false,
             choices:
             [ {
                   id: 'fruits',
@@ -266,6 +271,7 @@ var ex_build_01 = new Vue({
                   }, {
                     id: 'watermelon',
                     title: 'Watermelon',
+                    disabled: true
                   } ],
                 }, {
                   id: 'vegetables',
@@ -410,7 +416,7 @@ var ex_build_01 = new Vue({
     return {
             data:data,
             value: {
-              str1: 'email@gmail.com',
+              str1: '',
               str2: 'aaa',
               select1: 'A',
               select2_static: '静态结果',

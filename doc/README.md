@@ -1,4 +1,4 @@
-Vuecoms 3.4
+Vuecoms 3.7.7
 =============
 
 * [Vuecoms](../README.md)

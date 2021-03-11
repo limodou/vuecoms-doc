@@ -52,8 +52,9 @@ var ex_build_01 = new Vue({
           {name: 'str12', label: '字段12', help: '当选择1勾选时可见', showWhen: 'status1'},
           {name: 'str2', label: '字段2', help: '当选择2勾选时静态', staticWhen: 'status2'},
           {name: 'str3', label: '字段3', help: '当选择3勾选时必填', requiredWhen: 'status3'},
-          {name: 'str4', label: '字段4', help: '当选择3勾选时处理', when: ['status3', function(v, field, value){
+          {name: 'str4', label: '字段4', help: '当选择3勾选时处理', when: ['status4', function(v, field, value){
             self.$Message.info('字段4被调用:'+v)
+            self.$set(field.options, 'disabled', v)
           }]},
           {name: 'str5', label: '字段5', help: '当选择2和3勾选时处理', when: [function(){return self.value.check2 && self.value.check3}, function(v, field, value){
             self.$Message.info('字段5被调用:'+v)
@@ -83,6 +84,9 @@ var ex_build_01 = new Vue({
               },
               status3: function(){
                 return self.value.check3
+              },
+              status4: function(){
+                return Boolean(self.value.str11)
               },
             }
           }
